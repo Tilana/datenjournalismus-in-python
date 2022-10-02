@@ -1,3 +1,2 @@
 rise==5.7.1 
-pandas==1.5.0
 notebook==6.4.12

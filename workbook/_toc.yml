@@ -1,0 +1,33 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: willkommen/intro
+parts:
+  - caption: Willkommen 
+    chapters:
+    - file: willkommen/kursplan 
+    - file: willkommen/motivation 
+    - file: willkommen/tipps 
+  - caption: Grundlagen in Python
+    maxdepth: 1
+    chapters:
+    - file: grundlagen/beispiele 
+      sections:
+      - file: grundlagen/wealth 
+    - file: grundlagen/theorie 
+      sections:
+      - file: grundlagen/operatoren 
+      - file: grundlagen/variablen 
+      - file: grundlagen/datentypen 
+      - file: grundlagen/inbuilt_functions
+    - file: aufgaben/intro
+      sections:
+      - file: aufgaben/vl1
+  - caption: Datenanalyse
+    chapters:
+      - file: datenanalyse/tbd
+  - caption: APIs & Scraper
+    chapters:
+      - file: APIs/tbd
+

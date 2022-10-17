@@ -4,7 +4,7 @@ Willkommen zum Datenjournalismus in Python: - Eine praktische Einführung in die
 
 In diesem Workbook werden die Grundlagen der Programmierung mit Python erlernt. Der Fokus liegt dabei auf den möglichen Anwendungsfeldern im Datenjournalismus.
 
-Die folgenden datenjournalistischen Fähigkeiten werde   n im Workbook behandelt:
+Die folgenden datenjournalistischen Fähigkeiten werden im Workbook behandelt:
 - Python Code lesen, verstehen und eigenständig programmieren
 - auf Daten aus unterschiedlichen Quellen zugreifen, diese verarbeiten, analysieren und visualisieren
 - einen Webscraper bauen

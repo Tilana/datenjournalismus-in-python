@@ -17,10 +17,17 @@ parts:
       - file: grundlagen/wealth 
     - file: grundlagen/theorie 
       sections:
-      - file: grundlagen/operatoren 
+      - file: grundlagen/operatoren
+        sections:
+          - file: grundlagen/arithm_operatoren
+          - file: grundlagen/vergleichsoperatoren
+          - file: grundlagen/bool_operatoren
       - file: grundlagen/variablen 
       - file: grundlagen/datentypen 
       - file: grundlagen/inbuilt_functions
+      - file: grundlagen/kontrollstrukturen
+        sections:
+          - file: grundlagen/ifelse
     - file: aufgaben/intro
       sections:
       - file: aufgaben/vl1

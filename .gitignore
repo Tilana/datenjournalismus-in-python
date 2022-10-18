@@ -1,0 +1,15 @@
+*.pdf
+
+# Workbook
+workbook/_build/
+
+vorlesung/.ipynb_checkpoints/
+aufgaben/.ipynb_checkpoints/
+grundung/.ipynb
+
+
+.ipynb_checkpoints/
+
+imgs/unused/
+
+quiz/

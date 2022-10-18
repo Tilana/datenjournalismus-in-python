@@ -30,7 +30,8 @@ parts:
           - file: grundlagen/ifelse
     - file: aufgaben/intro
       sections:
-      - file: aufgaben/vl1
+      - file: aufgaben/uebungen1
+      - file: aufgaben/uebungen2
   - caption: Datenanalyse
     chapters:
       - file: datenanalyse/tbd

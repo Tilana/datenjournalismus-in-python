@@ -210,6 +210,11 @@ const thebe_selector_output = ".output, .cell_output"
      Eingebaute Funktionen
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/methoden.html">
+     Methoden
+    </a>
+   </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../grundlagen/kontrollstrukturen.html">
      Kontrollstrukturen
@@ -477,12 +482,63 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings-und-ihre-methoden">
+     Strings und ihre Methoden
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#was-ist-wahr-in-python">
+     Was ist wahr in Python?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ein-gleichnis">
+     Ein Gleichnis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operation-wahrheit">
+     Operation Wahrheit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kontrollstrukturen">
+   Kontrollstrukturen
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -494,6 +550,46 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings-und-ihre-methoden">
+     Strings und ihre Methoden
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#was-ist-wahr-in-python">
+     Was ist wahr in Python?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ein-gleichnis">
+     Ein Gleichnis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operation-wahrheit">
+     Operation Wahrheit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kontrollstrukturen">
+   Kontrollstrukturen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -503,6 +599,125 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="string-methoden-vergleichs-boolsche-operatoren-if-elif-else">
 <h1>String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else<a class="headerlink" href="#string-methoden-vergleichs-boolsche-operatoren-if-elif-else" title="Permalink to this headline">#</a></h1>
+<p>Diese Aufgaben sind etwas anspruchsvoller. Probiert so weit wie möglich zu kommen. Falls ihr nicht weiter wisst probiert es mit einer Internetrecherche. Sonst reichen auch Lösungsansätze.</p>
+<section id="strings-und-ihre-methoden">
+<h2>Strings und ihre Methoden<a class="headerlink" href="#strings-und-ihre-methoden" title="Permalink to this headline">#</a></h2>
+<p>Nutze die Methoden von Strings, um die gegebenen Anforderungen zu erfüllen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Trenne den Apfel vom Baum, aber den Baum nicht vom Stamm.&quot;&quot;&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Apfel-Baum-Stamm&quot;</span>
+<span class="sd">&#39;&#39;&#39;Schreibe den Namen zusammen.&#39;&#39;&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Georg&#39;</span><span class="p">,</span> <span class="s1">&#39;Elser&#39;</span><span class="p">]</span>
+<span class="sd">&#39;&#39;&#39;Füge hier dein Alter ein.&#39;&#39;&#39;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;Ich bin schon </span><span class="si">{}</span><span class="s1"> Jahre alt.&#39;</span>
+<span class="sd">&#39;&#39;&#39;Ersetze alle &#39;kl&#39; durch &#39;r&#39;.&#39;&#39;&#39;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;Alle kleinen Klaviere klingen geklaut besser.&quot;</span>
+<span class="sd">&#39;&#39;&#39;Finde die Nadel im Heuhaufen&#39;&#39;&#39;</span>
+<span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;HeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuNadelHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeu&quot;</span>
+<span class="sd">&#39;&#39;&#39;Überprüfe ob f nur aus Buchstaben besteht.&#39;&#39;&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGH1JKLMN0PQRSTUVWXYZ&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gegeben ist der folgende Satz. Nutze die Methoden von Strings, um das Wort ‘Ring’ in Großbuchstaben zu schreiben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satz</span> <span class="o">=</span> <span class="s2">&quot;Ein Ring, sie zu knechten.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="was-ist-wahr-in-python">
+<h2>Was ist wahr in Python?<a class="headerlink" href="#was-ist-wahr-in-python" title="Permalink to this headline">#</a></h2>
+<p>Welche Werte werden von Python als wahr ausgewertet? Welche Regel steckt dahinter?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ein-gleichnis">
+<h2>Ein Gleichnis<a class="headerlink" href="#ein-gleichnis" title="Permalink to this headline">#</a></h2>
+<p>Gegeben sind fünf Thesen. Überprüfe mithilfe der Vergleichsoperatoren, die in der Vorlesung vorgestellt wurden, ob sie wahr sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;These 1:</span>
+<span class="sd">Das doppelte von zehn ist mindestens so groß wie das dreifache von fünf.&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">These 2:</span>
+<span class="sd">13 zum Quadrat ist genau 169.&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;These 3:</span>
+<span class="sd">Drei mal acht ist nicht das gleiche wie vier mal sechs.&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;These 4:</span>
+<span class="sd">Fünf geteilt durch zwei ist weniger als dreimal ein halb.&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;These 5:</span>
+<span class="sd">Das zehnfache von 83 ist niemals so groß wie das fünffache von 161.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;These 5:\nDas zehnfache von 83 ist niemals so groß wie das fünffache von 161.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operation-wahrheit">
+<h2>Operation Wahrheit<a class="headerlink" href="#operation-wahrheit" title="Permalink to this headline">#</a></h2>
+<p>Mithilfe der (aussagen-)logischen Operatoren <strong>not</strong>, <strong>or</strong> und <strong>and</strong> können boolesche Werte ausgewertet werden. Ergänze diese Operatoren in den folgenden <strong>if</strong>-Abfragen, sodass ein bekannter Liedtext ausgegeben wird.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span>  <span class="mi">64</span> <span class="o">&gt;</span> <span class="mi">66</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Griechischer Wein ist so wie das Blut der Erde&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Komm, schenk dir ein&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="s1">&#39;Hallo&#39;</span> <span class="s1">&#39;False&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ich bau ein Schloss&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="kc">True</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Und wenn ich dann traurig werde&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="mi">97</span> <span class="o">==</span> <span class="mi">22</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Liegt es daran, dass ich immer träume von daheim&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Morgen Kinder wirds nix geben.&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="kc">False</span> <span class="kc">True</span> <span class="kc">False</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Du musst verzeihn.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span>  <span class="mi">64</span> <span class="o">&gt;</span> <span class="mi">66</span><span class="p">:</span>
+              <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kontrollstrukturen">
+<h1>Kontrollstrukturen<a class="headerlink" href="#kontrollstrukturen" title="Permalink to this headline">#</a></h1>
+<p>Schreibe ein <strong>if</strong>-Statement welches prüft, ob eine Zahl positiv, negativ oder gleich null ist. Gebe als Ausgabe den Satz “x ist positiv/negativ/null.” entsprechend dem jeweiligen Fall aus. X soll dabei durch die überprüfte Zahl ersetzt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

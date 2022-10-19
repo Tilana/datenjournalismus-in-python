@@ -210,6 +210,11 @@ const thebe_selector_output = ".output, .cell_output"
      Eingebaute Funktionen
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/methoden.html">
+     Methoden
+    </a>
+   </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../grundlagen/kontrollstrukturen.html">
      Kontrollstrukturen
@@ -507,6 +512,18 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Code</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">0</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
 </pre></div>
 </div>
 </div>
@@ -521,13 +538,21 @@ title="Print to PDF"
 <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;546&quot;</span>
 <span class="n">g</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.87</span>
 <span class="n">h</span> <span class="o">=</span> <span class="kc">False</span>
-
 </pre></div>
 </div>
 <p><strong>Speichere deinen Namen als Variabel und gib ihn auf der Konsole aus</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Justus&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;Mit = kann ich Variablen zuweisen.</span>
+<span class="sd">Variablen sollten &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Justus
 </pre></div>
 </div>
 </div>
@@ -540,16 +565,32 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eduard
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Erstelle ein Programm, das einen beliebigen Namen als Eingabe entgegennimmt und ‘Hallo &lt; name &gt;’ auf der Konsole ausgibt.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt bist du ?1&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt bist du ?2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wie alt bist du ?123
+Wie alt bist du ?223
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt bist du ?1&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wie alt bist du ?2&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hallo&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;str&#39; and &#39;str&#39;
 </pre></div>
 </div>
 </div>
@@ -567,6 +608,11 @@ title="Print to PDF"
 <div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">-</span> <span class="p">(</span><span class="mi">9</span> <span class="o">-</span> <span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -591,10 +637,32 @@ title="Print to PDF"
 
 </pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>184
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Schreibe ein Programm, das 20 Meter pro Sekunde (m/s) in Kilometer pro Stunde (km/h) umwandelt</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+<span class="n">m_s</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">kmh</span> <span class="o">=</span> <span class="n">m_s</span><span class="o">*</span><span class="mf">3.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kmh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72.0
 </pre></div>
 </div>
 </div>
@@ -608,16 +676,31 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>72.0
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Schreibe ein Programm, das eine beliebiege Meter pro Sekunde (m/s) Eingabe in Kilometer pro Stunde (km/h) umwandelt</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+<span class="n">m_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie viel m/s bist du gefharen?&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">m_s</span><span class="p">))</span>
+<span class="n">km_h</span> <span class="o">=</span> <span class="n">m_s</span> <span class="o">*</span> <span class="mf">3.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">km_h</span><span class="p">,</span> <span class="s1">&#39;km/h&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wie viel m/s bist du gefharen?12,5
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Code</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">m_s</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie viel m/s bist du gefharen?&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">m_s</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">km_h</span> <span class="o">=</span> <span class="n">m_s</span> <span class="o">*</span> <span class="mf">3.6</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;12,5&#39;
 </pre></div>
 </div>
 </div>

@@ -25,6 +25,7 @@ parts:
       - file: grundlagen/variablen 
       - file: grundlagen/datentypen 
       - file: grundlagen/inbuilt_functions
+      - file: grundlagen/methoden
       - file: grundlagen/kontrollstrukturen
         sections:
           - file: grundlagen/ifelse

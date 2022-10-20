@@ -15,6 +15,7 @@ parts:
     - file: grundlagen/beispiele 
       sections:
       - file: grundlagen/wealth 
+      - file: grundlagen/automatisierteTexte
     - file: grundlagen/theorie 
       sections:
       - file: grundlagen/operatoren

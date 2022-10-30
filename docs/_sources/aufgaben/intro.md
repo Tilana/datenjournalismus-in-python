@@ -5,7 +5,10 @@ Wer programmieren lernen möchte, muss selbst Code lesen, verstehen und vorallem
 Diese Übungsaufgaben sollen genau dazu anregen und das eigene Verständnis zu prüfen.
 
 
-### Weitere Übungen
+```{tableofcontents}
+```
+
+## Weitere Übungen
 
 Weitere Aufgaben zum Üben und Wissen testen gibt es hier:
 

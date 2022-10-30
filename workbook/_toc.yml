@@ -24,12 +24,20 @@ parts:
           - file: grundlagen/vergleichsoperatoren
           - file: grundlagen/bool_operatoren
       - file: grundlagen/variablen 
-      - file: grundlagen/datentypen 
-      - file: grundlagen/inbuilt_functions
+      - file: grundlagen/datentypen
+        sections:
+          - file: grundlagen/datentypen_basics
+          - file: grundlagen/listen
       - file: grundlagen/methoden
+      - file: grundlagen/funktionen
+        sections:
+          - file: grundlagen/inbuilt_functions
+          - file: grundlagen/eigene_funktionen
       - file: grundlagen/kontrollstrukturen
         sections:
           - file: grundlagen/ifelse
+          - file: grundlagen/forloops
+          - file: grundlagen/whileloops
     - file: aufgaben/intro
       sections:
       - file: aufgaben/uebungen1
@@ -40,4 +48,7 @@ parts:
   - caption: APIs & Scraper
     chapters:
       - file: APIs/tbd
+  - caption: Weitere Informationen
+    chapters:
+      - file: weiteres/intro
 

@@ -13,7 +13,7 @@ Die folgenden datenjournalistischen Fähigkeiten werden im Workbook behandelt:
 ## Inhalt
 
 Das Workbook ist in drei Haupteile gegliedert:
-- Grundlagen in Pytho
+- Grundlagen in Python
 - Datenanalyse und -verarbeitung
 - APIs und Scraperwerden neue Inhalte zum Workbook hinzugefügt.
 

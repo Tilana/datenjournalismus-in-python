@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else &#8212; Datenjournalismus in Python</title>
+    <title>String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else &#8212; Datenjournalismus in Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -300,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else
+     String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else
     </a>
    </li>
   </ul>
@@ -565,27 +565,34 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-und-ihre-methoden">
-   Strings und ihre Methoden
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings-und-ihre-methoden">
+     Strings und ihre Methoden
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#was-ist-wahr-in-python">
+     Was ist wahr in Python?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ein-gleichnis">
+     Ein Gleichnis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operation-wahrheit">
+     Operation Wahrheit
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#was-ist-wahr-in-python">
-   Was ist wahr in Python?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ein-gleichnis">
-   Ein Gleichnis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operation-wahrheit">
-   Operation Wahrheit
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kontrollstrukturen">
    Kontrollstrukturen
   </a>
@@ -599,7 +606,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>String Methoden, Vergleichs- & boolsche Operatoren, if-elif-else</h1>
+                <h1>String Methoden Vergleichs- & boolsche Operatoren, if-elif-else</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -609,27 +616,34 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-und-ihre-methoden">
-   Strings und ihre Methoden
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings-und-ihre-methoden">
+     Strings und ihre Methoden
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#was-ist-wahr-in-python">
+     Was ist wahr in Python?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ein-gleichnis">
+     Ein Gleichnis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operation-wahrheit">
+     Operation Wahrheit
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#was-ist-wahr-in-python">
-   Was ist wahr in Python?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ein-gleichnis">
-   Ein Gleichnis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operation-wahrheit">
-   Operation Wahrheit
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kontrollstrukturen">
    Kontrollstrukturen
   </a>
@@ -645,7 +659,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="string-methoden-vergleichs-boolsche-operatoren-if-elif-else">
-<h1>String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else<a class="headerlink" href="#string-methoden-vergleichs-boolsche-operatoren-if-elif-else" title="Permalink to this headline">#</a></h1>
+<h1>String Methoden Vergleichs- &amp; boolsche Operatoren, if-elif-else<a class="headerlink" href="#string-methoden-vergleichs-boolsche-operatoren-if-elif-else" title="Permalink to this headline">#</a></h1>
 <p>Diese Aufgaben sind etwas anspruchsvoller. Probiert so weit wie möglich zu kommen. Falls ihr nicht weiter wisst probiert es mit einer Internetrecherche. Sonst reichen auch Lösungsansätze.</p>
 <section id="strings-und-ihre-methoden">
 <h2>Strings und ihre Methoden<a class="headerlink" href="#strings-und-ihre-methoden" title="Permalink to this headline">#</a></h2>
@@ -754,8 +768,9 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="kontrollstrukturen">
-<h2>Kontrollstrukturen<a class="headerlink" href="#kontrollstrukturen" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="kontrollstrukturen">
+<h1>Kontrollstrukturen<a class="headerlink" href="#kontrollstrukturen" title="Permalink to this headline">#</a></h1>
 <p>Schreibe ein <strong>if</strong>-Statement welches prüft, ob eine Zahl positiv, negativ oder gleich null ist. Gebe als Ausgabe den Satz “x ist positiv/negativ/null.” entsprechend dem jeweiligen Fall aus. X soll dabei durch die überprüfte Zahl ersetzt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,7 +779,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Kontrollstrukturen &#8212; Datenjournalismus in Python</title>
+    <title>Flow Control &#8212; Datenjournalismus in Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Fallunterscheidungen: if, else, elif" href="ifelse.html" />
-    <link rel="prev" title="Selbstdefinierte Funktionen" href="eigene_funktionen.html" />
+    <link rel="next" title="Übungsaufgaben" href="../aufgaben/intro.html" />
+    <link rel="prev" title="While Loop" href="whileloops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -260,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
+    <a class="reference internal" href="kontrollstrukturen.html">
      Kontrollstrukturen
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="ifelse.html">
        Fallunterscheidungen: if, else, elif
@@ -284,8 +284,8 @@ const thebe_selector_output = ".output, .cell_output"
        While Loop
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="flow_control.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Flow Control
       </a>
      </li>
@@ -407,6 +407,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/grundlagen/flow_control.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/grundlagen/flow_control.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -446,7 +493,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fgrundlagen/kontrollstrukturen.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fgrundlagen/flow_control.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -474,7 +521,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/grundlagen/kontrollstrukturen.md"
+        <a href="../_sources/grundlagen/flow_control.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -485,7 +532,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -511,23 +558,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pass">
+   Pass
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Kontrollstrukturen</h1>
+                <h1>Flow Control</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pass">
+   Pass
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -535,20 +619,150 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="kontrollstrukturen">
-<h1>Kontrollstrukturen<a class="headerlink" href="#kontrollstrukturen" title="Permalink to this headline">#</a></h1>
-<p>Kontrollstrukturen dienen der Steuerung eines Programms.
-Sie ermöglichen, dass einzelne Code-Blöcke nur unter bestimmten Bedingungen ausgeführt, ausgelassen oder mehrfach wiederholt werden.</p>
-<p>In Python werden Einrückungen zur Gruppierung und Kenntlichmachung einzelner Code-Blöcke genutzt.</p>
-<p>Uns bekannte Kontrollstrukturen sind:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ifelse.html">Fallunterscheidungen: if, else, elif</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forloops.html">For Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="whileloops.html">While Loop</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flow_control.html">Flow Control</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="flow-control">
+<h1>Flow Control<a class="headerlink" href="#flow-control" title="Permalink to this headline">#</a></h1>
+<p>Für mehr Kontrolle in For- und While-Schleifen sorgen die folgenden Anweisungen:</p>
+<p><strong>break</strong> - bricht eine Schleife frühzeitig ab</p>
+<p><strong>continue</strong> - überspringt die aktuelle Iteration. Der Rest der Schleife wird jedoch weiter ausgeführt</p>
+<p><strong>pass</strong> - ignoriert eine Bedingung und führt die Schleife weiter aus</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normale Schleife</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start Loop</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> End Loop&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start Loop
+
+Number is 0
+Number is 1
+Number is 2
+Number is 3
+Number is 4
+Number is 5
+Number is 6
+Number is 7
+Number is 8
+Number is 9
+
+ End Loop
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start Loop</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> End Loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start Loop
+
+Number is 0
+Number is 1
+Number is 2
+Number is 3
+Number is 4
+
+ End Loop
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Continue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start Loop</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">continue</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> End Loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start Loop
+
+Number is 0
+Number is 1
+Number is 2
+Number is 3
+Number is 4
+Number is 6
+Number is 7
+Number is 8
+Number is 9
+
+ End Loop
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pass</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start Loop</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">pass</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> End Loop&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start Loop
+
+Number is 0
+Number is 1
+Number is 2
+Number is 3
+Number is 4
+Number is 5
+Number is 6
+Number is 7
+Number is 8
+Number is 9
+
+ End Loop
+</pre></div>
+</div>
+</div>
+</div>
+<section id="pass">
+<h2>Pass<a class="headerlink" href="#pass" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pass</span></code> wird häufig auch als Platzhalter eingefügt wenn beispielweise Funktionen noch nicht implementiert sind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -578,17 +792,17 @@ Sie ermöglichen, dass einzelne Code-Blöcke nur unter bestimmten Bedingungen au
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="eigene_funktionen.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="whileloops.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Selbstdefinierte Funktionen</p>
+            <p class="prev-next-title">While Loop</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ifelse.html" title="next page">
+    <a class='right-next' id="next-link" href="../aufgaben/intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Fallunterscheidungen: if, else, elif</p>
+        <p class="prev-next-title">Übungsaufgaben</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

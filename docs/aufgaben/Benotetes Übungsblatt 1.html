@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Übungsblatt &#8212; Datenjournalismus in Python</title>
+    <title>Übungsblatt - Python Grundlagen &#8212; Datenjournalismus in Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -223,6 +223,11 @@ const thebe_selector_output = ".output, .cell_output"
        Listen
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/dictionaries.html">
+       Dictionaries
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2">
@@ -275,6 +280,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../grundlagen/whileloops.html">
        While Loop
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/flow_control.html">
+       Flow Control
       </a>
      </li>
     </ul>
@@ -570,7 +580,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   1. Übungsblatt
+   Übungsblatt - Python Grundlagen
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -581,9 +591,16 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#luftdaten-in-leipzig">
-   Luftdaten in Leipzig
+  <a class="reference internal nav-link" href="#oberburgermeister-in-leipzig">
+   Oberbürgermeister in Leipzig
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finde-die-fehler">
+     Finde die Fehler
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -594,7 +611,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>1. Übungsblatt</h1>
+                <h1>Übungsblatt - Python Grundlagen</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -606,7 +623,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   1. Übungsblatt
+   Übungsblatt - Python Grundlagen
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -617,9 +634,16 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#luftdaten-in-leipzig">
-   Luftdaten in Leipzig
+  <a class="reference internal nav-link" href="#oberburgermeister-in-leipzig">
+   Oberbürgermeister in Leipzig
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finde-die-fehler">
+     Finde die Fehler
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -631,16 +655,19 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ubungsblatt">
-<h1>1. Übungsblatt<a class="headerlink" href="#ubungsblatt" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ubungsblatt-python-grundlagen">
+<h1>Übungsblatt - Python Grundlagen<a class="headerlink" href="#ubungsblatt-python-grundlagen" title="Permalink to this headline">#</a></h1>
 <p>In diesem Übungsblatt decken wir die Grundlagen in Python ab.</p>
 <p>Die Abgabe ist bis zum 17. November um 24 Uhr über Moodle mögliche.
-Bitte gebt Python Code oder Jupyternotebooks ab.</p>
+Bitte gebt Python Code oder Jupyternotebooks (Filetypen <em>.py</em> oder <em>.ipyb</em>) ab.</p>
+<p>Für die Bewertung ist der Lösungsweg relevant; reine Textantworten werden nicht gewertet. Jede Aufgabe gibt 5 Punkte. Bestanden hat wer mindestens 40% der Gesamtpunktzahl erreicht.</p>
+<p>Achtet auf verständliche Variablen und Kommentare im Code.</p>
 <section id="quiztool">
 <h2>Quiztool<a class="headerlink" href="#quiztool" title="Permalink to this headline">#</a></h2>
-<p>Baue ein Quiztool für Freund:innen oder Familie.
-Inspiration für Fragen gibt es hier: <a class="reference external" href="https://www.gapminder.org/">https://www.gapminder.org/</a> aber ihr dürft euch auch selbst Fragen und Antworten audenken.</p>
-<p><strong>1.</strong> Zeige eine Frage mit 4 Antwortmöglichkeiten. Ein:e Nutzer:in kann 1,2,3,4 eingeben und bekommt zurück ob er:sie richtig liegt.</p>
+<p>Baue ein Quiztool für Familie oder Freund:innen.
+Inspiration für Fragen gibt es hier: <a class="reference external" href="https://www.gapminder.org/">https://www.gapminder.org/</a> . Gerne dürft ihr euch auch selbst Fragen und Antworten audenken.</p>
+<p><strong>1.</strong> Zeige eine Frage mit 4 Antwortmöglichkeiten an. Ein:e Nutzer:in kann 1,2,3,4 eingeben und bekommt zurück ob er:sie richtig liegt.</p>
+<p>Gib eine Warnung aus, falls etwas anderers als die Antwortmöglichkeiten 1 - 4 eingegeben wurde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
@@ -648,7 +675,7 @@ Inspiration für Fragen gibt es hier: <a class="reference external" href="https:
 </div>
 </div>
 </div>
-<p><strong>2.</strong> Gib einen Fehler aus, falls etwas anderers als die Antwortmöglichkeiten 1,2,3 oder 4 eingegeben wird</p>
+<p><strong>2.</strong> Wiederhole die Frage bis die richtige Antwort gefunden wurde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
@@ -656,7 +683,15 @@ Inspiration für Fragen gibt es hier: <a class="reference external" href="https:
 </div>
 </div>
 </div>
-<p><strong>3.</strong> Wiederhole die Frage bis die richtige Antwort gefunden wurde</p>
+<p><strong>3.</strong> Definiere mindestens 3 Fragen mit passenden Antworten, die nacheinander gestellt werden. Gib am Ende die Gesamtpunktzahl zurück.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bonus</strong> Randomisiere die Reihenfolge der Fragen, sowie die Anzeige der Antworten.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
@@ -666,8 +701,95 @@ Inspiration für Fragen gibt es hier: <a class="reference external" href="https:
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="luftdaten-in-leipzig">
-<h1>Luftdaten in Leipzig<a class="headerlink" href="#luftdaten-in-leipzig" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="oberburgermeister-in-leipzig">
+<h1>Oberbürgermeister in Leipzig<a class="headerlink" href="#oberburgermeister-in-leipzig" title="Permalink to this headline">#</a></h1>
+<p>Die folgende Liste enthält alle Oberbürgermeister von Leipzig seit 1877 bis heute. Die Liste ist chronologisch sortiert. Der amtierende Oberbürgermeister steht dabei an erster Stelle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oberbuergermeister</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Burkhard Jung (SPD)&#39;</span><span class="p">,</span> <span class="s1">&#39;Andreas Müller (kommissarisch) (SPD)&#39;</span><span class="p">,</span> <span class="s1">&#39;Wolfgang Tiefensee (SPD)&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Hinrich Lehmann-Grube (SPD)&#39;</span><span class="p">,</span> <span class="s1">&#39;Günter Hädrich (kommissarisch) (parteilos)&#39;</span><span class="p">,</span> <span class="s1">&#39;Bernd Seidel (SED)&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Karl-Heinz Müller (SED)&#39;</span><span class="p">,</span> <span class="s1">&#39;Walter Kresse (SED)&#39;</span><span class="p">,</span> <span class="s1">&#39;Erich Uhlich (SED)&#39;</span><span class="p">,</span> <span class="s1">&#39;Max Ernst Opitz (SED)&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Erich Zeigner&#39;</span><span class="p">,</span> <span class="s1">&#39;Wilhelm Johannes Vierling&#39;</span><span class="p">,</span> <span class="s1">&#39;Alfred Freyberg (NSDAP)&#39;</span><span class="p">,</span> <span class="s1">&#39;Rudolf Haake (kommissarisch) (NSDAP)&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Walter Dönicke (NSDAP)&#39;</span><span class="p">,</span> <span class="s1">&#39;Rudolf Haake (kommissarisch) (NSDAP)&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl Friedrich Goerdeler (DNVP)&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Karl Rothe (DVP)&#39;</span><span class="p">,</span> <span class="s1">&#39;Rudolf Dittrich (NLP)&#39;</span><span class="p">,</span> <span class="s1">&#39;Carl Bruno Tröndlin (NLP)&#39;</span><span class="p">,</span> <span class="s1">&#39;Otto Robert Georgi (NLP)&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1. Überblick</strong>
+a. Wie viele Oberbürgermeister hatte Leipzig seit 1877?
+b. Wie viele waren kommisarisch im Amt?
+c. Sortiere die Liste chronologisch, so dass der erste Oberbürgermeister von 1877, Otto Robert Georgi, an erster Stelle steht.</p>
+<p><strong>2. Analyse der Parteien</strong></p>
+<p>a. Erstelle eine Funktion die aus einem String mit Namen, Partei und eventuell dem Vermerk <em>kommissarisch</em> die Partei zurückgibt.</p>
+<p>b. Erstelle zwei neue Listen: eine mit den Namen der Oberbürgermeister, eine andere mit den zugehörigen Parteien. Welche Partei kommt am häufigsten vor?</p>
+<p>c. Für eine bessere Übersicht der Daten erstelle ein Dictionary, in folgendem Format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">überblick</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;SPD&#39;</span><span class="p">:</span>       <span class="p">{</span><span class="s1">&#39;Amtszeiten&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                           <span class="s1">&#39;Oberbürgermeister&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Hinrich Lehmann-Grube&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;Burkhard Jung&#39;</span><span class="p">]},</span>
+             <span class="s1">&#39;parteilos&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Amtszeiten&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                           <span class="s1">&#39;Oberbürgermeister&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Günter Hädrich&#39;</span><span class="p">],</span>
+             <span class="o">...</span><span class="p">,</span>
+             <span class="s1">&#39;NLP&#39;</span><span class="p">:</span>       <span class="p">{</span><span class="o">..</span><span class="p">}</span>
+             <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>3. Mehrfache Amtsinhaber</strong></p>
+<p>a. Gibt es Oberbürgermeister die mehrfach im Amt waren? Falls ja wer und wie viele Amtszeiten hatten sie?</p>
+<section id="finde-die-fehler">
+<h2>Finde die Fehler<a class="headerlink" href="#finde-die-fehler" title="Permalink to this headline">#</a></h2>
+<p>Der Zoll veröffentlicht jeder Jahr eine Statistik über die Anzahl an sichergestellten Gegenständen. Folgende Daten enthalten die sichergestellten Waffen von 2019 - 2021. Ziel des Codes ist die prozentuale Zu- / Abnahme der Anzahl an sichergestellten Waffen zu berechnen.</p>
+<p>Leider haben im Code einige Fehler eingeschlichen. Finde sie und korrigiere den Code.</p>
+<p>Was passiert im Code? Gehe durch die einzelnen Abschnitte und kommentiere was geschieht.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;cols&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Kriegswaffen (Stück)&#39;</span><span class="p">,</span> <span class="s1">&#39;Lang- und Faustfeuerwaffen&#39;</span><span class="p">,</span> <span class="s1">&#39;Andere Waffen&#39;</span><span class="p">,</span> <span class="s1">&#39;Munition&#39;</span><span class="p">,</span> <span class="s1">&#39;Explosivstoffe (kg)&#39;</span><span class="p">],</span>
+    <span class="mi">2021</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mf">5.236</span><span class="p">,</span> <span class="mf">6.198</span><span class="p">,</span> <span class="mf">137.499</span><span class="p">,</span> <span class="mi">36</span><span class="p">],</span>
+    <span class="mi">2020</span><span class="p">:</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">372</span><span class="p">,</span> <span class="mi">448</span><span class="p">,</span> <span class="mf">31.533</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="mi">2019</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mf">40.601</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">}</span>
+
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2020</span><span class="p">])</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2019</span><span class="p">])</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2020</span><span class="p">])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2021</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fehler: Überprüfe die Dateneingabe: Die Anzahl an Werten pro Jahr stimmt nicht überein.</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">values_diff</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2020</span><span class="p">])):</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">differenz</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2020</span><span class="p">][</span><span class="n">idx</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">2019</span><span class="p">][</span><span class="n">idx</span><span class="p">])</span>
+    <span class="n">values_diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="s1">&#39;cols&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Prozentuale Differenz: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">diff</span> <span class="ow">in</span> <span class="n">values_diff</span><span class="p">:</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;cols&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">category</span><span class="si">:</span><span class="s1"> &lt;28</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">diff</span><span class="si">}</span><span class="s1"> %&#39;</span><span class="p">)</span>
+    
+    
+<span class="k">def</span> <span class="nf">differenz</span><span class="p">(</span><span class="n">val1</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">val2</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="nb">round</span><span class="p">(((</span><span class="n">val1</span> <span class="o">-</span> <span class="n">val2</span><span class="p">)</span> <span class="o">/</span> <span class="n">val2</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fehler: Überprüfe die Dateneingabe: Die Anzahl an Werten pro Jahr stimmt nicht überein.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 13&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">values_diff</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2020</span><span class="p">])):</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>     <span class="n">diff</span> <span class="o">=</span> <span class="n">differenz</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">2020</span><span class="p">][</span><span class="n">idx</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">2019</span><span class="p">][</span><span class="n">idx</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">values_diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="k">if</span> <span class="s1">&#39;cols&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+
+<span class="ne">NameError</span>: name &#39;differenz&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

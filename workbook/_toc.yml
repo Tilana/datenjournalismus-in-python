@@ -28,6 +28,7 @@ parts:
         sections:
           - file: grundlagen/datentypen_basics
           - file: grundlagen/listen
+          - file: grundlagen/dictionaries
       - file: grundlagen/methoden
       - file: grundlagen/funktionen
         sections:
@@ -38,6 +39,7 @@ parts:
           - file: grundlagen/ifelse
           - file: grundlagen/forloops
           - file: grundlagen/whileloops
+          - file: grundlagen/flow_control
     - file: aufgaben/intro
       sections:
       - file: aufgaben/uebungen1

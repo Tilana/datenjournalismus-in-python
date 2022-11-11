@@ -14,8 +14,10 @@ parts:
     chapters:
     - file: grundlagen/beispiele 
       sections:
-      - file: grundlagen/wealth 
-      - file: grundlagen/automatisierteTexte
+      - file: grundlagen/anwendungsbeispiele/wealth 
+      - file: grundlagen/anwendungsbeispiele/automatisierteTexte
+      - file: grundlagen/anwendungsbeispiele/luftqualitaet
+      - file: grundlagen/anwendungsbeispiele/nebeneinkuenfte
     - file: grundlagen/theorie 
       sections:
       - file: grundlagen/operatoren
@@ -45,6 +47,7 @@ parts:
       - file: aufgaben/uebungen1
       - file: aufgaben/uebungen2
       - file: aufgaben/uebungen3
+      - file: aufgaben/uebungen4
   - caption: Datenanalyse
     chapters:
       - file: datenanalyse/tbd

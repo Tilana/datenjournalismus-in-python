@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>While-Schleifen und Dictionaries &#8212; Datenjournalismus in Python</title>
+    <title>While-Schleifen &amp; Dictionaries &#8212; Datenjournalismus in Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Datenanalyse und -verarbeitung" href="../datenanalyse/tbd.html" />
+    <link rel="next" title="Datenanalyse und -verarbeitung" href="../datenanalyse/datapipeline.html" />
     <link rel="prev" title="Listen, Funktionen und Schleifen" href="uebungen3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -301,6 +301,11 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/packages.html">
+     Python Packages
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -330,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     While-Schleifen und Dictionaries
+     While-Schleifen &amp;  Dictionaries
     </a>
    </li>
   </ul>
@@ -343,9 +348,43 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datenanalyse/tbd.html">
+  <a class="reference internal" href="../datenanalyse/datapipeline.html">
    Datenanalyse und -verarbeitung
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datenanalyse/beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datenanalyse/data_exploration.html">
+     Datenexploration: Weltweite Naturkatastrophen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro2.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen5.html">
+     Packages &amp; Pandas
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -617,7 +656,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>While-Schleifen und Dictionaries</h1>
+                <h1>While-Schleifen &  Dictionaries</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -650,21 +689,43 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="while-schleifen-und-dictionaries">
-<h1>While-Schleifen und Dictionaries<a class="headerlink" href="#while-schleifen-und-dictionaries" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="while-schleifen-dictionaries">
+<h1>While-Schleifen &amp;  Dictionaries<a class="headerlink" href="#while-schleifen-dictionaries" title="Permalink to this headline">#</a></h1>
 <section id="while-schleifen">
 <h2><em>while</em>-Schleifen<a class="headerlink" href="#while-schleifen" title="Permalink to this headline">#</a></h2>
 <p>Gib mithilfe einer while-Schleife alle ungeraden Werte der gegebenen Liste aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="n">viele_zahlen</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">9</span>==0]
-<span class="nb">print</span><span class="p">(</span><span class="n">viele_zahlen</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99, 108, 117, 126, 135, 144, 153, 162, 171, 180, 189, 198, 207, 216, 225, 234, 243, 252, 261, 270, 279, 288, 297, 306, 315, 324, 333, 342, 351, 360, 369, 378, 387, 396, 405, 414, 423, 432, 441, 450, 459, 468, 477, 486, 495, 504, 513, 522, 531, 540, 549, 558, 567, 576, 585, 594, 603, 612, 621, 630, 639, 648, 657, 666, 675, 684, 693, 702, 711, 720, 729, 738, 747, 756, 765, 774, 783, 792, 801, 810, 819, 828, 837, 846, 855, 864, 873, 882, 891, 900, 909, 918, 927, 936, 945, 954, 963, 972, 981, 990, 999, 1008, 1017, 1026, 1035, 1044, 1053, 1062, 1071, 1080, 1089, 1098, 1107, 1116, 1125, 1134, 1143, 1152, 1161, 1170, 1179, 1188, 1197, 1206, 1215, 1224, 1233, 1242, 1251, 1260, 1269, 1278, 1287, 1296, 1305, 1314, 1323, 1332, 1341, 1350, 1359, 1368, 1377, 1386, 1395, 1404, 1413, 1422, 1431, 1440, 1449, 1458, 1467, 1476, 1485, 1494, 1503, 1512, 1521, 1530, 1539, 1548, 1557, 1566, 1575, 1584, 1593, 1602, 1611, 1620, 1629, 1638, 1647, 1656, 1665, 1674, 1683, 1692, 1701, 1710, 1719, 1728, 1737, 1746, 1755, 1764, 1773, 1782, 1791, 1800, 1809, 1818, 1827, 1836, 1845, 1854, 1863, 1872, 1881, 1890, 1899, 1908, 1917, 1926, 1935, 1944, 1953, 1962, 1971, 1980, 1989, 1998, 2007, 2016, 2025, 2034, 2043, 2052, 2061, 2070, 2079, 2088, 2097, 2106, 2115, 2124, 2133, 2142, 2151, 2160, 2169, 2178, 2187, 2196, 2205, 2214, 2223, 2232, 2241, 2250, 2259, 2268, 2277, 2286, 2295, 2304, 2313, 2322, 2331, 2340, 2349, 2358, 2367, 2376, 2385, 2394, 2403, 2412, 2421, 2430, 2439, 2448, 2457, 2466, 2475, 2484, 2493, 2502, 2511, 2520, 2529, 2538, 2547, 2556, 2565, 2574, 2583, 2592, 2601, 2610, 2619, 2628, 2637, 2646, 2655, 2664, 2673, 2682, 2691, 2700, 2709, 2718, 2727, 2736, 2745, 2754, 2763, 2772, 2781, 2790, 2799, 2808, 2817, 2826, 2835, 2844, 2853, 2862, 2871, 2880, 2889, 2898, 2907, 2916, 2925, 2934, 2943, 2952, 2961, 2970, 2979, 2988, 2997, 3006, 3015, 3024, 3033, 3042, 3051, 3060, 3069, 3078, 3087, 3096, 3105, 3114, 3123, 3132, 3141, 3150, 3159, 3168, 3177, 3186, 3195, 3204, 3213, 3222, 3231, 3240, 3249, 3258, 3267, 3276, 3285, 3294, 3303, 3312, 3321, 3330, 3339, 3348, 3357, 3366, 3375, 3384, 3393, 3402, 3411, 3420, 3429, 3438, 3447, 3456, 3465, 3474, 3483, 3492, 3501, 3510, 3519, 3528, 3537, 3546, 3555, 3564, 3573, 3582, 3591, 3600, 3609, 3618, 3627, 3636, 3645, 3654, 3663, 3672, 3681, 3690, 3699, 3708, 3717, 3726, 3735, 3744, 3753, 3762, 3771, 3780, 3789, 3798, 3807, 3816, 3825, 3834, 3843, 3852, 3861, 3870, 3879, 3888, 3897, 3906, 3915, 3924, 3933, 3942, 3951, 3960, 3969, 3978, 3987, 3996, 4005, 4014, 4023, 4032, 4041, 4050, 4059, 4068, 4077, 4086, 4095, 4104, 4113, 4122, 4131, 4140, 4149, 4158, 4167, 4176, 4185, 4194, 4203, 4212, 4221, 4230, 4239, 4248, 4257, 4266, 4275, 4284, 4293, 4302, 4311, 4320, 4329, 4338, 4347, 4356, 4365, 4374, 4383, 4392, 4401, 4410, 4419, 4428, 4437, 4446, 4455, 4464, 4473, 4482, 4491, 4500, 4509, 4518, 4527, 4536, 4545, 4554, 4563, 4572, 4581, 4590, 4599, 4608, 4617, 4626, 4635, 4644, 4653, 4662, 4671, 4680, 4689, 4698, 4707, 4716, 4725, 4734, 4743, 4752, 4761, 4770, 4779, 4788, 4797, 4806, 4815, 4824, 4833, 4842, 4851, 4860, 4869, 4878, 4887, 4896, 4905, 4914, 4923, 4932, 4941, 4950, 4959, 4968, 4977, 4986, 4995, 5004, 5013, 5022, 5031, 5040, 5049, 5058, 5067, 5076, 5085, 5094, 5103, 5112, 5121, 5130, 5139, 5148, 5157, 5166, 5175, 5184, 5193, 5202, 5211, 5220, 5229, 5238, 5247, 5256, 5265, 5274, 5283, 5292, 5301, 5310, 5319, 5328, 5337, 5346, 5355, 5364, 5373, 5382, 5391, 5400, 5409, 5418, 5427, 5436, 5445, 5454, 5463, 5472, 5481, 5490, 5499, 5508, 5517, 5526, 5535, 5544, 5553, 5562, 5571, 5580, 5589, 5598, 5607, 5616, 5625, 5634, 5643, 5652, 5661, 5670, 5679, 5688, 5697, 5706, 5715, 5724, 5733, 5742, 5751, 5760, 5769, 5778, 5787, 5796, 5805, 5814, 5823, 5832, 5841, 5850, 5859, 5868, 5877, 5886, 5895, 5904, 5913, 5922, 5931, 5940, 5949, 5958, 5967, 5976, 5985, 5994, 6003, 6012, 6021, 6030, 6039, 6048, 6057, 6066, 6075, 6084, 6093, 6102, 6111, 6120, 6129, 6138, 6147, 6156, 6165, 6174, 6183, 6192, 6201, 6210, 6219, 6228, 6237, 6246, 6255, 6264, 6273, 6282, 6291, 6300, 6309, 6318, 6327, 6336, 6345, 6354, 6363, 6372, 6381, 6390, 6399, 6408, 6417, 6426, 6435, 6444, 6453, 6462, 6471, 6480, 6489, 6498, 6507, 6516, 6525, 6534, 6543, 6552, 6561, 6570, 6579, 6588, 6597, 6606, 6615, 6624, 6633, 6642, 6651, 6660, 6669, 6678, 6687, 6696, 6705, 6714, 6723, 6732, 6741, 6750, 6759, 6768, 6777, 6786, 6795, 6804, 6813, 6822, 6831, 6840, 6849, 6858, 6867, 6876, 6885, 6894, 6903, 6912, 6921, 6930, 6939, 6948, 6957, 6966, 6975, 6984, 6993, 7002, 7011, 7020, 7029, 7038, 7047, 7056, 7065, 7074, 7083, 7092, 7101, 7110, 7119, 7128, 7137, 7146, 7155, 7164, 7173, 7182, 7191, 7200, 7209, 7218, 7227, 7236, 7245, 7254, 7263, 7272, 7281, 7290, 7299, 7308, 7317, 7326, 7335, 7344, 7353, 7362, 7371, 7380, 7389, 7398, 7407, 7416, 7425, 7434, 7443, 7452, 7461, 7470, 7479, 7488, 7497, 7506, 7515, 7524, 7533, 7542, 7551, 7560, 7569, 7578, 7587, 7596, 7605, 7614, 7623, 7632, 7641, 7650, 7659, 7668, 7677, 7686, 7695, 7704, 7713, 7722, 7731, 7740, 7749, 7758, 7767, 7776, 7785, 7794, 7803, 7812, 7821, 7830, 7839, 7848, 7857, 7866, 7875, 7884, 7893, 7902, 7911, 7920, 7929, 7938, 7947, 7956, 7965, 7974, 7983, 7992, 8001, 8010, 8019, 8028, 8037, 8046, 8055, 8064, 8073, 8082, 8091, 8100, 8109, 8118, 8127, 8136, 8145, 8154, 8163, 8172, 8181, 8190, 8199, 8208, 8217, 8226, 8235, 8244, 8253, 8262, 8271, 8280, 8289, 8298, 8307, 8316, 8325, 8334, 8343, 8352, 8361, 8370, 8379, 8388, 8397, 8406, 8415, 8424, 8433, 8442, 8451, 8460, 8469, 8478, 8487, 8496, 8505, 8514, 8523, 8532, 8541, 8550, 8559, 8568, 8577, 8586, 8595, 8604, 8613, 8622, 8631, 8640, 8649, 8658, 8667, 8676, 8685, 8694, 8703, 8712, 8721, 8730, 8739, 8748, 8757, 8766, 8775, 8784, 8793, 8802, 8811, 8820, 8829, 8838, 8847, 8856, 8865, 8874, 8883, 8892, 8901, 8910, 8919, 8928, 8937, 8946, 8955, 8964, 8973, 8982, 8991, 9000, 9009, 9018, 9027, 9036, 9045, 9054, 9063, 9072, 9081, 9090, 9099, 9108, 9117, 9126, 9135, 9144, 9153, 9162, 9171, 9180, 9189, 9198, 9207, 9216, 9225, 9234, 9243, 9252, 9261, 9270, 9279, 9288, 9297, 9306, 9315, 9324, 9333, 9342, 9351, 9360, 9369, 9378, 9387, 9396, 9405, 9414, 9423, 9432, 9441, 9450, 9459, 9468, 9477, 9486, 9495, 9504, 9513, 9522, 9531, 9540, 9549, 9558, 9567, 9576, 9585, 9594, 9603, 9612, 9621, 9630, 9639, 9648, 9657, 9666, 9675, 9684, 9693, 9702, 9711, 9720, 9729, 9738, 9747, 9756, 9765, 9774, 9783, 9792, 9801, 9810, 9819, 9828, 9837, 9846, 9855, 9864, 9873, 9882, 9891, 9900, 9909, 9918, 9927, 9936, 9945, 9954, 9963, 9972, 9981, 9990, 9999]
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Grundsätzlich ist es möglich jede for-Schleife auch als while-Schleife zu definieren</span>
+<span class="sd">und umgekehrt. Aus berechenbarkeitstheoretischer Sicht spricht man davon, dass beide</span>
+<span class="sd">Schleifenarten gleichmächtig sind.</span>
+
+<span class="sd">Der entscheidende Unterschied liegt in der Lesbarkeit und Verständlichkeit.</span>
+<span class="sd">Grundsätzlich lässt sich sagen, wenn ich für alle Elemente in einer Liste</span>
+<span class="sd">eine bestimmte Aktion ausführen will, ist die Verwendung einer for-Schleife meist sinnvoll.</span>
+
+<span class="sd">Seltener sollen bestimmte Aktionen nur solange ausgeführt werden bis ein bestimmter Zustand</span>
+<span class="sd">eintritt oder nicht mehr zutrifft, dann ist eine while-Schleife angebracht.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">viele_zahlen</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="k">9</span>==0]
+
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">viele_zahlen</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">elem</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">viele_zahlen</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">viele_zahlen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">viele_zahlen</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -675,19 +736,30 @@ Nutze <em>continue</em>, um Werte zu überspringen, die nicht zur Ergebnisliste 
 Nutze <em>break</em>, wenn das angegebene Maximum erreicht wurde, um die <em>while</em>-Schleife zu beenden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">durch3und4</span><span class="p">(</span><span class="n">letzteZahl</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span> <span class="p">:</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="k">def</span> <span class="nf">durch3und4</span><span class="p">(</span><span class="n">letzteZahl</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span> <span class="p">:</span>
-                                          <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">durch3und7</span><span class="p">(</span><span class="n">letzteZahl</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">durch3_7</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">letzteZahl</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span>==0 and i%7==0:
+            <span class="n">durch3_7</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">durch3_7</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">durch3und7</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bewege den weissen Turm so lange nach rechts bis er entweder am Spielfeldrand oder vor einer anderen Figur steht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schachbrett</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;schwarzes Pferd&#39;</span><span class="p">,</span> <span class="s1">&#39;schwarzer Bauer&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;weisser Bauer&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
@@ -702,10 +774,28 @@ Nutze <em>break</em>, wenn das angegebene Maximum erreicht wurde, um die <em>whi
 </div>
 </div>
 </div>
-<p>Bewege den weissen Turm so lange nach rechts bis er entweder am Spielfeldrand oder vor einer anderen Figur steht.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reiheWT</span> <span class="o">=</span> <span class="n">schachbrett</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">positionWT</span> <span class="o">=</span> <span class="n">reiheWT</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;weisser Turm&#39;</span><span class="p">)</span>
+<span class="n">nächstesFeld</span> <span class="o">=</span> <span class="n">positionWT</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">nächstesFeld</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">reiheWT</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">reiheWT</span><span class="p">[</span><span class="n">nächstesFeld</span><span class="p">]:</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">reiheWT</span><span class="p">[</span><span class="n">nächstesFeld</span><span class="p">]</span>
+        <span class="n">reiheWT</span><span class="p">[</span><span class="n">nächstesFeld</span><span class="p">]</span> <span class="o">=</span> <span class="n">reiheWT</span><span class="p">[</span><span class="n">positionWT</span><span class="p">]</span>
+        <span class="n">reiheWT</span><span class="p">[</span><span class="n">positionWT</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span>
+        <span class="n">positionWT</span> <span class="o">=</span> <span class="n">nächstesFeld</span>
+        <span class="n">nächstesFeld</span> <span class="o">=</span> <span class="n">positionWT</span> <span class="o">+</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">positionWT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reiheWT</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -721,10 +811,41 @@ Nutze <em>break</em>, wenn das angegebene Maximum erreicht wurde, um die <em>whi
 </div>
 </div>
 </div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Zum Definieren von Dictionaries bieten sich die folgenden beide Möglichkeiten.</span>
+<span class="sd">Wenn der Inhalt eines dicts bereits zum Definitionszeitpunkt bekannt ist,</span>
+<span class="sd">ist die zweite Option meist einfacher.</span>
+
+<span class="sd">Wenn das dict erst im Laufe des Programms (z.B. in einer for-Schleife) gefüllt werden soll,</span>
+<span class="sd">muss die erste Option verwendet werden.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">blumen</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">blumen</span><span class="p">[</span><span class="s1">&#39;rose&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rosa&#39;</span><span class="p">,</span> <span class="s1">&#39;rot&#39;</span><span class="p">,</span> <span class="s1">&#39;schwarze&#39;</span><span class="p">]</span>
+<span class="n">blumen</span><span class="p">[</span><span class="s1">&#39;enzian&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blau&#39;</span>
+<span class="n">blumen</span><span class="p">[</span><span class="s1">&#39;margeriten&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;weiss&#39;</span>
+
+<span class="n">blumen2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Rose&#39;</span><span class="p">:</span> <span class="s1">&#39;rot&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Enzian&#39;</span><span class="p">:</span> <span class="s1">&#39;blau&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;margeriten&#39;</span><span class="p">:</span> <span class="s1">&#39;weiss&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">blumen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Füge deine Lieblingsblume zu <em>blumen</em> hinzu.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blumen</span><span class="p">[</span><span class="s1">&#39;tulpe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gelb&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">blumen</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -737,10 +858,87 @@ Nutze <em>break</em>, wenn das angegebene Maximum erreicht wurde, um die <em>whi
 </div>
 </div>
 </div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Mit dem del-Statement können wir konkrete Werte &quot;fallenlassen&quot;.</span>
+<span class="sd">Dabei kann es sich um einzelne Variablen handeln, aber auch um Einträge in lists, dicts, usw.</span>
+
+<span class="sd">Alle Iterables haben aber auch eigene Funktionen um bestimmte Werte zu löschen.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">del</span> <span class="n">blumen</span><span class="p">[</span><span class="s1">&#39;enzian&#39;</span><span class="p">]</span>
+<span class="c1">#blumen.pop(&#39;enzian&#39;)</span>
+
+<span class="k">del</span> <span class="n">blumen</span><span class="p">[</span><span class="s1">&#39;rose&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1">#blumen[&#39;rose&#39;].remove(&#39;schwarz&#39;)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">blumen</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Hier wird eine Variable x definiert und ausgegeben.</span>
+<span class="sd">Anschließend wird x mit del gelöscht.</span>
+<span class="sd">Die Fehlermeldung bei der zweiten Ausgabe zeigt, dass x fallengelassen wurde.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1945</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Gib für alle gespeicherten Blumen die Blütenfarbe aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">blumen</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">farbe</span> <span class="ow">in</span> <span class="n">blumen</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">farbe</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">blume</span> <span class="ow">in</span> <span class="n">blumen</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s1">&#39;r&#39;</span> <span class="ow">in</span> <span class="n">blume</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">blumen</span><span class="p">[</span><span class="n">blume</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Das lambda-Statement erstellt eine (anonyme) Hilfsfunktion.</span>
+<span class="sd">Sie besteht aus einem Funktionskopf mit Eingabeparametern</span>
+<span class="sd">und einem Funktionskörper mit EINER Expression.</span>
+
+<span class="sd">Einige Built-in-Functions in Python erwarten als Eingabeparameter eine Funktion.</span>
+<span class="sd">Um sich die Definition einer neuen Funktion zu sparen, bietet sich dann oft</span>
+<span class="sd">das Verwenden von Lambda an.</span>
+
+<span class="sd">Die folgenden Verwendungen von sorted sind äquivalent zueinander.</span>
+<span class="sd">Beachte auch den untypischen Funktionsaufruf im ersten Beispiel ohne Klammern.</span>
+<span class="sd">Bei Lambda-Funktionen können außerdem keine Annotationen verwendet werden.</span>
+<span class="sd">Damit sind z.B. die Festlegung auf einen Rückgabe- und einen Eingabe-Datentyp nicht möglich.</span>
+
+<span class="sd">Normalerweise werden Lambda-Funktionen vor allem in built-in-Functions wie</span>
+<span class="sd">filter, map, oder sorted verwendet.</span>
+<span class="sd">Der offizielle Python style guide (PEP 8) rät von der Verwendung von lambda-Funktionen ab.</span>
+
+<span class="sd">Ausführlich wird das Thema lambda-Funktion zum Beispiel [hier](https://realpython.com/python-lambda/) besprochen.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">lower_string</span><span class="p">(</span><span class="n">s</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">blumen_sort</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">blumen</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">lower_string</span><span class="p">)</span>
+<span class="n">blumen_sortiert</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">blumen</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span><span class="n">b</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">blumen_sort</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">blumen_sortiert</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -782,7 +980,7 @@ Nutze <em>break</em>, wenn das angegebene Maximum erreicht wurde, um die <em>whi
             <p class="prev-next-title">Listen, Funktionen und Schleifen</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../datenanalyse/tbd.html" title="next page">
+    <a class='right-next' id="next-link" href="../datenanalyse/datapipeline.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Datenanalyse und -verarbeitung</p>

@@ -301,6 +301,11 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/packages.html">
+     Python Packages
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -330,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="uebungen4.html">
-     While-Schleifen und Dictionaries
+     While-Schleifen &amp;  Dictionaries
     </a>
    </li>
   </ul>
@@ -343,9 +348,43 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datenanalyse/tbd.html">
+  <a class="reference internal" href="../datenanalyse/datapipeline.html">
    Datenanalyse und -verarbeitung
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datenanalyse/beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datenanalyse/data_exploration.html">
+     Datenexploration: Weltweite Naturkatastrophen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro2.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen5.html">
+     Packages &amp; Pandas
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -696,84 +735,178 @@ title="Print to PDF"
 <p>Nutze die Methoden von Strings, um die gegebenen Anforderungen zu erfüllen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Trenne den Apfel vom Baum, aber den Baum nicht vom Stamm.&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trenne den Apfel vom Baum, aber den Baum nicht vom Stamm</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Apfel-Baum-Stamm&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schreibe den Namen zusammen</span>
+<span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Georg&#39;</span><span class="p">,</span> <span class="s1">&#39;Elser&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Möglichkeit 1: </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="sd">&#39;&#39;&#39;Schreibe den Namen zusammen.&#39;&#39;&#39;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Georg&#39;</span><span class="p">,</span> <span class="s1">&#39;Elser&#39;</span><span class="p">]</span>
-<span class="c1"># join() ist sozusagen die Umkehroperation von split().</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="sd">&#39;&#39;&#39;Füge hier dein Alter ein.&#39;&#39;&#39;</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;Ich bin schon </span><span class="si">{}</span><span class="s1"> Jahre alt. Und </span><span class="si">{}</span><span class="s1"> cm groß.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">179</span><span class="p">)</span>
-<span class="n">alter</span> <span class="o">=</span> <span class="mi">23</span>
-<span class="c1"># Mithilfe von f&#39;&#39; lassen sich Strings einfacher und übersichtlicher formatieren.</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ich bin schon </span><span class="si">{</span><span class="n">alter</span><span class="si">}</span><span class="s1"> Jahre alt. Und </span><span class="si">{</span><span class="mi">179</span><span class="si">}</span><span class="s1"> cm groß.&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="c1"># Möglichkeit 2 mit join als Umkehroperation von split()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Füge dein Alter und deine Größe ein.</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Ich bin </span><span class="si">{}</span><span class="s1"> Jahre alt und </span><span class="si">{}</span><span class="s1"> cm groß.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">groesse</span> <span class="o">=</span> <span class="mi">179</span>
 
-<span class="sd">&#39;&#39;&#39;Ersetze alle &#39;kl&#39; durch &#39;r&#39;.&#39;&#39;&#39;</span>
-<span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;Alle kleinen Klaviere klingen geklaut besser.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;kl&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
-<span class="sd">&#39;&#39;&#39;Finde die Nadel im Heuhaufen&#39;&#39;&#39;</span>
-<span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;HeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuNadelHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeu&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">))</span>
-<span class="c1"># Befindet sich überhaupt eine Nadel im Heuhaufen?</span>
-<span class="k">if</span> <span class="s1">&#39;Nadel&#39;</span> <span class="ow">in</span> <span class="n">e</span><span class="p">:</span>
+<span class="c1"># Möglichkeit 1 mit format</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Ich bin </span><span class="si">{}</span><span class="s1"> Jahre alt und </span><span class="si">{}</span><span class="s1"> cm groß&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alter</span><span class="p">,</span> <span class="n">groesse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># Möglichkeit 2 mit f&#39;-Strings für eine übersichtlichere Darstellung</span>
+<span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Ich bin </span><span class="si">{</span><span class="n">alter</span><span class="si">}</span><span class="s1"> Jahre alt und </span><span class="si">{</span><span class="n">groesse</span><span class="si">}</span><span class="s1"> cm groß.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ersetze alle &#39;kl&#39; durch &#39;r&#39;</span>
+<span class="n">satz</span> <span class="o">=</span> <span class="s2">&quot;Alle kleinen Klaviere klingen geklaut besser.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">satz</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;kl&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Finde die Nadel im Heuhaufen</span>
+<span class="n">heuhaufen</span> <span class="o">=</span> <span class="s2">&quot;HeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuNadelHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeu&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Möglichkeit 1:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heuhaufen</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">))</span>
+
+<span class="c1"># Möglichkeit 2:</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">heuhaufen</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;Nadel&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heuhaufen</span><span class="p">[</span><span class="n">idx</span><span class="p">:</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Befindet sich überhaupt eine Nadel im Heuhaufen?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;Nadel&#39;</span> <span class="ow">in</span> <span class="n">heuhaufen</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ja&#39;</span><span class="p">)</span>
-<span class="c1"># find() gibt uns den Turm</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;Nadel&#39;</span><span class="p">))</span>
-<span class="c1"># Großgeschrieben lässt sich die Nadel besser finden.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Nadel&#39;</span><span class="p">,</span> <span class="s1">&#39;NADEL&#39;</span><span class="p">))</span>
-<span class="c1"># Die strip()-Methode kann vorallem verwendet werden, um Texte am Anfang und Ende zu bereinigen.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;         Ich bin ein Text.       &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-<span class="sd">&#39;&#39;&#39;Überprüfe ob f nur aus Buchstaben besteht.&#39;&#39;&#39;</span>
-<span class="n">f</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGH1JKLMN0PQRSTUVWXYZ&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Apfel&#39;, &#39;Baum-Stamm&#39;]
-Georg Elser
-GeorgElser
-Ich bin schon 23 Jahre alt. Und 179 cm groß.
-Ich bin schon 23 Jahre alt. Und 179 cm groß.
-Alle reinen Klaviere ringen geraut besser.
-[&#39;HeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeu&#39;, &#39;adelHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeu&#39;]
-Ja
-84
-HeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuNADELHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeuHeu
-Ich bin ein Text.
-False
 </pre></div>
 </div>
 </div>
 </div>
-<p>Gegeben ist der folgende Satz. Nutze die Methoden von Strings, um das Wort ‘Ring’ in Großbuchstaben zu schreiben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Großgeschrieben lässt sich die Nadel besser finden. Ändere Nadel im Heuhaufen zu NADEL um</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">heuhaufen</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Nadel&#39;</span><span class="p">,</span> <span class="s1">&#39;NADEL&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lösche die voranstehenden und nachfolgenden Leerzeichen im Text</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;         Ich bin ein Text.       &#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Die strip()-Methode kann verwendet werden, um Texte am Anfang und Ende zu bereinigen.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Überprüfe ob der string nur aus Buchstaben besteht</span>
+<span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGH1JKLMN0PQRSTUVWXYZ&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ändere das Wort ‘Ring’ in Großbuchstaben um. Nutze dafür einmal <code class="docutils literal notranslate"><span class="pre">.replace()</span></code> und einmal <code class="docutils literal notranslate"><span class="pre">.upper()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satz</span> <span class="o">=</span> <span class="s2">&quot;Ein Ring, sie zu knechten.&quot;</span>
-<span class="n">satz1</span> <span class="o">=</span> <span class="s2">&quot;Ein Ding, sie zu knechten.&quot;</span>
-<span class="n">satz5</span> <span class="o">=</span> <span class="s2">&quot;Ein Drink, sie zu knechten.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Möglichkeit 1 mit replace</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">satz</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Ring&#39;</span><span class="p">,</span> <span class="s1">&#39;RING&#39;</span><span class="p">))</span>
 
-<span class="c1"># Alternativ: Wenn immer das zweite Wort in einem Satz verändert werden soll.</span>
-<span class="n">token</span> <span class="o">=</span> <span class="n">satz5</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">satz</span> <span class="o">=</span> <span class="s2">&quot;Ein Ring, sie zu knechten.&quot;</span>
+<span class="c1"># Möglichkeit 2 mit upper</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">satz</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 <span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-<span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ein RING, sie zu knechten.
-[&#39;Ein&#39;, &#39;Drink,&#39;, &#39;sie&#39;, &#39;zu&#39;, &#39;knechten.&#39;]
-[&#39;Ein&#39;, &#39;DRINK,&#39;, &#39;sie&#39;, &#39;zu&#39;, &#39;knechten.&#39;]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ein DRINK, sie zu knechten.&#39;
+<span class="n">satz</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">satz</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -791,21 +924,14 @@ False
 <span class="n">e</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">f</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="n">g</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-True
-True
-False
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mit bool(&lt;variable&gt;) wird eine Variable in einen Boolean verwandelt und wir sehen ihren Wahrheitswert</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -818,29 +944,99 @@ False
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;These 1:</span>
 <span class="sd">Das doppelte von zehn ist mindestens so groß wie das dreifache von fünf.&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">10</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">These 2:</span>
-<span class="sd">13 zum Quadrat ist genau 169.&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">13</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">169</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;These 3:</span>
-<span class="sd">Drei mal acht ist nicht das gleiche wie vier mal sechs.&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">8</span> <span class="o">!=</span> <span class="mi">4</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;These 4:</span>
-<span class="sd">Fünf geteilt durch zwei ist weniger als dreimal ein halb.&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="sd">&quot;&quot;&quot;These 5:</span>
-<span class="sd">Das zehnfache von 83 ist niemals so groß wie das fünffache von 161.&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="mi">83</span> <span class="o">&lt;</span> <span class="mi">161</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
-False
-False
-False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;These 1:\nDas doppelte von zehn ist mindestens so groß wie das dreifache von fünf.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="mi">10</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="o">*</span><span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">These 2:</span>
+<span class="sd">13 zum Quadrat ist genau 169.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nThese 2:\n13 zum Quadrat ist genau 169.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span><span class="o">**</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">169</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;These 3:</span>
+<span class="sd">Drei mal acht ist nicht das gleiche wie vier mal sechs.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;These 3:\nDrei mal acht ist nicht das gleiche wie vier mal sechs.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">*</span><span class="mi">8</span> <span class="o">!=</span> <span class="mi">4</span><span class="o">*</span><span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;These 4:</span>
+<span class="sd">Fünf geteilt durch zwei ist weniger als dreimal ein halb.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;These 4:\nFünf geteilt durch zwei ist weniger als dreimal ein halb.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">*</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;These 5:</span>
+<span class="sd">Das zehnfache von 83 ist niemals so groß wie das fünffache von 161.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;These 5:\nDas zehnfache von 83 ist niemals so groß wie das fünffache von 161.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">*</span><span class="mi">83</span> <span class="o">&lt;</span> <span class="mi">161</span>
 </pre></div>
 </div>
 </div>
@@ -850,6 +1046,34 @@ False
 <h2>Operation Wahrheit<a class="headerlink" href="#operation-wahrheit" title="Permalink to this headline">#</a></h2>
 <p>Mithilfe der (aussagen-)logischen Operatoren <strong>not</strong>, <strong>or</strong> und <strong>and</strong> können boolesche Werte ausgewertet werden. Ergänze diese Operatoren in den folgenden <strong>if</strong>-Abfragen, sodass ein bekannter Liedtext ausgegeben wird.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="mi">64</span> <span class="o">&gt;</span> <span class="mi">66</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Griechischer Wein ist so wie das Blut der Erde&#39;</span><span class="p">)</span>
+<span class="k">if</span>  <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Komm, schenk dir ein&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="s1">&#39;Hallo&#39;</span> <span class="ow">or</span> <span class="s1">&#39;False&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ich bau ein Schloss&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Und wenn ich dann traurig werde&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="mi">97</span> <span class="o">==</span> <span class="mi">22</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Liegt es daran, dass ich immer träume von daheim&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="mi">0</span> <span class="ow">or</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Morgen Kinder wirds nix geben.&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Du musst verzeihn.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ich bau ein Schloss
+Und wenn ich dann traurig werde
+Morgen Kinder wirds nix geben.
+Du musst verzeihn.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="mi">64</span> <span class="o">&gt;</span> <span class="mi">66</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Griechischer Wein ist so wie das Blut der Erde&#39;</span><span class="p">)</span>
@@ -868,15 +1092,6 @@ False
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Griechischer Wein ist so wie das Blut der Erde
-Komm, schenk dir ein
-Und wenn ich dann traurig werde
-Liegt es daran, dass ich immer träume von daheim
-Du musst verzeihn.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -884,6 +1099,13 @@ Du musst verzeihn.
 <h1>Kontrollstrukturen<a class="headerlink" href="#kontrollstrukturen" title="Permalink to this headline">#</a></h1>
 <p>Schreibe ein <strong>if</strong>-Statement welches prüft, ob eine Zahl positiv, negativ oder gleich null ist. Gebe als Ausgabe den Satz “x ist positiv/negativ/null.” entsprechend dem jeweiligen Fall aus. X soll dabei durch die überprüfte Zahl ersetzt werden.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Deine Zahl ist:&#39;</span><span class="p">))</span>
 
@@ -897,36 +1119,6 @@ Du musst verzeihn.
     <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Deine Zahl ist:&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> ist </span><span class="si">{}</span><span class="s1">&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-
-<span class="nn">File ~/.local/lib/python3.8/site-packages/ipykernel/kernelbase.py:1174,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1167</span> <span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">   </span><span class="mi">1168</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1169</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1170</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1171</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1173</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1174</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>

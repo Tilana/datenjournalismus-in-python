@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="While-Schleifen und Dictionaries" href="uebungen4.html" />
+    <link rel="next" title="While-Schleifen &amp; Dictionaries" href="uebungen4.html" />
     <link rel="prev" title="String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else" href="uebungen2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -301,6 +301,11 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/packages.html">
+     Python Packages
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -330,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="uebungen4.html">
-     While-Schleifen und Dictionaries
+     While-Schleifen &amp;  Dictionaries
     </a>
    </li>
   </ul>
@@ -343,9 +348,43 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../datenanalyse/tbd.html">
+  <a class="reference internal" href="../datenanalyse/datapipeline.html">
    Datenanalyse und -verarbeitung
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datenanalyse/beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datenanalyse/data_exploration.html">
+     Datenexploration: Weltweite Naturkatastrophen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro2.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen5.html">
+     Packages &amp; Pandas
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -672,7 +711,13 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="n">meine_list</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">317</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meine_list</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">317</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -681,7 +726,16 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Möglichkeit 1</span>
 <span class="n">meine_list</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">64</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">45</span><span class="p">])</span>
+
+<span class="c1"># Möglichkeit 2</span>
 <span class="n">meine_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
 <span class="n">meine_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
 </pre></div>
@@ -692,20 +746,20 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-
-<span class="c1"># Die folgenden drei Befehle machen sind äquivalent</span>
-<span class="n">meine_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
-
-<span class="n">meine_list</span> <span class="o">=</span> <span class="n">meine_list</span> <span class="o">+</span> <span class="n">abc</span>
-
-<span class="n">meine_list</span> <span class="o">+=</span> <span class="n">abc</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">meine_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[25, 317, 1997, 37, 64, 17, 45, 64, 17, 1, 6, 1, 4, 1, 6, 1, 4, 1, 6, 1, 4]
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Möglichkeit 1</span>
+<span class="n">meine_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
+
+<span class="c1"># Möglichkeit 2</span>
+<span class="n">meine_list</span> <span class="o">=</span> <span class="n">meine_list</span> <span class="o">+</span> <span class="n">abc</span>
+
+<span class="c1"># Möglichkeit 3</span>
+<span class="n">meine_list</span> <span class="o">+=</span> <span class="n">abc</span>
 </pre></div>
 </div>
 </div>
@@ -714,7 +768,13 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="n">meine_list</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meine_list</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
 </pre></div>
 </div>
 </div>
@@ -723,27 +783,38 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="c1"># Hier wird der Doppelpunkt gebraucht um eine Sequenz statt eines einzelnen Werts auszugeben.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">meine_list</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
-
-<span class="c1"># Mit dieser Schreibweise kann auch eine Schrittweite angegeben werden.</span>
-<span class="c1"># In diesem Fall wird ab der Stelle 4  (inklusive) jeder zweite Wert bis zum Wert 10 (exklusive) der Liste ausgegeben.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">meine_list</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
-
-<span class="c1"># Remove löscht den ersten vorkommenden WERT, der als Parameter angeben wurde.</span>
-<span class="n">meine_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="c1"># Pop löscht den Wert am angegebenen INDEX und gibt diesen auch zürck.</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">meine_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">meine_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 1, 4]
-[64, 45, 17]
-317
-[25, 1997, 37, 64, 17, 45, 64, 17, 9, 6, 4, 1, 6, 1, 4, 1, 6, 1, 4]
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hier wird der Doppelpunkt gebraucht um eine Sequenz statt eines einzelnen Werts auszugeben.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meine_list</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>
+
+<span class="c1"># Zusatz: Mit dieser Schreibweise kann auch eine Schrittweite angegeben werden.</span>
+<span class="c1"># In diesem Fall wird ab der Stelle 4  (inklusive) jeder zweite Wert bis zum Wert 10 (exklusive) der Liste ausgegeben.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meine_list</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lösche den Wert an index 4 und gib diesen zurück</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pop löscht den Wert am angegebenen INDEX und gibt diesen auch zürck.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">meine_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1"># Zusatz: Remove löscht den ersten vorkommenden WERT, der als Parameter angeben wurde.</span>
+<span class="n">meine_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -767,14 +838,14 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-8
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -783,18 +854,26 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>schwarzer Bauer
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Bewege die schwarze Dame diagonal zwei Felder weit über das Spielfeld und gebe ihre neue Position aus.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -812,11 +891,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;schwarzes Pferd&#39;, &#39;schwarzer Bauer&#39;, None, None, None, None, &#39;weisser Bauer&#39;, None], [None, None, None, None, None, None, &#39;schwarzer Bauer&#39;, None], [None, None, None, None, None, None, &#39;schwarzer König&#39;, None], [&#39;schwarzer Bauer&#39;, None, None, &#39;weisser Turm&#39;, None, None, None, None], [None, None, &#39;weisser König&#39;, None, &#39;schwarzer Läufer&#39;, &#39;schwarzer Bauer&#39;, None, None], [None, None, None, &#39;schwarze Dame&#39;, None, None, None, None], [None, None, &#39;weisse Dame&#39;, None, None, None, None, None], [&#39;schwarzer Bauer&#39;, None, None, None, None, None, None, None]]
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="aufgabe-2-funktionen">
@@ -826,6 +900,13 @@ Teste die Funktion mit mehreren Wortpaaren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Möglichkeit 1</span>
 <span class="k">def</span> <span class="nf">similiar</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Die Funktion vergleicht zwei Strings auf Gleichheit.</span>
@@ -840,7 +921,7 @@ Teste die Funktion mit mehreren Wortpaaren.</p>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> ist nicht das gleich Wort wie </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-
+<span class="c1"># Möglichkeit 2</span>
 <span class="k">def</span> <span class="nf">similiar2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Diese Funktion gibt das gleiche Ergebnis, wie die obige, nur kürzer.</span>
@@ -851,22 +932,10 @@ Teste die Funktion mit mehreren Wortpaaren.</p>
     <span class="k">return</span> <span class="n">a</span><span class="o">==</span><span class="n">b</span>
 
 
-
-
 <span class="nb">print</span><span class="p">(</span><span class="n">similiar</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;Test&#39;</span><span class="p">))</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">similiar</span><span class="p">(</span><span class="s1">&#39;Welt&#39;</span><span class="p">,</span> <span class="s1">&#39;Welt&#39;</span><span class="p">)</span>
 
 <span class="n">similiar2</span><span class="p">(</span><span class="s1">&#39;Udo&#39;</span><span class="p">,</span> <span class="s1">&#39;Jürgens&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3] ist nicht das gleich Wort wie Test
-False
-Welt ist das gleich Wort wie Welt
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -875,7 +944,13 @@ Welt ist das gleich Wort wie Welt
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="k">def</span> <span class="nf">arith_mitte</span><span class="p">(</span><span class="n">liste</span><span class="p">:</span><span class="nb">list</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">arith_mitte</span><span class="p">(</span><span class="n">liste</span><span class="p">:</span><span class="nb">list</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Berechnet das arithmetische Mittel, einer gegeben Liste.</span>
 <span class="sd">    :param liste:</span>
@@ -884,11 +959,6 @@ Welt ist das gleich Wort wie Welt
     <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">arith_mitte</span><span class="p">(</span><span class="n">meine_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>121.53
 </pre></div>
 </div>
 </div>
@@ -901,6 +971,80 @@ Welt ist das gleich Wort wie Welt
 </div>
 </div>
 </div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bewege_koenig</span><span class="p">(</span><span class="n">reihe</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">feld</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">richtung</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+
+    <span class="c1"># Hier wird zuerst überprüft, ob das Feld überhaupt auf dem Schachbrett existiert.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">reihe</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">)</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">feld</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gebe ein Feld an das existiert&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="c1"># Hier wird geprüft, ob ein König auf dem angegebenen Feld steht.</span>
+    <span class="k">if</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Auf dem Feld steht keine Figur.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="s2">&quot;König&quot;</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Auf dem Feld steht kein König.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Hier wird die Richtung überprüft und das Feld auf das der König gestellt wird berechnet. Anschließend wird die Funktion ziehen aufgerufen um den König auf das neue Feld zu ziehen.</span>
+    <span class="k">if</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;S&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;W&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;O&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;NW&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;NO&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;SO&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">richtung</span> <span class="o">==</span> <span class="s2">&quot;SW&quot;</span><span class="p">:</span>
+        <span class="n">neue_reihe</span> <span class="o">=</span> <span class="n">reihe</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">neues_feld</span> <span class="o">=</span> <span class="n">feld</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">,</span> <span class="n">feld</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">)</span>
+
+
+<span class="c1"># ziehen ist eine Hilfsfunktion, welche überprüft, ob das neue Feld in der neuen Reihe existiert und ob sich eine Figur der gleichen Farbe auf dem neuen Feld befindet. Falls das neue Feld existiert und sich keine gleichfarbige Figur darauf befindet, zieht die figur vom angegebenen Feld auf das neue Feld.</span>
+<span class="k">def</span> <span class="nf">ziehen</span><span class="p">(</span><span class="n">reihe</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">feld</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">neue_reihe</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">neues_feld</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">neue_reihe</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">)</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">neues_feld</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der König kann sich nur auf dem Schachfeld bewegen.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">neue_reihe</span><span class="p">][</span><span class="n">neues_feld</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;schwarz&quot;</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]</span> <span class="ow">and</span> <span class="s2">&quot;schwarz&quot;</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">neue_reihe</span><span class="p">][</span><span class="n">neues_feld</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;weiss&quot;</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]</span> <span class="ow">and</span> <span class="s2">&quot;weiss&quot;</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">neue_reihe</span><span class="p">][</span><span class="n">neues_feld</span><span class="p">]):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Auf dem Feld steht bereits eine gleichfarbige Figur.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">schachbrett</span><span class="p">[</span><span class="n">neue_reihe</span><span class="p">][</span><span class="n">neues_feld</span><span class="p">]</span> <span class="o">=</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]</span>
+            <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">schachbrett</span><span class="p">[</span><span class="n">neue_reihe</span><span class="p">][</span><span class="n">neues_feld</span><span class="p">]</span> <span class="o">=</span> <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]</span>
+        <span class="n">schachbrett</span><span class="p">[</span><span class="n">reihe</span><span class="p">][</span><span class="n">feld</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="n">bewege_koenig</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">schachbrett</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="for-schleifen">
 <h2>for-Schleifen<a class="headerlink" href="#for-schleifen" title="Permalink to this headline">#</a></h2>
@@ -908,7 +1052,13 @@ Welt ist das gleich Wort wie Welt
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Donau-Dampfschifffahrtsgesellschaft&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Donau-Dampfschifffahrtsgesellschaft&#39;</span>
 
 <span class="n">counter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">zeichen</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
@@ -923,67 +1073,20 @@ Welt ist das gleich Wort wie Welt
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-35
-34
-</pre></div>
-</div>
-</div>
 </div>
 <p>Gib alle durch zwei teilbaren Werte der in Aufgabe 1 definierten Liste aus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-
-<span class="k">for</span> <span class="n">nummer</span> <span class="ow">in</span> <span class="n">meine_list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">nummer</span><span class="o">%</span><span class="k">2</span> == 0:
-        <span class="nb">print</span><span class="p">(</span><span class="n">nummer</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64
-64
-6
-4
-6
-4
-6
-4
+</div>
+<div class="cell tag_skip-execution tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">nummer</span> <span class="ow">in</span> <span class="n">meine_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">nummer</span><span class="o">%</span><span class="k">2</span> == 0:
+        <span class="nb">print</span><span class="p">(</span><span class="n">nummer</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -992,16 +1095,16 @@ Welt ist das gleich Wort wie Welt
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
-
-<span class="n">gesuchte_figur</span> <span class="o">=</span> <span class="s1">&#39;weisser König&#39;</span>
-<span class="k">for</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">gesuchte_figur</span> <span class="ow">in</span> <span class="n">reihe</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">schachbrett</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">reihe</span><span class="p">),</span> <span class="n">reihe</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">gesuchte_figur</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 2
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gesuchte_figur</span> <span class="o">=</span> <span class="s1">&#39;weisser König&#39;</span>
+<span class="k">for</span> <span class="n">reihe</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">gesuchte_figur</span> <span class="ow">in</span> <span class="n">reihe</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">schachbrett</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">reihe</span><span class="p">),</span> <span class="n">reihe</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">gesuchte_figur</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1010,19 +1113,20 @@ Welt ist das gleich Wort wie Welt
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dein Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Möglichkeit 1</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">sublist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;schwarzer Bauer&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">))</span>
 
-
+<span class="c1"># Möglichkeit 2</span>
 <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">schachbrett</span><span class="p">:</span>
     <span class="n">counter</span> <span class="o">+=</span> <span class="n">sublist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;schwarzer Bauer&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-5
 </pre></div>
 </div>
 </div>
@@ -1086,7 +1190,7 @@ Welt ist das gleich Wort wie Welt
     <a class='right-next' id="next-link" href="uebungen4.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">While-Schleifen und Dictionaries</p>
+        <p class="prev-next-title">While-Schleifen &amp;  Dictionaries</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

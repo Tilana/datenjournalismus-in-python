@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Datentypen &#8212; Datenjournalismus in Python</title>
+    <title>Python Packages &#8212; Datenjournalismus in Python</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Grundlegende Datentypen: int, float, string, bool" href="datentypen_basics.html" />
-    <link rel="prev" title="Variablen" href="variablen.html" />
+    <link rel="next" title="Übungsaufgaben" href="../aufgaben/intro.html" />
+    <link rel="prev" title="Flow Control" href="flow_control.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -215,11 +215,11 @@ const thebe_selector_output = ".output, .cell_output"
      Variablen
     </a>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="datentypen.html">
      Datentypen
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
@@ -301,8 +301,8 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="packages.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Python Packages
     </a>
    </li>
@@ -461,6 +461,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/grundlagen/packages.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/grundlagen/packages.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -500,7 +547,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fgrundlagen/datentypen.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fgrundlagen/packages.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -528,7 +575,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/grundlagen/datentypen.md"
+        <a href="../_sources/grundlagen/packages.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -539,7 +586,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -565,23 +612,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python Packages
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-von-python-packages">
+   Installation von Python Packages
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Datentypen</h1>
+                <h1>Python Packages</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python Packages
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-von-python-packages">
+   Installation von Python Packages
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -589,19 +683,55 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="datentypen">
-<h1>Datentypen<a class="headerlink" href="#datentypen" title="Permalink to this headline">#</a></h1>
-<p>Jeder Wert in Python hat einen Datentyp.</p>
-<p>Der Datentyp legt fest welche Berechnungen oder Methoden möglich oder verfügbar sind.</p>
-<p>Uns bekannte Datentypen sind:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="datentypen_basics.html">Grundlegende Datentypen: int, float, string, bool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="listen.html">Listen</a></li>
-<li class="toctree-l1"><a class="reference internal" href="listen.html#nested-lists">Nested Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dictionaries.html#dictionary-methoden">Dictionary Methoden</a></li>
+  <section id="python-packages">
+<h1>Python Packages<a class="headerlink" href="#python-packages" title="Permalink to this headline">#</a></h1>
+<p>Packages, auch Module genannt, sind vorgefertigte Code-Pakete, deren Funktionen wir wir verwenden können ohne diese selbst programmieren zu müssen.</p>
+<p>Manche Packages sind in Python vorinstalliert und müssen nur noch importiert werden.</p>
+<p>Beispiele:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/math.html">math</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/random.html">random</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html">datetime</a></p></li>
 </ul>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zufälliger Integer Wert mit random package</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># das heutige Datum über datetime ausgeben lassen</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="installation-von-python-packages">
+<h1>Installation von Python Packages<a class="headerlink" href="#installation-von-python-packages" title="Permalink to this headline">#</a></h1>
+<p>Packages die von der Python Community zur Verfügung gestellt werden, müssen vor der Verwendung installiert werden. Dafür kann <a class="reference external" href="https://pypi.org/project/pip/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a> als Packagemanager verwendet werden.</p>
+<p>Tipps für die Installation von Python Packages in Windows, Linux und Mac gibt es hier: <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/installing-packages/">https://packaging.python.org/en/latest/tutorials/installing-packages/</a></p>
+<p>In Jupyter Notebooks können Packages wie folgt installiert werden:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install a pip package im Jupyter Notebook</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install pandas
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 
@@ -632,17 +762,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="variablen.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="flow_control.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Variablen</p>
+            <p class="prev-next-title">Flow Control</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="datentypen_basics.html" title="next page">
+    <a class='right-next' id="next-link" href="../aufgaben/intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Grundlegende Datentypen: int, float, string, bool</p>
+        <p class="prev-next-title">Übungsaufgaben</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

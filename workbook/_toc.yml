@@ -42,6 +42,7 @@ parts:
           - file: grundlagen/forloops
           - file: grundlagen/whileloops
           - file: grundlagen/flow_control
+      - file: grundlagen/packages
     - file: aufgaben/intro
       sections:
       - file: aufgaben/uebungen1
@@ -49,8 +50,15 @@ parts:
       - file: aufgaben/uebungen3
       - file: aufgaben/uebungen4
   - caption: Datenanalyse
+    maxdepth: 1
     chapters:
-      - file: datenanalyse/tbd
+      - file: datenanalyse/datapipeline
+      - file: datenanalyse/beispiele
+        sections:
+        - file: datenanalyse/data_exploration
+      - file: aufgaben/intro2
+        sections:
+          - file: aufgaben/uebungen5
   - caption: APIs & Scraper
     chapters:
       - file: APIs/tbd

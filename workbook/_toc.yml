@@ -59,6 +59,7 @@ parts:
       - file: aufgaben/intro2
         sections:
           - file: aufgaben/uebungen5
+          - file: aufgaben/uebungen6
   - caption: APIs & Scraper
     chapters:
       - file: APIs/tbd

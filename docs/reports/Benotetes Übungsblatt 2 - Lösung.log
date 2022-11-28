@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/home/natalie/.local/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/natalie/.local/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/natalie/.local/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/natalie/.local/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/natalie/.local/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/natalie/.local/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/natalie/.local/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+bools = data['director'].apply(has_comma)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn [8], line 1[0m
+[0;32m----> 1[0m bools [38;5;241m=[39m data[[38;5;124m'[39m[38;5;124mdirector[39m[38;5;124m'[39m][38;5;241m.[39mapply(has_comma)
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/core/series.py:4771[0m, in [0;36mSeries.apply[0;34m(self, func, convert_dtype, args, **kwargs)[0m
+[1;32m   4661[0m [38;5;28;01mdef[39;00m [38;5;21mapply[39m(
+[1;32m   4662[0m     [38;5;28mself[39m,
+[1;32m   4663[0m     func: AggFuncType,
+[0;32m   (...)[0m
+[1;32m   4666[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[1;32m   4667[0m ) [38;5;241m-[39m[38;5;241m>[39m DataFrame [38;5;241m|[39m Series:
+[1;32m   4668[0m     [38;5;124;03m"""[39;00m
+[1;32m   4669[0m [38;5;124;03m    Invoke function on values of Series.[39;00m
+[1;32m   4670[0m 
+[0;32m   (...)[0m
+[1;32m   4769[0m [38;5;124;03m    dtype: float64[39;00m
+[1;32m   4770[0m [38;5;124;03m    """[39;00m
+[0;32m-> 4771[0m     [38;5;28;01mreturn[39;00m [43mSeriesApply[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mfunc[49m[43m,[49m[43m [49m[43mconvert_dtype[49m[43m,[49m[43m [49m[43margs[49m[43m,[49m[43m [49m[43mkwargs[49m[43m)[49m[38;5;241;43m.[39;49m[43mapply[49m[43m([49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/core/apply.py:1105[0m, in [0;36mSeriesApply.apply[0;34m(self)[0m
+[1;32m   1102[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mapply_str()
+[1;32m   1104[0m [38;5;66;03m# self.f is Callable[39;00m
+[0;32m-> 1105[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mapply_standard[49m[43m([49m[43m)[49m
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/core/apply.py:1156[0m, in [0;36mSeriesApply.apply_standard[0;34m(self)[0m
+[1;32m   1154[0m     [38;5;28;01melse[39;00m:
+[1;32m   1155[0m         values [38;5;241m=[39m obj[38;5;241m.[39mastype([38;5;28mobject[39m)[38;5;241m.[39m_values
+[0;32m-> 1156[0m         mapped [38;5;241m=[39m [43mlib[49m[38;5;241;43m.[39;49m[43mmap_infer[49m[43m([49m
+[1;32m   1157[0m [43m            [49m[43mvalues[49m[43m,[49m
+[1;32m   1158[0m [43m            [49m[43mf[49m[43m,[49m
+[1;32m   1159[0m [43m            [49m[43mconvert[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mconvert_dtype[49m[43m,[49m
+[1;32m   1160[0m [43m        [49m[43m)[49m
+[1;32m   1162[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(mapped) [38;5;129;01mand[39;00m [38;5;28misinstance[39m(mapped[[38;5;241m0[39m], ABCSeries):
+[1;32m   1163[0m     [38;5;66;03m# GH#43986 Need to do list(mapped) in order to get treated as nested[39;00m
+[1;32m   1164[0m     [38;5;66;03m#  See also GH#25959 regarding EA support[39;00m
+[1;32m   1165[0m     [38;5;28;01mreturn[39;00m obj[38;5;241m.[39m_constructor_expanddim([38;5;28mlist[39m(mapped), index[38;5;241m=[39mobj[38;5;241m.[39mindex)
+
+File [0;32m~/.local/lib/python3.9/site-packages/pandas/_libs/lib.pyx:2918[0m, in [0;36mpandas._libs.lib.map_infer[0;34m()[0m
+
+Cell [0;32mIn [7], line 2[0m, in [0;36mhas_comma[0;34m(text)[0m
+[1;32m      1[0m [38;5;28;01mdef[39;00m [38;5;21mhas_comma[39m(text):
+[0;32m----> 2[0m     [38;5;28;01mif[39;00m [38;5;124;43m'[39;49m[38;5;124;43m,[39;49m[38;5;124;43m'[39;49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[43mtext[49m:
+[1;32m      3[0m         [38;5;28;01mreturn[39;00m [38;5;28;01mTrue[39;00m
+[1;32m      4[0m     [38;5;28;01mreturn[39;00m [38;5;28;01mFalse[39;00m
+
+[0;31mTypeError[0m: argument of type 'float' is not iterable
+TypeError: argument of type 'float' is not iterable
+

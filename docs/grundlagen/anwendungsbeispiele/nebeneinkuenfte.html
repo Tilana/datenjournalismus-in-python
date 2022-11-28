@@ -1,0 +1,2066 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Nebeneinkünfte von Lokalpolitiker:innen &#8212; Datenjournalismus in Python</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Theorie" href="../theorie.html" />
+    <link rel="prev" title="Analyse der Luftqualität in Leipzig" href="luftqualitaet.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/Uni_Leipzig_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Datenjournalismus in Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../willkommen/intro.html">
+                    Datenjournalismus in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Willkommen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../willkommen/kursplan.html">
+   Workbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../willkommen/motivation.html">
+   Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../willkommen/tipps.html">
+   Tipps
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen in Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="wealth.html">
+     Wie reich ist Jeff Bezos?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="automatisierteTexte.html">
+     Automatisierte Texte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="luftqualitaet.html">
+     Analyse der Luftqualität in Leipzig
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Nebeneinkünfte von Lokalpolitiker:innen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../theorie.html">
+   Theorie
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../operatoren.html">
+     Operatoren
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../arithm_operatoren.html">
+       Arithmetische Operatoren
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../vergleichsoperatoren.html">
+       Vergleichsoperatoren
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../bool_operatoren.html">
+       Logische (Boolsche) Operatoren
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../variablen.html">
+     Variablen
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../datentypen.html">
+     Datentypen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../datentypen_basics.html">
+       Grundlegende Datentypen: int, float, string, bool
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../listen.html">
+       Listen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../dictionaries.html">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../funktionen.html">
+     Funktionen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../inbuilt_functions.html">
+       Eingebaute Funktionen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../eigene_funktionen.html">
+       Selbstdefinierte Funktionen
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../kontrollstrukturen.html">
+     Kontrollstrukturen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ifelse.html">
+       Fallunterscheidungen: if, else, elif
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../forloops.html">
+       For Loops
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../whileloops.html">
+       While Loop
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../flow_control.html">
+       Flow Control
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../packages.html">
+     Python Packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../aufgaben/intro.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aufgaben/uebungen1.html">
+     Operatoren, Datentypen &amp; built-in Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aufgaben/uebungen2.html">
+     String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aufgaben/uebungen3.html">
+     Listen, Funktionen und Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aufgaben/uebungen4.html">
+     While-Schleifen &amp;  Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datenanalyse
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../datenanalyse/datapipeline.html">
+   Datenanalyse und -verarbeitung
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../datenanalyse/beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datenanalyse/data_exploration.html">
+     Datenexploration: Weltweite Naturkatastrophen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../aufgaben/intro2.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aufgaben/uebungen5.html">
+     Packages &amp; Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../aufgaben/uebungen6.html">
+     Weitere Schritte mit Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  APIs &amp; Scraper
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../APIs/tbd.html">
+   APIs und Scraper
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weitere Informationen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../weiteres/intro.html">
+   Weitere Informationen
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/grundlagen/anwendungsbeispiele/nebeneinkuenfte.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/grundlagen/anwendungsbeispiele/nebeneinkuenfte.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Tilana/datenjournalismus-in-python"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fgrundlagen/anwendungsbeispiele/nebeneinkuenfte.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/grundlagen/anwendungsbeispiele/nebeneinkuenfte.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispieldaten">
+   Beispieldaten
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uberblick">
+     Überblick:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daten-als-dictionary">
+   Daten als Dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Überblick:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verschachtelte-dictionaries">
+   Verschachtelte Dictionaries ….
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alle-nebeneinkunfte-von-allen-landrat-innen-in-rheinlandpfalz-im-jahr-2020">
+   Alle Nebeneinkünfte von allen Landrät:innen in Rheinlandpfalz im Jahr 2020.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aufgabe">
+     Aufgabe:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weitere-recherchefragen">
+   Weitere Recherchefragen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionary-sortieren">
+     Dictionary Sortieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parteien">
+     Parteien
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#firmen">
+     Firmen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabetool-fur-nebeneinkunfte">
+   Eingabetool für Nebeneinkünfte
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Nebeneinkünfte von Lokalpolitiker:innen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beispieldaten">
+   Beispieldaten
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uberblick">
+     Überblick:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daten-als-dictionary">
+   Daten als Dictionary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Überblick:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verschachtelte-dictionaries">
+   Verschachtelte Dictionaries ….
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alle-nebeneinkunfte-von-allen-landrat-innen-in-rheinlandpfalz-im-jahr-2020">
+   Alle Nebeneinkünfte von allen Landrät:innen in Rheinlandpfalz im Jahr 2020.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aufgabe">
+     Aufgabe:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weitere-recherchefragen">
+   Weitere Recherchefragen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionary-sortieren">
+     Dictionary Sortieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parteien">
+     Parteien
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#firmen">
+     Firmen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eingabetool-fur-nebeneinkunfte">
+   Eingabetool für Nebeneinkünfte
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="nebeneinkunfte-von-lokalpolitiker-innen">
+<h1>Nebeneinkünfte von Lokalpolitiker:innen<a class="headerlink" href="#nebeneinkunfte-von-lokalpolitiker-innen" title="Permalink to this headline">#</a></h1>
+<p>Wir analysieren die Nebeneinkünfte von Landrät:innen in Rheinlandpfalz basierend auf den Daten und der Recherche von <a class="reference external" href="https://correctiv.org/aktuelles/wirtschaft/2021/06/24/nebeneinkuenfte-kommunalpolitiker-in-rheinland-pfalz-auf-gehaltslisten-von-rwe/#tabelle">Correctiv</a></p>
+<p>Die folgenden theoretischen Grundlagen werden dabei besprochen und geübt:</p>
+<ul class="simple">
+<li><p>Dictionaries</p></li>
+<li><p>Listen</p></li>
+<li><p>For-Schleifen</p></li>
+<li><p>While-Schleifen</p></li>
+<li><p>Flow Control</p></li>
+</ul>
+<p><img alt="Correctiv Recherche" src="../../_images/nebeneinkuenfte.png" /></p>
+<section id="beispieldaten">
+<h2>Beispieldaten<a class="headerlink" href="#beispieldaten" title="Permalink to this headline">#</a></h2>
+<p>Ein Einblick in die Nebeneinkünfte im Jahr 2020 von Manfred Schur (CDU), Landrat von Cochem-Zell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arbeitgeber</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;</span><span class="p">,</span> <span class="s1">&#39;Zweckverband Tierische Nebenprodukte Südwest&#39;</span><span class="p">,</span> <span class="s1">&#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;</span><span class="p">,</span> <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">,</span> <span class="s1">&#39;RWE&#39;</span><span class="p">,</span> <span class="s1">&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;</span><span class="p">,</span> <span class="s1">&#39;Westenergie&#39;</span><span class="p">,</span> <span class="s1">&#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;</span><span class="p">,</span> <span class="s1">&#39;Rheinische Zusatzversorgungskasse&#39;</span><span class="p">,</span> <span class="s1">&#39;Agentur für Arbeit&#39;</span><span class="p">]</span>
+<span class="n">verdienst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8073</span><span class="p">,</span> <span class="mi">8073</span><span class="p">,</span> <span class="mi">6038</span><span class="p">,</span> <span class="mi">5575</span><span class="p">,</span> <span class="mi">5200</span><span class="p">,</span> <span class="mi">2195</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">26</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="uberblick">
+<h3>Überblick:<a class="headerlink" href="#uberblick" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Wie viel Geld verdient Manfred Schur an Nebeneinkünften insgesamt?</p></li>
+<li><p>Wie viel Geld erhält Manfred Schur von RWE?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">verdienst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37974
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2.</span>
+<span class="n">rwe_idx</span> <span class="o">=</span> <span class="n">arbeitgeber</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;RWE&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">verdienst</span><span class="p">[</span><span class="n">rwe_idx</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5200
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="daten-als-dictionary">
+<h2>Daten als Dictionary<a class="headerlink" href="#daten-als-dictionary" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nebeneinkünfte</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;</span><span class="p">:</span> <span class="mi">8073</span><span class="p">,</span>
+                  <span class="s1">&#39;Zweckverband Tierische Nebenprodukte Südwest&#39;</span><span class="p">:</span> <span class="mi">8073</span><span class="p">,</span>
+                  <span class="s1">&#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;</span><span class="p">:</span> <span class="mi">6038</span><span class="p">,</span>
+                  <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">5575</span><span class="p">,</span>
+                  <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">,</span>
+                  <span class="s1">&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;</span><span class="p">:</span> <span class="mi">2195</span><span class="p">,</span>
+                  <span class="s1">&#39;Westenergie&#39;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+                  <span class="s1">&#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+                  <span class="s1">&#39;Rheinische Zusatzversorgungskasse&#39;</span><span class="p">:</span> <span class="mi">194</span><span class="p">,</span>
+                  <span class="s1">&#39;Agentur für Arbeit&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>Überblick:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Wie viel Geld verdient Manfred Schur an Nebeneinkünften insgesamt?</p></li>
+<li><p>Wie viel Geld erhält Manfred Schur von RWE?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Wie viel Geld verdient Manfred Schur an Nebeneinkünften insgesamt?</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37974
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Wie viel Geld erhält Manfred Schur von</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="p">[</span><span class="s1">&#39;RWE&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5200
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="verschachtelte-dictionaries">
+<h2>Verschachtelte Dictionaries ….<a class="headerlink" href="#verschachtelte-dictionaries" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_cochemzell</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;landrat&#39;</span><span class="p">:</span> <span class="s1">&#39;Manfred Schur&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;</span><span class="p">:</span> <span class="mi">8073</span><span class="p">,</span>
+                                      <span class="s1">&#39;Zweckverband Tierische Nebenprodukte Südwest&#39;</span><span class="p">:</span> <span class="mi">8073</span><span class="p">,</span>
+                                      <span class="s1">&#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;</span><span class="p">:</span> <span class="mi">6038</span><span class="p">,</span>
+                                      <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">5575</span><span class="p">,</span>
+                                      <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">,</span>
+                                      <span class="s1">&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;</span><span class="p">:</span> <span class="mi">2195</span><span class="p">,</span>
+                                      <span class="s1">&#39;Westenergie&#39;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+                                      <span class="s1">&#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+                                      <span class="s1">&#39;Rheinische Zusatzversorgungskasse&#39;</span><span class="p">:</span> <span class="mi">194</span><span class="p">,</span>
+                                      <span class="s1">&#39;Agentur für Arbeit&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+                                      <span class="p">}</span>
+                 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data_cochemzell</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data_cochemzell</span><span class="p">[</span><span class="s1">&#39;partei&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data_cochemzell</span><span class="p">[</span><span class="s1">&#39;partei&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CDU
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data_cochemzell</span><span class="p">[</span><span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;: 8073, &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;: 8073, &#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: 6038, &#39;Sparkassenverband RP&#39;: 5575, &#39;RWE&#39;: 5200, &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;: 2195, &#39;Westenergie&#39;: 2000, &#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;: 600, &#39;Rheinische Zusatzversorgungskasse&#39;: 194, &#39;Agentur für Arbeit&#39;: 26}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summe</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="n">summe</span><span class="p">(</span><span class="n">data_cochemzell</span><span class="p">[</span><span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37974
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data_cochemzell</span><span class="p">[</span><span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">][</span><span class="s1">&#39;RWE&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5200
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="alle-nebeneinkunfte-von-allen-landrat-innen-in-rheinlandpfalz-im-jahr-2020">
+<h2>Alle Nebeneinkünfte von allen Landrät:innen in Rheinlandpfalz im Jahr 2020.<a class="headerlink" href="#alle-nebeneinkunfte-von-allen-landrat-innen-in-rheinlandpfalz-im-jahr-2020" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Mainz-Bingen&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+                     <span class="s1">&#39;Rheinhessenwein e.V.&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Mainz&#39;</span><span class="p">:</span> <span class="mi">8944</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Mainz&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Rhein-Nahe&#39;</span><span class="p">:</span> <span class="mi">9444</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Verkehrsbund Rhein Nahe&#39;</span><span class="p">:</span> <span class="mf">613.55</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Dorothea Schäfer&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Frankenthal (Pfalz)&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Gewässerzweckverband Isenach-Eckbach&#39;</span><span class="p">:</span> <span class="mi">6600</span><span class="p">,</span>
+                     <span class="s1">&#39;Pfälzische Pensionsanstalt&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Rhein-Haardt&#39;</span><span class="p">:</span> <span class="mf">4074.96</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">5575</span><span class="p">,</span>
+                     <span class="s1">&#39;Verband Region Rhein-Neckar&#39;</span><span class="p">:</span> <span class="mi">1560</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Rhein-Haardt&#39;</span><span class="p">:</span> <span class="mi">135</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Martin Hebich&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Trier-Saarburg&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Innogy Westenergie&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+                     <span class="s1">&#39;Kommunaler Rat&#39;</span><span class="p">:</span> <span class="mf">25.56</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">6100</span><span class="p">,</span>
+                     <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">129000</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Trier&#39;</span><span class="p">:</span> <span class="mi">9544</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassen- und Giroverband RP&#39;</span><span class="p">:</span> <span class="mf">5898.65</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Industriepark Region Trier&#39;</span><span class="p">:</span> <span class="mi">2208</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Trier&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Günther Schartz&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Mainz&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Gas-Union Frankfurth/Mainz&#39;</span><span class="p">:</span> <span class="mf">7812.5</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Mainz&#39;</span><span class="p">:</span> <span class="mi">8844</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband der Sparkasse Mainz&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Michael Ebling&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Speyer&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Kommunaler Rat&#39;</span><span class="p">:</span> <span class="mf">76.68</span><span class="p">,</span>
+                     <span class="s1">&#39;Kreditausschuss&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Vorderpfalz&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">7644</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Vorderpfalz&#39;</span><span class="p">:</span> <span class="mi">320</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Stefanie Seiler&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Kusel&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Fremdenverkehrszweckverband&#39;</span><span class="p">:</span> <span class="mf">1533.84</span><span class="p">,</span>
+                     <span class="s1">&#39;Kreissparkasse Kusel&#39;</span><span class="p">:</span> <span class="mi">6880</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Otto Rubly&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Trier&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Sparkasse Trier&#39;</span><span class="p">:</span> <span class="mi">8944</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Wolfram Leibe&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Bad Dürkheim&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;Pfälzische Pensionsanstalt&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Rhein-Haardt&#39;</span><span class="p">:</span> <span class="mf">6950.04</span><span class="p">,</span>
+                     <span class="s1">&#39;Verband Region Rhein-Neckar&#39;</span><span class="p">:</span> <span class="mi">540</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Rhein-Haardt&#39;</span><span class="p">:</span> <span class="mi">270</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverbandes Pollichia-Museum&#39;</span><span class="p">:</span> <span class="mf">783.96</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Hans-Ulrich Ihlenfeld&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Cochem-Zell&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;</span><span class="p">:</span> <span class="mi">6038</span><span class="p">,</span>
+                     <span class="s1">&#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+                     <span class="s1">&#39;Agentur für Arbeit&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+                     <span class="s1">&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;</span><span class="p">:</span> <span class="mf">8073.24</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;</span><span class="p">:</span> <span class="mi">2195</span><span class="p">,</span>
+                     <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">,</span>
+                     <span class="s1">&#39;Rheinische Zusatzversorgungskasse&#39;</span><span class="p">:</span> <span class="mi">194</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">5575</span><span class="p">,</span>
+                     <span class="s1">&#39;Westenergie&#39;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Tierische Nebenprodukte Südwest&#39;</span><span class="p">:</span> <span class="mf">8073.24</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Manfred Schnur&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Südwestpfalz&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Bezirkstag Pfalz&#39;</span><span class="p">:</span> <span class="mi">2100</span><span class="p">,</span>
+                     <span class="s1">&#39;Institut für Medien und Pädagogik e. V.&#39;</span><span class="p">:</span> <span class="mf">17.9</span><span class="p">,</span>
+                     <span class="s1">&#39;Kommunaler Rat&#39;</span><span class="p">:</span> <span class="mf">51.12</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Südwestpfalz&#39;</span><span class="p">:</span> <span class="mi">8544</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Entwicklungsgebiet Flugplatz ZW&#39;</span><span class="p">:</span> <span class="mf">1380.51</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Susanne Ganster&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Kaiserslautern&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Sparkassen- und Giroverband RP&#39;</span><span class="p">:</span> <span class="mi">5269</span><span class="p">,</span>
+                     <span class="s1">&#39;Stadtsparkasse&#39;</span><span class="p">:</span> <span class="mi">5704</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Klaus Weichel&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Rhein-Lahn-Kreis&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Agentur für Arbeit&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+                     <span class="s1">&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;</span><span class="p">:</span> <span class="mf">3924.48</span><span class="p">,</span>
+                     <span class="s1">&#39;Baugenossenschaft Rhein-Lahn eG&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+                     <span class="s1">&#39;Kommunaler Rat&#39;</span><span class="p">:</span> <span class="mf">51.12</span><span class="p">,</span>
+                     <span class="s1">&#39;Landesbank Baden-Württemberg&#39;</span><span class="p">:</span> <span class="mf">1283.33</span><span class="p">,</span>
+                     <span class="s1">&#39;Nassauische Sparkasse&#39;</span><span class="p">:</span> <span class="mf">4832.88</span><span class="p">,</span>
+                     <span class="s1">&#39;Süwag Energie AG&#39;</span><span class="p">:</span> <span class="mi">8000</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Tierische Nebenprodukte Südwest&#39;</span><span class="p">:</span> <span class="mf">3924.48</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Frank Puchtler&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Südliche Weinstraße&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Agentur für Arbeit&#39;</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+                     <span class="s1">&#39;Bezirksverband Pfalz&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+                     <span class="s1">&#39;Landeszentrale für Medien und Kommunikation&#39;</span><span class="p">:</span> <span class="mi">893</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;Pfalzklinikum für Psychiatrie u. Neurologie (AdöR)&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Südliche Weinstraße&#39;</span><span class="p">:</span> <span class="mi">9594</span><span class="p">,</span>
+                     <span class="s1">&#39;Verband Region Rhein-Neckar&#39;</span><span class="p">:</span> <span class="mi">660</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Dietmar Seefeldt&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Ludwigshafen am Rhein&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Sparkasse Vorderpfalz&#39;</span><span class="p">:</span> <span class="mi">8644</span><span class="p">,</span>
+                     <span class="s1">&#39;Verband Region Rhein-Neckar&#39;</span><span class="p">:</span> <span class="mi">144</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Jutta Steinruck&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Bernkastel-Wittlich&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Agentur für Arbeit&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+                     <span class="s1">&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Abfallwirtschaft Region Trier&#39;</span><span class="p">:</span> <span class="mi">7848</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;</span><span class="p">:</span> <span class="mi">8324</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Gregor Eibes&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Neustadt an der Weinstraße&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Sparkasse Rhein-Haardt&#39;</span><span class="p">:</span> <span class="mf">4074.96</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">231</span><span class="p">,</span>
+                     <span class="s1">&#39;Verband Region Rhein-Neckar&#39;</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span>
+                     <span class="s1">&#39;Zusatzversorgungskasse der bayerischen Gemeinden&#39;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Rhein-Haardt&#39;</span><span class="p">:</span> <span class="mi">135</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;Freie Wähler&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Marc Weigel&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Germersheim&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;Park &amp; Bellheimer AG&#39;</span><span class="p">:</span> <span class="mi">5950</span><span class="p">,</span>
+                     <span class="s1">&#39;Pfälzische Pensionsanstalt&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Germersheim-Kandel&#39;</span><span class="p">:</span> <span class="mi">6680</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassen- und Giroverband RP&#39;</span><span class="p">:</span> <span class="mf">14073.41</span><span class="p">,</span>
+                     <span class="s1">&#39;Verkehrsverbund Rhein-Neckar&#39;</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Schienenpersonennahverkehr Süd&#39;</span><span class="p">:</span> <span class="mi">7464</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Fritz Brechtel&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Worms&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Sparkasse Worms-Alzey-Ried&#39;</span><span class="p">:</span> <span class="mi">8944</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Worms-Alzey-Ried&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Adolf Kessel&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Rhein-Hunsrück-Kreis&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Kreissparkasse Rhein-Hunsrück&#39;</span><span class="p">:</span> <span class="mi">6980</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Marlon Brähr&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Bad Kreuznach&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse (div. Ebenen)&#39;</span><span class="p">:</span> <span class="mi">9544</span><span class="p">,</span>
+                     <span class="s1">&#39;Westenergie&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Bettina Dickes&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Landau in der Pfalz&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Kommunaler Rat&#39;</span><span class="p">:</span> <span class="mf">51.12</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Südliche Weinstraße&#39;</span><span class="p">:</span> <span class="mi">6698</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">6236</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Südliche Weinstraße&#39;</span><span class="p">:</span> <span class="mi">450</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Thomas Hirsch&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Westerwaldkreis&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;Nassauische Sparkasse&#39;</span><span class="p">:</span> <span class="mf">6978.95</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;</span><span class="p">:</span> <span class="mi">220</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Westerwald-Sieg&#39;</span><span class="p">:</span> <span class="mi">9044</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">308</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenzweckverband Nassau&#39;</span><span class="p">:</span> <span class="mf">383.45</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenzweckverband Westerwald-Sieg&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Achim Schwickert&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Eifelkreis Bitburg-Prüm&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Beirat für Kommunalentwicklung RP&#39;</span><span class="p">:</span> <span class="mf">190.16</span><span class="p">,</span>
+                     <span class="s1">&#39;Kreissparkasse Bitburg-Prüm&#39;</span><span class="p">:</span> <span class="mi">7080</span><span class="p">,</span>
+                     <span class="s1">&#39;Kreisvolkshochschule&#39;</span><span class="p">:</span> <span class="mi">3597</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Region Trier&#39;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+                     <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">6155</span><span class="p">,</span>
+                     <span class="s1">&#39;Saarländischer Schwesternverband&#39;</span><span class="p">:</span> <span class="mi">7735</span><span class="p">,</span>
+                     <span class="s1">&#39;Westenergie&#39;</span><span class="p">:</span> <span class="mi">1160</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Berufsbildungszentrum Bitburg-Prüm&#39;</span><span class="p">:</span> <span class="mi">5181</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Flugplatz Bitburg&#39;</span><span class="p">:</span> <span class="mi">5186</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Naturpark Südeifel&#39;</span><span class="p">:</span> <span class="mi">5973</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Schienen-Personen-NahVerker&#39;</span><span class="p">:</span> <span class="mi">3723</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Stausee Bitburg&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Verkehrsbund Region Trier&#39;</span><span class="p">:</span> <span class="mi">7032</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;Freie Wähler&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Joachim Streit&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Birkenfeld&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Kreissparkasse Birkenfeld&#39;</span><span class="p">:</span> <span class="mi">6780</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">153</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Matthias Schneider&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Alzey-Worms&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Innogy Westenergie&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;</span><span class="p">:</span> <span class="mi">1200</span><span class="p">,</span>
+                     <span class="s1">&#39;Rheinhessenwein e.V.&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Worms-Alzey-Ried&#39;</span><span class="p">:</span> <span class="mi">9094</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">5883</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Heiko Sippel&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Rhein-Pfalz-Kreis&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Bezirksverband Pfalz&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Vorderpfalz&#39;</span><span class="p">:</span> <span class="mi">8664</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">308</span><span class="p">,</span>
+                     <span class="s1">&#39;Verband Region Rhein-Neckar&#39;</span><span class="p">:</span> <span class="mi">240</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Clemens Kärner&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Donnersbergkreis&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Westpfalz&#39;</span><span class="p">:</span> <span class="mi">780</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Donnersberg&#39;</span><span class="p">:</span> <span class="mi">6842</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;parteilos&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Rainer Guth&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Altenkirchen&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Westerwald-Sieg&#39;</span><span class="p">:</span> <span class="mi">9244</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Sparkasse Westerwald-Sieg&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Peter Enders&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Pirmasens&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Zweckverband Abfallverwertung Südwestpfalz&#39;</span><span class="p">:</span> <span class="mi">3060</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Markus Zwick&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Ahrweiler&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Kreissparkasse Ahrweiler&#39;</span><span class="p">:</span> <span class="mi">7080</span><span class="p">,</span>
+                     <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">,</span>
+                     <span class="s1">&#39;Rheinland-Westenenergie&#39;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">5269</span><span class="p">,</span>
+                     <span class="s1">&#39;Wasserversorgung Zweckverband Main-Eifel&#39;</span><span class="p">:</span> <span class="mf">873.13</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband SPNV&#39;</span><span class="p">:</span> <span class="mi">7446</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Jürgen Pfähler&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Kaiserslautern&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Kreissparkasse Kaiserslautern&#39;</span><span class="p">:</span> <span class="mi">9284</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Ralf Leßmeister&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Neuwied&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Landesmusikverband RLP&#39;</span><span class="p">:</span> <span class="mi">480</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;</span><span class="p">:</span> <span class="mi">165</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Neuwied&#39;</span><span class="p">:</span> <span class="mi">8644</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Neuwied (Verbandsversammlung)&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+                     <span class="s1">&#39;Süwag Energie AG&#39;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Achim Hallerbach&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Zweibrücken&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Pfälzische Pensionsanstalt&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Südwestpfalz&#39;</span><span class="p">:</span> <span class="mi">5698</span><span class="p">,</span>
+                     <span class="s1">&#39;ZAB consult GmbH&#39;</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband der Entwicklungsgesellschaft Flugplatz Zweibrücken&#39;</span><span class="p">:</span> <span class="mf">1687.29</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Marold Wosnitza&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Kreisfreie Stadt Koblenz&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Sparkasse Koblenz&#39;</span><span class="p">:</span> <span class="mi">9344</span><span class="p">,</span> <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mf">3016.7</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;SPD&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;David Langner&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;kreis&#39;</span><span class="p">:</span> <span class="s1">&#39;Landkreis Mayen-Koblenz&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Fremdenverkehrszweckverband&#39;</span><span class="p">:</span> <span class="mi">1860</span><span class="p">,</span>
+                     <span class="s1">&#39;Hausverwaltung Schon &amp; Müller&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                     <span class="s1">&#39;Innogy Westenergie&#39;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+                     <span class="s1">&#39;Kreissparkasse Mayen&#39;</span><span class="p">:</span> <span class="mi">7580</span><span class="p">,</span>
+                     <span class="s1">&#39;Landkreistag RP&#39;</span><span class="p">:</span> <span class="mi">950</span><span class="p">,</span>
+                     <span class="s1">&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;</span><span class="p">:</span> <span class="mi">165</span><span class="p">,</span>
+                     <span class="s1">&#39;RWE&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkasse Koblenz&#39;</span><span class="p">:</span> <span class="mi">9544</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassen Finanzdienste&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+                     <span class="s1">&#39;Sparkassenverband RP&#39;</span><span class="p">:</span> <span class="mi">5500</span><span class="p">,</span>
+                     <span class="s1">&#39;Unfallkasse RP&#39;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span>
+                     <span class="s1">&#39;Wasserversorgung Zweckverband Main-Eifel&#39;</span><span class="p">:</span> <span class="mi">5658</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Industriepark A61&#39;</span><span class="p">:</span> <span class="mi">225</span><span class="p">,</span>
+                     <span class="s1">&#39;Zweckverband Vulkanpark&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">},</span>
+  <span class="s1">&#39;partei&#39;</span><span class="p">:</span> <span class="s1">&#39;CDU&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="s1">&#39;Alexander Saftig&#39;</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="aufgabe">
+<h3>Aufgabe:<a class="headerlink" href="#aufgabe" title="Permalink to this headline">#</a></h3>
+<p>Berechne die Summe der Nebenkünfte und füge sie ins Dictionary ein</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funktion, die die Summe aller Nebenverdienste berechnet</span>
+<span class="k">def</span> <span class="nf">summe</span><span class="p">(</span><span class="n">nebenverdienste</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">nebenverdienste</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Einfügen der Summe ins Dictionary</span>
+<span class="k">for</span> <span class="n">kreisdata</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;kreis&#39;</span><span class="p">])</span>
+    <span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;summe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summe</span><span class="p">(</span><span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Landkreis Mainz-Bingen
+Kreisfreie Stadt Frankenthal (Pfalz)
+Landkreis Trier-Saarburg
+Kreisfreie Stadt Mainz
+Kreisfreie Stadt Speyer
+Landkreis Kusel
+Kreisfreie Stadt Trier
+Landkreis Bad Dürkheim
+Landkreis Cochem-Zell
+Landkreis Südwestpfalz
+Kreisfreie Stadt Kaiserslautern
+Rhein-Lahn-Kreis
+Landkreis Südliche Weinstraße
+Kreisfreie Stadt Ludwigshafen am Rhein
+Landkreis Bernkastel-Wittlich
+Kreisfreie Stadt Neustadt an der Weinstraße
+Landkreis Germersheim
+Kreisfreie Stadt Worms
+Rhein-Hunsrück-Kreis
+Landkreis Bad Kreuznach
+Kreisfreie Stadt Landau in der Pfalz
+Westerwaldkreis
+Eifelkreis Bitburg-Prüm
+Landkreis Birkenfeld
+Landkreis Alzey-Worms
+Rhein-Pfalz-Kreis
+Donnersbergkreis
+Landkreis Altenkirchen
+Kreisfreie Stadt Pirmasens
+Landkreis Ahrweiler
+Landkreis Kaiserslautern
+Landkreis Neuwied
+Kreisfreie Stadt Zweibrücken
+Kreisfreie Stadt Koblenz
+Landkreis Mayen-Koblenz
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="weitere-recherchefragen">
+<h2>Weitere Recherchefragen<a class="headerlink" href="#weitere-recherchefragen" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Ist der Datensatz vollständig?</p></li>
+<li><p>Wer verdient am meisten? In welchem Landkreis ist der:die Landrat:in im Amt?</p></li>
+<li><p>Welche Firmen sind beteiligt? Wie viel bezahlen diese ingesamt an Landrät:innen?</p></li>
+<li><p>Wie sind die Nebeneinkünfte auf die Parteien verteilt?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vollständigkeit der Daten</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Zusatz:</strong> Laut Wikipedia gibt es 24 Landkreise und 12 kreisfreien Städte. Also insgesamt 36 Landrät:innen. Daher fehlen die Daten zu einem Kreis.
+Auf der Seite von Correctiv gibt es den Hinweis, dass Julia Gieseking, Landrätin in der Vulkaneifel, ihre Nebenverdienste nicth fristgerecht eingereicht hat.</p>
+<p>Erstelle eine List mit den Gesamtnebeneinkünften der Landrät:innen.
+Gib das Minimum, Maximum und den Durchschnitt an Nebeneinkünften an.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+<span class="n">gesamt_nebeneinkünfte</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">kreisdata</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">gesamt_nebeneinkünfte</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;summe&#39;</span><span class="p">])</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">gesamt_nebeneinkünfte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20427.0, 18145.0, 153926.0, 16956.0, 8841.0, 8414.0, 8944, 8944.0, 37974.0, 12144.0, 10973, 22242.0, 11599, 8788, 21848, 5491.0, 36117.0, 9094, 6980, 10594, 13435.0, 17084.0, 53632.0, 12333, 17377, 9362, 7722, 10344, 3060, 27868.0, 9284, 12564, 9285.0, 12361.0, 39307]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Minimum</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum: </span><span class="si">{}</span><span class="s1"> €&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">gesamt_nebeneinkünfte</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maximum: </span><span class="si">{}</span><span class="s1"> €&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">gesamt_nebeneinkünfte</span><span class="p">)))</span>
+
+<span class="n">durchschnitt</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">gesamt_nebeneinkünfte</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">gesamt_nebeneinkünfte</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Durchschnitt: </span><span class="si">{}</span><span class="s1"> €&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">durchschnitt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum: 3060 €
+Maximum: 153926.0 €
+Durchschnitt: 19813.11 €
+</pre></div>
+</div>
+</div>
+</div>
+<p>Welche:r Landrat:in hat die höchsten Nebenverdienste?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code</span>
+<span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">gesamt_nebeneinkünfte</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">kreisdata</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">maximum</span> <span class="o">==</span> <span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;summe&#39;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;kreis&#39;</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Landkreis Trier-Saarburg
+Günther Schartz
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dictionary-sortieren">
+<h3>Dictionary Sortieren<a class="headerlink" href="#dictionary-sortieren" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;summe&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">sorted_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;kreis&#39;: &#39;Landkreis Trier-Saarburg&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Innogy Westenergie&#39;: 1000,
+                     &#39;Kommunaler Rat&#39;: 25.56,
+                     &#39;Landkreistag RP&#39;: 6100,
+                     &#39;RWE&#39;: 129000,
+                     &#39;Sparkasse Trier&#39;: 9544,
+                     &#39;Sparkassen- und Giroverband RP&#39;: 5898.65,
+                     &#39;Zweckverband Industriepark Region Trier&#39;: 2208,
+                     &#39;Zweckverband Sparkasse Trier&#39;: 150},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Günther Schartz&#39;,
+  &#39;summe&#39;: 153926.0},
+ {&#39;kreis&#39;: &#39;Eifelkreis Bitburg-Prüm&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Beirat für Kommunalentwicklung RP&#39;: 190.16,
+                     &#39;Kreissparkasse Bitburg-Prüm&#39;: 7080,
+                     &#39;Kreisvolkshochschule&#39;: 3597,
+                     &#39;Planungsgemeinschaft Region Trier&#39;: 600,
+                     &#39;RWE&#39;: 6155,
+                     &#39;Saarländischer Schwesternverband&#39;: 7735,
+                     &#39;Westenergie&#39;: 1160,
+                     &#39;Zweckverband Berufsbildungszentrum Bitburg-Prüm&#39;: 5181,
+                     &#39;Zweckverband Flugplatz Bitburg&#39;: 5186,
+                     &#39;Zweckverband Naturpark Südeifel&#39;: 5973,
+                     &#39;Zweckverband Schienen-Personen-NahVerker&#39;: 3723,
+                     &#39;Zweckverband Stausee Bitburg&#39;: 20,
+                     &#39;Zweckverband Verkehrsbund Region Trier&#39;: 7032},
+  &#39;partei&#39;: &#39;Freie Wähler&#39;,
+  &#39;person&#39;: &#39;Joachim Streit&#39;,
+  &#39;summe&#39;: 53632.0},
+ {&#39;kreis&#39;: &#39;Landkreis Mayen-Koblenz&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Fremdenverkehrszweckverband&#39;: 1860,
+                     &#39;Hausverwaltung Schon &amp; Müller&#39;: 100,
+                     &#39;Innogy Westenergie&#39;: 2000,
+                     &#39;Kreissparkasse Mayen&#39;: 7580,
+                     &#39;Landkreistag RP&#39;: 950,
+                     &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;: 165,
+                     &#39;RWE&#39;: 5200,
+                     &#39;Sparkasse Koblenz&#39;: 9544,
+                     &#39;Sparkassen Finanzdienste&#39;: 300,
+                     &#39;Sparkassenverband RP&#39;: 5500,
+                     &#39;Unfallkasse RP&#39;: 75,
+                     &#39;Wasserversorgung Zweckverband Main-Eifel&#39;: 5658,
+                     &#39;Zweckverband Industriepark A61&#39;: 225,
+                     &#39;Zweckverband Vulkanpark&#39;: 150},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Alexander Saftig&#39;,
+  &#39;summe&#39;: 39307},
+ {&#39;kreis&#39;: &#39;Landkreis Cochem-Zell&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: 6038,
+                     &#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;: 600,
+                     &#39;Agentur für Arbeit&#39;: 26,
+                     &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;: 8073.24,
+                     &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;: 2195,
+                     &#39;RWE&#39;: 5200,
+                     &#39;Rheinische Zusatzversorgungskasse&#39;: 194,
+                     &#39;Sparkassenverband RP&#39;: 5575,
+                     &#39;Westenergie&#39;: 2000,
+                     &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;: 8073.24},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Manfred Schnur&#39;,
+  &#39;summe&#39;: 37974.0},
+ {&#39;kreis&#39;: &#39;Landkreis Germersheim&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Landkreistag RP&#39;: 50,
+                     &#39;Park &amp; Bellheimer AG&#39;: 5950,
+                     &#39;Pfälzische Pensionsanstalt&#39;: 100,
+                     &#39;Sparkasse Germersheim-Kandel&#39;: 6680,
+                     &#39;Sparkassen- und Giroverband RP&#39;: 14073.41,
+                     &#39;Verkehrsverbund Rhein-Neckar&#39;: 1800,
+                     &#39;Zweckverband Schienenpersonennahverkehr Süd&#39;: 7464},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Fritz Brechtel&#39;,
+  &#39;summe&#39;: 36117.0},
+ {&#39;kreis&#39;: &#39;Landkreis Ahrweiler&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Kreissparkasse Ahrweiler&#39;: 7080,
+                     &#39;RWE&#39;: 5200,
+                     &#39;Rheinland-Westenenergie&#39;: 2000,
+                     &#39;Sparkassenverband RP&#39;: 5269,
+                     &#39;Wasserversorgung Zweckverband Main-Eifel&#39;: 873.13,
+                     &#39;Zweckverband SPNV&#39;: 7446},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Jürgen Pfähler&#39;,
+  &#39;summe&#39;: 27868.0},
+ {&#39;kreis&#39;: &#39;Rhein-Lahn-Kreis&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Agentur für Arbeit&#39;: 26,
+                     &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;: 3924.48,
+                     &#39;Baugenossenschaft Rhein-Lahn eG&#39;: 200,
+                     &#39;Kommunaler Rat&#39;: 51.12,
+                     &#39;Landesbank Baden-Württemberg&#39;: 1283.33,
+                     &#39;Nassauische Sparkasse&#39;: 4832.88,
+                     &#39;Süwag Energie AG&#39;: 8000,
+                     &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;: 3924.48},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Frank Puchtler&#39;,
+  &#39;summe&#39;: 22242.0},
+ {&#39;kreis&#39;: &#39;Landkreis Bernkastel-Wittlich&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Agentur für Arbeit&#39;: 26,
+                     &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;: 50,
+                     &#39;RWE&#39;: 5200,
+                     &#39;Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: 400,
+                     &#39;Zweckverband Abfallwirtschaft Region Trier&#39;: 7848,
+                     &#39;Zweckverband Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: 8324},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Gregor Eibes&#39;,
+  &#39;summe&#39;: 21848},
+ {&#39;kreis&#39;: &#39;Landkreis Mainz-Bingen&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;: 1200,
+                     &#39;Rheinhessenwein e.V.&#39;: 25,
+                     &#39;Sparkasse Mainz&#39;: 8944,
+                     &#39;Zweckverband Sparkasse Mainz&#39;: 200,
+                     &#39;Zweckverband Sparkasse Rhein-Nahe&#39;: 9444,
+                     &#39;Zweckverband Verkehrsbund Rhein Nahe&#39;: 613.55},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Dorothea Schäfer&#39;,
+  &#39;summe&#39;: 20427.0},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Frankenthal (Pfalz)&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Gewässerzweckverband Isenach-Eckbach&#39;: 6600,
+                     &#39;Pfälzische Pensionsanstalt&#39;: 200,
+                     &#39;Sparkasse Rhein-Haardt&#39;: 4074.96,
+                     &#39;Sparkassenverband RP&#39;: 5575,
+                     &#39;Verband Region Rhein-Neckar&#39;: 1560,
+                     &#39;Zweckverband Sparkasse Rhein-Haardt&#39;: 135},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Martin Hebich&#39;,
+  &#39;summe&#39;: 18145.0},
+ {&#39;kreis&#39;: &#39;Landkreis Alzey-Worms&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Innogy Westenergie&#39;: 1000,
+                     &#39;Landkreistag RP&#39;: 150,
+                     &#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;: 1200,
+                     &#39;Rheinhessenwein e.V.&#39;: 50,
+                     &#39;Sparkasse Worms-Alzey-Ried&#39;: 9094,
+                     &#39;Sparkassenverband RP&#39;: 5883},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Heiko Sippel&#39;,
+  &#39;summe&#39;: 17377},
+ {&#39;kreis&#39;: &#39;Westerwaldkreis&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Landkreistag RP&#39;: 50,
+                     &#39;Nassauische Sparkasse&#39;: 6978.95,
+                     &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;: 220,
+                     &#39;Sparkasse Westerwald-Sieg&#39;: 9044,
+                     &#39;Sparkassenverband RP&#39;: 308,
+                     &#39;Sparkassenzweckverband Nassau&#39;: 383.45,
+                     &#39;Sparkassenzweckverband Westerwald-Sieg&#39;: 100},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Achim Schwickert&#39;,
+  &#39;summe&#39;: 17084.0},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Mainz&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Gas-Union Frankfurth/Mainz&#39;: 7812.5,
+                     &#39;Sparkasse Mainz&#39;: 8844,
+                     &#39;Zweckverband der Sparkasse Mainz&#39;: 300},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Michael Ebling&#39;,
+  &#39;summe&#39;: 16956.0},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Landau in der Pfalz&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Kommunaler Rat&#39;: 51.12,
+                     &#39;Sparkasse Südliche Weinstraße&#39;: 6698,
+                     &#39;Sparkassenverband RP&#39;: 6236,
+                     &#39;Zweckverband Sparkasse Südliche Weinstraße&#39;: 450},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Thomas Hirsch&#39;,
+  &#39;summe&#39;: 13435.0},
+ {&#39;kreis&#39;: &#39;Landkreis Neuwied&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Landesmusikverband RLP&#39;: 480,
+                     &#39;Landkreistag RP&#39;: 75,
+                     &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;: 165,
+                     &#39;Sparkasse Neuwied&#39;: 8644,
+                     &#39;Sparkasse Neuwied (Verbandsversammlung)&#39;: 200,
+                     &#39;Süwag Energie AG&#39;: 3000},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Achim Hallerbach&#39;,
+  &#39;summe&#39;: 12564},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Koblenz&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Sparkasse Koblenz&#39;: 9344, &#39;Sparkassenverband RP&#39;: 3016.7},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;David Langner&#39;,
+  &#39;summe&#39;: 12361.0},
+ {&#39;kreis&#39;: &#39;Landkreis Birkenfeld&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Kreissparkasse Birkenfeld&#39;: 6780,
+                     &#39;Landkreistag RP&#39;: 100,
+                     &#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;: 100,
+                     &#39;RWE&#39;: 5200,
+                     &#39;Sparkassenverband RP&#39;: 153},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Matthias Schneider&#39;,
+  &#39;summe&#39;: 12333},
+ {&#39;kreis&#39;: &#39;Landkreis Südwestpfalz&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Bezirkstag Pfalz&#39;: 2100,
+                     &#39;Institut für Medien und Pädagogik e. V.&#39;: 17.9,
+                     &#39;Kommunaler Rat&#39;: 51.12,
+                     &#39;Landkreistag RP&#39;: 50,
+                     &#39;Sparkasse Südwestpfalz&#39;: 8544,
+                     &#39;Zweckverband Entwicklungsgebiet Flugplatz ZW&#39;: 1380.51},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Susanne Ganster&#39;,
+  &#39;summe&#39;: 12144.0},
+ {&#39;kreis&#39;: &#39;Landkreis Südliche Weinstraße&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Agentur für Arbeit&#39;: 52,
+                     &#39;Bezirksverband Pfalz&#39;: 150,
+                     &#39;Landeszentrale für Medien und Kommunikation&#39;: 893,
+                     &#39;Landkreistag RP&#39;: 50,
+                     &#39;Pfalzklinikum für Psychiatrie u. Neurologie (AdöR)&#39;: 200,
+                     &#39;Sparkasse Südliche Weinstraße&#39;: 9594,
+                     &#39;Verband Region Rhein-Neckar&#39;: 660},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Dietmar Seefeldt&#39;,
+  &#39;summe&#39;: 11599},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Kaiserslautern&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Sparkassen- und Giroverband RP&#39;: 5269,
+                     &#39;Stadtsparkasse&#39;: 5704},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Klaus Weichel&#39;,
+  &#39;summe&#39;: 10973},
+ {&#39;kreis&#39;: &#39;Landkreis Bad Kreuznach&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Landkreistag RP&#39;: 50,
+                     &#39;Sparkasse (div. Ebenen)&#39;: 9544,
+                     &#39;Westenergie&#39;: 1000},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Bettina Dickes&#39;,
+  &#39;summe&#39;: 10594},
+ {&#39;kreis&#39;: &#39;Landkreis Altenkirchen&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;RWE&#39;: 1000,
+                     &#39;Sparkasse Westerwald-Sieg&#39;: 9244,
+                     &#39;Zweckverband Sparkasse Westerwald-Sieg&#39;: 100},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Peter Enders&#39;,
+  &#39;summe&#39;: 10344},
+ {&#39;kreis&#39;: &#39;Rhein-Pfalz-Kreis&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Bezirksverband Pfalz&#39;: 100,
+                     &#39;Landkreistag RP&#39;: 50,
+                     &#39;Sparkasse Vorderpfalz&#39;: 8664,
+                     &#39;Sparkassenverband RP&#39;: 308,
+                     &#39;Verband Region Rhein-Neckar&#39;: 240},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Clemens Kärner&#39;,
+  &#39;summe&#39;: 9362},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Zweibrücken&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Pfälzische Pensionsanstalt&#39;: 100,
+                     &#39;Sparkasse Südwestpfalz&#39;: 5698,
+                     &#39;ZAB consult GmbH&#39;: 1800,
+                     &#39;Zweckverband der Entwicklungsgesellschaft Flugplatz Zweibrücken&#39;: 1687.29},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Marold Wosnitza&#39;,
+  &#39;summe&#39;: 9285.0},
+ {&#39;kreis&#39;: &#39;Landkreis Kaiserslautern&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Kreissparkasse Kaiserslautern&#39;: 9284},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Ralf Leßmeister&#39;,
+  &#39;summe&#39;: 9284},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Worms&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Sparkasse Worms-Alzey-Ried&#39;: 8944,
+                     &#39;Zweckverband Sparkasse Worms-Alzey-Ried&#39;: 150},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Adolf Kessel&#39;,
+  &#39;summe&#39;: 9094},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Trier&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Sparkasse Trier&#39;: 8944},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Wolfram Leibe&#39;,
+  &#39;summe&#39;: 8944},
+ {&#39;kreis&#39;: &#39;Landkreis Bad Dürkheim&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Landkreistag RP&#39;: 100,
+                     &#39;Pfälzische Pensionsanstalt&#39;: 300,
+                     &#39;Sparkasse Rhein-Haardt&#39;: 6950.04,
+                     &#39;Verband Region Rhein-Neckar&#39;: 540,
+                     &#39;Zweckverband Sparkasse Rhein-Haardt&#39;: 270,
+                     &#39;Zweckverbandes Pollichia-Museum&#39;: 783.96},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Hans-Ulrich Ihlenfeld&#39;,
+  &#39;summe&#39;: 8944.0},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Speyer&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Kommunaler Rat&#39;: 76.68,
+                     &#39;Kreditausschuss&#39;: 400,
+                     &#39;Sparkasse Vorderpfalz&#39;: 400,
+                     &#39;Sparkassenverband RP&#39;: 7644,
+                     &#39;Zweckverband Sparkasse Vorderpfalz&#39;: 320},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Stefanie Seiler&#39;,
+  &#39;summe&#39;: 8841.0},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Ludwigshafen am Rhein&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Sparkasse Vorderpfalz&#39;: 8644,
+                     &#39;Verband Region Rhein-Neckar&#39;: 144},
+  &#39;partei&#39;: &#39;SPD&#39;,
+  &#39;person&#39;: &#39;Jutta Steinruck&#39;,
+  &#39;summe&#39;: 8788},
+ {&#39;kreis&#39;: &#39;Landkreis Kusel&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Fremdenverkehrszweckverband&#39;: 1533.84,
+                     &#39;Kreissparkasse Kusel&#39;: 6880},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Otto Rubly&#39;,
+  &#39;summe&#39;: 8414.0},
+ {&#39;kreis&#39;: &#39;Donnersbergkreis&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Landkreistag RP&#39;: 100,
+                     &#39;Planungsgemeinschaft Westpfalz&#39;: 780,
+                     &#39;Sparkasse Donnersberg&#39;: 6842},
+  &#39;partei&#39;: &#39;parteilos&#39;,
+  &#39;person&#39;: &#39;Rainer Guth&#39;,
+  &#39;summe&#39;: 7722},
+ {&#39;kreis&#39;: &#39;Rhein-Hunsrück-Kreis&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Kreissparkasse Rhein-Hunsrück&#39;: 6980},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Marlon Brähr&#39;,
+  &#39;summe&#39;: 6980},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Neustadt an der Weinstraße&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Sparkasse Rhein-Haardt&#39;: 4074.96,
+                     &#39;Sparkassenverband RP&#39;: 231,
+                     &#39;Verband Region Rhein-Neckar&#39;: 800,
+                     &#39;Zusatzversorgungskasse der bayerischen Gemeinden&#39;: 250,
+                     &#39;Zweckverband Sparkasse Rhein-Haardt&#39;: 135},
+  &#39;partei&#39;: &#39;Freie Wähler&#39;,
+  &#39;person&#39;: &#39;Marc Weigel&#39;,
+  &#39;summe&#39;: 5491.0},
+ {&#39;kreis&#39;: &#39;Kreisfreie Stadt Pirmasens&#39;,
+  &#39;nebeneinkünfte&#39;: {&#39;Zweckverband Abfallverwertung Südwestpfalz&#39;: 3060},
+  &#39;partei&#39;: &#39;CDU&#39;,
+  &#39;person&#39;: &#39;Markus Zwick&#39;,
+  &#39;summe&#39;: 3060}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parteien">
+<h3>Parteien<a class="headerlink" href="#parteien" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Schreibe eine Liste mit allen Parteien der Landrät:innen</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parteien</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">kreisdata</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">parteien</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kreisdata</span><span class="p">[</span><span class="s1">&#39;partei&#39;</span><span class="p">])</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">parteien</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;SPD&#39;, &#39;SPD&#39;, &#39;CDU&#39;, &#39;SPD&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;SPD&#39;, &#39;SPD&#39;, &#39;CDU&#39;, &#39;SPD&#39;, &#39;CDU&#39;, &#39;Freie Wähler&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;Freie Wähler&#39;, &#39;CDU&#39;, &#39;SPD&#39;, &#39;CDU&#39;, &#39;parteilos&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;CDU&#39;, &#39;SPD&#39;, &#39;SPD&#39;, &#39;CDU&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Erstelle ein Dictionary mit der Partei und der Gesamtsumme der einzelnen Landrät:innen</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;CDU&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">129000</span><span class="p">,</span> <span class="mi">8500</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mi">43000</span><span class="p">],</span>
+ <span class="s1">&#39;SPD&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4700</span><span class="p">,</span> <span class="mf">3721.0</span><span class="p">,</span> <span class="o">...</span> <span class="p">,</span> <span class="mi">3920</span><span class="p">],</span>
+ <span class="o">...</span> <span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">partei_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CDU&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;SPD&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;Freie Wähler&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;parteilos&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+<span class="k">for</span> <span class="n">partei</span> <span class="ow">in</span> <span class="n">partei_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">datapoint</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">datapoint</span><span class="p">[</span><span class="s1">&#39;partei&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">partei</span><span class="p">:</span>
+            <span class="n">partei_data</span><span class="p">[</span><span class="n">partei</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">datapoint</span><span class="p">[</span><span class="s1">&#39;summe&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">partei_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CDU&#39;: [20427.0, 18145.0, 153926.0, 8414.0, 8944.0, 37974.0, 12144.0, 11599, 21848, 36117.0, 9094, 6980, 10594, 13435.0, 17084.0, 12333, 9362, 10344, 3060, 27868.0, 9284, 12564, 39307], &#39;SPD&#39;: [16956.0, 8841.0, 8944, 10973, 22242.0, 8788, 17377, 9285.0, 12361.0], &#39;Freie Wähler&#39;: [5491.0, 53632.0], &#39;parteilos&#39;: [7722]}
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Berechne den durchschnittlichen Betrag an Nebeneinkünften pro Partei.
+Fülle ein neues Dictionary mit der Partei als Key und dem Durchschnittsbetrag als Value.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_partei_data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">partei</span><span class="p">,</span> <span class="n">betrag</span> <span class="ow">in</span> <span class="n">partei_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">avg_partei_data</span><span class="p">[</span><span class="n">partei</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span> <span class="nb">sum</span><span class="p">(</span><span class="n">betrag</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">betrag</span><span class="p">)</span> <span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">avg_partei_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CDU&#39;: 22211, &#39;SPD&#39;: 12863, &#39;Freie Wähler&#39;: 29562, &#39;parteilos&#39;: 7722}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="firmen">
+<h3>Firmen<a class="headerlink" href="#firmen" title="Permalink to this headline">#</a></h3>
+<p>Welche Firmen zahlen Beträge an Landrät:innen aus?</p>
+<ol class="simple">
+<li><p>Erstelle eine Liste mit allen Firmen</p></li>
+<li><p>Filtere doppelt vorkommende Firmen aus</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firmen</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">datapoint</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">firma</span> <span class="ow">in</span> <span class="n">datapoint</span><span class="p">[</span><span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">firmen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">firma</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">firmen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;, &#39;Rheinhessenwein e.V.&#39;, &#39;Sparkasse Mainz&#39;, &#39;Zweckverband Sparkasse Mainz&#39;, &#39;Zweckverband Sparkasse Rhein-Nahe&#39;, &#39;Zweckverband Verkehrsbund Rhein Nahe&#39;, &#39;Gewässerzweckverband Isenach-Eckbach&#39;, &#39;Pfälzische Pensionsanstalt&#39;, &#39;Sparkasse Rhein-Haardt&#39;, &#39;Sparkassenverband RP&#39;, &#39;Verband Region Rhein-Neckar&#39;, &#39;Zweckverband Sparkasse Rhein-Haardt&#39;, &#39;Innogy Westenergie&#39;, &#39;Kommunaler Rat&#39;, &#39;Landkreistag RP&#39;, &#39;RWE&#39;, &#39;Sparkasse Trier&#39;, &#39;Sparkassen- und Giroverband RP&#39;, &#39;Zweckverband Industriepark Region Trier&#39;, &#39;Zweckverband Sparkasse Trier&#39;, &#39;Gas-Union Frankfurth/Mainz&#39;, &#39;Sparkasse Mainz&#39;, &#39;Zweckverband der Sparkasse Mainz&#39;, &#39;Kommunaler Rat&#39;, &#39;Kreditausschuss&#39;, &#39;Sparkasse Vorderpfalz&#39;, &#39;Sparkassenverband RP&#39;, &#39;Zweckverband Sparkasse Vorderpfalz&#39;, &#39;Fremdenverkehrszweckverband&#39;, &#39;Kreissparkasse Kusel&#39;, &#39;Sparkasse Trier&#39;, &#39;Landkreistag RP&#39;, &#39;Pfälzische Pensionsanstalt&#39;, &#39;Sparkasse Rhein-Haardt&#39;, &#39;Verband Region Rhein-Neckar&#39;, &#39;Zweckverband Sparkasse Rhein-Haardt&#39;, &#39;Zweckverbandes Pollichia-Museum&#39;, &#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, &#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;, &#39;Agentur für Arbeit&#39;, &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;, &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;, &#39;RWE&#39;, &#39;Rheinische Zusatzversorgungskasse&#39;, &#39;Sparkassenverband RP&#39;, &#39;Westenergie&#39;, &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;, &#39;Bezirkstag Pfalz&#39;, &#39;Institut für Medien und Pädagogik e. V.&#39;, &#39;Kommunaler Rat&#39;, &#39;Landkreistag RP&#39;, &#39;Sparkasse Südwestpfalz&#39;, &#39;Zweckverband Entwicklungsgebiet Flugplatz ZW&#39;, &#39;Sparkassen- und Giroverband RP&#39;, &#39;Stadtsparkasse&#39;, &#39;Agentur für Arbeit&#39;, &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;, &#39;Baugenossenschaft Rhein-Lahn eG&#39;, &#39;Kommunaler Rat&#39;, &#39;Landesbank Baden-Württemberg&#39;, &#39;Nassauische Sparkasse&#39;, &#39;Süwag Energie AG&#39;, &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;, &#39;Agentur für Arbeit&#39;, &#39;Bezirksverband Pfalz&#39;, &#39;Landeszentrale für Medien und Kommunikation&#39;, &#39;Landkreistag RP&#39;, &#39;Pfalzklinikum für Psychiatrie u. Neurologie (AdöR)&#39;, &#39;Sparkasse Südliche Weinstraße&#39;, &#39;Verband Region Rhein-Neckar&#39;, &#39;Sparkasse Vorderpfalz&#39;, &#39;Verband Region Rhein-Neckar&#39;, &#39;Agentur für Arbeit&#39;, &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;, &#39;RWE&#39;, &#39;Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, &#39;Zweckverband Abfallwirtschaft Region Trier&#39;, &#39;Zweckverband Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, &#39;Sparkasse Rhein-Haardt&#39;, &#39;Sparkassenverband RP&#39;, &#39;Verband Region Rhein-Neckar&#39;, &#39;Zusatzversorgungskasse der bayerischen Gemeinden&#39;, &#39;Zweckverband Sparkasse Rhein-Haardt&#39;, &#39;Landkreistag RP&#39;, &#39;Park &amp; Bellheimer AG&#39;, &#39;Pfälzische Pensionsanstalt&#39;, &#39;Sparkasse Germersheim-Kandel&#39;, &#39;Sparkassen- und Giroverband RP&#39;, &#39;Verkehrsverbund Rhein-Neckar&#39;, &#39;Zweckverband Schienenpersonennahverkehr Süd&#39;, &#39;Sparkasse Worms-Alzey-Ried&#39;, &#39;Zweckverband Sparkasse Worms-Alzey-Ried&#39;, &#39;Kreissparkasse Rhein-Hunsrück&#39;, &#39;Landkreistag RP&#39;, &#39;Sparkasse (div. Ebenen)&#39;, &#39;Westenergie&#39;, &#39;Kommunaler Rat&#39;, &#39;Sparkasse Südliche Weinstraße&#39;, &#39;Sparkassenverband RP&#39;, &#39;Zweckverband Sparkasse Südliche Weinstraße&#39;, &#39;Landkreistag RP&#39;, &#39;Nassauische Sparkasse&#39;, &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;, &#39;Sparkasse Westerwald-Sieg&#39;, &#39;Sparkassenverband RP&#39;, &#39;Sparkassenzweckverband Nassau&#39;, &#39;Sparkassenzweckverband Westerwald-Sieg&#39;, &#39;Beirat für Kommunalentwicklung RP&#39;, &#39;Kreissparkasse Bitburg-Prüm&#39;, &#39;Kreisvolkshochschule&#39;, &#39;Planungsgemeinschaft Region Trier&#39;, &#39;RWE&#39;, &#39;Saarländischer Schwesternverband&#39;, &#39;Westenergie&#39;, &#39;Zweckverband Berufsbildungszentrum Bitburg-Prüm&#39;, &#39;Zweckverband Flugplatz Bitburg&#39;, &#39;Zweckverband Naturpark Südeifel&#39;, &#39;Zweckverband Schienen-Personen-NahVerker&#39;, &#39;Zweckverband Stausee Bitburg&#39;, &#39;Zweckverband Verkehrsbund Region Trier&#39;, &#39;Kreissparkasse Birkenfeld&#39;, &#39;Landkreistag RP&#39;, &#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;, &#39;RWE&#39;, &#39;Sparkassenverband RP&#39;, &#39;Innogy Westenergie&#39;, &#39;Landkreistag RP&#39;, &#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;, &#39;Rheinhessenwein e.V.&#39;, &#39;Sparkasse Worms-Alzey-Ried&#39;, &#39;Sparkassenverband RP&#39;, &#39;Bezirksverband Pfalz&#39;, &#39;Landkreistag RP&#39;, &#39;Sparkasse Vorderpfalz&#39;, &#39;Sparkassenverband RP&#39;, &#39;Verband Region Rhein-Neckar&#39;, &#39;Landkreistag RP&#39;, &#39;Planungsgemeinschaft Westpfalz&#39;, &#39;Sparkasse Donnersberg&#39;, &#39;RWE&#39;, &#39;Sparkasse Westerwald-Sieg&#39;, &#39;Zweckverband Sparkasse Westerwald-Sieg&#39;, &#39;Zweckverband Abfallverwertung Südwestpfalz&#39;, &#39;Kreissparkasse Ahrweiler&#39;, &#39;RWE&#39;, &#39;Rheinland-Westenenergie&#39;, &#39;Sparkassenverband RP&#39;, &#39;Wasserversorgung Zweckverband Main-Eifel&#39;, &#39;Zweckverband SPNV&#39;, &#39;Kreissparkasse Kaiserslautern&#39;, &#39;Landesmusikverband RLP&#39;, &#39;Landkreistag RP&#39;, &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;, &#39;Sparkasse Neuwied&#39;, &#39;Sparkasse Neuwied (Verbandsversammlung)&#39;, &#39;Süwag Energie AG&#39;, &#39;Pfälzische Pensionsanstalt&#39;, &#39;Sparkasse Südwestpfalz&#39;, &#39;ZAB consult GmbH&#39;, &#39;Zweckverband der Entwicklungsgesellschaft Flugplatz Zweibrücken&#39;, &#39;Sparkasse Koblenz&#39;, &#39;Sparkassenverband RP&#39;, &#39;Fremdenverkehrszweckverband&#39;, &#39;Hausverwaltung Schon &amp; Müller&#39;, &#39;Innogy Westenergie&#39;, &#39;Kreissparkasse Mayen&#39;, &#39;Landkreistag RP&#39;, &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;, &#39;RWE&#39;, &#39;Sparkasse Koblenz&#39;, &#39;Sparkassen Finanzdienste&#39;, &#39;Sparkassenverband RP&#39;, &#39;Unfallkasse RP&#39;, &#39;Wasserversorgung Zweckverband Main-Eifel&#39;, &#39;Zweckverband Industriepark A61&#39;, &#39;Zweckverband Vulkanpark&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#2. Entferne Duplikate aus der Firmenliste</span>
+<span class="n">unique_firmen</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">firma</span> <span class="ow">in</span> <span class="n">firmen</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">firma</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_firmen</span><span class="p">:</span>
+        <span class="n">unique_firmen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">firma</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_firmen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;, &#39;Rheinhessenwein e.V.&#39;, &#39;Sparkasse Mainz&#39;, &#39;Zweckverband Sparkasse Mainz&#39;, &#39;Zweckverband Sparkasse Rhein-Nahe&#39;, &#39;Zweckverband Verkehrsbund Rhein Nahe&#39;, &#39;Gewässerzweckverband Isenach-Eckbach&#39;, &#39;Pfälzische Pensionsanstalt&#39;, &#39;Sparkasse Rhein-Haardt&#39;, &#39;Sparkassenverband RP&#39;, &#39;Verband Region Rhein-Neckar&#39;, &#39;Zweckverband Sparkasse Rhein-Haardt&#39;, &#39;Innogy Westenergie&#39;, &#39;Kommunaler Rat&#39;, &#39;Landkreistag RP&#39;, &#39;RWE&#39;, &#39;Sparkasse Trier&#39;, &#39;Sparkassen- und Giroverband RP&#39;, &#39;Zweckverband Industriepark Region Trier&#39;, &#39;Zweckverband Sparkasse Trier&#39;, &#39;Gas-Union Frankfurth/Mainz&#39;, &#39;Zweckverband der Sparkasse Mainz&#39;, &#39;Kreditausschuss&#39;, &#39;Sparkasse Vorderpfalz&#39;, &#39;Zweckverband Sparkasse Vorderpfalz&#39;, &#39;Fremdenverkehrszweckverband&#39;, &#39;Kreissparkasse Kusel&#39;, &#39;Zweckverbandes Pollichia-Museum&#39;, &#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, &#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;, &#39;Agentur für Arbeit&#39;, &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;, &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;, &#39;Rheinische Zusatzversorgungskasse&#39;, &#39;Westenergie&#39;, &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;, &#39;Bezirkstag Pfalz&#39;, &#39;Institut für Medien und Pädagogik e. V.&#39;, &#39;Sparkasse Südwestpfalz&#39;, &#39;Zweckverband Entwicklungsgebiet Flugplatz ZW&#39;, &#39;Stadtsparkasse&#39;, &#39;Baugenossenschaft Rhein-Lahn eG&#39;, &#39;Landesbank Baden-Württemberg&#39;, &#39;Nassauische Sparkasse&#39;, &#39;Süwag Energie AG&#39;, &#39;Bezirksverband Pfalz&#39;, &#39;Landeszentrale für Medien und Kommunikation&#39;, &#39;Pfalzklinikum für Psychiatrie u. Neurologie (AdöR)&#39;, &#39;Sparkasse Südliche Weinstraße&#39;, &#39;Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, &#39;Zweckverband Abfallwirtschaft Region Trier&#39;, &#39;Zweckverband Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, &#39;Zusatzversorgungskasse der bayerischen Gemeinden&#39;, &#39;Park &amp; Bellheimer AG&#39;, &#39;Sparkasse Germersheim-Kandel&#39;, &#39;Verkehrsverbund Rhein-Neckar&#39;, &#39;Zweckverband Schienenpersonennahverkehr Süd&#39;, &#39;Sparkasse Worms-Alzey-Ried&#39;, &#39;Zweckverband Sparkasse Worms-Alzey-Ried&#39;, &#39;Kreissparkasse Rhein-Hunsrück&#39;, &#39;Sparkasse (div. Ebenen)&#39;, &#39;Zweckverband Sparkasse Südliche Weinstraße&#39;, &#39;Sparkasse Westerwald-Sieg&#39;, &#39;Sparkassenzweckverband Nassau&#39;, &#39;Sparkassenzweckverband Westerwald-Sieg&#39;, &#39;Beirat für Kommunalentwicklung RP&#39;, &#39;Kreissparkasse Bitburg-Prüm&#39;, &#39;Kreisvolkshochschule&#39;, &#39;Planungsgemeinschaft Region Trier&#39;, &#39;Saarländischer Schwesternverband&#39;, &#39;Zweckverband Berufsbildungszentrum Bitburg-Prüm&#39;, &#39;Zweckverband Flugplatz Bitburg&#39;, &#39;Zweckverband Naturpark Südeifel&#39;, &#39;Zweckverband Schienen-Personen-NahVerker&#39;, &#39;Zweckverband Stausee Bitburg&#39;, &#39;Zweckverband Verkehrsbund Region Trier&#39;, &#39;Kreissparkasse Birkenfeld&#39;, &#39;Planungsgemeinschaft Westpfalz&#39;, &#39;Sparkasse Donnersberg&#39;, &#39;Zweckverband Sparkasse Westerwald-Sieg&#39;, &#39;Zweckverband Abfallverwertung Südwestpfalz&#39;, &#39;Kreissparkasse Ahrweiler&#39;, &#39;Rheinland-Westenenergie&#39;, &#39;Wasserversorgung Zweckverband Main-Eifel&#39;, &#39;Zweckverband SPNV&#39;, &#39;Kreissparkasse Kaiserslautern&#39;, &#39;Landesmusikverband RLP&#39;, &#39;Sparkasse Neuwied&#39;, &#39;Sparkasse Neuwied (Verbandsversammlung)&#39;, &#39;ZAB consult GmbH&#39;, &#39;Zweckverband der Entwicklungsgesellschaft Flugplatz Zweibrücken&#39;, &#39;Sparkasse Koblenz&#39;, &#39;Hausverwaltung Schon &amp; Müller&#39;, &#39;Kreissparkasse Mayen&#39;, &#39;Sparkassen Finanzdienste&#39;, &#39;Unfallkasse RP&#39;, &#39;Zweckverband Industriepark A61&#39;, &#39;Zweckverband Vulkanpark&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vergleich wie viele Firmen öfter vorkommen</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">firmen</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique_firmen</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>176
+98
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Welche Firma zahlt in Summe am meisten an die Landrätinnen?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firmen_data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">firma</span> <span class="ow">in</span> <span class="n">unique_firmen</span><span class="p">:</span>
+    <span class="n">gehälter</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">datapoint</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">firma2</span><span class="p">,</span> <span class="n">gehalt</span> <span class="ow">in</span> <span class="n">datapoint</span><span class="p">[</span><span class="s1">&#39;nebeneinkünfte&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">firma</span> <span class="o">==</span> <span class="n">firma2</span><span class="p">:</span>
+                <span class="n">gehälter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gehalt</span><span class="p">)</span>              
+    <span class="n">firmen_data</span><span class="p">[</span><span class="n">firma</span><span class="p">]</span> <span class="o">=</span> <span class="n">gehälter</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">firmen_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;: [1200, 100, 1200], &#39;Rheinhessenwein e.V.&#39;: [25, 50], &#39;Sparkasse Mainz&#39;: [8944, 8844], &#39;Zweckverband Sparkasse Mainz&#39;: [200], &#39;Zweckverband Sparkasse Rhein-Nahe&#39;: [9444], &#39;Zweckverband Verkehrsbund Rhein Nahe&#39;: [613.55], &#39;Gewässerzweckverband Isenach-Eckbach&#39;: [6600], &#39;Pfälzische Pensionsanstalt&#39;: [200, 300, 100, 100], &#39;Sparkasse Rhein-Haardt&#39;: [4074.96, 6950.04, 4074.96], &#39;Sparkassenverband RP&#39;: [5575, 7644, 5575, 231, 6236, 308, 153, 5883, 308, 5269, 3016.7, 5500], &#39;Verband Region Rhein-Neckar&#39;: [1560, 540, 660, 144, 800, 240], &#39;Zweckverband Sparkasse Rhein-Haardt&#39;: [135, 270, 135], &#39;Innogy Westenergie&#39;: [1000, 1000, 2000], &#39;Kommunaler Rat&#39;: [25.56, 76.68, 51.12, 51.12, 51.12], &#39;Landkreistag RP&#39;: [6100, 100, 50, 50, 50, 50, 50, 100, 150, 50, 100, 75, 950], &#39;RWE&#39;: [129000, 5200, 5200, 6155, 5200, 1000, 5200, 5200], &#39;Sparkasse Trier&#39;: [9544, 8944], &#39;Sparkassen- und Giroverband RP&#39;: [5898.65, 5269, 14073.41], &#39;Zweckverband Industriepark Region Trier&#39;: [2208], &#39;Zweckverband Sparkasse Trier&#39;: [150], &#39;Gas-Union Frankfurth/Mainz&#39;: [7812.5], &#39;Zweckverband der Sparkasse Mainz&#39;: [300], &#39;Kreditausschuss&#39;: [400], &#39;Sparkasse Vorderpfalz&#39;: [400, 8644, 8664], &#39;Zweckverband Sparkasse Vorderpfalz&#39;: [320], &#39;Fremdenverkehrszweckverband&#39;: [1533.84, 1860], &#39;Kreissparkasse Kusel&#39;: [6880], &#39;Zweckverbandes Pollichia-Museum&#39;: [783.96], &#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: [6038], &#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;: [600], &#39;Agentur für Arbeit&#39;: [26, 26, 52, 26], &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;: [8073.24, 3924.48, 50], &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;: [2195, 220, 165, 165], &#39;Rheinische Zusatzversorgungskasse&#39;: [194], &#39;Westenergie&#39;: [2000, 1000, 1160], &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;: [8073.24, 3924.48], &#39;Bezirkstag Pfalz&#39;: [2100], &#39;Institut für Medien und Pädagogik e. V.&#39;: [17.9], &#39;Sparkasse Südwestpfalz&#39;: [8544, 5698], &#39;Zweckverband Entwicklungsgebiet Flugplatz ZW&#39;: [1380.51], &#39;Stadtsparkasse&#39;: [5704], &#39;Baugenossenschaft Rhein-Lahn eG&#39;: [200], &#39;Landesbank Baden-Württemberg&#39;: [1283.33], &#39;Nassauische Sparkasse&#39;: [4832.88, 6978.95], &#39;Süwag Energie AG&#39;: [8000, 3000], &#39;Bezirksverband Pfalz&#39;: [150, 100], &#39;Landeszentrale für Medien und Kommunikation&#39;: [893], &#39;Pfalzklinikum für Psychiatrie u. Neurologie (AdöR)&#39;: [200], &#39;Sparkasse Südliche Weinstraße&#39;: [9594, 6698], &#39;Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: [400], &#39;Zweckverband Abfallwirtschaft Region Trier&#39;: [7848], &#39;Zweckverband Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: [8324], &#39;Zusatzversorgungskasse der bayerischen Gemeinden&#39;: [250], &#39;Park &amp; Bellheimer AG&#39;: [5950], &#39;Sparkasse Germersheim-Kandel&#39;: [6680], &#39;Verkehrsverbund Rhein-Neckar&#39;: [1800], &#39;Zweckverband Schienenpersonennahverkehr Süd&#39;: [7464], &#39;Sparkasse Worms-Alzey-Ried&#39;: [8944, 9094], &#39;Zweckverband Sparkasse Worms-Alzey-Ried&#39;: [150], &#39;Kreissparkasse Rhein-Hunsrück&#39;: [6980], &#39;Sparkasse (div. Ebenen)&#39;: [9544], &#39;Zweckverband Sparkasse Südliche Weinstraße&#39;: [450], &#39;Sparkasse Westerwald-Sieg&#39;: [9044, 9244], &#39;Sparkassenzweckverband Nassau&#39;: [383.45], &#39;Sparkassenzweckverband Westerwald-Sieg&#39;: [100], &#39;Beirat für Kommunalentwicklung RP&#39;: [190.16], &#39;Kreissparkasse Bitburg-Prüm&#39;: [7080], &#39;Kreisvolkshochschule&#39;: [3597], &#39;Planungsgemeinschaft Region Trier&#39;: [600], &#39;Saarländischer Schwesternverband&#39;: [7735], &#39;Zweckverband Berufsbildungszentrum Bitburg-Prüm&#39;: [5181], &#39;Zweckverband Flugplatz Bitburg&#39;: [5186], &#39;Zweckverband Naturpark Südeifel&#39;: [5973], &#39;Zweckverband Schienen-Personen-NahVerker&#39;: [3723], &#39;Zweckverband Stausee Bitburg&#39;: [20], &#39;Zweckverband Verkehrsbund Region Trier&#39;: [7032], &#39;Kreissparkasse Birkenfeld&#39;: [6780], &#39;Planungsgemeinschaft Westpfalz&#39;: [780], &#39;Sparkasse Donnersberg&#39;: [6842], &#39;Zweckverband Sparkasse Westerwald-Sieg&#39;: [100], &#39;Zweckverband Abfallverwertung Südwestpfalz&#39;: [3060], &#39;Kreissparkasse Ahrweiler&#39;: [7080], &#39;Rheinland-Westenenergie&#39;: [2000], &#39;Wasserversorgung Zweckverband Main-Eifel&#39;: [873.13, 5658], &#39;Zweckverband SPNV&#39;: [7446], &#39;Kreissparkasse Kaiserslautern&#39;: [9284], &#39;Landesmusikverband RLP&#39;: [480], &#39;Sparkasse Neuwied&#39;: [8644], &#39;Sparkasse Neuwied (Verbandsversammlung)&#39;: [200], &#39;ZAB consult GmbH&#39;: [1800], &#39;Zweckverband der Entwicklungsgesellschaft Flugplatz Zweibrücken&#39;: [1687.29], &#39;Sparkasse Koblenz&#39;: [9344, 9544], &#39;Hausverwaltung Schon &amp; Müller&#39;: [100], &#39;Kreissparkasse Mayen&#39;: [7580], &#39;Sparkassen Finanzdienste&#39;: [300], &#39;Unfallkasse RP&#39;: [75], &#39;Zweckverband Industriepark A61&#39;: [225], &#39;Zweckverband Vulkanpark&#39;: [150]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Summiere die Gehälter pro Firma auf</span>
+<span class="k">for</span> <span class="n">firma</span><span class="p">,</span> <span class="n">gehälter</span> <span class="ow">in</span> <span class="n">firmen_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">firmen_data</span><span class="p">[</span><span class="n">firma</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">gehälter</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">firmen_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;: 2500, &#39;Rheinhessenwein e.V.&#39;: 75, &#39;Sparkasse Mainz&#39;: 17788, &#39;Zweckverband Sparkasse Mainz&#39;: 200, &#39;Zweckverband Sparkasse Rhein-Nahe&#39;: 9444, &#39;Zweckverband Verkehrsbund Rhein Nahe&#39;: 614.0, &#39;Gewässerzweckverband Isenach-Eckbach&#39;: 6600, &#39;Pfälzische Pensionsanstalt&#39;: 700, &#39;Sparkasse Rhein-Haardt&#39;: 15100.0, &#39;Sparkassenverband RP&#39;: 45699.0, &#39;Verband Region Rhein-Neckar&#39;: 3944, &#39;Zweckverband Sparkasse Rhein-Haardt&#39;: 540, &#39;Innogy Westenergie&#39;: 4000, &#39;Kommunaler Rat&#39;: 256.0, &#39;Landkreistag RP&#39;: 7875, &#39;RWE&#39;: 162155, &#39;Sparkasse Trier&#39;: 18488, &#39;Sparkassen- und Giroverband RP&#39;: 25241.0, &#39;Zweckverband Industriepark Region Trier&#39;: 2208, &#39;Zweckverband Sparkasse Trier&#39;: 150, &#39;Gas-Union Frankfurth/Mainz&#39;: 7812.0, &#39;Zweckverband der Sparkasse Mainz&#39;: 300, &#39;Kreditausschuss&#39;: 400, &#39;Sparkasse Vorderpfalz&#39;: 17708, &#39;Zweckverband Sparkasse Vorderpfalz&#39;: 320, &#39;Fremdenverkehrszweckverband&#39;: 3394.0, &#39;Kreissparkasse Kusel&#39;: 6880, &#39;Zweckverbandes Pollichia-Museum&#39;: 784.0, &#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: 6038, &#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;: 600, &#39;Agentur für Arbeit&#39;: 130, &#39;Altlastenzweckverband Tierische Nebenprodukte&#39;: 12048.0, &#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;: 2745, &#39;Rheinische Zusatzversorgungskasse&#39;: 194, &#39;Westenergie&#39;: 4160, &#39;Zweckverband Tierische Nebenprodukte Südwest&#39;: 11998.0, &#39;Bezirkstag Pfalz&#39;: 2100, &#39;Institut für Medien und Pädagogik e. V.&#39;: 18.0, &#39;Sparkasse Südwestpfalz&#39;: 14242, &#39;Zweckverband Entwicklungsgebiet Flugplatz ZW&#39;: 1381.0, &#39;Stadtsparkasse&#39;: 5704, &#39;Baugenossenschaft Rhein-Lahn eG&#39;: 200, &#39;Landesbank Baden-Württemberg&#39;: 1283.0, &#39;Nassauische Sparkasse&#39;: 11812.0, &#39;Süwag Energie AG&#39;: 11000, &#39;Bezirksverband Pfalz&#39;: 250, &#39;Landeszentrale für Medien und Kommunikation&#39;: 893, &#39;Pfalzklinikum für Psychiatrie u. Neurologie (AdöR)&#39;: 200, &#39;Sparkasse Südliche Weinstraße&#39;: 16292, &#39;Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: 400, &#39;Zweckverband Abfallwirtschaft Region Trier&#39;: 7848, &#39;Zweckverband Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;: 8324, &#39;Zusatzversorgungskasse der bayerischen Gemeinden&#39;: 250, &#39;Park &amp; Bellheimer AG&#39;: 5950, &#39;Sparkasse Germersheim-Kandel&#39;: 6680, &#39;Verkehrsverbund Rhein-Neckar&#39;: 1800, &#39;Zweckverband Schienenpersonennahverkehr Süd&#39;: 7464, &#39;Sparkasse Worms-Alzey-Ried&#39;: 18038, &#39;Zweckverband Sparkasse Worms-Alzey-Ried&#39;: 150, &#39;Kreissparkasse Rhein-Hunsrück&#39;: 6980, &#39;Sparkasse (div. Ebenen)&#39;: 9544, &#39;Zweckverband Sparkasse Südliche Weinstraße&#39;: 450, &#39;Sparkasse Westerwald-Sieg&#39;: 18288, &#39;Sparkassenzweckverband Nassau&#39;: 383.0, &#39;Sparkassenzweckverband Westerwald-Sieg&#39;: 100, &#39;Beirat für Kommunalentwicklung RP&#39;: 190.0, &#39;Kreissparkasse Bitburg-Prüm&#39;: 7080, &#39;Kreisvolkshochschule&#39;: 3597, &#39;Planungsgemeinschaft Region Trier&#39;: 600, &#39;Saarländischer Schwesternverband&#39;: 7735, &#39;Zweckverband Berufsbildungszentrum Bitburg-Prüm&#39;: 5181, &#39;Zweckverband Flugplatz Bitburg&#39;: 5186, &#39;Zweckverband Naturpark Südeifel&#39;: 5973, &#39;Zweckverband Schienen-Personen-NahVerker&#39;: 3723, &#39;Zweckverband Stausee Bitburg&#39;: 20, &#39;Zweckverband Verkehrsbund Region Trier&#39;: 7032, &#39;Kreissparkasse Birkenfeld&#39;: 6780, &#39;Planungsgemeinschaft Westpfalz&#39;: 780, &#39;Sparkasse Donnersberg&#39;: 6842, &#39;Zweckverband Sparkasse Westerwald-Sieg&#39;: 100, &#39;Zweckverband Abfallverwertung Südwestpfalz&#39;: 3060, &#39;Kreissparkasse Ahrweiler&#39;: 7080, &#39;Rheinland-Westenenergie&#39;: 2000, &#39;Wasserversorgung Zweckverband Main-Eifel&#39;: 6531.0, &#39;Zweckverband SPNV&#39;: 7446, &#39;Kreissparkasse Kaiserslautern&#39;: 9284, &#39;Landesmusikverband RLP&#39;: 480, &#39;Sparkasse Neuwied&#39;: 8644, &#39;Sparkasse Neuwied (Verbandsversammlung)&#39;: 200, &#39;ZAB consult GmbH&#39;: 1800, &#39;Zweckverband der Entwicklungsgesellschaft Flugplatz Zweibrücken&#39;: 1687.0, &#39;Sparkasse Koblenz&#39;: 18888, &#39;Hausverwaltung Schon &amp; Müller&#39;: 100, &#39;Kreissparkasse Mayen&#39;: 7580, &#39;Sparkassen Finanzdienste&#39;: 300, &#39;Unfallkasse RP&#39;: 75, &#39;Zweckverband Industriepark A61&#39;: 225, &#39;Zweckverband Vulkanpark&#39;: 150}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sortiere das Dictionary mit den Gehältern pro Firma. Der höchste Betrag soll dabei an erster Stelle stehen</span>
+<span class="n">sorted_data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">firmen_data</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;RWE&#39;, 162155), (&#39;Sparkassenverband RP&#39;, 45699.0), (&#39;Sparkassen- und Giroverband RP&#39;, 25241.0), (&#39;Sparkasse Koblenz&#39;, 18888), (&#39;Sparkasse Trier&#39;, 18488), (&#39;Sparkasse Westerwald-Sieg&#39;, 18288), (&#39;Sparkasse Worms-Alzey-Ried&#39;, 18038), (&#39;Sparkasse Mainz&#39;, 17788), (&#39;Sparkasse Vorderpfalz&#39;, 17708), (&#39;Sparkasse Südliche Weinstraße&#39;, 16292), (&#39;Sparkasse Rhein-Haardt&#39;, 15100.0), (&#39;Sparkasse Südwestpfalz&#39;, 14242), (&#39;Altlastenzweckverband Tierische Nebenprodukte&#39;, 12048.0), (&#39;Zweckverband Tierische Nebenprodukte Südwest&#39;, 11998.0), (&#39;Nassauische Sparkasse&#39;, 11812.0), (&#39;Süwag Energie AG&#39;, 11000), (&#39;Sparkasse (div. Ebenen)&#39;, 9544), (&#39;Zweckverband Sparkasse Rhein-Nahe&#39;, 9444), (&#39;Kreissparkasse Kaiserslautern&#39;, 9284), (&#39;Sparkasse Neuwied&#39;, 8644), (&#39;Zweckverband Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, 8324), (&#39;Landkreistag RP&#39;, 7875), (&#39;Zweckverband Abfallwirtschaft Region Trier&#39;, 7848), (&#39;Gas-Union Frankfurth/Mainz&#39;, 7812.0), (&#39;Saarländischer Schwesternverband&#39;, 7735), (&#39;Kreissparkasse Mayen&#39;, 7580), (&#39;Zweckverband Schienenpersonennahverkehr Süd&#39;, 7464), (&#39;Zweckverband SPNV&#39;, 7446), (&#39;Kreissparkasse Bitburg-Prüm&#39;, 7080), (&#39;Kreissparkasse Ahrweiler&#39;, 7080), (&#39;Zweckverband Verkehrsbund Region Trier&#39;, 7032), (&#39;Kreissparkasse Rhein-Hunsrück&#39;, 6980), (&#39;Kreissparkasse Kusel&#39;, 6880), (&#39;Sparkasse Donnersberg&#39;, 6842), (&#39;Kreissparkasse Birkenfeld&#39;, 6780), (&#39;Sparkasse Germersheim-Kandel&#39;, 6680), (&#39;Gewässerzweckverband Isenach-Eckbach&#39;, 6600), (&#39;Wasserversorgung Zweckverband Main-Eifel&#39;, 6531.0), (&#39;(Zweckverband) Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, 6038), (&#39;Zweckverband Naturpark Südeifel&#39;, 5973), (&#39;Park &amp; Bellheimer AG&#39;, 5950), (&#39;Stadtsparkasse&#39;, 5704), (&#39;Zweckverband Flugplatz Bitburg&#39;, 5186), (&#39;Zweckverband Berufsbildungszentrum Bitburg-Prüm&#39;, 5181), (&#39;Westenergie&#39;, 4160), (&#39;Innogy Westenergie&#39;, 4000), (&#39;Verband Region Rhein-Neckar&#39;, 3944), (&#39;Zweckverband Schienen-Personen-NahVerker&#39;, 3723), (&#39;Kreisvolkshochschule&#39;, 3597), (&#39;Fremdenverkehrszweckverband&#39;, 3394.0), (&#39;Zweckverband Abfallverwertung Südwestpfalz&#39;, 3060), (&#39;Planungsgemeinschaft Mittelrhein-Westerwald&#39;, 2745), (&#39;Planungsgemeinschaft Rheinhessen-Nahe&#39;, 2500), (&#39;Zweckverband Industriepark Region Trier&#39;, 2208), (&#39;Bezirkstag Pfalz&#39;, 2100), (&#39;Rheinland-Westenenergie&#39;, 2000), (&#39;Verkehrsverbund Rhein-Neckar&#39;, 1800), (&#39;ZAB consult GmbH&#39;, 1800), (&#39;Zweckverband der Entwicklungsgesellschaft Flugplatz Zweibrücken&#39;, 1687.0), (&#39;Zweckverband Entwicklungsgebiet Flugplatz ZW&#39;, 1381.0), (&#39;Landesbank Baden-Württemberg&#39;, 1283.0), (&#39;Landeszentrale für Medien und Kommunikation&#39;, 893), (&#39;Zweckverbandes Pollichia-Museum&#39;, 784.0), (&#39;Planungsgemeinschaft Westpfalz&#39;, 780), (&#39;Pfälzische Pensionsanstalt&#39;, 700), (&#39;Zweckverband Verkehrsbund Rhein Nahe&#39;, 614.0), (&#39;Abfallzweckverband Rhein-Mosel-Eifel&#39;, 600), (&#39;Planungsgemeinschaft Region Trier&#39;, 600), (&#39;Zweckverband Sparkasse Rhein-Haardt&#39;, 540), (&#39;Landesmusikverband RLP&#39;, 480), (&#39;Zweckverband Sparkasse Südliche Weinstraße&#39;, 450), (&#39;Kreditausschuss&#39;, 400), (&#39;Sparkasse Mittelmosel - Eifel Mosel Hunsrück&#39;, 400), (&#39;Sparkassenzweckverband Nassau&#39;, 383.0), (&#39;Zweckverband Sparkasse Vorderpfalz&#39;, 320), (&#39;Zweckverband der Sparkasse Mainz&#39;, 300), (&#39;Sparkassen Finanzdienste&#39;, 300), (&#39;Kommunaler Rat&#39;, 256.0), (&#39;Bezirksverband Pfalz&#39;, 250), (&#39;Zusatzversorgungskasse der bayerischen Gemeinden&#39;, 250), (&#39;Zweckverband Industriepark A61&#39;, 225), (&#39;Zweckverband Sparkasse Mainz&#39;, 200), (&#39;Baugenossenschaft Rhein-Lahn eG&#39;, 200), (&#39;Pfalzklinikum für Psychiatrie u. Neurologie (AdöR)&#39;, 200), (&#39;Sparkasse Neuwied (Verbandsversammlung)&#39;, 200), (&#39;Rheinische Zusatzversorgungskasse&#39;, 194), (&#39;Beirat für Kommunalentwicklung RP&#39;, 190.0), (&#39;Zweckverband Sparkasse Trier&#39;, 150), (&#39;Zweckverband Sparkasse Worms-Alzey-Ried&#39;, 150), (&#39;Zweckverband Vulkanpark&#39;, 150), (&#39;Agentur für Arbeit&#39;, 130), (&#39;Sparkassenzweckverband Westerwald-Sieg&#39;, 100), (&#39;Zweckverband Sparkasse Westerwald-Sieg&#39;, 100), (&#39;Hausverwaltung Schon &amp; Müller&#39;, 100), (&#39;Rheinhessenwein e.V.&#39;, 75), (&#39;Unfallkasse RP&#39;, 75), (&#39;Zweckverband Stausee Bitburg&#39;, 20), (&#39;Institut für Medien und Pädagogik e. V.&#39;, 18.0)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="eingabetool-fur-nebeneinkunfte">
+<h2>Eingabetool für Nebeneinkünfte<a class="headerlink" href="#eingabetool-fur-nebeneinkunfte" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firma</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">nebeneinkünfte</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">while</span> <span class="n">firma</span> <span class="o">!=</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span>
+    <span class="n">firma</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Firma:&#39;</span><span class="p">)</span>
+    <span class="n">gehalt</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Gehalt:&#39;</span><span class="p">)</span>
+    <span class="n">nebeneinkünfte</span><span class="p">[</span><span class="n">firma</span><span class="p">]</span> <span class="o">=</span> <span class="n">gehalt</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Alle Nebeneinkünfte:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firma</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
+<span class="n">nebeneinkünfte</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">while</span> <span class="n">firma</span> <span class="o">!=</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span>
+    <span class="n">firma</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Firma:&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">firma</span> <span class="o">==</span> <span class="s1">&#39;x&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">gehalt</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Gehalt:&#39;</span><span class="p">)</span>
+    <span class="n">erwerb</span> <span class="o">=</span> <span class="p">{</span><span class="n">firma</span><span class="p">:</span> <span class="n">gehalt</span><span class="p">}</span>
+    <span class="n">nebeneinkünfte</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">erwerb</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;While Loop Ende</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Alle Nebeneinkünfte:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nebeneinkünfte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./grundlagen/anwendungsbeispiele"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="luftqualitaet.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Analyse der Luftqualität in Leipzig</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../theorie.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Theorie</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Natalie Widmann<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -138,7 +138,7 @@
 137,1920,China,Climatological,Drought,Drought,1,20000000.0,500000.0,,7.4096349077176
 138,1920,China,Geophysical,Earthquake,Ground movement,1,180000.0,180000.0,25000000.0,7.4096349077176
 139,1920,Cabo Verde,Climatological,Drought,Drought,1,24000.0,24000.0,,7.4096349077176
-140,1920,Germany,Hydrological,Flood,No Subtype,1,0.0,0.0,20000000.0,7.4096349077176
+140,1920,Germany Fed Rep,Hydrological,Flood,No Subtype,1,0.0,0.0,20000000.0,7.4096349077176
 141,1920,Italy,Geophysical,Earthquake,Ground movement,1,1400.0,1400.0,,7.4096349077176
 142,1920,Mexico,Geophysical,Earthquake,Ground movement,1,167.0,648.0,,7.4096349077176
 143,1920,United States of America (the),Meteorological,Storm,Convective storm,1,224.0,224.0,,7.4096349077176
@@ -168,7 +168,7 @@
 167,1924,Turkey,Geophysical,Earthquake,Ground movement,2,1140.0,110.0,,6.3388072715524
 168,1924,Taiwan (Province of China),Meteorological,Storm,Tropical cyclone,1,1000.0,1000.0,,6.3388072715524
 169,1925,China,Geophysical,Earthquake,Ground movement,2,1500.0,5012.0,,6.4865076351614
-170,1925,Germany,Hydrological,Flood,No Subtype,1,0.0,0.0,19000000.0,6.4865076351614
+170,1925,Germany Fed Rep,Hydrological,Flood,No Subtype,1,0.0,0.0,19000000.0,6.4865076351614
 171,1925,India,Meteorological,Storm,Tropical cyclone,1,80.0,80.0,,6.4865076351614
 172,1925,Iran (Islamic Republic of),Geophysical,Earthquake,Ground movement,1,500.0,500.0,,6.4865076351614
 173,1925,Japan,Geophysical,Earthquake,Ground movement,1,9999.0,395.0,,6.4865076351614
@@ -181,7 +181,7 @@
 180,1926,Bahamas (the),Meteorological,Storm,Tropical cyclone,1,0.0,0.0,,6.5480494533318
 181,1926,Colombia,Hydrological,Landslide,Landslide,1,100.0,100.0,,6.5480494533318
 182,1926,Cuba,Meteorological,Storm,Tropical cyclone,1,600.0,600.0,,6.5480494533318
-183,1926,Germany,Hydrological,Flood,No Subtype,1,0.0,0.0,31000000.0,6.5480494533318
+183,1926,Germany Fed Rep,Hydrological,Flood,No Subtype,1,0.0,0.0,31000000.0,6.5480494533318
 184,1926,Egypt,Geophysical,Earthquake,Ground movement,1,12.0,12.0,,6.5480494533318
 185,1926,France,Hydrological,Landslide,Mudslide,1,28.0,28.0,,6.5480494533318
 186,1926,India,Hydrological,Flood,Riverine flood,1,0.0,0.0,,6.5480494533318
@@ -217,7 +217,7 @@
 216,1928,Turkey,Geophysical,Earthquake,Ground movement,1,209.0,50.0,,6.3511156351865
 217,1928,United States of America (the),Meteorological,Storm,Tropical cyclone,1,1836.0,1836.0,25000000.0,6.3511156351865
 218,1929,Bahamas (the),Meteorological,Storm,Tropical cyclone,1,0.0,0.0,,6.3511156351865
-219,1929,Germany,Meteorological,Storm,Convective storm,1,0.0,0.0,55000000.0,6.3511156351865
+219,1929,Germany Fed Rep,Meteorological,Storm,Convective storm,1,0.0,0.0,55000000.0,6.3511156351865
 220,1929,Iran (Islamic Republic of),Geophysical,Earthquake,Ground movement,1,1121.0,3253.0,,6.3511156351865
 221,1929,Mexico,Climatological,Wildfire,"Land fire (Brush, Bush, Pasture)",1,60.0,60.0,,6.3511156351865
 222,1929,New Zealand,Geophysical,Earthquake,Ground movement,1,17.0,17.0,,6.3511156351865
@@ -547,7 +547,7 @@
 546,1953,Belgium,Hydrological,Flood,Coastal flood,1,350.0,11.0,,9.8959243618021
 547,1953,Chile,Geophysical,Earthquake,Ground movement,2,55.0,15.0,507310000.0,9.8959243618021
 548,1953,Cyprus,Geophysical,Earthquake,Ground movement,1,2600.0,40.0,,9.8959243618021
-549,1953,Germany,Meteorological,Storm,Convective storm,1,0.0,0.0,25000000.0,9.8959243618021
+549,1953,Germany Fed Rep,Meteorological,Storm,Convective storm,1,0.0,0.0,25000000.0,9.8959243618021
 550,1953,Ecuador,Hydrological,Flood,No Subtype,1,71.0,71.0,,9.8959243618021
 551,1953,Spain,Hydrological,Flood,No Subtype,1,50.0,50.0,,9.8959243618021
 552,1953,Greece,Geophysical,Earthquake,Ground movement,1,141277.0,476.0,100000000.0,9.8959243618021
@@ -779,7 +779,7 @@
 778,1962,Canada,Meteorological,Storm,No Subtype,1,33.0,33.0,,11.1636125082004
 779,1962,Colombia,Geophysical,Earthquake,Ground movement,1,300.0,47.0,,11.1636125082004
 780,1962,Colombia,Hydrological,Flood,No Subtype,1,135.0,135.0,,11.1636125082004
-781,1962,Germany,Meteorological,Storm,Convective storm,1,347.0,347.0,600000000.0,11.1636125082004
+781,1962,Germany Fed Rep,Meteorological,Storm,Convective storm,1,347.0,347.0,600000000.0,11.1636125082004
 782,1962,Spain,Hydrological,Flood,Flash flood,1,445.0,445.0,80000000.0,11.1636125082004
 783,1962,Guam,Meteorological,Storm,Tropical cyclone,1,6.0,6.0,250000000.0,11.1636125082004
 784,1962,Hong Kong,Meteorological,Storm,Tropical cyclone,1,183.0,183.0,,11.1636125082004
@@ -1079,7 +1079,7 @@
 1078,1968,Colombia,Meteorological,Storm,No Subtype,1,1083.0,0.0,50000.0,12.8366149136235
 1079,1968,Costa Rica,Geophysical,Volcanic activity,Ash fall,1,15671.0,87.0,5000000.0,12.8366149136235
 1080,1968,Cuba,Meteorological,Storm,Tropical cyclone,1,0.0,0.0,,12.8366149136235
-1081,1968,Germany,Meteorological,Storm,Convective storm,1,2.0,2.0,31000000.0,12.8366149136235
+1081,1968,Germany Fed Rep,Meteorological,Storm,Convective storm,1,2.0,2.0,31000000.0,12.8366149136235
 1082,1968,Dominican Republic (the),Climatological,Drought,Drought,1,240000.0,0.0,5000000.0,12.8366149136235
 1083,1968,Ethiopia,Hydrological,Flood,No Subtype,1,16000.0,1.0,920000.0,12.8366149136235
 1084,1968,United Kingdom of Great Britain and Northern Ireland (the),Meteorological,Storm,No Subtype,1,700.0,20.0,2500000.0,12.8366149136235
@@ -1308,7 +1308,7 @@
 1307,1972,Bangladesh,Meteorological,Storm,Convective storm,1,25000.0,200.0,,15.4322326700197
 1308,1972,Botswana,Hydrological,Flood,No Subtype,1,1000.0,0.0,50000.0,15.4322326700197
 1309,1972,Colombia,Hydrological,Landslide,Landslide,1,70.0,70.0,,15.4322326700197
-1310,1972,Germany,Meteorological,Storm,No Subtype,1,54.0,54.0,420000000.0,15.4322326700197
+1310,1972,Germany Fed Rep,Meteorological,Storm,No Subtype,1,54.0,54.0,420000000.0,15.4322326700197
 1311,1972,Spain,Hydrological,Flood,No Subtype,1,0.0,0.0,20000000.0,15.4322326700197
 1312,1972,Fiji,Meteorological,Storm,Tropical cyclone,1,120000.0,3.0,22500000.0,15.4322326700197
 1313,1972,United Kingdom of Great Britain and Northern Ireland (the),Meteorological,Storm,No Subtype,1,0.0,0.0,,15.4322326700197
@@ -1419,7 +1419,7 @@
 1418,1974,Colombia,Geophysical,Earthquake,No Subtype,1,11.0,11.0,,18.196991034332
 1419,1974,Colombia,Hydrological,Landslide,Landslide,2,1000.0,390.0,,18.196991034332
 1420,1974,Czechoslovakia,Hydrological,Landslide,Avalanche,1,14.0,14.0,,18.196991034332
-1421,1974,Germany,Meteorological,Storm,No Subtype,1,0.0,0.0,22000000.0,18.196991034332
+1421,1974,Germany Fed Rep,Meteorological,Storm,No Subtype,1,0.0,0.0,22000000.0,18.196991034332
 1422,1974,Algeria,Hydrological,Flood,No Subtype,1,20000.0,11.0,30000000.0,18.196991034332
 1423,1974,Hong Kong,Meteorological,Storm,Tropical cyclone,2,2400.0,1.0,,18.196991034332
 1424,1974,Honduras,Meteorological,Storm,Tropical cyclone,1,600000.0,8000.0,540000000.0,18.196991034332
@@ -1520,7 +1520,7 @@
 1519,1976,Costa Rica,Geophysical,Volcanic activity,Ash fall,1,70000.0,0.0,,21.0017319046578
 1520,1976,Costa Rica,Climatological,Wildfire,Forest fire,1,0.0,0.0,,21.0017319046578
 1521,1976,Cuba,Geophysical,Earthquake,Ground movement,1,8.0,1.0,,21.0017319046578
-1522,1976,Germany,Meteorological,Storm,No Subtype,1,82.0,82.0,1300000000.0,21.0017319046578
+1522,1976,Germany Fed Rep,Meteorological,Storm,No Subtype,1,82.0,82.0,1300000000.0,21.0017319046578
 1523,1976,Denmark,Meteorological,Storm,No Subtype,1,0.0,0.0,,21.0017319046578
 1524,1976,Ecuador,Geophysical,Earthquake,Ground movement,2,20000.0,20.0,24000000.0,21.0017319046578
 1525,1976,Ecuador,Hydrological,Landslide,Landslide,1,60.0,60.0,,21.0017319046578
@@ -1678,8 +1678,8 @@
 1677,1978,China,Climatological,Drought,Drought,1,6000000.0,0.0,,24.0740345506232
 1678,1978,Congo (the Democratic Republic of the),Climatological,Drought,Drought,1,500000.0,0.0,,24.0740345506232
 1679,1978,Cuba,Meteorological,Storm,No Subtype,1,170.0,6.0,,24.0740345506232
-1680,1978,Germany,Geophysical,Earthquake,Ground movement,1,235.0,0.0,150000000.0,24.0740345506232
-1681,1978,Germany,Hydrological,Flood,Riverine flood,1,2.0,2.0,330000000.0,24.0740345506232
+1680,1978,Germany Fed Rep,Geophysical,Earthquake,Ground movement,1,235.0,0.0,150000000.0,24.0740345506232
+1681,1978,Germany Fed Rep,Hydrological,Flood,Riverine flood,1,2.0,2.0,330000000.0,24.0740345506232
 1682,1978,Djibouti,Hydrological,Flood,No Subtype,1,106000.0,0.0,,24.0740345506232
 1683,1978,Spain,Hydrological,Flood,Riverine flood,1,2.0,2.0,25000000.0,24.0740345506232
 1684,1978,Ethiopia,Hydrological,Flood,No Subtype,1,1000.0,9.0,,24.0740345506232
@@ -1757,7 +1757,7 @@
 1756,1979,China,Geophysical,Earthquake,Ground movement,2,574636.0,42.0,,26.7834419418325
 1757,1979,Colombia,Geophysical,Earthquake,Ground movement,2,11642.0,639.0,28000000.0,26.7834419418325
 1758,1979,Colombia,Hydrological,Flood,No Subtype,1,102000.0,62.0,,26.7834419418325
-1759,1979,Germany,Meteorological,Extreme temperature ,Cold wave,1,0.0,0.0,80000000.0,26.7834419418325
+1759,1979,Germany Fed Rep,Meteorological,Extreme temperature ,Cold wave,1,0.0,0.0,80000000.0,26.7834419418325
 1760,1979,Dominica,Meteorological,Storm,Tropical cyclone,1,72100.0,40.0,44650000.0,26.7834419418325
 1761,1979,Dominican Republic (the),Hydrological,Flood,No Subtype,1,1000.0,32.0,,26.7834419418325
 1762,1979,Dominican Republic (the),Meteorological,Storm,Tropical cyclone,1,1554000.0,1400.0,150000000.0,26.7834419418325
@@ -2178,8 +2178,8 @@
 2177,1983,Costa Rica,Geophysical,Earthquake,Ground movement,2,5535.0,12.0,6000000.0,36.7568773234201
 2178,1983,Cuba,Hydrological,Flood,No Subtype,1,164575.0,15.0,60000000.0,36.7568773234201
 2179,1983,Cyprus,Meteorological,Storm,Convective storm,1,0.0,0.0,,36.7568773234201
-2180,1983,Germany,Hydrological,Flood,No Subtype,1,12.0,0.0,,36.7568773234201
-2181,1983,Germany,Climatological,Wildfire,Forest fire,1,0.0,0.0,,36.7568773234201
+2180,1983,Germany Fed Rep,Hydrological,Flood,No Subtype,1,12.0,0.0,,36.7568773234201
+2181,1983,Germany Fed Rep,Climatological,Wildfire,Forest fire,1,0.0,0.0,,36.7568773234201
 2182,1983,Djibouti,Climatological,Drought,Drought,1,80000.0,0.0,,36.7568773234201
 2183,1983,Denmark,Meteorological,Storm,No Subtype,1,2.0,2.0,,36.7568773234201
 2184,1983,Dominican Republic (the),Climatological,Wildfire,Forest fire,1,0.0,0.0,,36.7568773234201
@@ -2316,8 +2316,8 @@
 2315,1984,Colombia,Hydrological,Flood,No Subtype,1,0.0,0.0,,38.3376251913405
 2316,1984,Cabo Verde,Meteorological,Storm,Tropical cyclone,1,5500.0,29.0,,38.3376251913405
 2317,1984,Czechoslovakia,Meteorological,Storm,Convective storm,1,0.0,0.0,,38.3376251913405
-2318,1984,Germany,Meteorological,Storm,No Subtype,2,0.0,0.0,,38.3376251913405
-2319,1984,Germany,Meteorological,Storm,Convective storm,2,250.0,3.0,950000000.0,38.3376251913405
+2318,1984,Germany Dem Rep,Meteorological,Storm,No Subtype,2,0.0,0.0,,38.3376251913405
+2319,1984,Germany Fed Rep,Meteorological,Storm,Convective storm,2,250.0,3.0,950000000.0,38.3376251913405
 2320,1984,Dominica,Meteorological,Storm,Tropical cyclone,1,10000.0,2.0,2000000.0,38.3376251913405
 2321,1984,Algeria,Hydrological,Flood,No Subtype,1,1470.0,54.0,,38.3376251913405
 2322,1984,Spain,Meteorological,Storm,No Subtype,1,30.0,3.0,1000000.0,38.3376251913405
@@ -2431,8 +2431,8 @@
 2430,1985,Czechoslovakia,Hydrological,Landslide,Avalanche,1,10.0,10.0,,39.696934178876
 2431,1985,Cuba,Hydrological,Flood,No Subtype,1,3000.0,0.0,,39.696934178876
 2432,1985,Cuba,Meteorological,Storm,Tropical cyclone,1,498891.0,4.0,,39.696934178876
-2433,1985,Germany,Meteorological,Storm,Convective storm,1,0.0,0.0,,39.696934178876
-2434,1985,Germany,Meteorological,Storm,Convective storm,1,0.0,0.0,,39.696934178876
+2433,1985,Germany Dem Rep,Meteorological,Storm,Convective storm,1,0.0,0.0,,39.696934178876
+2434,1985,Germany Fed Rep,Meteorological,Storm,Convective storm,1,0.0,0.0,,39.696934178876
 2435,1985,Denmark,Meteorological,Storm,Convective storm,1,0.0,0.0,,39.696934178876
 2436,1985,Dominican Republic (the),Hydrological,Flood,Riverine flood,1,895.0,12.0,,39.696934178876
 2437,1985,Algeria,Geophysical,Earthquake,Ground movement,1,30.0,30.0,1000000.0,39.696934178876
@@ -2844,7 +2844,7 @@
 2843,1988,Cuba,Hydrological,Flood,Riverine flood,1,90012.0,23.0,,43.6426415919528
 2844,1988,Cuba,Meteorological,Storm,No Subtype,1,1500.0,0.0,,43.6426415919528
 2845,1988,Cuba,Meteorological,Storm,Tropical cyclone,1,60000.0,0.0,,43.6426415919528
-2846,1988,Germany,Hydrological,Flood,Riverine flood,1,3500.0,6.0,,43.6426415919528
+2846,1988,Germany Fed Rep,Hydrological,Flood,Riverine flood,1,3500.0,6.0,,43.6426415919528
 2847,1988,Djibouti,Climatological,Drought,Drought,1,30000.0,0.0,,43.6426415919528
 2848,1988,Dominican Republic (the),Hydrological,Flood,No Subtype,1,1191150.0,0.0,,43.6426415919528
 2849,1988,Algeria,Geophysical,Earthquake,Ground movement,1,257.0,0.0,,43.6426415919528
@@ -3288,7 +3288,7 @@
 3287,1991,Costa Rica,Geophysical,Volcanic activity,Ash fall,1,0.0,0.0,,50.2608528318391
 3288,1991,Cyprus,Climatological,Drought,Drought,1,0.0,0.0,,50.2608528318391
 3289,1991,Germany,Meteorological,Storm,No Subtype,1,0.0,0.0,5000000.0,50.2608528318391
-3290,1991,Germany,Hydrological,Flood,Riverine flood,1,5.0,5.0,56000000.0,50.2608528318391
+3290,1991,Germany Fed Rep,Hydrological,Flood,Riverine flood,1,5.0,5.0,56000000.0,50.2608528318391
 3291,1991,Dominican Republic (the),Hydrological,Flood,No Subtype,1,10.0,10.0,,50.2608528318391
 3292,1991,Egypt,Hydrological,Flood,Flash flood,1,208.0,1.0,,50.2608528318391
 3293,1991,Spain,Climatological,Wildfire,"Land fire (Brush, Bush, Pasture)",1,0.0,0.0,,50.2608528318391

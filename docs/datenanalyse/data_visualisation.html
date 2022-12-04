@@ -1,0 +1,3621 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Visualisierung &#8212; Datenjournalismus in Python</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Praktische Anwendungen" href="beispiele.html" />
+    <link rel="prev" title="Data Cleaning" href="data_cleaning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Uni_Leipzig_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Datenjournalismus in Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../willkommen/intro.html">
+                    Datenjournalismus in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Willkommen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../willkommen/kursplan.html">
+   Workbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../willkommen/motivation.html">
+   Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../willkommen/tipps.html">
+   Tipps
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen in Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grundlagen/beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/wealth.html">
+     Wie reich ist Jeff Bezos?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/automatisierteTexte.html">
+     Automatisierte Texte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/luftqualitaet.html">
+     Analyse der Luftqualität in Leipzig
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/nebeneinkuenfte.html">
+     Nebeneinkünfte von Lokalpolitiker:innen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grundlagen/theorie.html">
+   Theorie
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/operatoren.html">
+     Operatoren
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/arithm_operatoren.html">
+       Arithmetische Operatoren
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/vergleichsoperatoren.html">
+       Vergleichsoperatoren
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/bool_operatoren.html">
+       Logische (Boolsche) Operatoren
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/variablen.html">
+     Variablen
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/datentypen.html">
+     Datentypen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/datentypen_basics.html">
+       Grundlegende Datentypen: int, float, string, bool
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/listen.html">
+       Listen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/dictionaries.html">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/funktionen.html">
+     Funktionen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/inbuilt_functions.html">
+       Eingebaute Funktionen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/eigene_funktionen.html">
+       Selbstdefinierte Funktionen
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/kontrollstrukturen.html">
+     Kontrollstrukturen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/ifelse.html">
+       Fallunterscheidungen: if, else, elif
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/forloops.html">
+       For Loops
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/whileloops.html">
+       While Loop
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/flow_control.html">
+       Flow Control
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/packages.html">
+     Python Packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../aufgaben/intro.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aufgaben/uebungen1.html">
+     Operatoren, Datentypen &amp; built-in Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aufgaben/uebungen2.html">
+     String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aufgaben/uebungen3.html">
+     Listen, Funktionen und Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aufgaben/uebungen4.html">
+     While-Schleifen &amp;  Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datenanalyse
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datapipeline.html">
+   Datenanalyse und -verarbeitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_exploration.html">
+   Datenexploration: Weltweite Naturkatastrophen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_cleaning.html">
+   Data Cleaning
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Visualisierung
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="natural_disaster_dashboard.html">
+     Natural Disasters Dashboard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../aufgaben/intro2.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aufgaben/uebungen5.html">
+     Packages &amp; Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aufgaben/uebungen6.html">
+     Weitere Schritte mit Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  APIs &amp; Scraper
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../APIs/tbd.html">
+   APIs und Scraper
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weitere Informationen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weiteres/intro.html">
+   Weitere Informationen
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/datenanalyse/data_visualisation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/datenanalyse/data_visualisation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Tilana/datenjournalismus-in-python"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fdatenanalyse/data_visualisation.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/datenanalyse/data_visualisation.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Visualisierung
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ziel">
+     Ziel
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#das-dashboard">
+     Das Dashboard…
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recherchefragen">
+     Recherchefragen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-in-einem-land">
+       Wie viele Todesopfer gibt es in einem Land?
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt">
+         Wie viele Todesopfer gibt es insgesamt?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt-in-deutschland">
+         Wie viele Todesopfer gibt es insgesamt in Deutschland?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#korrektur-der-landernamen-fur-deutschland">
+         Korrektur der Ländernamen für Deutschland
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-deutschland">
+         Wie viele Todesopfer gab es insgesamt in Deutschland?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-indien">
+         Wie viele Todesopfer gab es insgesamt in Indien?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#allgemeine-funktion-die-gesamtzahl-der-todesopfer-eines-landes-ausgibt">
+         Allgemeine Funktion die Gesamtzahl der Todesopfer eines Landes ausgibt
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dashboard-teil-ii">
+     Dashboard Teil II
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#welchen-anteil-haben-die-unterschiedlichen-naturkatastrophentypen-in-deutschland">
+       Welchen Anteil haben die unterschiedlichen Naturkatastrophentypen in Deutschland?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualisierung-von-dataframes">
+   Visualisierung von DataFrames
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Recherchefragen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#welche-naturkatastrophen-fordern-die-meisten-todesopfer">
+       Welche Naturkatastrophen fordern die meisten Todesopfer?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Visualisierung
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#welche-naturkatastrophen-fordern-die-meisten-todesopfer-in-deutschland">
+         Welche Naturkatastrophen fordern die meisten Todesopfer in Deutschland?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#generelle-funktion">
+         Generelle Funktion
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dashboard-teil-iii">
+     Dashboard Teil III
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wie-hat-sich-die-anzahl-der-naturkatastrophen-uber-die-jahre-hin-entwickelt">
+       Wie hat sich die Anzahl der Naturkatastrophen über die Jahre hin entwickelt?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#landerdashboard">
+     Länderdashboard
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uberblick-uber-die-welt">
+       Überblick über die Welt
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeit-fur-feedback">
+   Zeit für Feedback
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Visualisierung</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Visualisierung
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ziel">
+     Ziel
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#das-dashboard">
+     Das Dashboard…
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#recherchefragen">
+     Recherchefragen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-in-einem-land">
+       Wie viele Todesopfer gibt es in einem Land?
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt">
+         Wie viele Todesopfer gibt es insgesamt?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt-in-deutschland">
+         Wie viele Todesopfer gibt es insgesamt in Deutschland?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#korrektur-der-landernamen-fur-deutschland">
+         Korrektur der Ländernamen für Deutschland
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-deutschland">
+         Wie viele Todesopfer gab es insgesamt in Deutschland?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-indien">
+         Wie viele Todesopfer gab es insgesamt in Indien?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#allgemeine-funktion-die-gesamtzahl-der-todesopfer-eines-landes-ausgibt">
+         Allgemeine Funktion die Gesamtzahl der Todesopfer eines Landes ausgibt
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dashboard-teil-ii">
+     Dashboard Teil II
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#welchen-anteil-haben-die-unterschiedlichen-naturkatastrophentypen-in-deutschland">
+       Welchen Anteil haben die unterschiedlichen Naturkatastrophentypen in Deutschland?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualisierung-von-dataframes">
+   Visualisierung von DataFrames
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Recherchefragen
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#welche-naturkatastrophen-fordern-die-meisten-todesopfer">
+       Welche Naturkatastrophen fordern die meisten Todesopfer?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Visualisierung
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#welche-naturkatastrophen-fordern-die-meisten-todesopfer-in-deutschland">
+         Welche Naturkatastrophen fordern die meisten Todesopfer in Deutschland?
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#generelle-funktion">
+         Generelle Funktion
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dashboard-teil-iii">
+     Dashboard Teil III
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#wie-hat-sich-die-anzahl-der-naturkatastrophen-uber-die-jahre-hin-entwickelt">
+       Wie hat sich die Anzahl der Naturkatastrophen über die Jahre hin entwickelt?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#landerdashboard">
+     Länderdashboard
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#uberblick-uber-die-welt">
+       Überblick über die Welt
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeit-fur-feedback">
+   Zeit für Feedback
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="visualisierung">
+<h1>Visualisierung<a class="headerlink" href="#visualisierung" title="Permalink to this headline">#</a></h1>
+<section id="ziel">
+<h2>Ziel<a class="headerlink" href="#ziel" title="Permalink to this headline">#</a></h2>
+<p>Wir visualisieren die Daten im EM-DAT Datensatz und bauen ein Länderdashboard damit.</p>
+<p><img alt="Datenpipeline" src="../_images/datapipeline.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install a pip package im Jupyter Notebook</span>
+<span class="o">!</span>pip3 install pandas
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/natalie/.local/lib/python3.9/site-packages (1.5.1)
+Requirement already satisfied: numpy&gt;=1.20.3 in /home/natalie/.local/lib/python3.9/site-packages (from pandas) (1.23.4)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/natalie/.local/lib/python3.9/site-packages (from pandas) (2022.6)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /home/natalie/.local/lib/python3.9/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.14.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/clean_emdat.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1900</td>
+      <td>Cabo Verde</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>11000.0</td>
+      <td>11000.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1900</td>
+      <td>India</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>1250000.0</td>
+      <td>1250000.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1900</td>
+      <td>Jamaica</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>300.0</td>
+      <td>300.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1900</td>
+      <td>Japan</td>
+      <td>Geophysical</td>
+      <td>Volcanic activity</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1900</td>
+      <td>Turkey</td>
+      <td>Geophysical</td>
+      <td>Earthquake</td>
+      <td>Ground movement</td>
+      <td>1</td>
+      <td>140.0</td>
+      <td>140.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10338</th>
+      <td>2022</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>3400.0</td>
+      <td>13.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10339</th>
+      <td>2022</td>
+      <td>South Africa</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>7</td>
+      <td>143119.0</td>
+      <td>562.0</td>
+      <td>3.164000e+09</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10340</th>
+      <td>2022</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>15000.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10341</th>
+      <td>2022</td>
+      <td>Zimbabwe</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10342</th>
+      <td>2022</td>
+      <td>Zimbabwe</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3000.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>10342 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 10342 entries, 1 to 10342
+Data columns (total 10 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   Year                          10342 non-null  int64  
+ 1   Country                       10342 non-null  object 
+ 2   Disaster Subroup              10342 non-null  object 
+ 3   Disaster Type                 10342 non-null  object 
+ 4   Disaster Subtype              10342 non-null  object 
+ 5   Total Events                  10342 non-null  int64  
+ 6   Total Affected                10342 non-null  float64
+ 7   Total Deaths                  10342 non-null  float64
+ 8   Total Damage (USD, original)  3796 non-null   float64
+ 9   CPI                           10149 non-null  float64
+dtypes: float64(4), int64(2), object(4)
+memory usage: 888.8+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="das-dashboard">
+<h2>Das Dashboard…<a class="headerlink" href="#das-dashboard" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="recherchefragen">
+<h2>Recherchefragen<a class="headerlink" href="#recherchefragen" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Wie viele Todesopfer gibt es in einem Land?</p></li>
+<li><p>Wie stark ist ein Land von Naturkatastrophen betroffen?</p></li>
+<li><p>Welchen Anteil haben die unterschiedlichen Naturkatastrophentypen daran?</p></li>
+<li><p>Wie hat sich die Anzahl der Naturkatastrophen über die Jahre hin entwickelt?</p></li>
+</ul>
+<section id="wie-viele-todesopfer-gibt-es-in-einem-land">
+<h3>Wie viele Todesopfer gibt es in einem Land?<a class="headerlink" href="#wie-viele-todesopfer-gibt-es-in-einem-land" title="Permalink to this headline">#</a></h3>
+<section id="wie-viele-todesopfer-gibt-es-insgesamt">
+<h4>Wie viele Todesopfer gibt es insgesamt?<a class="headerlink" href="#wie-viele-todesopfer-gibt-es-insgesamt" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Total Deaths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22845977.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="wie-viele-todesopfer-gibt-es-insgesamt-in-deutschland">
+<h4>Wie viele Todesopfer gibt es insgesamt in Deutschland?<a class="headerlink" href="#wie-viele-todesopfer-gibt-es-insgesamt-in-deutschland" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1        False
+2        False
+3        False
+4        False
+5        False
+         ...  
+10338    False
+10339    False
+10340    False
+10341    False
+10342    False
+Name: Country, Length: 10342, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3121</th>
+      <td>1990</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>No Subtype</td>
+      <td>6</td>
+      <td>64.0</td>
+      <td>64.0</td>
+      <td>4.440000e+09</td>
+      <td>48.218797</td>
+    </tr>
+    <tr>
+      <th>3289</th>
+      <td>1991</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.000000e+06</td>
+      <td>50.260853</td>
+    </tr>
+    <tr>
+      <th>3431</th>
+      <td>1992</td>
+      <td>Germany</td>
+      <td>Geophysical</td>
+      <td>Earthquake</td>
+      <td>Ground movement</td>
+      <td>1</td>
+      <td>1525.0</td>
+      <td>1.0</td>
+      <td>5.000000e+07</td>
+      <td>51.783162</td>
+    </tr>
+    <tr>
+      <th>3432</th>
+      <td>1992</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.010000e+07</td>
+      <td>51.783162</td>
+    </tr>
+    <tr>
+      <th>3582</th>
+      <td>1993</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Riverine flood</td>
+      <td>1</td>
+      <td>100000.0</td>
+      <td>5.0</td>
+      <td>6.000000e+08</td>
+      <td>53.311620</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9469</th>
+      <td>2019</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>94.349092</td>
+    </tr>
+    <tr>
+      <th>9708</th>
+      <td>2020</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Extra-tropical storm</td>
+      <td>1</td>
+      <td>33.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>95.512967</td>
+    </tr>
+    <tr>
+      <th>9952</th>
+      <td>2021</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>1000.0</td>
+      <td>197.0</td>
+      <td>4.000000e+10</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>9953</th>
+      <td>2021</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>2</td>
+      <td>604.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>10188</th>
+      <td>2022</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Extra-tropical storm</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>66 rows × 10 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="korrektur-der-landernamen-fur-deutschland">
+<h4>Korrektur der Ländernamen für Deutschland<a class="headerlink" href="#korrektur-der-landernamen-fur-deutschland" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vorkommen von Deutschland</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s1">&#39;german&#39;</span> <span class="ow">in</span> <span class="n">country</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Germany Fed Rep
+Germany Dem Rep
+Germany
+</pre></div>
+</div>
+</div>
+</div>
+<p>Schreibe eine Funktion die dies bereinigt.</p>
+<p><strong>Eingabe</strong>: beliebiger Ländername (bspw. Indonesia, Belgium, Germany Fed Rep, etc.)</p>
+<p><strong>Ausgabe</strong>: der Ländername oder Germany falls einer der oben gelisteten Namen eingegeben wurde</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_country</span><span class="p">(</span><span class="n">land</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;german&#39;</span> <span class="ow">in</span> <span class="n">land</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s1">&#39;Germany&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">land</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Germany Fed Rep&#39;</span>
+<span class="n">clean_text</span> <span class="o">=</span> <span class="n">clean_country</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Germany
+</pre></div>
+</div>
+</div>
+</div>
+<p>Anwendung der Funktion auf alle Werte einer Spalte</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_unique_countries</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">corrected_name</span> <span class="o">=</span> <span class="n">clean_country</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+    <span class="n">new_unique_countries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_unique_countries</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>225
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>225
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;Country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean_country</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on _LocIndexer in module pandas.core.indexing object:
+
+class _LocIndexer(_LocationIndexer)
+ |  Access a group of rows and columns by label(s) or a boolean array.
+ |  
+ |  ``.loc[]`` is primarily label based, but may also be used with a
+ |  boolean array.
+ |  
+ |  Allowed inputs are:
+ |  
+ |  - A single label, e.g. ``5`` or ``&#39;a&#39;``, (note that ``5`` is
+ |    interpreted as a *label* of the index, and **never** as an
+ |    integer position along the index).
+ |  - A list or array of labels, e.g. ``[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]``.
+ |  - A slice object with labels, e.g. ``&#39;a&#39;:&#39;f&#39;``.
+ |  
+ |    .. warning:: Note that contrary to usual python slices, **both** the
+ |        start and the stop are included
+ |  
+ |  - A boolean array of the same length as the axis being sliced,
+ |    e.g. ``[True, False, True]``.
+ |  - An alignable boolean Series. The index of the key will be aligned before
+ |    masking.
+ |  - An alignable Index. The Index of the returned selection will be the input.
+ |  - A ``callable`` function with one argument (the calling Series or
+ |    DataFrame) and that returns valid output for indexing (one of the above)
+ |  
+ |  See more at :ref:`Selection by Label &lt;indexing.label&gt;`.
+ |  
+ |  Raises
+ |  ------
+ |  KeyError
+ |      If any items are not found.
+ |  IndexingError
+ |      If an indexed key is passed and its index is unalignable to the frame index.
+ |  
+ |  See Also
+ |  --------
+ |  DataFrame.at : Access a single value for a row/column label pair.
+ |  DataFrame.iloc : Access group of rows and columns by integer position(s).
+ |  DataFrame.xs : Returns a cross-section (row(s) or column(s)) from the
+ |      Series/DataFrame.
+ |  Series.loc : Access group of values using labels.
+ |  
+ |  Examples
+ |  --------
+ |  **Getting values**
+ |  
+ |  &gt;&gt;&gt; df = pd.DataFrame([[1, 2], [4, 5], [7, 8]],
+ |  ...      index=[&#39;cobra&#39;, &#39;viper&#39;, &#39;sidewinder&#39;],
+ |  ...      columns=[&#39;max_speed&#39;, &#39;shield&#39;])
+ |  &gt;&gt;&gt; df
+ |              max_speed  shield
+ |  cobra               1       2
+ |  viper               4       5
+ |  sidewinder          7       8
+ |  
+ |  Single label. Note this returns the row as a Series.
+ |  
+ |  &gt;&gt;&gt; df.loc[&#39;viper&#39;]
+ |  max_speed    4
+ |  shield       5
+ |  Name: viper, dtype: int64
+ |  
+ |  List of labels. Note using ``[[]]`` returns a DataFrame.
+ |  
+ |  &gt;&gt;&gt; df.loc[[&#39;viper&#39;, &#39;sidewinder&#39;]]
+ |              max_speed  shield
+ |  viper               4       5
+ |  sidewinder          7       8
+ |  
+ |  Single label for row and column
+ |  
+ |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;, &#39;shield&#39;]
+ |  2
+ |  
+ |  Slice with labels for row and single label for column. As mentioned
+ |  above, note that both the start and stop of the slice are included.
+ |  
+ |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;:&#39;viper&#39;, &#39;max_speed&#39;]
+ |  cobra    1
+ |  viper    4
+ |  Name: max_speed, dtype: int64
+ |  
+ |  Boolean list with the same length as the row axis
+ |  
+ |  &gt;&gt;&gt; df.loc[[False, False, True]]
+ |              max_speed  shield
+ |  sidewinder          7       8
+ |  
+ |  Alignable boolean Series:
+ |  
+ |  &gt;&gt;&gt; df.loc[pd.Series([False, True, False],
+ |  ...        index=[&#39;viper&#39;, &#39;sidewinder&#39;, &#39;cobra&#39;])]
+ |              max_speed  shield
+ |  sidewinder          7       8
+ |  
+ |  Index (same behavior as ``df.reindex``)
+ |  
+ |  &gt;&gt;&gt; df.loc[pd.Index([&quot;cobra&quot;, &quot;viper&quot;], name=&quot;foo&quot;)]
+ |         max_speed  shield
+ |  foo
+ |  cobra          1       2
+ |  viper          4       5
+ |  
+ |  Conditional that returns a boolean Series
+ |  
+ |  &gt;&gt;&gt; df.loc[df[&#39;shield&#39;] &gt; 6]
+ |              max_speed  shield
+ |  sidewinder          7       8
+ |  
+ |  Conditional that returns a boolean Series with column labels specified
+ |  
+ |  &gt;&gt;&gt; df.loc[df[&#39;shield&#39;] &gt; 6, [&#39;max_speed&#39;]]
+ |              max_speed
+ |  sidewinder          7
+ |  
+ |  Callable that returns a boolean Series
+ |  
+ |  &gt;&gt;&gt; df.loc[lambda df: df[&#39;shield&#39;] == 8]
+ |              max_speed  shield
+ |  sidewinder          7       8
+ |  
+ |  **Setting values**
+ |  
+ |  Set value for all items matching the list of labels
+ |  
+ |  &gt;&gt;&gt; df.loc[[&#39;viper&#39;, &#39;sidewinder&#39;], [&#39;shield&#39;]] = 50
+ |  &gt;&gt;&gt; df
+ |              max_speed  shield
+ |  cobra               1       2
+ |  viper               4      50
+ |  sidewinder          7      50
+ |  
+ |  Set value for an entire row
+ |  
+ |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;] = 10
+ |  &gt;&gt;&gt; df
+ |              max_speed  shield
+ |  cobra              10      10
+ |  viper               4      50
+ |  sidewinder          7      50
+ |  
+ |  Set value for an entire column
+ |  
+ |  &gt;&gt;&gt; df.loc[:, &#39;max_speed&#39;] = 30
+ |  &gt;&gt;&gt; df
+ |              max_speed  shield
+ |  cobra              30      10
+ |  viper              30      50
+ |  sidewinder         30      50
+ |  
+ |  Set value for rows matching callable condition
+ |  
+ |  &gt;&gt;&gt; df.loc[df[&#39;shield&#39;] &gt; 35] = 0
+ |  &gt;&gt;&gt; df
+ |              max_speed  shield
+ |  cobra              30      10
+ |  viper               0       0
+ |  sidewinder          0       0
+ |  
+ |  **Getting values on a DataFrame with an index that has integer labels**
+ |  
+ |  Another example using integers for the index
+ |  
+ |  &gt;&gt;&gt; df = pd.DataFrame([[1, 2], [4, 5], [7, 8]],
+ |  ...      index=[7, 8, 9], columns=[&#39;max_speed&#39;, &#39;shield&#39;])
+ |  &gt;&gt;&gt; df
+ |     max_speed  shield
+ |  7          1       2
+ |  8          4       5
+ |  9          7       8
+ |  
+ |  Slice with integer labels for rows. As mentioned above, note that both
+ |  the start and stop of the slice are included.
+ |  
+ |  &gt;&gt;&gt; df.loc[7:9]
+ |     max_speed  shield
+ |  7          1       2
+ |  8          4       5
+ |  9          7       8
+ |  
+ |  **Getting values with a MultiIndex**
+ |  
+ |  A number of examples using a DataFrame with a MultiIndex
+ |  
+ |  &gt;&gt;&gt; tuples = [
+ |  ...    (&#39;cobra&#39;, &#39;mark i&#39;), (&#39;cobra&#39;, &#39;mark ii&#39;),
+ |  ...    (&#39;sidewinder&#39;, &#39;mark i&#39;), (&#39;sidewinder&#39;, &#39;mark ii&#39;),
+ |  ...    (&#39;viper&#39;, &#39;mark ii&#39;), (&#39;viper&#39;, &#39;mark iii&#39;)
+ |  ... ]
+ |  &gt;&gt;&gt; index = pd.MultiIndex.from_tuples(tuples)
+ |  &gt;&gt;&gt; values = [[12, 2], [0, 4], [10, 20],
+ |  ...         [1, 4], [7, 1], [16, 36]]
+ |  &gt;&gt;&gt; df = pd.DataFrame(values, columns=[&#39;max_speed&#39;, &#39;shield&#39;], index=index)
+ |  &gt;&gt;&gt; df
+ |                       max_speed  shield
+ |  cobra      mark i           12       2
+ |             mark ii           0       4
+ |  sidewinder mark i           10      20
+ |             mark ii           1       4
+ |  viper      mark ii           7       1
+ |             mark iii         16      36
+ |  
+ |  Single label. Note this returns a DataFrame with a single index.
+ |  
+ |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;]
+ |           max_speed  shield
+ |  mark i          12       2
+ |  mark ii          0       4
+ |  
+ |  Single index tuple. Note this returns a Series.
+ |  
+ |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark ii&#39;)]
+ |  max_speed    0
+ |  shield       4
+ |  Name: (cobra, mark ii), dtype: int64
+ |  
+ |  Single label for row and column. Similar to passing in a tuple, this
+ |  returns a Series.
+ |  
+ |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;, &#39;mark i&#39;]
+ |  max_speed    12
+ |  shield        2
+ |  Name: (cobra, mark i), dtype: int64
+ |  
+ |  Single tuple. Note using ``[[]]`` returns a DataFrame.
+ |  
+ |  &gt;&gt;&gt; df.loc[[(&#39;cobra&#39;, &#39;mark ii&#39;)]]
+ |                 max_speed  shield
+ |  cobra mark ii          0       4
+ |  
+ |  Single tuple for the index with a single label for the column
+ |  
+ |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark i&#39;), &#39;shield&#39;]
+ |  2
+ |  
+ |  Slice from index tuple to single label
+ |  
+ |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark i&#39;):&#39;viper&#39;]
+ |                       max_speed  shield
+ |  cobra      mark i           12       2
+ |             mark ii           0       4
+ |  sidewinder mark i           10      20
+ |             mark ii           1       4
+ |  viper      mark ii           7       1
+ |             mark iii         16      36
+ |  
+ |  Slice from index tuple to index tuple
+ |  
+ |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark i&#39;):(&#39;viper&#39;, &#39;mark ii&#39;)]
+ |                      max_speed  shield
+ |  cobra      mark i          12       2
+ |             mark ii          0       4
+ |  sidewinder mark i          10      20
+ |             mark ii          1       4
+ |  viper      mark ii          7       1
+ |  
+ |  Please see the :ref:`user guide&lt;advanced.advanced_hierarchical&gt;`
+ |  for more details and explanations of advanced indexing.
+ |  
+ |  Method resolution order:
+ |      _LocIndexer
+ |      _LocationIndexer
+ |      pandas._libs.indexing.NDFrameIndexerBase
+ |      builtins.object
+ |  
+ |  Data and other attributes defined here:
+ |  
+ |  __annotations__ = {&#39;_takeable&#39;: &#39;bool&#39;}
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from _LocationIndexer:
+ |  
+ |  __call__(self: &#39;_LocationIndexerT&#39;, axis=None) -&gt; &#39;_LocationIndexerT&#39;
+ |      Call self as a function.
+ |  
+ |  __getitem__(self, key)
+ |  
+ |  __setitem__(self, key, value) -&gt; &#39;None&#39;
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from _LocationIndexer:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes inherited from _LocationIndexer:
+ |  
+ |  axis = None
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from pandas._libs.indexing.NDFrameIndexerBase:
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __reduce__ = __reduce_cython__(...)
+ |  
+ |  __setstate__ = __setstate_cython__(...)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods inherited from pandas._libs.indexing.NDFrameIndexerBase:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from pandas._libs.indexing.NDFrameIndexerBase:
+ |  
+ |  name
+ |  
+ |  ndim
+ |  
+ |  obj
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>140</th>
+      <td>1920</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.000000e+07</td>
+      <td>7.409635</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>1925</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.900000e+07</td>
+      <td>6.486508</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>1926</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.100000e+07</td>
+      <td>6.548049</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>1929</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.500000e+07</td>
+      <td>6.351116</td>
+    </tr>
+    <tr>
+      <th>549</th>
+      <td>1953</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.500000e+07</td>
+      <td>9.895924</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9469</th>
+      <td>2019</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>94.349092</td>
+    </tr>
+    <tr>
+      <th>9708</th>
+      <td>2020</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Extra-tropical storm</td>
+      <td>1</td>
+      <td>33.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>95.512967</td>
+    </tr>
+    <tr>
+      <th>9952</th>
+      <td>2021</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>1000.0</td>
+      <td>197.0</td>
+      <td>4.000000e+10</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>9953</th>
+      <td>2021</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>2</td>
+      <td>604.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>10188</th>
+      <td>2022</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Extra-tropical storm</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p><strong>Alternative Lösungsmöglichkeit</strong> (viel übersichtlicher und effizienter)</p>
+<p>mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> kann eine Funktion auf eine komplette Spalte oder Zeile des Dataframes angewendet werden</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_country</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>140</th>
+      <td>1920</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.000000e+07</td>
+      <td>7.409635</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>1925</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.900000e+07</td>
+      <td>6.486508</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>1926</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.100000e+07</td>
+      <td>6.548049</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>1929</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>5.500000e+07</td>
+      <td>6.351116</td>
+    </tr>
+    <tr>
+      <th>549</th>
+      <td>1953</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.500000e+07</td>
+      <td>9.895924</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9469</th>
+      <td>2019</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>94.349092</td>
+    </tr>
+    <tr>
+      <th>9708</th>
+      <td>2020</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Extra-tropical storm</td>
+      <td>1</td>
+      <td>33.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>95.512967</td>
+    </tr>
+    <tr>
+      <th>9952</th>
+      <td>2021</td>
+      <td>Germany</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>1000.0</td>
+      <td>197.0</td>
+      <td>4.000000e+10</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>9953</th>
+      <td>2021</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Convective storm</td>
+      <td>2</td>
+      <td>604.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>10188</th>
+      <td>2022</td>
+      <td>Germany</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Extra-tropical storm</td>
+      <td>3</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 10 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="wie-viele-todesopfer-gab-es-insgesamt-in-deutschland">
+<h4>Wie viele Todesopfer gab es insgesamt in Deutschland?<a class="headerlink" href="#wie-viele-todesopfer-gab-es-insgesamt-in-deutschland" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">][</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10419.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_germany</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+<span class="n">data_germany</span><span class="p">[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10419.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="wie-viele-todesopfer-gab-es-insgesamt-in-indien">
+<h4>Wie viele Todesopfer gab es insgesamt in Indien?<a class="headerlink" href="#wie-viele-todesopfer-gab-es-insgesamt-in-indien" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_land</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;India&#39;</span><span class="p">]</span>
+<span class="n">data_land</span><span class="p">[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4591827.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="allgemeine-funktion-die-gesamtzahl-der-todesopfer-eines-landes-ausgibt">
+<h4>Allgemeine Funktion die Gesamtzahl der Todesopfer eines Landes ausgibt<a class="headerlink" href="#allgemeine-funktion-die-gesamtzahl-der-todesopfer-eines-landes-ausgibt" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_total_deaths</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">country</span><span class="p">):</span>
+    <span class="n">data_land</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">data_land</span><span class="p">[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_total_deaths</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>239400.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="dashboard-teil-ii">
+<h2>Dashboard Teil II<a class="headerlink" href="#dashboard-teil-ii" title="Permalink to this headline">#</a></h2>
+<section id="welchen-anteil-haben-die-unterschiedlichen-naturkatastrophentypen-in-deutschland">
+<h3>Welchen Anteil haben die unterschiedlichen Naturkatastrophentypen in Deutschland?<a class="headerlink" href="#welchen-anteil-haben-die-unterschiedlichen-naturkatastrophentypen-in-deutschland" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">germany_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+<span class="n">germany_data</span><span class="p">[</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Storm                   0.540230
+Flood                   0.264368
+Extreme temperature     0.137931
+Earthquake              0.034483
+Wildfire                0.011494
+Landslide               0.011494
+Name: Disaster Type, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="visualisierung-von-dataframes">
+<h1>Visualisierung von DataFrames<a class="headerlink" href="#visualisierung-von-dataframes" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a> is a comprehensive library for creating static, animated, and interactive visualizations in Python.</p>
+<p>Matplotlib makes easy things easy and hard things possible.</p>
+<p>Install matplotlib:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install --upgrade pip
+<span class="o">!</span>pip3 install --upgrade Pillow
+<span class="o">!</span>pip3 install matplotlib
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pip in /home/natalie/.local/lib/python3.9/site-packages (22.3.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Pillow in /home/natalie/.local/lib/python3.9/site-packages (9.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /home/natalie/.local/lib/python3.9/site-packages (3.6.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: contourpy&gt;=1.0.1 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (1.0.6)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: packaging&gt;=20.0 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (21.3)
+Requirement already satisfied: numpy&gt;=1.19 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (1.23.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (9.3.0)
+Requirement already satisfied: cycler&gt;=0.10 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (1.4.4)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (3.0.9)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /home/natalie/.local/lib/python3.9/site-packages (from matplotlib) (4.38.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.14.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">germany_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">germany_data</span><span class="p">[</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Storm                   47
+Flood                   23
+Extreme temperature     12
+Earthquake               3
+Wildfire                 1
+Landslide                1
+Name: Disaster Type, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">germany_data</span><span class="p">[</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: &gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_43_1.png" src="../_images/data_visualisation_43_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">germany_data</span><span class="p">[</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;Disaster Type&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_44_1.png" src="../_images/data_visualisation_44_1.png" />
+</div>
+</div>
+<section id="id1">
+<h2>Recherchefragen<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="welche-naturkatastrophen-fordern-die-meisten-todesopfer">
+<h3>Welche Naturkatastrophen fordern die meisten Todesopfer?<a class="headerlink" href="#welche-naturkatastrophen-fordern-die-meisten-todesopfer" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> gruppiert einen DataFrame nach den Werten einer oder mehreren Spalten.</p>
+<p>Die Spalten nach denen man Gruppieren möchte werden als Argument übergeben. Danach folgt die gewünschte Berechnung auf dieser Gruppe. Das Ergebnis wird als DataFrame zurückgegeben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1900</td>
+      <td>Cabo Verde</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>11000.0</td>
+      <td>11000.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1900</td>
+      <td>India</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>1250000.0</td>
+      <td>1250000.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1900</td>
+      <td>Jamaica</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>300.0</td>
+      <td>300.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1900</td>
+      <td>Japan</td>
+      <td>Geophysical</td>
+      <td>Volcanic activity</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1900</td>
+      <td>Turkey</td>
+      <td>Geophysical</td>
+      <td>Earthquake</td>
+      <td>Ground movement</td>
+      <td>1</td>
+      <td>140.0</td>
+      <td>140.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10338</th>
+      <td>2022</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>3400.0</td>
+      <td>13.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10339</th>
+      <td>2022</td>
+      <td>South Africa</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>7</td>
+      <td>143119.0</td>
+      <td>562.0</td>
+      <td>3.164000e+09</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10340</th>
+      <td>2022</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>15000.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10341</th>
+      <td>2022</td>
+      <td>Zimbabwe</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>No Subtype</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10342</th>
+      <td>2022</td>
+      <td>Zimbabwe</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3000.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>10342 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22845977.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Disaster Type
+Animal accident                12.0
+Drought                  11733889.0
+Earthquake                2343594.0
+Extreme temperature        194056.0
+Flood                     7002950.0
+Fog                          4000.0
+Glacial lake outburst         262.0
+Insect infestation              0.0
+Landslide                   67417.0
+Mass movement (dry)          4644.0
+Storm                     1403607.0
+Volcanic activity           86893.0
+Wildfire                     4653.0
+Name: Total Deaths, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_491300/3612715955.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  data.groupby(&#39;Disaster Type&#39;).sum()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+    <tr>
+      <th>Disaster Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Animal accident</th>
+      <td>2014</td>
+      <td>1</td>
+      <td>5.000000e+00</td>
+      <td>12.0</td>
+      <td>0.000000e+00</td>
+      <td>87.366298</td>
+    </tr>
+    <tr>
+      <th>Drought</th>
+      <td>1543555</td>
+      <td>792</td>
+      <td>2.869852e+09</td>
+      <td>11733889.0</td>
+      <td>2.098881e+11</td>
+      <td>43039.824471</td>
+    </tr>
+    <tr>
+      <th>Earthquake</th>
+      <td>2134925</td>
+      <td>1576</td>
+      <td>2.052983e+08</td>
+      <td>2343594.0</td>
+      <td>8.653494e+11</td>
+      <td>46522.663819</td>
+    </tr>
+    <tr>
+      <th>Extreme temperature</th>
+      <td>1115693</td>
+      <td>607</td>
+      <td>1.038223e+08</td>
+      <td>194056.0</td>
+      <td>6.886634e+10</td>
+      <td>38106.532522</td>
+    </tr>
+    <tr>
+      <th>Flood</th>
+      <td>7604541</td>
+      <td>5730</td>
+      <td>3.967537e+09</td>
+      <td>7002950.0</td>
+      <td>9.771118e+11</td>
+      <td>239869.775450</td>
+    </tr>
+    <tr>
+      <th>Fog</th>
+      <td>1952</td>
+      <td>1</td>
+      <td>4.000000e+03</td>
+      <td>4000.0</td>
+      <td>0.000000e+00</td>
+      <td>9.822074</td>
+    </tr>
+    <tr>
+      <th>Glacial lake outburst</th>
+      <td>4043</td>
+      <td>3</td>
+      <td>3.600000e+01</td>
+      <td>262.0</td>
+      <td>2.100000e+08</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>Insect infestation</th>
+      <td>183314</td>
+      <td>95</td>
+      <td>2.802200e+06</td>
+      <td>0.0</td>
+      <td>2.292000e+08</td>
+      <td>4880.908507</td>
+    </tr>
+    <tr>
+      <th>Landslide</th>
+      <td>1277348</td>
+      <td>789</td>
+      <td>1.480567e+07</td>
+      <td>67417.0</td>
+      <td>1.125893e+10</td>
+      <td>36989.405750</td>
+    </tr>
+    <tr>
+      <th>Mass movement (dry)</th>
+      <td>93320</td>
+      <td>48</td>
+      <td>3.105800e+04</td>
+      <td>4644.0</td>
+      <td>2.090000e+08</td>
+      <td>2269.255805</td>
+    </tr>
+    <tr>
+      <th>Storm</th>
+      <td>5473348</td>
+      <td>4579</td>
+      <td>1.256494e+09</td>
+      <td>1403607.0</td>
+      <td>1.749046e+12</td>
+      <td>149355.146763</td>
+    </tr>
+    <tr>
+      <th>Volcanic activity</th>
+      <td>457628</td>
+      <td>269</td>
+      <td>1.004262e+07</td>
+      <td>86893.0</td>
+      <td>6.326912e+09</td>
+      <td>12030.182594</td>
+    </tr>
+    <tr>
+      <th>Wildfire</th>
+      <td>744227</td>
+      <td>453</td>
+      <td>1.836880e+07</td>
+      <td>4653.0</td>
+      <td>1.290320e+11</td>
+      <td>23624.803026</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_491300/3612715955.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  data.groupby(&#39;Disaster Type&#39;).sum()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+    <tr>
+      <th>Disaster Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Animal accident</th>
+      <td>2014</td>
+      <td>1</td>
+      <td>5.000000e+00</td>
+      <td>12.0</td>
+      <td>0.000000e+00</td>
+      <td>87.366298</td>
+    </tr>
+    <tr>
+      <th>Drought</th>
+      <td>1543555</td>
+      <td>792</td>
+      <td>2.869852e+09</td>
+      <td>11733889.0</td>
+      <td>2.098881e+11</td>
+      <td>43039.824471</td>
+    </tr>
+    <tr>
+      <th>Earthquake</th>
+      <td>2134925</td>
+      <td>1576</td>
+      <td>2.052983e+08</td>
+      <td>2343594.0</td>
+      <td>8.653494e+11</td>
+      <td>46522.663819</td>
+    </tr>
+    <tr>
+      <th>Extreme temperature</th>
+      <td>1115693</td>
+      <td>607</td>
+      <td>1.038223e+08</td>
+      <td>194056.0</td>
+      <td>6.886634e+10</td>
+      <td>38106.532522</td>
+    </tr>
+    <tr>
+      <th>Flood</th>
+      <td>7604541</td>
+      <td>5730</td>
+      <td>3.967537e+09</td>
+      <td>7002950.0</td>
+      <td>9.771118e+11</td>
+      <td>239869.775450</td>
+    </tr>
+    <tr>
+      <th>Fog</th>
+      <td>1952</td>
+      <td>1</td>
+      <td>4.000000e+03</td>
+      <td>4000.0</td>
+      <td>0.000000e+00</td>
+      <td>9.822074</td>
+    </tr>
+    <tr>
+      <th>Glacial lake outburst</th>
+      <td>4043</td>
+      <td>3</td>
+      <td>3.600000e+01</td>
+      <td>262.0</td>
+      <td>2.100000e+08</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>Insect infestation</th>
+      <td>183314</td>
+      <td>95</td>
+      <td>2.802200e+06</td>
+      <td>0.0</td>
+      <td>2.292000e+08</td>
+      <td>4880.908507</td>
+    </tr>
+    <tr>
+      <th>Landslide</th>
+      <td>1277348</td>
+      <td>789</td>
+      <td>1.480567e+07</td>
+      <td>67417.0</td>
+      <td>1.125893e+10</td>
+      <td>36989.405750</td>
+    </tr>
+    <tr>
+      <th>Mass movement (dry)</th>
+      <td>93320</td>
+      <td>48</td>
+      <td>3.105800e+04</td>
+      <td>4644.0</td>
+      <td>2.090000e+08</td>
+      <td>2269.255805</td>
+    </tr>
+    <tr>
+      <th>Storm</th>
+      <td>5473348</td>
+      <td>4579</td>
+      <td>1.256494e+09</td>
+      <td>1403607.0</td>
+      <td>1.749046e+12</td>
+      <td>149355.146763</td>
+    </tr>
+    <tr>
+      <th>Volcanic activity</th>
+      <td>457628</td>
+      <td>269</td>
+      <td>1.004262e+07</td>
+      <td>86893.0</td>
+      <td>6.326912e+09</td>
+      <td>12030.182594</td>
+    </tr>
+    <tr>
+      <th>Wildfire</th>
+      <td>744227</td>
+      <td>453</td>
+      <td>1.836880e+07</td>
+      <td>4653.0</td>
+      <td>1.290320e+11</td>
+      <td>23624.803026</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> kann auch auf mehrere Spalten gleichzeitig angewendet werden</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Disaster Subtype&#39;</span><span class="p">])[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Disaster Type          Disaster Subtype                
+Animal accident        No Subtype                                12.0
+Drought                Drought                             11733812.0
+                       No Subtype                                77.0
+Earthquake             Ground movement                      2075949.0
+                       No Subtype                               221.0
+                       Tsunami                               267424.0
+Extreme temperature    Cold wave                              17765.0
+                       Heat wave                             172555.0
+                       Severe winter conditions                3736.0
+Flood                  Coastal flood                           5352.0
+                       Flash flood                            70835.0
+                       No Subtype                           2480837.0
+                       Riverine flood                       4445926.0
+Fog                    No Subtype                              4000.0
+Glacial lake outburst  No Subtype                               262.0
+Insect infestation     Grasshopper                                0.0
+                       Locust                                     0.0
+                       No Subtype                                 0.0
+Landslide              Avalanche                               5227.0
+                       Landslide                              41435.0
+                       Mudslide                                4913.0
+                       No Subtype                             15427.0
+                       Rockfall                                 128.0
+                       Subsidence                               287.0
+Mass movement (dry)    Avalanche                                349.0
+                       Landslide                               3774.0
+                       No Subtype                                10.0
+                       Rockfall                                 477.0
+                       Subsidence                                34.0
+Storm                  Convective storm                       22730.0
+                       Extra-tropical storm                     558.0
+                       No Subtype                             25135.0
+                       Tropical cyclone                     1355184.0
+Volcanic activity      Ash fall                               85831.0
+                       Lava flow                                 33.0
+                       No Subtype                               516.0
+                       Pyroclastic flow                         513.0
+Wildfire               Forest fire                             3334.0
+                       Land fire (Brush, Bush, Pasture)         966.0
+                       No Subtype                               353.0
+Name: Total Deaths, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>Visualisierung<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;Total Deaths&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_55_1.png" src="../_images/data_visualisation_55_1.png" />
+</div>
+</div>
+<section id="welche-naturkatastrophen-fordern-die-meisten-todesopfer-in-deutschland">
+<h4>Welche Naturkatastrophen fordern die meisten Todesopfer in Deutschland?<a class="headerlink" href="#welche-naturkatastrophen-fordern-die-meisten-todesopfer-in-deutschland" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">germany_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
+<span class="n">germany_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;Total Deaths&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_57_1.png" src="../_images/data_visualisation_57_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;Total Deaths&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_58_1.png" src="../_images/data_visualisation_58_1.png" />
+</div>
+</div>
+</section>
+<section id="generelle-funktion">
+<h4>Generelle Funktion<a class="headerlink" href="#generelle-funktion" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;India&#39;</span>
+<span class="n">country_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+<span class="n">country_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: ylabel=&#39;Total Deaths&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_60_1.png" src="../_images/data_visualisation_60_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_death_by_disastertype</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">country</span><span class="p">):</span>
+    <span class="n">country_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+    <span class="n">country_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_death_by_disastertype</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Egypt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/data_visualisation_62_0.png" src="../_images/data_visualisation_62_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="dashboard-teil-iii">
+<h2>Dashboard Teil III<a class="headerlink" href="#dashboard-teil-iii" title="Permalink to this headline">#</a></h2>
+<section id="wie-hat-sich-die-anzahl-der-naturkatastrophen-uber-die-jahre-hin-entwickelt">
+<h3>Wie hat sich die Anzahl der Naturkatastrophen über die Jahre hin entwickelt?<a class="headerlink" href="#wie-hat-sich-die-anzahl-der-naturkatastrophen-uber-die-jahre-hin-entwickelt" title="Permalink to this headline">#</a></h3>
+<p><strong>Berechne für jedes Jahr die Summe aus allen <code class="docutils literal notranslate"><span class="pre">Events</span></code></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year
+1900      6
+1901      1
+1902     10
+1903     12
+1904      4
+       ... 
+2018    320
+2019    404
+2020    395
+2021    432
+2022    315
+Name: Total Events, Length: 123, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14943
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1900</th>
+      <td>Cabo Verde</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>30000000.0</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>1901</th>
+      <td>Japan</td>
+      <td>Geophysical</td>
+      <td>Earthquake</td>
+      <td>Tsunami</td>
+      <td>1</td>
+      <td>24.0</td>
+      <td>18.0</td>
+      <td>NaN</td>
+      <td>3.077091</td>
+    </tr>
+    <tr>
+      <th>1902</th>
+      <td>Azerbaijan</td>
+      <td>Geophysical</td>
+      <td>Earthquake</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>125.0</td>
+      <td>86.0</td>
+      <td>25000000.0</td>
+      <td>3.200175</td>
+    </tr>
+    <tr>
+      <th>1903</th>
+      <td>Canada</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>480000000.0</td>
+      <td>3.323258</td>
+    </tr>
+    <tr>
+      <th>1904</th>
+      <td>Bangladesh</td>
+      <td>Geophysical</td>
+      <td>Earthquake</td>
+      <td>Ground movement</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>3.323258</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>36000.0</td>
+      <td>92.669670</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>Afghanistan</td>
+      <td>Biological</td>
+      <td>Drought</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>4000000.0</td>
+      <td>94.349092</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>Afghanistan</td>
+      <td>Biological</td>
+      <td>Drought</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1500000.0</td>
+      <td>95.512967</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>120000.0</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Ash fall</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>240000.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>123 rows × 9 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year
+1900      6
+1901      1
+1902     10
+1903     12
+1904      4
+       ... 
+2018    320
+2019    404
+2020    395
+2021    432
+2022    315
+Name: Total Events, Length: 123, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yearly_events</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">yearly_events</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Events&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anzahl an Naturkatastrophen pro Jahr&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: title={&#39;center&#39;: &#39;Anzahl an Naturkatastrophen pro Jahr&#39;}, xlabel=&#39;Year&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_69_1.png" src="../_images/data_visualisation_69_1.png" />
+</div>
+</div>
+<p><strong>Plotte für Deutschland die Entwicklung der Anzahl an Naturkatastrophen über die Jahre hinweg</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yearly_events</span> <span class="o">=</span><span class="n">germany_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">yearly_events</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Events&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anzahl an Naturkatastrophen pro Jahr&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: title={&#39;center&#39;: &#39;Anzahl an Naturkatastrophen pro Jahr&#39;}, xlabel=&#39;Year&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_71_1.png" src="../_images/data_visualisation_71_1.png" />
+</div>
+</div>
+<p><strong>Generelle Funktion</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_evolution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">country</span><span class="p">):</span>
+    <span class="n">land_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">county</span><span class="p">]</span>
+    <span class="n">yearly_events</span> <span class="o">=</span> <span class="n">land_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">yearly_events</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Events&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anzahl an Naturkatastrophen pro Jahr&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="landerdashboard">
+<h2>Länderdashboard<a class="headerlink" href="#landerdashboard" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_pie</span><span class="p">(</span><span class="n">country_data</span><span class="p">):</span>
+    <span class="n">country_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anteil an getöten Menschen nach Naturkatastrophentyp&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_time_evolution</span><span class="p">(</span><span class="n">country_data</span><span class="p">):</span>
+    <span class="n">yearly_events</span> <span class="o">=</span> <span class="n">country_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">yearly_events</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Events&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anzahl an Naturkatastrophen pro Jahr&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">death_overview</span><span class="p">(</span><span class="n">country_data</span><span class="p">):</span>
+    <span class="n">total_deaths</span> <span class="o">=</span> <span class="n">country_data</span><span class="p">[</span><span class="s2">&quot;Total Deaths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Getötete Menschen seit 1900: </span><span class="si">{</span><span class="n">total_deaths</span><span class="si">:</span><span class="s1">,.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_anteil</span><span class="p">(</span><span class="n">country_total</span><span class="p">,</span> <span class="n">world_total</span><span class="p">):</span>
+    <span class="n">anteil</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">country_total</span> <span class="o">/</span> <span class="p">(</span><span class="n">world_total</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">anteil</span><span class="si">}</span><span class="s1">% aller Menschen die weltweit von Naturkatastrophen betroffen sind leben hier.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">analyze</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">country</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Naturkatastrophen in </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">country_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+    
+    <span class="c1"># compute_anteil(country_data[&#39;Total Affected&#39;].sum(), data[&#39;Total Affected&#39;].sum())</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">death_overview</span><span class="p">(</span><span class="n">country_data</span><span class="p">)</span>
+    <span class="n">plot_pie</span><span class="p">(</span><span class="n">country_data</span><span class="p">)</span>
+    <span class="n">plot_time_evolution</span><span class="p">(</span><span class="n">country_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analyze</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Bangladesh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Naturkatastrophen in BANGLADESH 
+
+Getötete Menschen seit 1900: 2,590,902
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_80_1.png" src="../_images/data_visualisation_80_1.png" />
+<img alt="../_images/data_visualisation_80_2.png" src="../_images/data_visualisation_80_2.png" />
+</div>
+</div>
+<section id="uberblick-uber-die-welt">
+<h3>Überblick über die Welt<a class="headerlink" href="#uberblick-uber-die-welt" title="Permalink to this headline">#</a></h3>
+<p>Wie können wir die selbstdefinierte Funktion <code class="docutils literal notranslate"><span class="pre">analyze()</span></code> anpassen, so dass auch eine Gesamtstatistik, die alle Länder der Welt enthält abgefragt werden kann?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">analyze</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">country</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Naturkatastrophen in </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">country_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">country</span> <span class="o">==</span> <span class="s1">&#39;world&#39;</span><span class="p">:</span>
+        <span class="n">country_data</span> <span class="o">=</span> <span class="n">data</span>   
+    <span class="n">compute_anteil</span><span class="p">(</span><span class="n">country_data</span><span class="p">[</span><span class="s1">&#39;Total Affected&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Affected&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="n">death_overview</span><span class="p">(</span><span class="n">country_data</span><span class="p">)</span>
+    <span class="n">plot_pie</span><span class="p">(</span><span class="n">country_data</span><span class="p">)</span>
+    <span class="n">plot_time_evolution</span><span class="p">(</span><span class="n">country_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analyze</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Naturkatastrophen in WORLD 
+
+100.0% aller Menschen die weltweit von Naturkatastrophen betroffen sind leben hier.
+Getötete Menschen seit 1900: 22,845,977
+</pre></div>
+</div>
+<img alt="../_images/data_visualisation_83_1.png" src="../_images/data_visualisation_83_1.png" />
+<img alt="../_images/data_visualisation_83_2.png" src="../_images/data_visualisation_83_2.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="zeit-fur-feedback">
+<h1>Zeit für Feedback<a class="headerlink" href="#zeit-fur-feedback" title="Permalink to this headline">#</a></h1>
+<p>Link: <a class="reference external" href="https://ahaslides.com/HP3D5">https://ahaslides.com/HP3D5</a></p>
+<p><img alt="Feedback QR Code" src="imgs/qrcode_vl7.png" /></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./datenanalyse"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="data_cleaning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Data Cleaning</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="beispiele.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Praktische Anwendungen</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Natalie Widmann<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -53,9 +53,12 @@ parts:
     maxdepth: 1
     chapters:
       - file: datenanalyse/datapipeline
+      - file: datenanalyse/data_exploration
+      - file: datenanalyse/data_cleaning
+      - file: datenanalyse/data_visualisation
       - file: datenanalyse/beispiele
         sections:
-        - file: datenanalyse/data_exploration
+        - file: datenanalyse/natural_disaster_dashboard
       - file: aufgaben/intro2
         sections:
           - file: aufgaben/uebungen5

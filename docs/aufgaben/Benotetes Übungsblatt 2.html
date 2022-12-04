@@ -350,6 +350,21 @@ const thebe_selector_output = ".output, .cell_output"
    Datenanalyse und -verarbeitung
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datenanalyse/data_exploration.html">
+   Datenexploration: Weltweite Naturkatastrophen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datenanalyse/data_cleaning.html">
+   Data Cleaning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datenanalyse/data_visualisation.html">
+   Visualisierung
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../datenanalyse/beispiele.html">
    Praktische Anwendungen
@@ -361,8 +376,8 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../datenanalyse/data_exploration.html">
-     Datenexploration: Weltweite Naturkatastrophen
+    <a class="reference internal" href="../datenanalyse/natural_disaster_dashboard.html">
+     Natural Disasters Dashboard
     </a>
    </li>
   </ul>
@@ -736,16 +751,18 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ubungsblatt-2-datenverarbeitung-und-analyse">
 <h1>Übungsblatt 2 - Datenverarbeitung und -analyse<a class="headerlink" href="#ubungsblatt-2-datenverarbeitung-und-analyse" title="Permalink to this headline">#</a></h1>
-<p>In diesem Übungsblatt decken wir Teil II der Vorlesungsinhalte über Datenanalyse und -verarbeitung ab.</p>
+<p>In diesem Übungsblatt decken wir mit Datenanalyse, -verarbeitung und -visualisierung Teil II der Vorlesungsinhalte ab.</p>
 <p>Die Abgabe ist bis zum <strong>11. Dezember um 24 Uhr</strong> über Moodle möglich.<br/>
 Bitte gebt Python Code oder Jupyternotebooks (Filetypen <em>.py</em> oder <em>.ipynb</em>) ab.</p>
-<p>Bestanden hat wer mindestens 40% der Gesamtpunktzahl, also 6 Punkte, erreicht.</p>
-<p><strong>Identische Abgaben werden nicht gewertet</strong></p>
+<p>Bestanden hat wer mindestens 40% der Gesamtpunktzahl, also 6 Punkte, erreicht. Der Kurs insgesamt wird nicht benotet sondern muss nur bestanden werden.</p>
+<p><strong>Identische Abgaben werden nicht gewertet.</strong></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="netflix-daten">
 <h1>Netflix Daten<a class="headerlink" href="#netflix-daten" title="Permalink to this headline">#</a></h1>
 <p>In diesem Übungsblatt analysieren wir Netflixdaten.
 Diese sind auf Kaggle verfügbar und können <a class="reference external" href="https://www.kaggle.com/datasets/shivamb/netflix-shows">hier</a> as <code class="docutils literal notranslate"><span class="pre">csv</span></code> Datei heruntergeladen werden.</p>
+<p><img alt="netflix.png" src="aufgaben/attachment:netflix.png" /></p>
+<p>Für die folgenden Aufgaben nutzt bitte <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <section id="daten-lesen-saubern">
 <h2>Daten lesen &amp; säubern<a class="headerlink" href="#daten-lesen-saubern" title="Permalink to this headline">#</a></h2>
 <p><strong>Lese die Daten mithilfe von <code class="docutils literal notranslate"><span class="pre">pandas</span></code> ein und zeige die ersten 10 Zeilen an.</strong> (0.5 Punkt)</p>
@@ -760,25 +777,25 @@ Beschreibe zwei Erkenntnisse die du daran ablesen kannst.</strong> (1 Punkt)</p>
 <section id="datenanalyse">
 <h2>Datenanalyse<a class="headerlink" href="#datenanalyse" title="Permalink to this headline">#</a></h2>
 <p><strong>Bei wie vielen Filmen ist <code class="docutils literal notranslate"><span class="pre">Youssef</span> <span class="pre">Chahine</span></code> als Regisseur gelistet?</strong></p>
-<p><strong>Zeig alle Filmtitel von ihm an.</strong> (1 Punkt)</p>
+<p><strong>Zeige alle Filmtitel von ihm an.</strong> (1 Punkt)</p>
 <p><strong>Bei wie vielen Filmen haben mehrere Regisseure mitgewirkt?</strong> (2 Punkte)</p>
 <p><strong>Ansatz</strong>: Falls mehrere Regisseure am Werk enthält der Wert in der Spalte <code class="docutils literal notranslate"><span class="pre">director</span></code> mindestens ein Komma.</p>
 <ol class="simple">
-<li><p>Schreibe eine Funktion die True zurückgibt (kein print!) sobald ein Komma in einem beliebigen Text vorkommt</p></li>
+<li><p>Schreibe eine Funktion die True zurückgibt (kein print!) sobald ein Komma in einem <strong>beliebigen Text</strong>, der als Argument übergeben wir, vorkommt</p></li>
 <li><p>Wende diese Funktion mihilfe von <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> auf alle Werte in der Spalte <code class="docutils literal notranslate"><span class="pre">director</span></code> an. Speichere das Ergebnis.</p></li>
-<li><p>Erstelle einen neuen DataFrame, der nur die Zeilen enthält in denen das Ergebnis aus Aufgabe 2 == <code class="docutils literal notranslate"><span class="pre">True</span></code> ist. Ermittle davon die Anzahl an Zeilen.</p></li>
+<li><p>Erstelle einen neuen DataFrame, der nur die Zeilen enthält in denen das Ergebnis aus Aufgabe 2 wahr ist. Ermittle davon die Anzahl an Zeilen.</p></li>
 </ol>
 <p><strong>Berechne das früheste Veröffentlichungsdatum für alle Regisseur:innen oder gelisteten Gruppen. Sortiere das Ergebnis chronologisch</strong> (1 Punkt)</p>
 <p>Hinweis: Verwende <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> um das mit einer Zeile Code zu lösen.</p>
-<p><strong>In welchem Land werden die meisten TV Shows oder Filme für Netflix produziert?</strong> (1 Punkt)</p>
-<p><strong>Erstelle einen Bar Plot mit den Top 10 Länder und ihrem prozentualen Anteil.</strong> (Punkt 1)</p>
+<p><strong>In welchem Land werden die meisten Filme (nicht TV Shows) für Netflix produziert?</strong> (1 Punkt)</p>
+<p><strong>Erstelle einen Bar Plot mit den Top 10 Länder und ihrem prozentualen Anteil an der Filmproduktion.</strong> (Punkt 1)</p>
 <p><strong>Bonus:</strong> Denke dir eine beliebige Recherchefrage aus und beantworte sie mit dem Datensatz. Für einen Plot gibt es einen Zusatzpunkt. (1 Punkt)</p>
 </section>
 <section id="datenvisualisierung">
 <h2>Datenvisualisierung<a class="headerlink" href="#datenvisualisierung" title="Permalink to this headline">#</a></h2>
 <p>Die folgende Visualisierung ist von <a class="reference external" href="https://www.kaggle.com/code/joshuaswords/netflix-data-visualization">https://www.kaggle.com/code/joshuaswords/netflix-data-visualization</a> übernommen. Wir wollen sie anpassen, so dass sie unseren Anforderungen entspricht.</p>
-<p>Keine Angst! - Du musst nicht alles verstehen. Es geht viel mehr darum, die wichtigsten Komponenten zu erkennen und abzuändern zu können. Ausprobieren und mit unterschiedlichen Werten experimentieren hilft dabei!</p>
-<p>Führe den folgenden Code aus.</p>
+<p>Keine Angst! - Du musst nicht alles verstehen. Es geht viel mehr darum, die wichtigsten Komponenten zu erkennen und abzuändern zu können. Unterschiedliche Werte einsetzen, Zeilen auskommentieren und den Code immer wieder auszuführen hilft dabei.</p>
+<p>Los geht’s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -840,6 +857,7 @@ Beschreibe zwei Erkenntnisse die du daran ablesen kannst.</strong> (1 Punkt)</p>
 </div>
 <section id="aufgaben">
 <h3>Aufgaben<a class="headerlink" href="#aufgaben" title="Permalink to this headline">#</a></h3>
+<p>Führe den Code aus und passe ihn wie folgt an:</p>
 <ul class="simple">
 <li><p>Ändere den Titel des Plots in <code class="docutils literal notranslate"><span class="pre">Veröffentlichte</span> <span class="pre">Netflix</span> <span class="pre">Filme</span> <span class="pre">und</span> <span class="pre">TV</span> <span class="pre">Shows</span></code> und die Schriftart in Arial um.</p></li>
 <li><p>Enfterne die Bildbeschreibung (<code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">see</span> <span class="pre">a</span> <span class="pre">slow....</span></code>) und ändere die Farbe für Filme in der Grafik in eine beliebige Farbe um</p></li>

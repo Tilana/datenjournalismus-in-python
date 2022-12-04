@@ -1,0 +1,1454 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Weitere Schritte mit Pandas &#8212; Datenjournalismus in Python</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Uni_Leipzig_Logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Datenjournalismus in Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../willkommen/intro.html">
+                    Datenjournalismus in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Willkommen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../willkommen/kursplan.html">
+   Workbook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../willkommen/motivation.html">
+   Motivation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../willkommen/tipps.html">
+   Tipps
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grundlagen in Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grundlagen/beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/wealth.html">
+     Wie reich ist Jeff Bezos?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/automatisierteTexte.html">
+     Automatisierte Texte
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/luftqualitaet.html">
+     Analyse der Luftqualität in Leipzig
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/nebeneinkuenfte.html">
+     Nebeneinkünfte von Lokalpolitiker:innen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grundlagen/theorie.html">
+   Theorie
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/operatoren.html">
+     Operatoren
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/arithm_operatoren.html">
+       Arithmetische Operatoren
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/vergleichsoperatoren.html">
+       Vergleichsoperatoren
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/bool_operatoren.html">
+       Logische (Boolsche) Operatoren
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/variablen.html">
+     Variablen
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/datentypen.html">
+     Datentypen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/datentypen_basics.html">
+       Grundlegende Datentypen: int, float, string, bool
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/listen.html">
+       Listen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/dictionaries.html">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/methoden.html">
+     Methoden
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/funktionen.html">
+     Funktionen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/inbuilt_functions.html">
+       Eingebaute Funktionen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/eigene_funktionen.html">
+       Selbstdefinierte Funktionen
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../grundlagen/kontrollstrukturen.html">
+     Kontrollstrukturen
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/ifelse.html">
+       Fallunterscheidungen: if, else, elif
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/forloops.html">
+       For Loops
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/whileloops.html">
+       While Loop
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../grundlagen/flow_control.html">
+       Flow Control
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grundlagen/packages.html">
+     Python Packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen1.html">
+     Operatoren, Datentypen &amp; built-in Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen2.html">
+     String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen3.html">
+     Listen, Funktionen und Schleifen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen4.html">
+     While-Schleifen &amp;  Dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Datenanalyse
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datenanalyse/datapipeline.html">
+   Datenanalyse und -verarbeitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datenanalyse/data_exploration.html">
+   Datenexploration: Weltweite Naturkatastrophen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datenanalyse/data_cleaning.html">
+   Data Cleaning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datenanalyse/data_visualisation.html">
+   Visualisierung
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datenanalyse/beispiele.html">
+   Praktische Anwendungen
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datenanalyse/natural_disaster_dashboard.html">
+     Natural Disasters Dashboard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro2.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen5.html">
+     Packages &amp; Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen6.html">
+     Weitere Schritte mit Pandas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  APIs &amp; Scraper
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../APIs/tbd.html">
+   APIs und Scraper
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Weitere Informationen
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weiteres/intro.html">
+   Weitere Informationen
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/aufgaben/uebungen6-Lösung.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/aufgaben/uebungen6-Lösung.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Tilana/datenjournalismus-in-python"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Faufgaben/uebungen6-Lösung.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/aufgaben/uebungen6-Lösung.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Weitere Schritte mit Pandas
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing-cleaning">
+     Indexing &amp; Cleaning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualisierung">
+     Visualisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rechercheaufgabe">
+   Rechercheaufgabe
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-output-in-python">
+     Input/Output in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Weitere Schritte mit Pandas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Weitere Schritte mit Pandas
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexing-cleaning">
+     Indexing &amp; Cleaning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualisierung">
+     Visualisierung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rechercheaufgabe">
+   Rechercheaufgabe
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#input-output-in-python">
+     Input/Output in Python
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="weitere-schritte-mit-pandas">
+<h1>Weitere Schritte mit Pandas<a class="headerlink" href="#weitere-schritte-mit-pandas" title="Permalink to this headline">#</a></h1>
+<section id="indexing-cleaning">
+<h2>Indexing &amp; Cleaning<a class="headerlink" href="#indexing-cleaning" title="Permalink to this headline">#</a></h2>
+<p>Lade deinen Datensatz von letzter Woche relativ zu deinem Arbeitsverzeichnis.
+Formatiere deinen DataFrame anschließend so, dass die Column ‘Date’ als neuer Index fungiert.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/city-stats.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lösche die Column mit den wenigsten Seitenaufrufen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df.pop(df.sum().idxmin())</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">idxmin</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#del df[df.sum().idxmin()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Berlin</th>
+      <th>München</th>
+      <th>Leipzig</th>
+      <th>Stuttgart</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-10</th>
+      <td>13436</td>
+      <td>5129</td>
+      <td>1287</td>
+      <td>1676</td>
+    </tr>
+    <tr>
+      <th>2020-11</th>
+      <td>15673</td>
+      <td>3629</td>
+      <td>1172</td>
+      <td>1870</td>
+    </tr>
+    <tr>
+      <th>2020-12</th>
+      <td>12500</td>
+      <td>3334</td>
+      <td>1104</td>
+      <td>1589</td>
+    </tr>
+    <tr>
+      <th>2021-01</th>
+      <td>12368</td>
+      <td>4476</td>
+      <td>1462</td>
+      <td>1979</td>
+    </tr>
+    <tr>
+      <th>2021-02</th>
+      <td>20432</td>
+      <td>5712</td>
+      <td>1933</td>
+      <td>3559</td>
+    </tr>
+    <tr>
+      <th>2021-03</th>
+      <td>22500</td>
+      <td>6668</td>
+      <td>1947</td>
+      <td>3238</td>
+    </tr>
+    <tr>
+      <th>2021-04</th>
+      <td>13439</td>
+      <td>4014</td>
+      <td>1629</td>
+      <td>1817</td>
+    </tr>
+    <tr>
+      <th>2021-05</th>
+      <td>5668</td>
+      <td>1834</td>
+      <td>1241</td>
+      <td>2144</td>
+    </tr>
+    <tr>
+      <th>2021-06</th>
+      <td>9887</td>
+      <td>2697</td>
+      <td>1683</td>
+      <td>1079</td>
+    </tr>
+    <tr>
+      <th>2021-07</th>
+      <td>6211</td>
+      <td>2137</td>
+      <td>808</td>
+      <td>981</td>
+    </tr>
+    <tr>
+      <th>2021-08</th>
+      <td>10759</td>
+      <td>2133</td>
+      <td>1235</td>
+      <td>1373</td>
+    </tr>
+    <tr>
+      <th>2021-09</th>
+      <td>5556</td>
+      <td>1711</td>
+      <td>986</td>
+      <td>1055</td>
+    </tr>
+    <tr>
+      <th>2021-10</th>
+      <td>6053</td>
+      <td>3683</td>
+      <td>1279</td>
+      <td>1225</td>
+    </tr>
+    <tr>
+      <th>2021-11</th>
+      <td>7455</td>
+      <td>2020</td>
+      <td>1153</td>
+      <td>1273</td>
+    </tr>
+    <tr>
+      <th>2021-12</th>
+      <td>8865</td>
+      <td>2872</td>
+      <td>2118</td>
+      <td>1619</td>
+    </tr>
+    <tr>
+      <th>2022-01</th>
+      <td>12223</td>
+      <td>3872</td>
+      <td>2554</td>
+      <td>1820</td>
+    </tr>
+    <tr>
+      <th>2022-02</th>
+      <td>3620</td>
+      <td>1648</td>
+      <td>1161</td>
+      <td>1172</td>
+    </tr>
+    <tr>
+      <th>2022-03</th>
+      <td>5006</td>
+      <td>2333</td>
+      <td>1131</td>
+      <td>1101</td>
+    </tr>
+    <tr>
+      <th>2022-04</th>
+      <td>7528</td>
+      <td>2144</td>
+      <td>1167</td>
+      <td>1225</td>
+    </tr>
+    <tr>
+      <th>2022-05</th>
+      <td>8110</td>
+      <td>20529</td>
+      <td>1326</td>
+      <td>1229</td>
+    </tr>
+    <tr>
+      <th>2022-06</th>
+      <td>9112</td>
+      <td>21624</td>
+      <td>1103</td>
+      <td>906</td>
+    </tr>
+    <tr>
+      <th>2022-07</th>
+      <td>10268</td>
+      <td>4255</td>
+      <td>3931</td>
+      <td>3061</td>
+    </tr>
+    <tr>
+      <th>2022-08</th>
+      <td>17969</td>
+      <td>10034</td>
+      <td>6358</td>
+      <td>5666</td>
+    </tr>
+    <tr>
+      <th>2022-09</th>
+      <td>20162</td>
+      <td>10399</td>
+      <td>6607</td>
+      <td>7169</td>
+    </tr>
+    <tr>
+      <th>2022-10</th>
+      <td>20790</td>
+      <td>7277</td>
+      <td>7148</td>
+      <td>7093</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Füge dem DataFrame eine weitere Zeile hinzu, in der die durchschnittlichen Aufrufzahlen der jeweiligen Seite angezeigt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Durchschnitt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1">#df[&#39;Durchschnitt pro Monat&#39;] = df.mean(axis=1)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Berlin</th>
+      <th>München</th>
+      <th>Leipzig</th>
+      <th>Stuttgart</th>
+      <th>Köln</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-10</th>
+      <td>13436.0</td>
+      <td>5129.00</td>
+      <td>1287.00</td>
+      <td>1676.00</td>
+      <td>1911.00</td>
+    </tr>
+    <tr>
+      <th>2020-11</th>
+      <td>15673.0</td>
+      <td>3629.00</td>
+      <td>1172.00</td>
+      <td>1870.00</td>
+      <td>2713.00</td>
+    </tr>
+    <tr>
+      <th>2020-12</th>
+      <td>12500.0</td>
+      <td>3334.00</td>
+      <td>1104.00</td>
+      <td>1589.00</td>
+      <td>1854.00</td>
+    </tr>
+    <tr>
+      <th>2021-01</th>
+      <td>12368.0</td>
+      <td>4476.00</td>
+      <td>1462.00</td>
+      <td>1979.00</td>
+      <td>2766.00</td>
+    </tr>
+    <tr>
+      <th>2021-02</th>
+      <td>20432.0</td>
+      <td>5712.00</td>
+      <td>1933.00</td>
+      <td>3559.00</td>
+      <td>3191.00</td>
+    </tr>
+    <tr>
+      <th>2021-03</th>
+      <td>22500.0</td>
+      <td>6668.00</td>
+      <td>1947.00</td>
+      <td>3238.00</td>
+      <td>3598.00</td>
+    </tr>
+    <tr>
+      <th>2021-04</th>
+      <td>13439.0</td>
+      <td>4014.00</td>
+      <td>1629.00</td>
+      <td>1817.00</td>
+      <td>1991.00</td>
+    </tr>
+    <tr>
+      <th>2021-05</th>
+      <td>5668.0</td>
+      <td>1834.00</td>
+      <td>1241.00</td>
+      <td>2144.00</td>
+      <td>1534.00</td>
+    </tr>
+    <tr>
+      <th>2021-06</th>
+      <td>9887.0</td>
+      <td>2697.00</td>
+      <td>1683.00</td>
+      <td>1079.00</td>
+      <td>1726.00</td>
+    </tr>
+    <tr>
+      <th>2021-07</th>
+      <td>6211.0</td>
+      <td>2137.00</td>
+      <td>808.00</td>
+      <td>981.00</td>
+      <td>1097.00</td>
+    </tr>
+    <tr>
+      <th>2021-08</th>
+      <td>10759.0</td>
+      <td>2133.00</td>
+      <td>1235.00</td>
+      <td>1373.00</td>
+      <td>1535.00</td>
+    </tr>
+    <tr>
+      <th>2021-09</th>
+      <td>5556.0</td>
+      <td>1711.00</td>
+      <td>986.00</td>
+      <td>1055.00</td>
+      <td>1134.00</td>
+    </tr>
+    <tr>
+      <th>2021-10</th>
+      <td>6053.0</td>
+      <td>3683.00</td>
+      <td>1279.00</td>
+      <td>1225.00</td>
+      <td>1458.00</td>
+    </tr>
+    <tr>
+      <th>2021-11</th>
+      <td>7455.0</td>
+      <td>2020.00</td>
+      <td>1153.00</td>
+      <td>1273.00</td>
+      <td>1891.00</td>
+    </tr>
+    <tr>
+      <th>2021-12</th>
+      <td>8865.0</td>
+      <td>2872.00</td>
+      <td>2118.00</td>
+      <td>1619.00</td>
+      <td>1727.00</td>
+    </tr>
+    <tr>
+      <th>2022-01</th>
+      <td>12223.0</td>
+      <td>3872.00</td>
+      <td>2554.00</td>
+      <td>1820.00</td>
+      <td>2504.00</td>
+    </tr>
+    <tr>
+      <th>2022-02</th>
+      <td>3620.0</td>
+      <td>1648.00</td>
+      <td>1161.00</td>
+      <td>1172.00</td>
+      <td>1184.00</td>
+    </tr>
+    <tr>
+      <th>2022-03</th>
+      <td>5006.0</td>
+      <td>2333.00</td>
+      <td>1131.00</td>
+      <td>1101.00</td>
+      <td>1223.00</td>
+    </tr>
+    <tr>
+      <th>2022-04</th>
+      <td>7528.0</td>
+      <td>2144.00</td>
+      <td>1167.00</td>
+      <td>1225.00</td>
+      <td>1680.00</td>
+    </tr>
+    <tr>
+      <th>2022-05</th>
+      <td>8110.0</td>
+      <td>20529.00</td>
+      <td>1326.00</td>
+      <td>1229.00</td>
+      <td>1509.00</td>
+    </tr>
+    <tr>
+      <th>2022-06</th>
+      <td>9112.0</td>
+      <td>21624.00</td>
+      <td>1103.00</td>
+      <td>906.00</td>
+      <td>1019.00</td>
+    </tr>
+    <tr>
+      <th>2022-07</th>
+      <td>10268.0</td>
+      <td>4255.00</td>
+      <td>3931.00</td>
+      <td>3061.00</td>
+      <td>1757.00</td>
+    </tr>
+    <tr>
+      <th>2022-08</th>
+      <td>17969.0</td>
+      <td>10034.00</td>
+      <td>6358.00</td>
+      <td>5666.00</td>
+      <td>3177.00</td>
+    </tr>
+    <tr>
+      <th>2022-09</th>
+      <td>20162.0</td>
+      <td>10399.00</td>
+      <td>6607.00</td>
+      <td>7169.00</td>
+      <td>3887.00</td>
+    </tr>
+    <tr>
+      <th>2022-10</th>
+      <td>20790.0</td>
+      <td>7277.00</td>
+      <td>7148.00</td>
+      <td>7093.00</td>
+      <td>3481.00</td>
+    </tr>
+    <tr>
+      <th>Durchschnitt</th>
+      <td>11423.6</td>
+      <td>5446.56</td>
+      <td>2140.92</td>
+      <td>2276.76</td>
+      <td>2061.88</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="visualisierung">
+<h2>Visualisierung<a class="headerlink" href="#visualisierung" title="Permalink to this headline">#</a></h2>
+<p>Visualisiere die Seitenaufrufe deiner gewählten Seiten, aber ohne den Durchschnittswert auszugeben.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Durchschnitt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/uebungen6-Lösung_8_0.png" src="../_images/uebungen6-Lösung_8_0.png" />
+</div>
+</div>
+<p>Speichere deinen DataFrame in einer Markdown-Datei und auch das Ergebnis der Visualisierung als png-Datei.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out/Stadt-Daten.csv&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;out/Stadt-graph.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out/Stadt-Daten.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;out/Stadt-graph.png&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/core/generic.py:3720,</span> in <span class="ni">NDFrame.to_csv</span><span class="nt">(self, path_or_buf, sep, na_rep, float_format, columns, header, index, index_label, mode, encoding, compression, quoting, quotechar, lineterminator, chunksize, date_format, doublequote, escapechar, decimal, errors, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3709</span> <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ABCDataFrame</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">3711</span> <span class="n">formatter</span> <span class="o">=</span> <span class="n">DataFrameFormatter</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3712</span>     <span class="n">frame</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3713</span>     <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3717</span>     <span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3718</span> <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3720</span> <span class="k">return</span> <span class="n">DataFrameRenderer</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3721</span>     <span class="n">path_or_buf</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3722</span>     <span class="n">lineterminator</span><span class="o">=</span><span class="n">lineterminator</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3723</span>     <span class="n">sep</span><span class="o">=</span><span class="n">sep</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3724</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3725</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3726</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3727</span>     <span class="n">quoting</span><span class="o">=</span><span class="n">quoting</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3728</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3729</span>     <span class="n">index_label</span><span class="o">=</span><span class="n">index_label</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3730</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3731</span>     <span class="n">chunksize</span><span class="o">=</span><span class="n">chunksize</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3732</span>     <span class="n">quotechar</span><span class="o">=</span><span class="n">quotechar</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3733</span>     <span class="n">date_format</span><span class="o">=</span><span class="n">date_format</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3734</span>     <span class="n">doublequote</span><span class="o">=</span><span class="n">doublequote</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3735</span>     <span class="n">escapechar</span><span class="o">=</span><span class="n">escapechar</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3736</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3737</span> <span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/formats/format.py:1189,</span> in <span class="ni">DataFrameRenderer.to_csv</span><span class="nt">(self, path_or_buf, encoding, sep, columns, index_label, mode, compression, quoting, quotechar, lineterminator, chunksize, date_format, doublequote, escapechar, errors, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span>     <span class="n">created_buffer</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span> <span class="n">csv_formatter</span> <span class="o">=</span> <span class="n">CSVFormatter</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1171</span>     <span class="n">path_or_buf</span><span class="o">=</span><span class="n">path_or_buf</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span>     <span class="n">lineterminator</span><span class="o">=</span><span class="n">lineterminator</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span>     <span class="n">formatter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fmt</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span> <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1189</span> <span class="n">csv_formatter</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="k">if</span> <span class="n">created_buffer</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path_or_buf</span><span class="p">,</span> <span class="n">StringIO</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/formats/csvs.py:241,</span> in <span class="ni">CSVFormatter.save</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span><span class="sd"> Create the writer &amp; save.</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span> <span class="c1"># apply compression and byte/text conversion</span>
+<span class="ne">--&gt; </span><span class="mi">241</span> <span class="k">with</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="bp">self</span><span class="o">.</span><span class="n">filepath_or_buffer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span> <span class="p">)</span> <span class="k">as</span> <span class="n">handles</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> 
+<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="c1"># Note: self.encoding is irrelevant here</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="o">=</span> <span class="n">csvlib</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span>         <span class="n">handles</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>         <span class="n">lineterminator</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lineterminator</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span>         <span class="n">quotechar</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quotechar</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">()</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/common.py:734,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span> <span class="c1"># Only for write methods</span>
+<span class="g g-Whitespace">    </span><span class="mi">733</span> <span class="k">if</span> <span class="s2">&quot;r&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span> <span class="ow">and</span> <span class="n">is_path</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">734</span>     <span class="n">check_parent_directory</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">handle</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span> <span class="k">if</span> <span class="n">compression</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span>     <span class="k">if</span> <span class="n">compression</span> <span class="o">!=</span> <span class="s2">&quot;zstd&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span>         <span class="c1"># compression libraries do not like an explicit text-mode</span>
+
+<span class="nn">File ~/.local/lib/python3.9/site-packages/pandas/io/common.py:597,</span> in <span class="ni">check_parent_directory</span><span class="nt">(path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">595</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">parent</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">597</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;Cannot save file into a non-existent directory: &#39;</span><span class="si">{</span><span class="n">parent</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+<span class="ne">OSError</span>: Cannot save file into a non-existent directory: &#39;out&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="rechercheaufgabe">
+<h1>Rechercheaufgabe<a class="headerlink" href="#rechercheaufgabe" title="Permalink to this headline">#</a></h1>
+<section id="input-output-in-python">
+<h2>Input/Output in Python<a class="headerlink" href="#input-output-in-python" title="Permalink to this headline">#</a></h2>
+<p>Recherchiere zuerst was <strong>JSON</strong>, <strong>TXT</strong> und <strong>PICKLE</strong> ist.
+Schreibe deine Daten (Name, E-Mail-Adresse, Traumberuf) in ein dictionary.
+Speichere dieses Dictionary anschließend in drei Versionen: ‘visitenkarte.txt’, ‘visitenkarte.json’ und ‘visitenkarte.pkl’ relativ zu deinem Arbeitsverzeichnis in dem Ordner ‘meine_visitenkarten’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visitenkarte</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;Max Mustermann&#39;</span><span class="p">,</span> <span class="s1">&#39;E-Mail-Adresse&#39;</span><span class="p">:</span> <span class="s1">&#39;max@muster.de&#39;</span><span class="p">,</span> <span class="s1">&#39;Traumberuf&#39;</span><span class="p">:</span> <span class="s1">&#39;Passbild-Model&#39;</span><span class="p">}</span>
+
+<span class="n">vdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">visitenkarte</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+
+<span class="n">vdf</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;out/visitenkarte.csv&#39;</span><span class="p">)</span>
+
+<span class="n">vdf</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;out/visitenkarte.json&#39;</span><span class="p">)</span>
+
+<span class="n">vdf</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s1">&#39;out/visitenkarte.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lese die Datei ‘visitenkarte.json’ jetzt ein und gib in der Konsole den Traumberuf aus.
+Versuche das Gleiche mit den anderen Dateitypen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickleDF</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s1">&#39;out/visitenkarte.pkl&#39;</span><span class="p">)</span>
+
+<span class="n">jsonDF</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;out/visitenkarte.json&#39;</span><span class="p">)</span>
+
+<span class="n">csvDF</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;out/visitenkarte.csv&#39;</span><span class="p">)</span>
+
+<span class="n">jsonDF</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./aufgaben"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Natalie Widmann<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -418,6 +418,23 @@ const thebe_selector_output = ".output, .cell_output"
    APIs und Scraper
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro3.html">
+   Übungsaufgaben
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen7.html">
+     Übung 7
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -1307,6 +1324,97 @@ Versuche das Gleiche mit den anderen Dateitypen</p>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;title&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s1">&#39;release_year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;release_year&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>release_year</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>title</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">United States</th>
+      <th>Prelude to War</th>
+      <td>1942</td>
+    </tr>
+    <tr>
+      <th>The Battle of Midway</th>
+      <td>1942</td>
+    </tr>
+    <tr>
+      <th>Why We Fight: The Battle of Russia</th>
+      <td>1943</td>
+    </tr>
+    <tr>
+      <th>WWII: Report from the Aleutians</th>
+      <td>1943</td>
+    </tr>
+    <tr>
+      <th>Undercover: How to Operate Behind Enemy Lines</th>
+      <td>1943</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>South Korea</th>
+      <th>Busted!</th>
+      <td>2021</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <th>Age of Samurai: Battle for Japan</th>
+      <td>2021</td>
+    </tr>
+    <tr>
+      <th>Brazil</th>
+      <th>Carnaval</th>
+      <td>2021</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <th>Sex/Life</th>
+      <td>2021</td>
+    </tr>
+    <tr>
+      <th>India, United States</th>
+      <th>The White Tiger</th>
+      <td>2021</td>
+    </tr>
+  </tbody>
+</table>
+<p>7976 rows × 1 columns</p>
+</div></div></div>
 </div>
 </section>
 </section>

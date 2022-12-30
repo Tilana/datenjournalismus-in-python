@@ -6,7 +6,7 @@ root: willkommen/intro
 parts:
   - caption: Willkommen 
     chapters:
-    - file: willkommen/kursplan 
+    - file: willkommen/getting_started
     - file: willkommen/motivation 
     - file: willkommen/tipps 
   - caption: Grundlagen in Python
@@ -43,7 +43,7 @@ parts:
           - file: grundlagen/whileloops
           - file: grundlagen/flow_control
       - file: grundlagen/packages
-    - file: aufgaben/intro
+      - file: grundlagen/dateipfade
       sections:
       - file: aufgaben/uebungen1
       - file: aufgaben/uebungen2
@@ -52,24 +52,17 @@ parts:
   - caption: Datenanalyse
     maxdepth: 1
     chapters:
-      - file: datenanalyse/datapipeline
       - file: datenanalyse/data_exploration
-      - file: datenanalyse/data_cleaning
       - file: datenanalyse/data_visualisation
-      - file: datenanalyse/beispiele
-        sections:
-        - file: datenanalyse/natural_disaster_dashboard
+      - file: datenanalyse/natural_disaster_dashboard
       - file: aufgaben/intro2
         sections:
           - file: aufgaben/uebungen5
           - file: aufgaben/uebungen6
   - caption: APIs & Scraper
     chapters:
-      - file: APIs/tbd
+      - file: APIs/API
       - file: aufgaben/intro3
         sections:
           - file: aufgaben/uebungen7
-  - caption: Weitere Informationen
-    chapters:
-      - file: weiteres/intro
 

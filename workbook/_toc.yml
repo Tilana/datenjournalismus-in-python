@@ -65,4 +65,5 @@ parts:
       - file: aufgaben/intro3
         sections:
           - file: aufgaben/uebungen7
+          - file: aufgaben/uebungen8
 

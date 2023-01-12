@@ -276,6 +276,11 @@ const thebe_selector_output = ".output, .cell_output"
      Übung 7
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="uebungen8.html">
+     Übung 8
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1158,7 +1163,15 @@ Versuche das Gleiche mit den anderen Dateitypen</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">,</span><span class="s1">&#39;title&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="s1">&#39;release_year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;release_year&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/netflix_titles.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="s1">&#39;release_year&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1192,25 +1205,27 @@ Versuche das Gleiche mit den anderen Dateitypen</p>
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">United States</th>
-      <th>Prelude to War</th>
-      <td>1942</td>
+      <th>, France, Algeria</th>
+      <th>Eyes of a Thief</th>
+      <td>2014</td>
     </tr>
     <tr>
-      <th>The Battle of Midway</th>
-      <td>1942</td>
+      <th>, South Korea</th>
+      <th>D.P.</th>
+      <td>2021</td>
     </tr>
     <tr>
-      <th>Why We Fight: The Battle of Russia</th>
-      <td>1943</td>
+      <th rowspan="3" valign="top">Argentina</th>
+      <th>27, el club de los malditos</th>
+      <td>2018</td>
     </tr>
     <tr>
-      <th>WWII: Report from the Aleutians</th>
-      <td>1943</td>
+      <th>A Life of Speed: The Juan Manuel Fangio Story</th>
+      <td>2020</td>
     </tr>
     <tr>
-      <th>Undercover: How to Operate Behind Enemy Lines</th>
-      <td>1943</td>
+      <th>Abzurdah</th>
+      <td>2015</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1218,29 +1233,27 @@ Versuche das Gleiche mit den anderen Dateitypen</p>
       <td>...</td>
     </tr>
     <tr>
-      <th>South Korea</th>
-      <th>Busted!</th>
-      <td>2021</td>
+      <th rowspan="3" valign="top">Vietnam</th>
+      <th>Furie</th>
+      <td>2019</td>
     </tr>
     <tr>
-      <th>United States</th>
-      <th>Age of Samurai: Battle for Japan</th>
-      <td>2021</td>
+      <th>Jackpot</th>
+      <td>2015</td>
     </tr>
     <tr>
-      <th>Brazil</th>
-      <th>Carnaval</th>
-      <td>2021</td>
+      <th>Sky Tour: The Movie</th>
+      <td>2020</td>
     </tr>
     <tr>
-      <th>United States</th>
-      <th>Sex/Life</th>
-      <td>2021</td>
+      <th>West Germany</th>
+      <th>Hitler - A Career</th>
+      <td>1977</td>
     </tr>
     <tr>
-      <th>India, United States</th>
-      <th>The White Tiger</th>
-      <td>2021</td>
+      <th>Zimbabwe</th>
+      <th>Cook Off</th>
+      <td>2017</td>
     </tr>
   </tbody>
 </table>

@@ -21,14 +21,15 @@ Das Workbook hat die folgenden datenjournalistischen Fähigkeiten zum Ziel:
 
 ## Inhalt
 
-Das Workbook ist in drei Haupteile gegliedert:
+Das Workbook ist in drei Hauptteile gegliedert:
 - Grundlagen in Python
 - Datenanalyse und -verarbeitung
-- APIs und Scraperwerden neue Inhalte zum Workbook hinzugefügt.
+- APIs und Scraper werden neue Inhalte zum Workbook hinzugefügt.
 
-Die Teile bauen aufeinander auf und reder Teil beinhaltet kurze Theorieeinheiten, sowie praktische Anwendungsbeispiele.
+Die Teile bauen aufeinander auf und jeder Teil beinhaltet kurze Theorieeinheiten, sowie praktische Anwendungsbeispiele.
 
 Zusätzlich gibt es Übungsaufgaben und weitere nützliche Ressourcen zum Vertiefen der Inhalte.
+Die Aufgaben inklusive Lösungen wurden von den Mentoren Carlos und Jonas erstellt. Vielen Dank dafür!
 
 
 :::{caution}

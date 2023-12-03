@@ -50,6 +50,8 @@ parts:
       - file: aufgaben/uebungen2
       - file: aufgaben/uebungen3
       - file: aufgaben/uebungen4
+      - file: aufgaben/uebung_luftqualitaet
+      - file: aufgaben/uebung_nebeneinkuenfte
   - caption: Datenanalyse
     maxdepth: 1
     chapters:

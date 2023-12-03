@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Explorative Datenanalyse &#8212; Datenjournalismus in Python</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,61 +62,104 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datenanalyse/data_exploration';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Visualisierung" href="data_visualisation.html" />
-    <link rel="prev" title="While-Schleifen &amp; Dictionaries" href="../aufgaben/uebungen4.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="prev" title="Nebeneinkünfte von Lokalpolitiker:innen" href="../aufgaben/uebung_nebeneinkuenfte.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../willkommen/intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/Uni_Leipzig_Logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Datenjournalismus in Python</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/Uni_Leipzig_Logo.png" class="logo__image only-light" alt="Datenjournalismus in Python - Home"/>
+    <script>document.write(`<img src="../_static/Uni_Leipzig_Logo.png" class="logo__image only-dark" alt="Datenjournalismus in Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,938 +168,416 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Willkommen
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Willkommen</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../willkommen/getting_started.html">
-   Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../willkommen/motivation.html">
-   Motivation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../willkommen/tipps.html">
-   Tipps
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../willkommen/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../willkommen/motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../willkommen/tipps.html">Tipps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Grundlagen in Python
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen in Python</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../grundlagen/beispiele.html">
-   Praktische Anwendungen
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/wealth.html">
-     Wie reich ist Jeff Bezos?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/automatisierteTexte.html">
-     Automatisierte Texte
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/luftqualitaet.html">
-     Analyse der Luftqualität in Leipzig
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/anwendungsbeispiele/nebeneinkuenfte.html">
-     Nebeneinkünfte von Lokalpolitiker:innen
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../grundlagen/theorie.html">
-   Theorie
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../grundlagen/operatoren.html">
-     Operatoren
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/arithm_operatoren.html">
-       Arithmetische Operatoren
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/vergleichsoperatoren.html">
-       Vergleichsoperatoren
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/bool_operatoren.html">
-       Logische (Boolsche) Operatoren
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/variablen.html">
-     Variablen
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../grundlagen/datentypen.html">
-     Datentypen
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/datentypen_basics.html">
-       Grundlegende Datentypen: int, float, string, bool
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/listen.html">
-       Listen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/dictionaries.html">
-       Dictionaries
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/methoden.html">
-     Methoden
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../grundlagen/funktionen.html">
-     Funktionen
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/inbuilt_functions.html">
-       Eingebaute Funktionen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/eigene_funktionen.html">
-       Selbstdefinierte Funktionen
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../grundlagen/kontrollstrukturen.html">
-     Kontrollstrukturen
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/ifelse.html">
-       Fallunterscheidungen: if, else, elif
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/forloops.html">
-       For Loops
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/whileloops.html">
-       While Loop
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../grundlagen/flow_control.html">
-       Flow Control
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/packages.html">
-     Python Packages
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../grundlagen/dateipfade.html">
-     Dateipfade
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../aufgaben/intro.html">
-   Übungsaufgaben
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen1.html">
-     Operatoren, Datentypen &amp; built-in Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen2.html">
-     String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen3.html">
-     Listen, Funktionen und Schleifen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen4.html">
-     While-Schleifen &amp;  Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../grundlagen/beispiele.html">Praktische Anwendungen</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/wealth.html">Wie reich ist Jeff Bezos?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/automatisierteTexte.html">Automatisierte Texte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/luftqualitaet.html">Analyse der Luftqualität in Leipzig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/nebeneinkuenfte.html">Nebeneinkünfte von Lokalpolitiker:innen</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Datenanalyse
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../grundlagen/theorie.html">Theorie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/operatoren.html">Operatoren</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/arithm_operatoren.html">Arithmetische Operatoren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/vergleichsoperatoren.html">Vergleichsoperatoren</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/bool_operatoren.html">Logische (Boolsche) Operatoren</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/variablen.html">Variablen</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/datentypen.html">Datentypen</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/datentypen_basics.html">Grundlegende Datentypen: int, float, string, bool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/listen.html">Listen</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/dictionaries.html">Dictionaries</a></li>
+
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/methoden.html">Methoden</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/funktionen.html">Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/inbuilt_functions.html">Eingebaute Funktionen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/eigene_funktionen.html">Selbstdefinierte Funktionen</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/kontrollstrukturen.html">Kontrollstrukturen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/ifelse.html">Fallunterscheidungen: if, else, elif</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/forloops.html">For Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/whileloops.html">While Loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../grundlagen/flow_control.html">Flow Control</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/packages.html">Python Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grundlagen/dateipfade.html">Dateipfade</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro.html">Übungsaufgaben</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen1.html">Operatoren, Datentypen &amp; built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen2.html">String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen3.html">Listen, Funktionen und Schleifen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen4.html">While-Schleifen &amp;  Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebung_luftqualitaet.html">Analyse der Luftqualität in Leipzig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebung_nebeneinkuenfte.html">Nebeneinkünfte von Lokalpolitiker:innen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenanalyse</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Explorative Datenanalyse
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data_visualisation.html">
-   Visualisierung
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="natural_disaster_dashboard.html">
-   Natural Disasters Dashboard
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../aufgaben/intro2.html">
-   Übungsaufgaben
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen5.html">
-     Packages &amp; Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen6.html">
-     Weitere Schritte mit Pandas
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Explorative Datenanalyse</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="data_visualisation.html">Visualisierung</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="natural_disaster_dashboard.html">Natural Disasters Dashboard</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro2.html">Übungsaufgaben</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen5.html">Packages &amp; Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen6.html">Weitere Schritte mit Pandas</a></li>
+
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  APIs &amp; Scraper
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APIs &amp; Scraper</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../APIs/API.html">
-   APIs
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../APIs/Scraper.html">
-   Web Scraping
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../aufgaben/intro3.html">
-   Übungsaufgaben
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen7.html">
-     Schnittstellen / API
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../aufgaben/uebungen8.html">
-     Scraper
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../APIs/API.html">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../APIs/Scraper.html">Web Scraping</a></li>
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro3.html">Übungsaufgaben</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen7.html">Schnittstellen / API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen8.html">Scraper</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/datenanalyse/data_exploration.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/datenanalyse/data_exploration.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/datenanalyse/data_exploration.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/datenanalyse/data_exploration.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Tilana/datenjournalismus-in-python" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fdatenanalyse/data_exploration.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/datenanalyse/data_exploration.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/Tilana/datenjournalismus-in-python"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/Tilana/datenjournalismus-in-python/issues/new?title=Issue%20on%20page%20%2Fdatenanalyse/data_exploration.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/datenanalyse/data_exploration.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Explorative Datenanalyse
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ziele">
-     Ziele
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#was-sind-daten">
-     Was sind Daten?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#strukturierte-daten">
-       Strukturierte Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#unstrukturierte-daten">
-       Unstrukturierte Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#semi-strukturierte-daten">
-       Semi-Strukturierte Daten
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unterschiedliche-ebenen-an-information-in-daten">
-     Unterschiedliche Ebenen an Information in Daten
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#datenpipeline">
-     Datenpipeline
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#explorative-datenanalyse-weltweite-naturkatastrophen">
-   Explorative Datenanalyse: Weltweite Naturkatastrophen
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#idee-daten-finden-verifikation">
-     Idee, Daten finden &amp; Verifikation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#aggregated-figures-for-natural-disasters-in-em-dat">
-       Aggregated figures for Natural Disasters in EM-DAT
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#datenexploration-und-bereinigung">
-     Datenexploration und -bereinigung
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uberblick-uber-die-daten">
-     Überblick über die Daten
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-cleaning-teil-i-erste-zeile-im-dataframe-entfernen">
-       Data Cleaning Teil I: erste Zeile im DataFrame entfernen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#datentypen-abfragen-und-anpassen">
-       Datentypen abfragen und anpassen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-cleaning-teil-ii-datentypen-umwandeln">
-       Data Cleaning Teil II: Datentypen umwandeln
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uberblick-uber-die-numerischen-daten">
-       Überblick über die numerischen Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uberblick-uber-die-objekt-daten">
-       Überblick über die Objekt Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-cleaning-teil-iii-germany-vereinheitlichen">
-       Data Cleaning Teil III:
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Germany
-        </span>
-       </code>
-       vereinheitlichen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#weiter-mit-der-datenexploration">
-       Weiter mit der Datenexploration
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframes-sortieren">
-       Dataframes Sortieren
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#indexing-and-retriving-data">
-       Indexing and Retriving Data
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#boolean-indexing">
-       Boolean Indexing
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fehlende-werte-nans-values">
-     Fehlende Werte - NaNs Values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#wie-viele-werte-pro-spalte-sind-nan">
-       Wie viele Werte pro Spalte sind NaN?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#moglichkeiten-zum-umgang-mit-fehlenden-werte">
-       Möglichkeiten zum Umgang mit fehlenden Werte
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#alle-zeilen-mit-nan-werten-entfernen">
-         Alle Zeilen mit NaN Werten entfernen
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fehlende-werte-entfernen">
-       Fehlende Werte entfernen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fehlende-werte-ersetzen">
-       Fehlende Werte ersetzen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Fehlende Werte ersetzen
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#duplikate">
-     Duplikate
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#daten-speichern-neu-laden">
-     Daten speichern &amp; Neu laden
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Explorative Datenanalyse</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Explorative Datenanalyse
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ziele">
-     Ziele
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#was-sind-daten">
-     Was sind Daten?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#strukturierte-daten">
-       Strukturierte Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#unstrukturierte-daten">
-       Unstrukturierte Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#semi-strukturierte-daten">
-       Semi-Strukturierte Daten
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unterschiedliche-ebenen-an-information-in-daten">
-     Unterschiedliche Ebenen an Information in Daten
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#datenpipeline">
-     Datenpipeline
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#explorative-datenanalyse-weltweite-naturkatastrophen">
-   Explorative Datenanalyse: Weltweite Naturkatastrophen
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#idee-daten-finden-verifikation">
-     Idee, Daten finden &amp; Verifikation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#aggregated-figures-for-natural-disasters-in-em-dat">
-       Aggregated figures for Natural Disasters in EM-DAT
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#datenexploration-und-bereinigung">
-     Datenexploration und -bereinigung
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#uberblick-uber-die-daten">
-     Überblick über die Daten
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-cleaning-teil-i-erste-zeile-im-dataframe-entfernen">
-       Data Cleaning Teil I: erste Zeile im DataFrame entfernen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#datentypen-abfragen-und-anpassen">
-       Datentypen abfragen und anpassen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-cleaning-teil-ii-datentypen-umwandeln">
-       Data Cleaning Teil II: Datentypen umwandeln
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uberblick-uber-die-numerischen-daten">
-       Überblick über die numerischen Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#uberblick-uber-die-objekt-daten">
-       Überblick über die Objekt Daten
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-cleaning-teil-iii-germany-vereinheitlichen">
-       Data Cleaning Teil III:
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Germany
-        </span>
-       </code>
-       vereinheitlichen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#weiter-mit-der-datenexploration">
-       Weiter mit der Datenexploration
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframes-sortieren">
-       Dataframes Sortieren
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#indexing-and-retriving-data">
-       Indexing and Retriving Data
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#boolean-indexing">
-       Boolean Indexing
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fehlende-werte-nans-values">
-     Fehlende Werte - NaNs Values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#wie-viele-werte-pro-spalte-sind-nan">
-       Wie viele Werte pro Spalte sind NaN?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#moglichkeiten-zum-umgang-mit-fehlenden-werte">
-       Möglichkeiten zum Umgang mit fehlenden Werte
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#alle-zeilen-mit-nan-werten-entfernen">
-         Alle Zeilen mit NaN Werten entfernen
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fehlende-werte-entfernen">
-       Fehlende Werte entfernen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fehlende-werte-ersetzen">
-       Fehlende Werte ersetzen
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Fehlende Werte ersetzen
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#duplikate">
-     Duplikate
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#daten-speichern-neu-laden">
-     Daten speichern &amp; Neu laden
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Explorative Datenanalyse</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Explorative Datenanalyse</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ziele">Ziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-sind-daten">Was sind Daten?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strukturierte-daten">Strukturierte Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unstrukturierte-daten">Unstrukturierte Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-strukturierte-daten">Semi-Strukturierte Daten</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unterschiedliche-ebenen-an-information-in-daten">Unterschiedliche Ebenen an Information in Daten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datenpipeline">Datenpipeline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explorative-datenanalyse-weltweite-naturkatastrophen">Explorative Datenanalyse: Weltweite Naturkatastrophen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idee-daten-finden-verifikation">Idee, Daten finden &amp; Verifikation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregated-figures-for-natural-disasters-in-em-dat">Aggregated figures for Natural Disasters in EM-DAT</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datenexploration-und-bereinigung">Datenexploration und -bereinigung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uberblick-uber-die-daten">Überblick über die Daten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-teil-i-erste-zeile-im-dataframe-entfernen">Data Cleaning Teil I: erste Zeile im DataFrame entfernen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datentypen-abfragen-und-anpassen">Datentypen abfragen und anpassen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-teil-ii-datentypen-umwandeln">Data Cleaning Teil II: Datentypen umwandeln</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uberblick-uber-die-numerischen-daten">Überblick über die numerischen Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uberblick-uber-die-objekt-daten">Überblick über die Objekt Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-teil-iii-germany-vereinheitlichen">Data Cleaning Teil III: <code class="docutils literal notranslate"><span class="pre">Germany</span></code> vereinheitlichen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weiter-mit-der-datenexploration">Weiter mit der Datenexploration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-sortieren">Dataframes Sortieren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-retriving-data">Indexing and Retriving Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean Indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fehlende-werte-nans-values">Fehlende Werte - NaNs Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-werte-pro-spalte-sind-nan">Wie viele Werte pro Spalte sind NaN?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moglichkeiten-zum-umgang-mit-fehlenden-werte">Möglichkeiten zum Umgang mit fehlenden Werte</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alle-zeilen-mit-nan-werten-entfernen">Alle Zeilen mit NaN Werten entfernen</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fehlende-werte-entfernen">Fehlende Werte entfernen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fehlende-werte-ersetzen">Fehlende Werte ersetzen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fehlende Werte ersetzen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duplikate">Duplikate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daten-speichern-neu-laden">Daten speichern &amp; Neu laden</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="explorative-datenanalyse">
-<h1>Explorative Datenanalyse<a class="headerlink" href="#explorative-datenanalyse" title="Permalink to this headline">#</a></h1>
+<h1>Explorative Datenanalyse<a class="headerlink" href="#explorative-datenanalyse" title="Permalink to this heading">#</a></h1>
 <section id="ziele">
-<h2>Ziele<a class="headerlink" href="#ziele" title="Permalink to this headline">#</a></h2>
+<h2>Ziele<a class="headerlink" href="#ziele" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Kennenlernen der unterschiedlichen Schritte bei der Datenanalyse</p></li>
 <li><p>kritisches Hinterfragen der Datenqualität</p></li>
@@ -1055,37 +588,37 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="was-sind-daten">
-<h2>Was sind Daten?<a class="headerlink" href="#was-sind-daten" title="Permalink to this headline">#</a></h2>
+<h2>Was sind Daten?<a class="headerlink" href="#was-sind-daten" title="Permalink to this heading">#</a></h2>
 <section id="strukturierte-daten">
-<h3>Strukturierte Daten<a class="headerlink" href="#strukturierte-daten" title="Permalink to this headline">#</a></h3>
+<h3>Strukturierte Daten<a class="headerlink" href="#strukturierte-daten" title="Permalink to this heading">#</a></h3>
 <p>Strukturierte Daten sind gut organisiert und so formattiert, dass es einfach ist sie zu durchsuchen, sie maschinell zu lesen oder zu verarbeiten. Das einfachste Beispiel ist eine Tabelle in der jede Spalte eine Kategorie festlegt.</p>
 </section>
 <section id="unstrukturierte-daten">
-<h3>Unstrukturierte Daten<a class="headerlink" href="#unstrukturierte-daten" title="Permalink to this headline">#</a></h3>
+<h3>Unstrukturierte Daten<a class="headerlink" href="#unstrukturierte-daten" title="Permalink to this heading">#</a></h3>
 <p>Im Gegensatz dazu sind unstrukturierte Daten nicht in einem bestimmten Format oder einer festgelegten Struktur verfügbar. Dazu zählen Texte, Bilder, Social Media Feeds, aber auch Audio Files, etc.</p>
 </section>
 <section id="semi-strukturierte-daten">
-<h3>Semi-Strukturierte Daten<a class="headerlink" href="#semi-strukturierte-daten" title="Permalink to this headline">#</a></h3>
+<h3>Semi-Strukturierte Daten<a class="headerlink" href="#semi-strukturierte-daten" title="Permalink to this heading">#</a></h3>
 <p>Semi-strukturierte Daten bilden eine Mischform. Beispielsweise eine Tabelle mit E-Mail Daten, in der Empfänger, Betreff, Datum und Absender strukturierte Informationen enthalten, der eigentliche Text jedoch unstrukturiert ist.</p>
 </section>
 </section>
 <section id="unterschiedliche-ebenen-an-information-in-daten">
-<h2>Unterschiedliche Ebenen an Information in Daten<a class="headerlink" href="#unterschiedliche-ebenen-an-information-in-daten" title="Permalink to this headline">#</a></h2>
+<h2>Unterschiedliche Ebenen an Information in Daten<a class="headerlink" href="#unterschiedliche-ebenen-an-information-in-daten" title="Permalink to this heading">#</a></h2>
 <p><img alt="Daten" src="../_images/data.png" /></p>
 <p>Quelle: Hot Butter Studio Brandon Rossen and Karyn Lurie (2012).</p>
 </section>
 <section id="datenpipeline">
-<h2>Datenpipeline<a class="headerlink" href="#datenpipeline" title="Permalink to this headline">#</a></h2>
+<h2>Datenpipeline<a class="headerlink" href="#datenpipeline" title="Permalink to this heading">#</a></h2>
 <p><img alt="Datenpipeline" src="../_images/datapipeline.png" /></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="explorative-datenanalyse-weltweite-naturkatastrophen">
-<h1>Explorative Datenanalyse: Weltweite Naturkatastrophen<a class="headerlink" href="#explorative-datenanalyse-weltweite-naturkatastrophen" title="Permalink to this headline">#</a></h1>
+<h1>Explorative Datenanalyse: Weltweite Naturkatastrophen<a class="headerlink" href="#explorative-datenanalyse-weltweite-naturkatastrophen" title="Permalink to this heading">#</a></h1>
 <section id="idee-daten-finden-verifikation">
-<h2>Idee, Daten finden &amp; Verifikation<a class="headerlink" href="#idee-daten-finden-verifikation" title="Permalink to this headline">#</a></h2>
+<h2>Idee, Daten finden &amp; Verifikation<a class="headerlink" href="#idee-daten-finden-verifikation" title="Permalink to this heading">#</a></h2>
 <p><img alt="Datenpipeline1" src="../_images/datenpipeline1.png" /></p>
 <section id="aggregated-figures-for-natural-disasters-in-em-dat">
-<h3>Aggregated figures for Natural Disasters in EM-DAT<a class="headerlink" href="#aggregated-figures-for-natural-disasters-in-em-dat" title="Permalink to this headline">#</a></h3>
+<h3>Aggregated figures for Natural Disasters in EM-DAT<a class="headerlink" href="#aggregated-figures-for-natural-disasters-in-em-dat" title="Permalink to this heading">#</a></h3>
 <p>Link: <a class="reference external" href="https://data.humdata.org/dataset/emdat-country-profiles">https://data.humdata.org/dataset/emdat-country-profiles</a></p>
 <p>In 1988, the <strong>Centre for Research on the Epidemiology of Disasters (CRED)</strong> launched the <strong>Emergency Events Database (EM-DAT)</strong>. EM-DAT was created with the initial support of the <strong>World Health Organisation (WHO) and the Belgian Government</strong>.</p>
 <p>The main objective of the database is to <strong>serve the purposes of humanitarian action at national and international levels</strong>. The initiative aims to rationalise decision making for disaster preparedness, as well as provide an objective base for vulnerability assessment and priority setting.</p>
@@ -1107,7 +640,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span>
 
 <span class="ne">NameError</span>: name &#39;data&#39; is not defined
@@ -1118,11 +651,11 @@ title="Print to PDF"
 </section>
 </section>
 <section id="datenexploration-und-bereinigung">
-<h2>Datenexploration und -bereinigung<a class="headerlink" href="#datenexploration-und-bereinigung" title="Permalink to this headline">#</a></h2>
+<h2>Datenexploration und -bereinigung<a class="headerlink" href="#datenexploration-und-bereinigung" title="Permalink to this heading">#</a></h2>
 <p><img alt="Datenpipeline1" src="../_images/datenpipeline2.png" /></p>
 </section>
 <section id="uberblick-uber-die-daten">
-<h2>Überblick über die Daten<a class="headerlink" href="#uberblick-uber-die-daten" title="Permalink to this headline">#</a></h2>
+<h2>Überblick über die Daten<a class="headerlink" href="#uberblick-uber-die-daten" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># head() gibt die ersten 5 Zeilen aus</span>
@@ -1435,7 +968,7 @@ None
 </div>
 </div>
 <section id="data-cleaning-teil-i-erste-zeile-im-dataframe-entfernen">
-<h3>Data Cleaning Teil I: erste Zeile im DataFrame entfernen<a class="headerlink" href="#data-cleaning-teil-i-erste-zeile-im-dataframe-entfernen" title="Permalink to this headline">#</a></h3>
+<h3>Data Cleaning Teil I: erste Zeile im DataFrame entfernen<a class="headerlink" href="#data-cleaning-teil-i-erste-zeile-im-dataframe-entfernen" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">index</span>
@@ -1679,7 +1212,7 @@ None
 </div>
 </section>
 <section id="datentypen-abfragen-und-anpassen">
-<h3>Datentypen abfragen und anpassen<a class="headerlink" href="#datentypen-abfragen-und-anpassen" title="Permalink to this headline">#</a></h3>
+<h3>Datentypen abfragen und anpassen<a class="headerlink" href="#datentypen-abfragen-und-anpassen" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -1726,7 +1259,7 @@ memory usage: 1.0+ MB
 </div>
 </section>
 <section id="data-cleaning-teil-ii-datentypen-umwandeln">
-<h3>Data Cleaning Teil II: Datentypen umwandeln<a class="headerlink" href="#data-cleaning-teil-ii-datentypen-umwandeln" title="Permalink to this headline">#</a></h3>
+<h3>Data Cleaning Teil II: Datentypen umwandeln<a class="headerlink" href="#data-cleaning-teil-ii-datentypen-umwandeln" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Umwandlung des Datentyp</span>
@@ -1784,7 +1317,7 @@ memory usage: 1.0+ MB
 </div>
 </section>
 <section id="uberblick-uber-die-numerischen-daten">
-<h3>Überblick über die numerischen Daten<a class="headerlink" href="#uberblick-uber-die-numerischen-daten" title="Permalink to this headline">#</a></h3>
+<h3>Überblick über die numerischen Daten<a class="headerlink" href="#uberblick-uber-die-numerischen-daten" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -1906,7 +1439,7 @@ memory usage: 1.0+ MB
 </div>
 </section>
 <section id="uberblick-uber-die-objekt-daten">
-<h3>Überblick über die Objekt Daten<a class="headerlink" href="#uberblick-uber-die-objekt-daten" title="Permalink to this headline">#</a></h3>
+<h3>Überblick über die Objekt Daten<a class="headerlink" href="#uberblick-uber-die-objekt-daten" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unterschiedliche Länder</span>
@@ -2016,13 +1549,13 @@ Germany
 </div>
 </section>
 <section id="data-cleaning-teil-iii-germany-vereinheitlichen">
-<h3>Data Cleaning Teil III: <code class="docutils literal notranslate"><span class="pre">Germany</span></code> vereinheitlichen<a class="headerlink" href="#data-cleaning-teil-iii-germany-vereinheitlichen" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>Data Cleaning Teil III: <code class="docutils literal notranslate"><span class="pre">Germany</span></code> vereinheitlichen<a class="headerlink" href="#data-cleaning-teil-iii-germany-vereinheitlichen" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Schritt: Schreibe eine Funktion die dies bereinigt.</p></li>
 </ol>
 <p><strong>Eingabe</strong>: beliebiger Ländername (bspw. Indonesia, Belgium, Germany Fed Rep, etc.)</p>
 <p><strong>Ausgabe</strong>: der Ländername oder Germany falls einer der oben gelisteten Namen eingegeben wurde</p>
-<ol class="simple">
+<ol class="arabic simple" start="2">
 <li><p>Schritt: Wende diese Funktion auf alle Ländernamen in der Spalte <code class="docutils literal notranslate"><span class="pre">Country</span></code> an</p></li>
 </ol>
 <div class="cell docutils container">
@@ -2302,7 +1835,7 @@ Mexico
 </div>
 </section>
 <section id="weiter-mit-der-datenexploration">
-<h3>Weiter mit der Datenexploration<a class="headerlink" href="#weiter-mit-der-datenexploration" title="Permalink to this headline">#</a></h3>
+<h3>Weiter mit der Datenexploration<a class="headerlink" href="#weiter-mit-der-datenexploration" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Disaster Group&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -2404,7 +1937,7 @@ Name: Disaster Type, dtype: float64
 </div>
 </section>
 <section id="dataframes-sortieren">
-<h3>Dataframes Sortieren<a class="headerlink" href="#dataframes-sortieren" title="Permalink to this headline">#</a></h3>
+<h3>Dataframes Sortieren<a class="headerlink" href="#dataframes-sortieren" title="Permalink to this heading">#</a></h3>
 <p>Dataframes können anhand einer oder meherer Spalten sortiert werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3042,7 +2575,7 @@ Name: Disaster Type, dtype: float64
 </div>
 </section>
 <section id="indexing-and-retriving-data">
-<h3>Indexing and Retriving Data<a class="headerlink" href="#indexing-and-retriving-data" title="Permalink to this headline">#</a></h3>
+<h3>Indexing and Retriving Data<a class="headerlink" href="#indexing-and-retriving-data" title="Permalink to this heading">#</a></h3>
 <p>Auf die Werte einer Spalte kann <code class="docutils literal notranslate"><span class="pre">&lt;dataframe&gt;['&lt;spaltenname&gt;']</span></code> zugegriffen werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3220,7 +2753,7 @@ Name: Year, Length: 10342, dtype: int64
 </div>
 </section>
 <section id="boolean-indexing">
-<h3>Boolean Indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this headline">#</a></h3>
+<h3>Boolean Indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this heading">#</a></h3>
 <p>Die ausgewählten Daten können auch gefilteret werden, in dem eine Bedingung mitgegeben wird.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3927,7 +3460,7 @@ Name: Total Affected, Length: 1078, dtype: float64
 </section>
 </section>
 <section id="fehlende-werte-nans-values">
-<h2>Fehlende Werte - NaNs Values<a class="headerlink" href="#fehlende-werte-nans-values" title="Permalink to this headline">#</a></h2>
+<h2>Fehlende Werte - NaNs Values<a class="headerlink" href="#fehlende-werte-nans-values" title="Permalink to this heading">#</a></h2>
 <p>Wo fehlen Werte im Datensatz?
 Wie viele fehlen?</p>
 <div class="cell docutils container">
@@ -3943,7 +3476,7 @@ Wie viele fehlen?</p>
 </div>
 </div>
 <section id="wie-viele-werte-pro-spalte-sind-nan">
-<h3>Wie viele Werte pro Spalte sind NaN?<a class="headerlink" href="#wie-viele-werte-pro-spalte-sind-nan" title="Permalink to this headline">#</a></h3>
+<h3>Wie viele Werte pro Spalte sind NaN?<a class="headerlink" href="#wie-viele-werte-pro-spalte-sind-nan" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -4041,13 +3574,13 @@ dtype: int64
 </div>
 </section>
 <section id="moglichkeiten-zum-umgang-mit-fehlenden-werte">
-<h3>Möglichkeiten zum Umgang mit fehlenden Werte<a class="headerlink" href="#moglichkeiten-zum-umgang-mit-fehlenden-werte" title="Permalink to this headline">#</a></h3>
+<h3>Möglichkeiten zum Umgang mit fehlenden Werte<a class="headerlink" href="#moglichkeiten-zum-umgang-mit-fehlenden-werte" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Zeilen mit fehlenden Werten entfernen</p></li>
 <li><p>fehlende Werte ersetzen</p></li>
 </ul>
 <section id="alle-zeilen-mit-nan-werten-entfernen">
-<h4>Alle Zeilen mit NaN Werten entfernen<a class="headerlink" href="#alle-zeilen-mit-nan-werten-entfernen" title="Permalink to this headline">#</a></h4>
+<h4>Alle Zeilen mit NaN Werten entfernen<a class="headerlink" href="#alle-zeilen-mit-nan-werten-entfernen" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">dropna()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4427,7 +3960,7 @@ dtype: int64
 </section>
 </section>
 <section id="fehlende-werte-entfernen">
-<h3>Fehlende Werte entfernen<a class="headerlink" href="#fehlende-werte-entfernen" title="Permalink to this headline">#</a></h3>
+<h3>Fehlende Werte entfernen<a class="headerlink" href="#fehlende-werte-entfernen" title="Permalink to this heading">#</a></h3>
 <p><strong>Vorteile</strong></p>
 <ul class="simple">
 <li><p>einfache Handhabung</p></li>
@@ -4441,7 +3974,7 @@ dtype: int64
 </ul>
 </section>
 <section id="fehlende-werte-ersetzen">
-<h3>Fehlende Werte ersetzen<a class="headerlink" href="#fehlende-werte-ersetzen" title="Permalink to this headline">#</a></h3>
+<h3>Fehlende Werte ersetzen<a class="headerlink" href="#fehlende-werte-ersetzen" title="Permalink to this heading">#</a></h3>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">.fillna()</span></code> können alle NaN Werte in einem DataFrame oder einer Series automatisch ersetzt werden.</p>
 <p>Das Argument <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> wendet die Methode direkt auf den DataFrame an.</p>
 <div class="cell docutils container">
@@ -5032,7 +4565,7 @@ dtype: int64
 </div>
 </section>
 <section id="id1">
-<h3>Fehlende Werte ersetzen<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>Fehlende Werte ersetzen<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p><strong>Vorteile</strong></p>
 <ul class="simple">
 <li><p>Verwendung möglichst aller Daten</p></li>
@@ -5046,7 +4579,7 @@ dtype: int64
 </section>
 </section>
 <section id="duplikate">
-<h2>Duplikate<a class="headerlink" href="#duplikate" title="Permalink to this headline">#</a></h2>
+<h2>Duplikate<a class="headerlink" href="#duplikate" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">.duplicated()</span></code> findet Zeilen mit genau den gleichen Werte.</p>
 <p>Mit <code class="docutils literal notranslate"><span class="pre">drop_duplicates()</span></code> können diese entfernt werden.</p>
 <div class="cell docutils container">
@@ -5249,7 +4782,7 @@ dtype: int64
 </div>
 </section>
 <section id="daten-speichern-neu-laden">
-<h2>Daten speichern &amp; Neu laden<a class="headerlink" href="#daten-speichern-neu-laden" title="Permalink to this headline">#</a></h2>
+<h2>Daten speichern &amp; Neu laden<a class="headerlink" href="#daten-speichern-neu-laden" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../../data/clean_emdat.csv&#39;</span><span class="p">)</span>
@@ -5264,15 +4797,15 @@ dtype: int64
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "Tilana/datenjournalismus-in-python",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./datenanalyse"
         },
         predefinedOutput: true
@@ -5280,50 +4813,148 @@ dtype: int64
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../aufgaben/uebungen4.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">While-Schleifen &amp;  Dictionaries</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../aufgaben/uebung_nebeneinkuenfte.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Nebeneinkünfte von Lokalpolitiker:innen</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="data_visualisation.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="data_visualisation.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Visualisierung</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Explorative Datenanalyse</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ziele">Ziele</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-sind-daten">Was sind Daten?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strukturierte-daten">Strukturierte Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unstrukturierte-daten">Unstrukturierte Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semi-strukturierte-daten">Semi-Strukturierte Daten</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unterschiedliche-ebenen-an-information-in-daten">Unterschiedliche Ebenen an Information in Daten</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datenpipeline">Datenpipeline</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explorative-datenanalyse-weltweite-naturkatastrophen">Explorative Datenanalyse: Weltweite Naturkatastrophen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idee-daten-finden-verifikation">Idee, Daten finden &amp; Verifikation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregated-figures-for-natural-disasters-in-em-dat">Aggregated figures for Natural Disasters in EM-DAT</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datenexploration-und-bereinigung">Datenexploration und -bereinigung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uberblick-uber-die-daten">Überblick über die Daten</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-teil-i-erste-zeile-im-dataframe-entfernen">Data Cleaning Teil I: erste Zeile im DataFrame entfernen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datentypen-abfragen-und-anpassen">Datentypen abfragen und anpassen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-teil-ii-datentypen-umwandeln">Data Cleaning Teil II: Datentypen umwandeln</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uberblick-uber-die-numerischen-daten">Überblick über die numerischen Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uberblick-uber-die-objekt-daten">Überblick über die Objekt Daten</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-teil-iii-germany-vereinheitlichen">Data Cleaning Teil III: <code class="docutils literal notranslate"><span class="pre">Germany</span></code> vereinheitlichen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weiter-mit-der-datenexploration">Weiter mit der Datenexploration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes-sortieren">Dataframes Sortieren</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-retriving-data">Indexing and Retriving Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean Indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fehlende-werte-nans-values">Fehlende Werte - NaNs Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-werte-pro-spalte-sind-nan">Wie viele Werte pro Spalte sind NaN?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moglichkeiten-zum-umgang-mit-fehlenden-werte">Möglichkeiten zum Umgang mit fehlenden Werte</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alle-zeilen-mit-nan-werten-entfernen">Alle Zeilen mit NaN Werten entfernen</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fehlende-werte-entfernen">Fehlende Werte entfernen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fehlende-werte-ersetzen">Fehlende Werte ersetzen</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fehlende Werte ersetzen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duplikate">Duplikate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daten-speichern-neu-laden">Daten speichern &amp; Neu laden</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Natalie Widmann<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Natalie Widmann
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

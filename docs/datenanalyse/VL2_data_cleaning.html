@@ -587,80 +587,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data/emdat.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../data/emdat.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/pandas/io/excel/_base.py:504,</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, date_format, thousands, decimal, comment, skipfooter, storage_options, dtype_backend, engine_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>     <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">504</span>     <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">io</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span>         <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span>         <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>         <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span> <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span>         <span class="s2">&quot;Engine should not be specified when passing &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="s2">&quot;an ExcelFile - ExcelFile already has the engine set&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>     <span class="p">)</span>
-
-<span class="nn">File ~/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/pandas/io/excel/_base.py:1580,</span> in <span class="ni">ExcelFile.__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options, engine_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1577</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">engine</span>
-<span class="g g-Whitespace">   </span><span class="mi">1578</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage_options</span> <span class="o">=</span> <span class="n">storage_options</span>
-<span class="ne">-&gt; </span><span class="mi">1580</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span>
-<span class="g g-Whitespace">   </span><span class="mi">1581</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1582</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1583</span>     <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1584</span> <span class="p">)</span>
-
-<span class="nn">File ~/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/pandas/io/excel/_openpyxl.py:553,</span> in <span class="ni">OpenpyxlReader.__init__</span><span class="nt">(self, filepath_or_buffer, storage_options, engine_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span><span class="sd"> Reader using openpyxl engine.</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">550</span><span class="sd">     Arbitrary keyword arguments passed to excel engine.</span>
-<span class="g g-Whitespace">    </span><span class="mi">551</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">552</span> <span class="n">import_optional_dependency</span><span class="p">(</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">553</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">554</span>     <span class="n">filepath_or_buffer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">555</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">556</span>     <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">557</span> <span class="p">)</span>
-
-<span class="nn">File ~/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/pandas/io/excel/_base.py:572,</span> in <span class="ni">BaseExcelReader.__init__</span><span class="nt">(self, filepath_or_buffer, storage_options, engine_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">IOHandles</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>     <span class="n">handle</span><span class="o">=</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="p">(</span><span class="n">ExcelFile</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_workbook_class</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">572</span>     <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>         <span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_workbook_class</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span>     <span class="bp">self</span><span class="o">.</span><span class="n">book</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/pandas/io/common.py:872,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">863</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">865</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="c1"># Binary mode</span>
-<span class="ne">--&gt; </span><span class="mi">872</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">873</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/emdat.xlsx&#39;
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../../data/emdat.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -671,6 +598,221 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>ISO</th>
+      <th>Disaster Group</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>Total Damage (USD, adjusted)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>#date +occurred</td>
+      <td>#country +name</td>
+      <td>#country +code</td>
+      <td>#cause +group</td>
+      <td>#cause +subgroup</td>
+      <td>#cause +type</td>
+      <td>#cause +subtype</td>
+      <td>#frequency</td>
+      <td>#affected +ind</td>
+      <td>#affected +ind +killed</td>
+      <td>NaN</td>
+      <td>#value +usd</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>AFG</td>
+      <td>Natural</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000</td>
+      <td>37</td>
+      <td>50000.0</td>
+      <td>84975</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>DZA</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105</td>
+      <td>37</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>DZA</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>DZA</td>
+      <td>Natural</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>VNM</td>
+      <td>Natural</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>YEM</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035</td>
+      <td>39</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>ZMB</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>ZMB</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>2023</td>
+      <td>Zimbabwe</td>
+      <td>ZWE</td>
+      <td>Natural</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5839 rows × 13 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="data-cleaning">
@@ -686,6 +828,30 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 5838 entries, 1 to 5838
+Data columns (total 13 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   Year                          5838 non-null   object 
+ 1   Country                       5838 non-null   object 
+ 2   ISO                           5838 non-null   object 
+ 3   Disaster Group                5838 non-null   object 
+ 4   Disaster Subroup              5838 non-null   object 
+ 5   Disaster Type                 5838 non-null   object 
+ 6   Disaster Subtype              5838 non-null   object 
+ 7   Total Events                  5838 non-null   object 
+ 8   Total Affected                4692 non-null   object 
+ 9   Total Deaths                  4118 non-null   object 
+ 10  Total Damage (USD, original)  2032 non-null   float64
+ 11  Total Damage (USD, adjusted)  1999 non-null   object 
+ 12  CPI                           5648 non-null   float64
+dtypes: float64(2), object(11)
+memory usage: 593.1+ KB
 </pre></div>
 </div>
 </div>
@@ -706,6 +872,30 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 5838 entries, 1 to 5838
+Data columns (total 13 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   Year                          5838 non-null   int64  
+ 1   Country                       5838 non-null   object 
+ 2   ISO                           5838 non-null   object 
+ 3   Disaster Group                5838 non-null   object 
+ 4   Disaster Subroup              5838 non-null   object 
+ 5   Disaster Type                 5838 non-null   object 
+ 6   Disaster Subtype              5838 non-null   object 
+ 7   Total Events                  5838 non-null   int64  
+ 8   Total Affected                4692 non-null   float64
+ 9   Total Deaths                  4118 non-null   float64
+ 10  Total Damage (USD, original)  2032 non-null   float64
+ 11  Total Damage (USD, adjusted)  1999 non-null   float64
+ 12  CPI                           5648 non-null   float64
+dtypes: float64(5), int64(2), object(6)
+memory usage: 593.1+ KB
+</pre></div>
+</div>
+</div>
 </div>
 <p>Entferne irrelevante Spalten, hier: <em>ISO, Disaster Group, Total Damage (USD, adjusted)</em></p>
 <div class="cell docutils container">
@@ -722,6 +912,185 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000.0</td>
+      <td>37.0</td>
+      <td>50000.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105.0</td>
+      <td>37.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2000</td>
+      <td>Angola</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>3</td>
+      <td>9011.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035.0</td>
+      <td>39.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>2023</td>
+      <td>Zimbabwe</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5838 rows × 10 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="fehlende-werte-nans-values">
@@ -734,6 +1103,11 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5838
+</pre></div>
+</div>
+</div>
 </div>
 <section id="wie-viele-werte-pro-spalte-sind-nan">
 <h3>Wie viele Werte pro Spalte sind NaN?<a class="headerlink" href="#wie-viele-werte-pro-spalte-sind-nan" title="Permalink to this heading">#</a></h3>
@@ -743,10 +1117,46 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 5838 entries, 1 to 5838
+Data columns (total 10 columns):
+ #   Column                        Non-Null Count  Dtype  
+---  ------                        --------------  -----  
+ 0   Year                          5838 non-null   int64  
+ 1   Country                       5838 non-null   object 
+ 2   Disaster Subroup              5838 non-null   object 
+ 3   Disaster Type                 5838 non-null   object 
+ 4   Disaster Subtype              5838 non-null   object 
+ 5   Total Events                  5838 non-null   int64  
+ 6   Total Affected                4692 non-null   float64
+ 7   Total Deaths                  4118 non-null   float64
+ 8   Total Damage (USD, original)  2032 non-null   float64
+ 9   CPI                           5648 non-null   float64
+dtypes: float64(4), int64(2), object(4)
+memory usage: 456.2+ KB
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year                               0
+Country                            0
+Disaster Subroup                   0
+Disaster Type                      0
+Disaster Subtype                   0
+Total Events                       0
+Total Affected                  1146
+Total Deaths                    1720
+Total Damage (USD, original)    3806
+CPI                              190
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -757,10 +1167,41 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1       False
+2       False
+3       False
+4       False
+5       False
+        ...  
+5834    False
+5835    False
+5836    False
+5837    False
+5838    False
+Name: Disaster Subtype, Length: 5838, dtype: bool
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year                               0
+Country                            0
+Disaster Subroup                   0
+Disaster Type                      0
+Disaster Subtype                   0
+Total Events                       0
+Total Affected                  1146
+Total Deaths                    1720
+Total Damage (USD, original)    3806
+CPI                              190
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -782,6 +1223,185 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000.0</td>
+      <td>37.0</td>
+      <td>5.000000e+04</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2000</td>
+      <td>Angola</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Riverine flood</td>
+      <td>1</td>
+      <td>70000.0</td>
+      <td>31.0</td>
+      <td>1.000000e+07</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2000</td>
+      <td>Argentina</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>3</td>
+      <td>31840.0</td>
+      <td>6.0</td>
+      <td>3.000000e+08</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2000</td>
+      <td>Australia</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>3</td>
+      <td>1350.0</td>
+      <td>1.0</td>
+      <td>1.500000e+08</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2000</td>
+      <td>Azerbaijan</td>
+      <td>Geophysical</td>
+      <td>Earthquake</td>
+      <td>Ground movement</td>
+      <td>1</td>
+      <td>3294.0</td>
+      <td>31.0</td>
+      <td>1.000000e+07</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5631</th>
+      <td>2022</td>
+      <td>United States of America</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>4</td>
+      <td>37.0</td>
+      <td>8.0</td>
+      <td>3.051000e+09</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>5632</th>
+      <td>2022</td>
+      <td>United States of America</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tornado</td>
+      <td>6</td>
+      <td>489.0</td>
+      <td>30.0</td>
+      <td>1.092900e+10</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>5633</th>
+      <td>2022</td>
+      <td>United States of America</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>2</td>
+      <td>1500.0</td>
+      <td>157.0</td>
+      <td>1.010000e+11</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>5640</th>
+      <td>2022</td>
+      <td>Viet Nam</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>5</td>
+      <td>23275.0</td>
+      <td>30.0</td>
+      <td>1.500000e+06</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>5643</th>
+      <td>2022</td>
+      <td>Viet Nam</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>436978.0</td>
+      <td>19.0</td>
+      <td>6.500000e+07</td>
+      <td>100.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>1474 rows × 10 columns</p>
+</div></div></div>
 </div>
 <p>Entferne nur Zeilen die in einer bestimmten Spalte NaN Werte haben</p>
 <div class="cell docutils container">
@@ -791,6 +1411,185 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000.0</td>
+      <td>37.0</td>
+      <td>50000.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105.0</td>
+      <td>37.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2000</td>
+      <td>Angola</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>3</td>
+      <td>9011.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5833</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>463.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035.0</td>
+      <td>39.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>4692 rows × 10 columns</p>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -818,6 +1617,185 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000.0</td>
+      <td>37.0</td>
+      <td>50000.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105.0</td>
+      <td>37.0</td>
+      <td>0.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100.0</td>
+      <td>7.0</td>
+      <td>0.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2000</td>
+      <td>Angola</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>3</td>
+      <td>9011.0</td>
+      <td>15.0</td>
+      <td>0.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035.0</td>
+      <td>39.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>2023</td>
+      <td>Zimbabwe</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>5838 rows × 10 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -832,13 +1810,185 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
-</pre></div>
-</div>
-</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000.0</td>
+      <td>37.0</td>
+      <td>50000.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105.0</td>
+      <td>37.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2000</td>
+      <td>Angola</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>3</td>
+      <td>9011.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035.0</td>
+      <td>39.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>2023</td>
+      <td>Zimbabwe</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5838 rows × 10 columns</p>
+</div></div></div>
 </div>
 <p>Welche Werte für Total Affected, Total Deaths oder Total Damage?</p>
 <ul class="simple">
@@ -867,6 +2017,185 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000.0</td>
+      <td>37.0</td>
+      <td>50000.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105.0</td>
+      <td>37.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2000</td>
+      <td>Angola</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>3</td>
+      <td>9011.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035.0</td>
+      <td>39.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>2023</td>
+      <td>Zimbabwe</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5838 rows × 10 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="id1">
@@ -893,6 +2222,11 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -900,13 +2234,192 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000.0</td>
+      <td>37.0</td>
+      <td>50000.0</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105.0</td>
+      <td>37.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100.0</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2000</td>
+      <td>Angola</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>3</td>
+      <td>9011.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>58.840648</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035.0</td>
+      <td>39.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>2023</td>
+      <td>Zimbabwe</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5838 rows × 10 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="daten-speichern-neu-laden">
 <h2>Daten speichern &amp; Neu laden<a class="headerlink" href="#daten-speichern-neu-laden" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/clean_emdat.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../../data/clean_emdat.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

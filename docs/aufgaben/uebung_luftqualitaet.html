@@ -234,6 +234,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../datenanalyse/data_visualisation.html">Visualisierung</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../datenanalyse/natural_disaster_dashboard.html">Natural Disasters Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datenanalyse/VL1_data_analysis.html">Datenanalyse Teil I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datenanalyse/VL2_data_cleaning.html">Datenanalyse Teil II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datenanalyse/VL3_visualisierung.html">Datenanalyse Teil III</a></li>
+
 <li class="toctree-l1 has-children"><a class="reference internal" href="intro2.html">Übungsaufgaben</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="uebungen5.html">Packages &amp; Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uebungen6.html">Weitere Schritte mit Pandas</a></li>
@@ -544,7 +548,7 @@ document.write(`
 <li><p>if-Bedingungen</p></li>
 <li><p>For-Schleifen.</p></li>
 </ul>
-<p><img alt="Luftqualitätsmonitor in Leipzig" src="../../imgs/luftqualitaet_leipzig.png" /></p>
+<p><img alt="Luftqualitätsmonitor in Leipzig" src="../_images/luftqualitaet_leipzig.png" /></p>
 <section id="hintergrund-pm10">
 <h2>Hintergrund PM10<a class="headerlink" href="#hintergrund-pm10" title="Permalink to this heading">#</a></h2>
 <p>Atmosphärische Partikel (PM) sind mikroskopische feste oder flüssige Materie, die in der Luft suspendiert sind. […] Von größter Bedeutung für die Bevölkerungsgesundheit sind die Partikel, die klein genug sind, um in die tiefsten Teile der Lunge eingeatmet zu werden. Diese <strong>Partikel haben einen Durchmesser von weniger als 10 Mikrometer</strong> (ungefähr 1/7 der Dicke eines menschlichen Haares) und sind als PM10 definiert. PM10 ist eine <strong>Mischung aus Materialien wie Rauch, Ruß, Staub, Salz, Säuren und Metallen.</strong> […] PM10 wird häufig als Nebel wahrgenommen, den man auch als <strong>Smog</strong> bezeichnet. <strong>PM10 gehört zu den schädlichsten aller Luftschadstoffe</strong>, da</p>
@@ -570,7 +574,7 @@ document.write(`
 <h2>Luftqualität Leipzig - Erste Analyse<a class="headerlink" href="#luftqualitat-leipzig-erste-analyse" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Wie viele Messungen sind vorhanden?</p></li>
-<li><p>Was ist der maximale Feinstaubwert? Welcher der minimale? Wie ist die Temperatur im Durchschnitt?</p></li>
+<li><p>Was ist der maximale Feinstaubwert? Welcher der minimale? Was der Durchschnittswert?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -631,7 +635,7 @@ document.write(`
 <section id="warnsystem">
 <h2>Warnsystem<a class="headerlink" href="#warnsystem" title="Permalink to this heading">#</a></h2>
 <p>Ziel: Ein Warnsystem falls die Luftqualität in den gelben Bereich abrutscht.</p>
-<p><img alt="Warnsystem" src="../../imgs/qualitaetsindex.png" /></p>
+<p><img alt="Warnsystem" src="../_images/qualitaetsindex.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pm10</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>

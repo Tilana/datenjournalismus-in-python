@@ -58,6 +58,9 @@ parts:
       - file: datenanalyse/data_exploration
       - file: datenanalyse/data_visualisation
       - file: datenanalyse/natural_disaster_dashboard
+      - file: datenanalyse/VL1_data_analysis.ipynb
+      - file: datenanalyse/VL2_data_cleaning.ipynb
+      - file: datenanalyse/VL3_visualisierung.ipynb
       - file: aufgaben/intro2
         sections:
           - file: aufgaben/uebungen5

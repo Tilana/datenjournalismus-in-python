@@ -573,9 +573,7 @@ document.write(`
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;2,&gt;=1.23.2 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (1.26.2)
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2.8.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2023.3.post1)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2023.3.post1)
 Requirement already satisfied: tzdata&gt;=2022.1 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2023.3)
 Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
 </pre></div>
@@ -589,6 +587,8 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../../data/emdat.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -663,9 +663,9 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>1</td>
       <td>2580000</td>
       <td>37</td>
-      <td>50000.0</td>
+      <td>50000.00</td>
       <td>84975</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>2</th>
@@ -681,7 +681,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>3</th>
@@ -697,7 +697,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>7</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>4</th>
@@ -713,7 +713,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>4</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>...</th>
@@ -902,7 +902,7 @@ memory usage: 593.1+ KB
 <p>Entferne irrelevante Spalten, hier: <em>ISO, Disaster Group, Total Damage (USD, adjusted)</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ISO&#39;</span><span class="p">,</span> <span class="s1">&#39;Disaster Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Damage (USD, adjusted)&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ISO&#39;</span><span class="p">,</span> <span class="s1">&#39;Disaster Group&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Damage (USD, adjusted)&#39;</span><span class="p">,</span> <span class="s1">&#39;CPI&#39;</span><span class="p">]</span>
 <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -942,7 +942,6 @@ memory usage: 593.1+ KB
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -954,10 +953,9 @@ memory usage: 593.1+ KB
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -967,10 +965,9 @@ memory usage: 593.1+ KB
       <td>Flood</td>
       <td>Flash flood</td>
       <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
+      <td>105.00</td>
+      <td>37.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>3</th>
@@ -980,10 +977,9 @@ memory usage: 593.1+ KB
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
+      <td>100.00</td>
+      <td>7.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>4</th>
@@ -993,10 +989,9 @@ memory usage: 593.1+ KB
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
+      <td>10.00</td>
+      <td>4.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1006,14 +1001,12 @@ memory usage: 593.1+ KB
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
+      <td>9011.00</td>
+      <td>15.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1032,9 +1025,8 @@ memory usage: 593.1+ KB
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
+      <td>3.00</td>
+      <td>1.00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1045,9 +1037,8 @@ memory usage: 593.1+ KB
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>169035.00</td>
+      <td>39.00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1058,8 +1049,7 @@ memory usage: 593.1+ KB
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>154608.0</td>
-      <td>NaN</td>
+      <td>154608.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -1071,8 +1061,7 @@ memory usage: 593.1+ KB
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>22000.0</td>
-      <td>NaN</td>
+      <td>22000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -1085,13 +1074,12 @@ memory usage: 593.1+ KB
       <td>Tropical cyclone</td>
       <td>1</td>
       <td>NaN</td>
-      <td>2.0</td>
-      <td>NaN</td>
+      <td>2.00</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5838 rows × 10 columns</p>
+<p>5838 rows × 9 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1122,7 +1110,7 @@ Wie viele fehlen?</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 5838 entries, 1 to 5838
-Data columns (total 10 columns):
+Data columns (total 9 columns):
  #   Column                        Non-Null Count  Dtype  
 ---  ------                        --------------  -----  
  0   Year                          5838 non-null   int64  
@@ -1134,38 +1122,15 @@ Data columns (total 10 columns):
  6   Total Affected                4692 non-null   float64
  7   Total Deaths                  4118 non-null   float64
  8   Total Damage (USD, original)  2032 non-null   float64
- 9   CPI                           5648 non-null   float64
-dtypes: float64(4), int64(2), object(4)
-memory usage: 456.2+ KB
+dtypes: float64(3), int64(2), object(4)
+memory usage: 410.6+ KB
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year                               0
-Country                            0
-Disaster Subroup                   0
-Disaster Type                      0
-Disaster Subtype                   0
-Total Events                       0
-Total Affected                  1146
-Total Deaths                    1720
-Total Damage (USD, original)    3806
-CPI                              190
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Disaster Subtype&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Affected&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1180,11 +1145,197 @@ dtype: int64
 5835    False
 5836    False
 5837    False
-5838    False
-Name: Disaster Subtype, Length: 5838, dtype: bool
+5838     True
+Name: Total Affected, Length: 5838, dtype: bool
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Affected&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1146
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>5838 rows × 9 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1202,7 +1353,6 @@ Total Events                       0
 Total Affected                  1146
 Total Deaths                    1720
 Total Damage (USD, original)    3806
-CPI                              190
 dtype: int64
 </pre></div>
 </div>
@@ -1253,7 +1403,6 @@ dtype: int64
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -1265,10 +1414,9 @@ dtype: int64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>5.000000e+04</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1278,10 +1426,9 @@ dtype: int64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>70000.0</td>
-      <td>31.0</td>
-      <td>1.000000e+07</td>
-      <td>58.840648</td>
+      <td>70000.00</td>
+      <td>31.00</td>
+      <td>10000000.00</td>
     </tr>
     <tr>
       <th>9</th>
@@ -1291,10 +1438,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>31840.0</td>
-      <td>6.0</td>
-      <td>3.000000e+08</td>
-      <td>58.840648</td>
+      <td>31840.00</td>
+      <td>6.00</td>
+      <td>300000000.00</td>
     </tr>
     <tr>
       <th>18</th>
@@ -1304,10 +1450,9 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>3</td>
-      <td>1350.0</td>
-      <td>1.0</td>
-      <td>1.500000e+08</td>
-      <td>58.840648</td>
+      <td>1350.00</td>
+      <td>1.00</td>
+      <td>150000000.00</td>
     </tr>
     <tr>
       <th>22</th>
@@ -1317,10 +1462,9 @@ dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>3294.0</td>
-      <td>31.0</td>
-      <td>1.000000e+07</td>
-      <td>58.840648</td>
+      <td>3294.00</td>
+      <td>31.00</td>
+      <td>10000000.00</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1333,76 +1477,70 @@ dtype: int64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>5631</th>
-      <td>2022</td>
+      <th>5824</th>
+      <td>2023</td>
+      <td>United States of America</td>
+      <td>Climatological</td>
+      <td>Wildfire</td>
+      <td>Wildfire (General)</td>
+      <td>2</td>
+      <td>8497.00</td>
+      <td>130.00</td>
+      <td>3000000000.00</td>
+    </tr>
+    <tr>
+      <th>5827</th>
+      <td>2023</td>
+      <td>United States of America</td>
+      <td>Meteorological</td>
+      <td>Extreme temperature</td>
+      <td>Severe winter conditions</td>
+      <td>1</td>
+      <td>25.00</td>
+      <td>10.00</td>
+      <td>380000000.00</td>
+    </tr>
+    <tr>
+      <th>5828</th>
+      <td>2023</td>
+      <td>United States of America</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Severe weather</td>
+      <td>1</td>
+      <td>551.00</td>
+      <td>3.00</td>
+      <td>250000000.00</td>
+    </tr>
+    <tr>
+      <th>5829</th>
+      <td>2023</td>
       <td>United States of America</td>
       <td>Meteorological</td>
       <td>Storm</td>
       <td>Storm (General)</td>
-      <td>4</td>
-      <td>37.0</td>
-      <td>8.0</td>
-      <td>3.051000e+09</td>
-      <td>100.000000</td>
+      <td>3</td>
+      <td>912.00</td>
+      <td>37.00</td>
+      <td>7000000000.00</td>
     </tr>
     <tr>
-      <th>5632</th>
-      <td>2022</td>
+      <th>5830</th>
+      <td>2023</td>
       <td>United States of America</td>
       <td>Meteorological</td>
       <td>Storm</td>
       <td>Tornado</td>
-      <td>6</td>
-      <td>489.0</td>
-      <td>30.0</td>
-      <td>1.092900e+10</td>
-      <td>100.000000</td>
-    </tr>
-    <tr>
-      <th>5633</th>
-      <td>2022</td>
-      <td>United States of America</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>2</td>
-      <td>1500.0</td>
-      <td>157.0</td>
-      <td>1.010000e+11</td>
-      <td>100.000000</td>
-    </tr>
-    <tr>
-      <th>5640</th>
-      <td>2022</td>
-      <td>Viet Nam</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
       <td>5</td>
-      <td>23275.0</td>
-      <td>30.0</td>
-      <td>1.500000e+06</td>
-      <td>100.000000</td>
-    </tr>
-    <tr>
-      <th>5643</th>
-      <td>2022</td>
-      <td>Viet Nam</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>436978.0</td>
-      <td>19.0</td>
-      <td>6.500000e+07</td>
-      <td>100.000000</td>
+      <td>14217.00</td>
+      <td>75.00</td>
+      <td>19560000000.00</td>
     </tr>
   </tbody>
 </table>
-<p>1474 rows × 10 columns</p>
+<p>1500 rows × 9 columns</p>
 </div></div></div>
 </div>
 <p>Entferne nur Zeilen die in einer bestimmten Spalte NaN Werte haben</p>
@@ -1441,7 +1579,6 @@ dtype: int64
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -1453,10 +1590,9 @@ dtype: int64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1466,10 +1602,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
+      <td>105.00</td>
+      <td>37.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1479,10 +1614,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
+      <td>100.00</td>
+      <td>7.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1492,10 +1626,9 @@ dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
+      <td>10.00</td>
+      <td>4.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1505,14 +1638,12 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
+      <td>9011.00</td>
+      <td>15.00</td>
       <td>NaN</td>
-      <td>58.840648</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1531,9 +1662,8 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>463.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
+      <td>463.00</td>
+      <td>4.00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1544,9 +1674,8 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
+      <td>3.00</td>
+      <td>1.00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1557,9 +1686,8 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
+      <td>169035.00</td>
+      <td>39.00</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -1570,8 +1698,7 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>154608.0</td>
-      <td>NaN</td>
+      <td>154608.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -1583,14 +1710,13 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>22000.0</td>
-      <td>NaN</td>
+      <td>22000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>4692 rows × 10 columns</p>
+<p>4692 rows × 9 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1647,7 +1773,6 @@ dtype: int64
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -1659,10 +1784,9 @@ dtype: int64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1672,10 +1796,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
-      <td>0.0</td>
-      <td>58.840648</td>
+      <td>105.00</td>
+      <td>37.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1685,10 +1808,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
-      <td>0.0</td>
-      <td>58.840648</td>
+      <td>100.00</td>
+      <td>7.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1698,10 +1820,9 @@ dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
-      <td>0.0</td>
-      <td>58.840648</td>
+      <td>10.00</td>
+      <td>4.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1711,14 +1832,12 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
-      <td>0.0</td>
-      <td>58.840648</td>
+      <td>9011.00</td>
+      <td>15.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1737,10 +1856,9 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>3.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>5835</th>
@@ -1750,10 +1868,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>169035.00</td>
+      <td>39.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>5836</th>
@@ -1763,10 +1880,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>154608.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>154608.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>5837</th>
@@ -1776,10 +1892,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>22000.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>22000.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>5838</th>
@@ -1789,207 +1904,13 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>2.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
+      <td>0.00</td>
+      <td>2.00</td>
+      <td>0.00</td>
     </tr>
   </tbody>
 </table>
-<p>5838 rows × 10 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Disaster Subtype&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;No Subtype&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2000</td>
-      <td>Angola</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>2023</td>
-      <td>Yemen</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>154608.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>22000.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5838</th>
-      <td>2023</td>
-      <td>Zimbabwe</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>5838 rows × 10 columns</p>
+<p>5838 rows × 9 columns</p>
 </div></div></div>
 </div>
 <p>Welche Werte für Total Affected, Total Deaths oder Total Damage?</p>
@@ -2015,6 +1936,25 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Damage (USD, original)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1639896721.4173229
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Damage (USD, original)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Damage (USD, original)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Damage (USD, original)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
 </pre></div>
 </div>
@@ -2047,7 +1987,6 @@ dtype: int64
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -2059,10 +1998,9 @@ dtype: int64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2072,10 +2010,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>105.00</td>
+      <td>37.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2085,10 +2022,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>100.00</td>
+      <td>7.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2098,10 +2034,9 @@ dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>10.00</td>
+      <td>4.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5</th>
@@ -2111,14 +2046,12 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>9011.00</td>
+      <td>15.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -2137,10 +2070,9 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>3.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5835</th>
@@ -2150,10 +2082,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>169035.00</td>
+      <td>39.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5836</th>
@@ -2163,10 +2094,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>154608.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>154608.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5837</th>
@@ -2176,10 +2106,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>22000.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>22000.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5838</th>
@@ -2189,14 +2118,13 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>1639896721.42</td>
     </tr>
   </tbody>
 </table>
-<p>5838 rows × 10 columns</p>
+<p>5838 rows × 9 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -2264,7 +2192,6 @@ dtype: int64
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -2276,10 +2203,9 @@ dtype: int64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2289,10 +2215,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>105.00</td>
+      <td>37.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2302,10 +2227,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>100.00</td>
+      <td>7.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2315,10 +2239,9 @@ dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>10.00</td>
+      <td>4.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5</th>
@@ -2328,14 +2251,12 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>9011.00</td>
+      <td>15.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -2354,10 +2275,9 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>3.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5835</th>
@@ -2367,10 +2287,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>169035.00</td>
+      <td>39.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5836</th>
@@ -2380,10 +2299,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>154608.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>154608.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5837</th>
@@ -2393,10 +2311,9 @@ dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>22000.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>22000.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5838</th>
@@ -2406,14 +2323,13 @@ dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>1639896721.42</td>
     </tr>
   </tbody>
 </table>
-<p>5838 rows × 10 columns</p>
+<p>5838 rows × 9 columns</p>
 </div></div></div>
 </div>
 </section>

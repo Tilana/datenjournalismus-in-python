@@ -528,8 +528,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-in-einem-land">Wie viele Todesopfer gibt es in einem Land?</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt">Wie viele Todesopfer gibt es insgesamt?</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt-in-deutschland">Wie viele Todesopfer gibt es insgesamt in Deutschland?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#korrektur-der-landernamen-fur-deutschland">Korrektur der Ländernamen für Deutschland</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-deutschland">Wie viele Todesopfer gab es insgesamt in Deutschland?</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-indien">Wie viele Todesopfer gab es insgesamt in Indien?</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allgemeine-funktion-die-gesamtzahl-der-todesopfer-eines-landes-ausgibt">Allgemeine Funktion die Gesamtzahl der Todesopfer eines Landes ausgibt</a></li>
 </ul>
@@ -608,6 +606,8 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/clean_emdat.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -647,7 +647,6 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -659,10 +658,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -672,10 +670,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Flood</td>
       <td>Flash flood</td>
       <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>105.00</td>
+      <td>37.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>3</th>
@@ -685,10 +682,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>100.00</td>
+      <td>7.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4</th>
@@ -698,10 +694,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>10.00</td>
+      <td>4.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5</th>
@@ -711,14 +706,12 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>9011.00</td>
+      <td>15.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -737,10 +730,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>3.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5835</th>
@@ -750,10 +742,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>169035.00</td>
+      <td>39.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5836</th>
@@ -763,10 +754,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>154608.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>154608.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5837</th>
@@ -776,10 +766,9 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>22000.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>22000.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5838</th>
@@ -789,14 +778,13 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>1639896721.42</td>
     </tr>
   </tbody>
 </table>
-<p>5838 rows × 10 columns</p>
+<p>5838 rows × 9 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -808,7 +796,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjourn
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Index: 5838 entries, 1 to 5838
-Data columns (total 10 columns):
+Data columns (total 9 columns):
  #   Column                        Non-Null Count  Dtype  
 ---  ------                        --------------  -----  
  0   Year                          5838 non-null   int64  
@@ -819,10 +807,9 @@ Data columns (total 10 columns):
  5   Total Events                  5838 non-null   int64  
  6   Total Affected                5838 non-null   float64
  7   Total Deaths                  5838 non-null   float64
- 8   Total Damage (USD, original)  2032 non-null   float64
- 9   CPI                           5648 non-null   float64
-dtypes: float64(4), int64(2), object(4)
-memory usage: 501.7+ KB
+ 8   Total Damage (USD, original)  5838 non-null   float64
+dtypes: float64(3), int64(2), object(4)
+memory usage: 456.1+ KB
 </pre></div>
 </div>
 </div>
@@ -915,7 +902,6 @@ Name: Country, Length: 5838, dtype: bool
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -927,10 +913,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>3.000000e+08</td>
-      <td>60.503579</td>
+      <td>6.00</td>
+      <td>6.00</td>
+      <td>300000000.00</td>
     </tr>
     <tr>
       <th>636</th>
@@ -940,10 +925,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>330108.0</td>
-      <td>27.0</td>
-      <td>1.160000e+10</td>
-      <td>61.463188</td>
+      <td>330108.00</td>
+      <td>27.00</td>
+      <td>11600000000.00</td>
     </tr>
     <tr>
       <th>637</th>
@@ -953,10 +937,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>1.800000e+09</td>
-      <td>61.463188</td>
+      <td>11.00</td>
+      <td>11.00</td>
+      <td>1800000000.00</td>
     </tr>
     <tr>
       <th>638</th>
@@ -966,10 +949,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>2</td>
-      <td>19.0</td>
-      <td>11.0</td>
-      <td>2.500000e+08</td>
-      <td>61.463188</td>
+      <td>19.00</td>
+      <td>11.00</td>
+      <td>250000000.00</td>
     </tr>
     <tr>
       <th>929</th>
@@ -979,10 +961,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Heat wave</td>
       <td>1</td>
-      <td>9355.0</td>
-      <td>9355.0</td>
-      <td>1.650000e+09</td>
-      <td>62.858460</td>
+      <td>9355.00</td>
+      <td>9355.00</td>
+      <td>1650000000.00</td>
     </tr>
     <tr>
       <th>930</th>
@@ -992,10 +973,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>3.000000e+08</td>
-      <td>62.858460</td>
+      <td>5.00</td>
+      <td>5.00</td>
+      <td>300000000.00</td>
     </tr>
     <tr>
       <th>931</th>
@@ -1005,10 +985,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>62.858460</td>
+      <td>10.00</td>
+      <td>10.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1163</th>
@@ -1018,10 +997,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>150.0</td>
-      <td>0.0</td>
-      <td>1.200000e+07</td>
-      <td>64.541329</td>
+      <td>150.00</td>
+      <td>0.00</td>
+      <td>12000000.00</td>
     </tr>
     <tr>
       <th>1164</th>
@@ -1031,10 +1009,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>1.300000e+08</td>
-      <td>64.541329</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>130000000.00</td>
     </tr>
     <tr>
       <th>1434</th>
@@ -1044,10 +1021,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>2</td>
-      <td>450.0</td>
-      <td>1.0</td>
-      <td>2.200000e+08</td>
-      <td>66.731058</td>
+      <td>450.00</td>
+      <td>1.00</td>
+      <td>220000000.00</td>
     </tr>
     <tr>
       <th>1435</th>
@@ -1057,10 +1033,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Cold wave</td>
       <td>1</td>
-      <td>165.0</td>
-      <td>1.0</td>
-      <td>3.000000e+08</td>
-      <td>66.731058</td>
+      <td>165.00</td>
+      <td>1.00</td>
+      <td>300000000.00</td>
     </tr>
     <tr>
       <th>1436</th>
@@ -1070,10 +1045,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.700000e+08</td>
-      <td>66.731058</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>270000000.00</td>
     </tr>
     <tr>
       <th>1694</th>
@@ -1083,10 +1057,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>1000.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
+      <td>1000.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1695</th>
@@ -1096,10 +1069,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Heat wave</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1696</th>
@@ -1109,10 +1081,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Severe winter conditions</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
+      <td>10.00</td>
+      <td>10.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1697</th>
@@ -1122,10 +1093,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Hail</td>
       <td>1</td>
-      <td>100.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
+      <td>100.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1698</th>
@@ -1135,10 +1105,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>2</td>
-      <td>200.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
+      <td>200.00</td>
+      <td>10.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1948</th>
@@ -1148,10 +1117,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>70.848793</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1949</th>
@@ -1161,10 +1129,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Blizzard/Winter storm</td>
       <td>1</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>70.848793</td>
+      <td>7.00</td>
+      <td>7.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>1950</th>
@@ -1174,10 +1141,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>130.0</td>
-      <td>11.0</td>
-      <td>5.500000e+09</td>
-      <td>70.848793</td>
+      <td>130.00</td>
+      <td>11.00</td>
+      <td>5500000000.00</td>
     </tr>
     <tr>
       <th>2205</th>
@@ -1187,10 +1153,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>1.200000e+09</td>
-      <td>73.568746</td>
+      <td>5.00</td>
+      <td>5.00</td>
+      <td>1200000000.00</td>
     </tr>
     <tr>
       <th>2206</th>
@@ -1200,10 +1165,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Severe weather</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>1.500000e+09</td>
-      <td>73.568746</td>
+      <td>3.00</td>
+      <td>3.00</td>
+      <td>1500000000.00</td>
     </tr>
     <tr>
       <th>2435</th>
@@ -1213,10 +1177,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.000000e+07</td>
-      <td>73.307177</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>20000000.00</td>
     </tr>
     <tr>
       <th>2436</th>
@@ -1226,10 +1189,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Cold wave</td>
       <td>2</td>
-      <td>15.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>73.307177</td>
+      <td>15.00</td>
+      <td>15.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>2437</th>
@@ -1239,10 +1201,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>5.000000e+07</td>
-      <td>73.307177</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>50000000.00</td>
     </tr>
     <tr>
       <th>2668</th>
@@ -1252,10 +1213,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
+      <td>3.00</td>
+      <td>3.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>2669</th>
@@ -1265,10 +1225,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Cold wave</td>
       <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>2670</th>
@@ -1278,10 +1237,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Blizzard/Winter storm</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>2671</th>
@@ -1291,10 +1249,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>1.000000e+09</td>
-      <td>74.509444</td>
+      <td>4.00</td>
+      <td>4.00</td>
+      <td>1000000000.00</td>
     </tr>
     <tr>
       <th>2907</th>
@@ -1304,10 +1261,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>76.861595</td>
+      <td>4.00</td>
+      <td>4.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>3128</th>
@@ -1317,10 +1273,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Cold wave</td>
       <td>2</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>NaN</td>
-      <td>78.452114</td>
+      <td>6.00</td>
+      <td>6.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>3334</th>
@@ -1330,10 +1285,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>6350.0</td>
-      <td>4.0</td>
-      <td>1.290000e+10</td>
-      <td>79.601309</td>
+      <td>6350.00</td>
+      <td>4.00</td>
+      <td>12900000000.00</td>
     </tr>
     <tr>
       <th>3335</th>
@@ -1343,10 +1297,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>2</td>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>79.601309</td>
+      <td>2.00</td>
+      <td>7.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>3336</th>
@@ -1356,10 +1309,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Hail</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>4.800000e+09</td>
-      <td>79.601309</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4800000000.00</td>
     </tr>
     <tr>
       <th>3528</th>
@@ -1369,10 +1321,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Lightning/Thunderstorms</td>
       <td>2</td>
-      <td>1.0</td>
-      <td>8.0</td>
-      <td>4.000000e+08</td>
-      <td>80.892624</td>
+      <td>1.00</td>
+      <td>8.00</td>
+      <td>400000000.00</td>
     </tr>
     <tr>
       <th>3987</th>
@@ -1382,10 +1333,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>2.000000e+09</td>
-      <td>82.010331</td>
+      <td>7.00</td>
+      <td>7.00</td>
+      <td>2000000000.00</td>
     </tr>
     <tr>
       <th>4219</th>
@@ -1395,10 +1345,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>600.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>83.757255</td>
+      <td>600.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4220</th>
@@ -1408,10 +1357,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Hail</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>7.400000e+08</td>
-      <td>83.757255</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>740000000.00</td>
     </tr>
     <tr>
       <th>4221</th>
@@ -1421,10 +1369,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Severe weather</td>
       <td>1</td>
-      <td>24.0</td>
-      <td>3.0</td>
-      <td>1.590000e+08</td>
-      <td>83.757255</td>
+      <td>24.00</td>
+      <td>3.00</td>
+      <td>159000000.00</td>
     </tr>
     <tr>
       <th>4448</th>
@@ -1434,10 +1381,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Heat wave</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>85.803026</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4449</th>
@@ -1447,10 +1393,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>12.0</td>
-      <td>5.0</td>
-      <td>5.884750e+08</td>
-      <td>85.803026</td>
+      <td>12.00</td>
+      <td>5.00</td>
+      <td>588475000.00</td>
     </tr>
     <tr>
       <th>4694</th>
@@ -1460,10 +1405,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Heat wave</td>
       <td>2</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>87.358007</td>
+      <td>4.00</td>
+      <td>4.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4695</th>
@@ -1473,10 +1417,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Blizzard/Winter storm</td>
       <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>87.358007</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4934</th>
@@ -1486,10 +1429,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>33.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>88.435641</td>
+      <td>33.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5194</th>
@@ -1499,10 +1441,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>1000.0</td>
-      <td>197.0</td>
-      <td>4.000000e+10</td>
-      <td>92.590193</td>
+      <td>1000.00</td>
+      <td>197.00</td>
+      <td>40000000000.00</td>
     </tr>
     <tr>
       <th>5195</th>
@@ -1512,10 +1453,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
-      <td>600.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>92.590193</td>
+      <td>600.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5196</th>
@@ -1525,10 +1465,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>92.590193</td>
+      <td>4.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5461</th>
@@ -1538,10 +1477,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Extreme temperature</td>
       <td>Heat wave</td>
       <td>1</td>
-      <td>8173.0</td>
-      <td>8173.0</td>
-      <td>NaN</td>
-      <td>100.000000</td>
+      <td>8173.00</td>
+      <td>8173.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5462</th>
@@ -1551,10 +1489,9 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>3</td>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>1.023156e+09</td>
-      <td>100.000000</td>
+      <td>2.00</td>
+      <td>7.00</td>
+      <td>1023156000.00</td>
     </tr>
     <tr>
       <th>5707</th>
@@ -1564,1867 +1501,14 @@ Name: Country, Length: 5838, dtype: bool
       <td>Storm</td>
       <td>Severe weather</td>
       <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="korrektur-der-landernamen-fur-deutschland">
-<h4>Korrektur der Ländernamen für Deutschland<a class="headerlink" href="#korrektur-der-landernamen-fur-deutschland" title="Permalink to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vorkommen von Deutschland</span>
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
-    <span class="k">if</span> <span class="s1">&#39;german&#39;</span> <span class="ow">in</span> <span class="n">country</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Germany
-</pre></div>
-</div>
-</div>
-</div>
-<p>Schreibe eine Funktion die dies bereinigt.</p>
-<p><strong>Eingabe</strong>: beliebiger Ländername (bspw. Indonesia, Belgium, Germany Fed Rep, etc.)</p>
-<p><strong>Ausgabe</strong>: der Ländername oder Germany falls einer der oben gelisteten Namen eingegeben wurde</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_country</span><span class="p">(</span><span class="n">land</span><span class="p">):</span>
-    <span class="k">if</span> <span class="s1">&#39;german&#39;</span> <span class="ow">in</span> <span class="n">land</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-        <span class="k">return</span> <span class="s1">&#39;Germany&#39;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">land</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Germany Fed Rep&#39;</span>
-<span class="n">clean_text</span> <span class="o">=</span> <span class="n">clean_country</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Germany
-</pre></div>
-</div>
-</div>
-</div>
-<p>Anwendung der Funktion auf alle Werte einer Spalte</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_unique_countries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
-    <span class="n">corrected_name</span> <span class="o">=</span> <span class="n">clean_country</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
-    <span class="n">new_unique_countries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected_name</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_unique_countries</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>216
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>216
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;Country&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean_country</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on _LocIndexer in module pandas.core.indexing object:
-
-class _LocIndexer(_LocationIndexer)
- |  Access a group of rows and columns by label(s) or a boolean array.
- |  
- |  ``.loc[]`` is primarily label based, but may also be used with a
- |  boolean array.
- |  
- |  Allowed inputs are:
- |  
- |  - A single label, e.g. ``5`` or ``&#39;a&#39;``, (note that ``5`` is
- |    interpreted as a *label* of the index, and **never** as an
- |    integer position along the index).
- |  - A list or array of labels, e.g. ``[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]``.
- |  - A slice object with labels, e.g. ``&#39;a&#39;:&#39;f&#39;``.
- |  
- |    .. warning:: Note that contrary to usual python slices, **both** the
- |        start and the stop are included
- |  
- |  - A boolean array of the same length as the axis being sliced,
- |    e.g. ``[True, False, True]``.
- |  - An alignable boolean Series. The index of the key will be aligned before
- |    masking.
- |  - An alignable Index. The Index of the returned selection will be the input.
- |  - A ``callable`` function with one argument (the calling Series or
- |    DataFrame) and that returns valid output for indexing (one of the above)
- |  
- |  See more at :ref:`Selection by Label &lt;indexing.label&gt;`.
- |  
- |  Raises
- |  ------
- |  KeyError
- |      If any items are not found.
- |  IndexingError
- |      If an indexed key is passed and its index is unalignable to the frame index.
- |  
- |  See Also
- |  --------
- |  DataFrame.at : Access a single value for a row/column label pair.
- |  DataFrame.iloc : Access group of rows and columns by integer position(s).
- |  DataFrame.xs : Returns a cross-section (row(s) or column(s)) from the
- |      Series/DataFrame.
- |  Series.loc : Access group of values using labels.
- |  
- |  Examples
- |  --------
- |  **Getting values**
- |  
- |  &gt;&gt;&gt; df = pd.DataFrame([[1, 2], [4, 5], [7, 8]],
- |  ...      index=[&#39;cobra&#39;, &#39;viper&#39;, &#39;sidewinder&#39;],
- |  ...      columns=[&#39;max_speed&#39;, &#39;shield&#39;])
- |  &gt;&gt;&gt; df
- |              max_speed  shield
- |  cobra               1       2
- |  viper               4       5
- |  sidewinder          7       8
- |  
- |  Single label. Note this returns the row as a Series.
- |  
- |  &gt;&gt;&gt; df.loc[&#39;viper&#39;]
- |  max_speed    4
- |  shield       5
- |  Name: viper, dtype: int64
- |  
- |  List of labels. Note using ``[[]]`` returns a DataFrame.
- |  
- |  &gt;&gt;&gt; df.loc[[&#39;viper&#39;, &#39;sidewinder&#39;]]
- |              max_speed  shield
- |  viper               4       5
- |  sidewinder          7       8
- |  
- |  Single label for row and column
- |  
- |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;, &#39;shield&#39;]
- |  2
- |  
- |  Slice with labels for row and single label for column. As mentioned
- |  above, note that both the start and stop of the slice are included.
- |  
- |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;:&#39;viper&#39;, &#39;max_speed&#39;]
- |  cobra    1
- |  viper    4
- |  Name: max_speed, dtype: int64
- |  
- |  Boolean list with the same length as the row axis
- |  
- |  &gt;&gt;&gt; df.loc[[False, False, True]]
- |              max_speed  shield
- |  sidewinder          7       8
- |  
- |  Alignable boolean Series:
- |  
- |  &gt;&gt;&gt; df.loc[pd.Series([False, True, False],
- |  ...        index=[&#39;viper&#39;, &#39;sidewinder&#39;, &#39;cobra&#39;])]
- |              max_speed  shield
- |  sidewinder          7       8
- |  
- |  Index (same behavior as ``df.reindex``)
- |  
- |  &gt;&gt;&gt; df.loc[pd.Index([&quot;cobra&quot;, &quot;viper&quot;], name=&quot;foo&quot;)]
- |         max_speed  shield
- |  foo
- |  cobra          1       2
- |  viper          4       5
- |  
- |  Conditional that returns a boolean Series
- |  
- |  &gt;&gt;&gt; df.loc[df[&#39;shield&#39;] &gt; 6]
- |              max_speed  shield
- |  sidewinder          7       8
- |  
- |  Conditional that returns a boolean Series with column labels specified
- |  
- |  &gt;&gt;&gt; df.loc[df[&#39;shield&#39;] &gt; 6, [&#39;max_speed&#39;]]
- |              max_speed
- |  sidewinder          7
- |  
- |  Multiple conditional using ``&amp;`` that returns a boolean Series
- |  
- |  &gt;&gt;&gt; df.loc[(df[&#39;max_speed&#39;] &gt; 1) &amp; (df[&#39;shield&#39;] &lt; 8)]
- |         max_speed  shield
- |  viper          4       5
- |  
- |  Multiple conditional using ``|`` that returns a boolean Series
- |  
- |  &gt;&gt;&gt; df.loc[(df[&#39;max_speed&#39;] &gt; 4) | (df[&#39;shield&#39;] &lt; 5)]
- |              max_speed  shield
- |  cobra               1       2
- |  sidewinder          7       8
- |  
- |  Please ensure that each condition is wrapped in parentheses ``()``.
- |  See the :ref:`user guide&lt;indexing.boolean&gt;`
- |  for more details and explanations of Boolean indexing.
- |  
- |  .. note::
- |      If you find yourself using 3 or more conditionals in ``.loc[]``,
- |      consider using :ref:`advanced indexing&lt;advanced.advanced_hierarchical&gt;`.
- |  
- |      See below for using ``.loc[]`` on MultiIndex DataFrames.
- |  
- |  Callable that returns a boolean Series
- |  
- |  &gt;&gt;&gt; df.loc[lambda df: df[&#39;shield&#39;] == 8]
- |              max_speed  shield
- |  sidewinder          7       8
- |  
- |  **Setting values**
- |  
- |  Set value for all items matching the list of labels
- |  
- |  &gt;&gt;&gt; df.loc[[&#39;viper&#39;, &#39;sidewinder&#39;], [&#39;shield&#39;]] = 50
- |  &gt;&gt;&gt; df
- |              max_speed  shield
- |  cobra               1       2
- |  viper               4      50
- |  sidewinder          7      50
- |  
- |  Set value for an entire row
- |  
- |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;] = 10
- |  &gt;&gt;&gt; df
- |              max_speed  shield
- |  cobra              10      10
- |  viper               4      50
- |  sidewinder          7      50
- |  
- |  Set value for an entire column
- |  
- |  &gt;&gt;&gt; df.loc[:, &#39;max_speed&#39;] = 30
- |  &gt;&gt;&gt; df
- |              max_speed  shield
- |  cobra              30      10
- |  viper              30      50
- |  sidewinder         30      50
- |  
- |  Set value for rows matching callable condition
- |  
- |  &gt;&gt;&gt; df.loc[df[&#39;shield&#39;] &gt; 35] = 0
- |  &gt;&gt;&gt; df
- |              max_speed  shield
- |  cobra              30      10
- |  viper               0       0
- |  sidewinder          0       0
- |  
- |  Add value matching location
- |  
- |  &gt;&gt;&gt; df.loc[&quot;viper&quot;, &quot;shield&quot;] += 5
- |  &gt;&gt;&gt; df
- |              max_speed  shield
- |  cobra              30      10
- |  viper               0       5
- |  sidewinder          0       0
- |  
- |  Setting using a ``Series`` or a ``DataFrame`` sets the values matching the
- |  index labels, not the index positions.
- |  
- |  &gt;&gt;&gt; shuffled_df = df.loc[[&quot;viper&quot;, &quot;cobra&quot;, &quot;sidewinder&quot;]]
- |  &gt;&gt;&gt; df.loc[:] += shuffled_df
- |  &gt;&gt;&gt; df
- |              max_speed  shield
- |  cobra              60      20
- |  viper               0      10
- |  sidewinder          0       0
- |  
- |  **Getting values on a DataFrame with an index that has integer labels**
- |  
- |  Another example using integers for the index
- |  
- |  &gt;&gt;&gt; df = pd.DataFrame([[1, 2], [4, 5], [7, 8]],
- |  ...      index=[7, 8, 9], columns=[&#39;max_speed&#39;, &#39;shield&#39;])
- |  &gt;&gt;&gt; df
- |     max_speed  shield
- |  7          1       2
- |  8          4       5
- |  9          7       8
- |  
- |  Slice with integer labels for rows. As mentioned above, note that both
- |  the start and stop of the slice are included.
- |  
- |  &gt;&gt;&gt; df.loc[7:9]
- |     max_speed  shield
- |  7          1       2
- |  8          4       5
- |  9          7       8
- |  
- |  **Getting values with a MultiIndex**
- |  
- |  A number of examples using a DataFrame with a MultiIndex
- |  
- |  &gt;&gt;&gt; tuples = [
- |  ...    (&#39;cobra&#39;, &#39;mark i&#39;), (&#39;cobra&#39;, &#39;mark ii&#39;),
- |  ...    (&#39;sidewinder&#39;, &#39;mark i&#39;), (&#39;sidewinder&#39;, &#39;mark ii&#39;),
- |  ...    (&#39;viper&#39;, &#39;mark ii&#39;), (&#39;viper&#39;, &#39;mark iii&#39;)
- |  ... ]
- |  &gt;&gt;&gt; index = pd.MultiIndex.from_tuples(tuples)
- |  &gt;&gt;&gt; values = [[12, 2], [0, 4], [10, 20],
- |  ...         [1, 4], [7, 1], [16, 36]]
- |  &gt;&gt;&gt; df = pd.DataFrame(values, columns=[&#39;max_speed&#39;, &#39;shield&#39;], index=index)
- |  &gt;&gt;&gt; df
- |                       max_speed  shield
- |  cobra      mark i           12       2
- |             mark ii           0       4
- |  sidewinder mark i           10      20
- |             mark ii           1       4
- |  viper      mark ii           7       1
- |             mark iii         16      36
- |  
- |  Single label. Note this returns a DataFrame with a single index.
- |  
- |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;]
- |           max_speed  shield
- |  mark i          12       2
- |  mark ii          0       4
- |  
- |  Single index tuple. Note this returns a Series.
- |  
- |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark ii&#39;)]
- |  max_speed    0
- |  shield       4
- |  Name: (cobra, mark ii), dtype: int64
- |  
- |  Single label for row and column. Similar to passing in a tuple, this
- |  returns a Series.
- |  
- |  &gt;&gt;&gt; df.loc[&#39;cobra&#39;, &#39;mark i&#39;]
- |  max_speed    12
- |  shield        2
- |  Name: (cobra, mark i), dtype: int64
- |  
- |  Single tuple. Note using ``[[]]`` returns a DataFrame.
- |  
- |  &gt;&gt;&gt; df.loc[[(&#39;cobra&#39;, &#39;mark ii&#39;)]]
- |                 max_speed  shield
- |  cobra mark ii          0       4
- |  
- |  Single tuple for the index with a single label for the column
- |  
- |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark i&#39;), &#39;shield&#39;]
- |  2
- |  
- |  Slice from index tuple to single label
- |  
- |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark i&#39;):&#39;viper&#39;]
- |                       max_speed  shield
- |  cobra      mark i           12       2
- |             mark ii           0       4
- |  sidewinder mark i           10      20
- |             mark ii           1       4
- |  viper      mark ii           7       1
- |             mark iii         16      36
- |  
- |  Slice from index tuple to index tuple
- |  
- |  &gt;&gt;&gt; df.loc[(&#39;cobra&#39;, &#39;mark i&#39;):(&#39;viper&#39;, &#39;mark ii&#39;)]
- |                      max_speed  shield
- |  cobra      mark i          12       2
- |             mark ii          0       4
- |  sidewinder mark i          10      20
- |             mark ii          1       4
- |  viper      mark ii          7       1
- |  
- |  Please see the :ref:`user guide&lt;advanced.advanced_hierarchical&gt;`
- |  for more details and explanations of advanced indexing.
- |  
- |  Method resolution order:
- |      _LocIndexer
- |      _LocationIndexer
- |      pandas._libs.indexing.NDFrameIndexerBase
- |      builtins.object
- |  
- |  Data and other attributes defined here:
- |  
- |  __annotations__ = {&#39;_takeable&#39;: &#39;bool&#39;}
- |  
- |  ----------------------------------------------------------------------
- |  Methods inherited from _LocationIndexer:
- |  
- |  __call__(self, axis: &#39;Axis | None&#39; = None) -&gt; &#39;Self&#39;
- |      Call self as a function.
- |  
- |  __getitem__(self, key)
- |  
- |  __setitem__(self, key, value) -&gt; &#39;None&#39;
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors inherited from _LocationIndexer:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)
- |  
- |  ----------------------------------------------------------------------
- |  Data and other attributes inherited from _LocationIndexer:
- |  
- |  axis = None
- |  
- |  ----------------------------------------------------------------------
- |  Methods inherited from pandas._libs.indexing.NDFrameIndexerBase:
- |  
- |  __init__(self, /, *args, **kwargs)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  __reduce__ = __reduce_cython__(...)
- |  
- |  __setstate__ = __setstate_cython__(...)
- |  
- |  ----------------------------------------------------------------------
- |  Static methods inherited from pandas._libs.indexing.NDFrameIndexerBase:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors inherited from pandas._libs.indexing.NDFrameIndexerBase:
- |  
- |  name
- |  
- |  ndim
- |  
- |  obj
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>370</th>
-      <td>2001</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>3.000000e+08</td>
-      <td>60.503579</td>
-    </tr>
-    <tr>
-      <th>636</th>
-      <td>2002</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>330108.0</td>
-      <td>27.0</td>
-      <td>1.160000e+10</td>
-      <td>61.463188</td>
-    </tr>
-    <tr>
-      <th>637</th>
-      <td>2002</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>1.800000e+09</td>
-      <td>61.463188</td>
-    </tr>
-    <tr>
-      <th>638</th>
-      <td>2002</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>2</td>
-      <td>19.0</td>
-      <td>11.0</td>
-      <td>2.500000e+08</td>
-      <td>61.463188</td>
-    </tr>
-    <tr>
-      <th>929</th>
-      <td>2003</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>9355.0</td>
-      <td>9355.0</td>
-      <td>1.650000e+09</td>
-      <td>62.858460</td>
-    </tr>
-    <tr>
-      <th>930</th>
-      <td>2003</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>3.000000e+08</td>
-      <td>62.858460</td>
-    </tr>
-    <tr>
-      <th>931</th>
-      <td>2003</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>62.858460</td>
-    </tr>
-    <tr>
-      <th>1163</th>
-      <td>2004</td>
-      <td>Germany</td>
-      <td>Geophysical</td>
-      <td>Earthquake</td>
-      <td>Ground movement</td>
-      <td>1</td>
-      <td>150.0</td>
-      <td>0.0</td>
-      <td>1.200000e+07</td>
-      <td>64.541329</td>
-    </tr>
-    <tr>
-      <th>1164</th>
-      <td>2004</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>1.300000e+08</td>
-      <td>64.541329</td>
-    </tr>
-    <tr>
-      <th>1434</th>
-      <td>2005</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>2</td>
-      <td>450.0</td>
-      <td>1.0</td>
-      <td>2.200000e+08</td>
-      <td>66.731058</td>
-    </tr>
-    <tr>
-      <th>1435</th>
-      <td>2005</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>1</td>
-      <td>165.0</td>
-      <td>1.0</td>
-      <td>3.000000e+08</td>
-      <td>66.731058</td>
-    </tr>
-    <tr>
-      <th>1436</th>
-      <td>2005</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.700000e+08</td>
-      <td>66.731058</td>
-    </tr>
-    <tr>
-      <th>1694</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>1000.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1695</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1696</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Severe winter conditions</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1697</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Hail</td>
-      <td>1</td>
-      <td>100.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1698</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>2</td>
-      <td>200.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1948</th>
-      <td>2007</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>70.848793</td>
-    </tr>
-    <tr>
-      <th>1949</th>
-      <td>2007</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Blizzard/Winter storm</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>70.848793</td>
-    </tr>
-    <tr>
-      <th>1950</th>
-      <td>2007</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>130.0</td>
-      <td>11.0</td>
-      <td>5.500000e+09</td>
-      <td>70.848793</td>
-    </tr>
-    <tr>
-      <th>2205</th>
-      <td>2008</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>1.200000e+09</td>
-      <td>73.568746</td>
-    </tr>
-    <tr>
-      <th>2206</th>
-      <td>2008</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Severe weather</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>1.500000e+09</td>
-      <td>73.568746</td>
-    </tr>
-    <tr>
-      <th>2435</th>
-      <td>2009</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.000000e+07</td>
-      <td>73.307177</td>
-    </tr>
-    <tr>
-      <th>2436</th>
-      <td>2009</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>2</td>
-      <td>15.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>73.307177</td>
-    </tr>
-    <tr>
-      <th>2437</th>
-      <td>2009</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>5.000000e+07</td>
-      <td>73.307177</td>
-    </tr>
-    <tr>
-      <th>2668</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2669</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2670</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Blizzard/Winter storm</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2671</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>1.000000e+09</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2907</th>
-      <td>2011</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>76.861595</td>
-    </tr>
-    <tr>
-      <th>3128</th>
-      <td>2012</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>2</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>NaN</td>
-      <td>78.452114</td>
-    </tr>
-    <tr>
-      <th>3334</th>
-      <td>2013</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>6350.0</td>
-      <td>4.0</td>
-      <td>1.290000e+10</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>3335</th>
-      <td>2013</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>2</td>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>3336</th>
-      <td>2013</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Hail</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>4.800000e+09</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>3528</th>
-      <td>2014</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>8.0</td>
-      <td>4.000000e+08</td>
-      <td>80.892624</td>
-    </tr>
-    <tr>
-      <th>3987</th>
-      <td>2016</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>2.000000e+09</td>
-      <td>82.010331</td>
-    </tr>
-    <tr>
-      <th>4219</th>
-      <td>2017</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>600.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>83.757255</td>
-    </tr>
-    <tr>
-      <th>4220</th>
-      <td>2017</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Hail</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>7.400000e+08</td>
-      <td>83.757255</td>
-    </tr>
-    <tr>
-      <th>4221</th>
-      <td>2017</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Severe weather</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>3.0</td>
-      <td>1.590000e+08</td>
-      <td>83.757255</td>
-    </tr>
-    <tr>
-      <th>4448</th>
-      <td>2018</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>85.803026</td>
-    </tr>
-    <tr>
-      <th>4449</th>
-      <td>2018</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>5.0</td>
-      <td>5.884750e+08</td>
-      <td>85.803026</td>
-    </tr>
-    <tr>
-      <th>4694</th>
-      <td>2019</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>2</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>87.358007</td>
-    </tr>
-    <tr>
-      <th>4695</th>
-      <td>2019</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Blizzard/Winter storm</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>87.358007</td>
-    </tr>
-    <tr>
-      <th>4934</th>
-      <td>2020</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>33.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>88.435641</td>
-    </tr>
-    <tr>
-      <th>5194</th>
-      <td>2021</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>1000.0</td>
-      <td>197.0</td>
-      <td>4.000000e+10</td>
-      <td>92.590193</td>
-    </tr>
-    <tr>
-      <th>5195</th>
-      <td>2021</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>600.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>92.590193</td>
-    </tr>
-    <tr>
-      <th>5196</th>
-      <td>2021</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>92.590193</td>
-    </tr>
-    <tr>
-      <th>5461</th>
-      <td>2022</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>8173.0</td>
-      <td>8173.0</td>
-      <td>NaN</td>
-      <td>100.000000</td>
-    </tr>
-    <tr>
-      <th>5462</th>
-      <td>2022</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>3</td>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>1.023156e+09</td>
-      <td>100.000000</td>
-    </tr>
-    <tr>
-      <th>5707</th>
-      <td>2023</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Severe weather</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p><strong>Alternative Lösungsmöglichkeit</strong> (viel übersichtlicher und effizienter)</p>
-<p>mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> kann eine Funktion auf eine komplette Spalte oder Zeile des Dataframes angewendet werden</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_country</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>370</th>
-      <td>2001</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>3.000000e+08</td>
-      <td>60.503579</td>
-    </tr>
-    <tr>
-      <th>636</th>
-      <td>2002</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>330108.0</td>
-      <td>27.0</td>
-      <td>1.160000e+10</td>
-      <td>61.463188</td>
-    </tr>
-    <tr>
-      <th>637</th>
-      <td>2002</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>1.800000e+09</td>
-      <td>61.463188</td>
-    </tr>
-    <tr>
-      <th>638</th>
-      <td>2002</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>2</td>
-      <td>19.0</td>
-      <td>11.0</td>
-      <td>2.500000e+08</td>
-      <td>61.463188</td>
-    </tr>
-    <tr>
-      <th>929</th>
-      <td>2003</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>9355.0</td>
-      <td>9355.0</td>
-      <td>1.650000e+09</td>
-      <td>62.858460</td>
-    </tr>
-    <tr>
-      <th>930</th>
-      <td>2003</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>3.000000e+08</td>
-      <td>62.858460</td>
-    </tr>
-    <tr>
-      <th>931</th>
-      <td>2003</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>62.858460</td>
-    </tr>
-    <tr>
-      <th>1163</th>
-      <td>2004</td>
-      <td>Germany</td>
-      <td>Geophysical</td>
-      <td>Earthquake</td>
-      <td>Ground movement</td>
-      <td>1</td>
-      <td>150.0</td>
-      <td>0.0</td>
-      <td>1.200000e+07</td>
-      <td>64.541329</td>
-    </tr>
-    <tr>
-      <th>1164</th>
-      <td>2004</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>1.300000e+08</td>
-      <td>64.541329</td>
-    </tr>
-    <tr>
-      <th>1434</th>
-      <td>2005</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>2</td>
-      <td>450.0</td>
-      <td>1.0</td>
-      <td>2.200000e+08</td>
-      <td>66.731058</td>
-    </tr>
-    <tr>
-      <th>1435</th>
-      <td>2005</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>1</td>
-      <td>165.0</td>
-      <td>1.0</td>
-      <td>3.000000e+08</td>
-      <td>66.731058</td>
-    </tr>
-    <tr>
-      <th>1436</th>
-      <td>2005</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.700000e+08</td>
-      <td>66.731058</td>
-    </tr>
-    <tr>
-      <th>1694</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>1000.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1695</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1696</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Severe winter conditions</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1697</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Hail</td>
-      <td>1</td>
-      <td>100.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1698</th>
-      <td>2006</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>2</td>
-      <td>200.0</td>
-      <td>10.0</td>
-      <td>NaN</td>
-      <td>68.883759</td>
-    </tr>
-    <tr>
-      <th>1948</th>
-      <td>2007</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>70.848793</td>
-    </tr>
-    <tr>
-      <th>1949</th>
-      <td>2007</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Blizzard/Winter storm</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>70.848793</td>
-    </tr>
-    <tr>
-      <th>1950</th>
-      <td>2007</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>130.0</td>
-      <td>11.0</td>
-      <td>5.500000e+09</td>
-      <td>70.848793</td>
-    </tr>
-    <tr>
-      <th>2205</th>
-      <td>2008</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>1.200000e+09</td>
-      <td>73.568746</td>
-    </tr>
-    <tr>
-      <th>2206</th>
-      <td>2008</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Severe weather</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>1.500000e+09</td>
-      <td>73.568746</td>
-    </tr>
-    <tr>
-      <th>2435</th>
-      <td>2009</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.000000e+07</td>
-      <td>73.307177</td>
-    </tr>
-    <tr>
-      <th>2436</th>
-      <td>2009</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>2</td>
-      <td>15.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>73.307177</td>
-    </tr>
-    <tr>
-      <th>2437</th>
-      <td>2009</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>5.000000e+07</td>
-      <td>73.307177</td>
-    </tr>
-    <tr>
-      <th>2668</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2669</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2670</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Blizzard/Winter storm</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2671</th>
-      <td>2010</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>1.000000e+09</td>
-      <td>74.509444</td>
-    </tr>
-    <tr>
-      <th>2907</th>
-      <td>2011</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>76.861595</td>
-    </tr>
-    <tr>
-      <th>3128</th>
-      <td>2012</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Cold wave</td>
-      <td>2</td>
-      <td>6.0</td>
-      <td>6.0</td>
-      <td>NaN</td>
-      <td>78.452114</td>
-    </tr>
-    <tr>
-      <th>3334</th>
-      <td>2013</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>6350.0</td>
-      <td>4.0</td>
-      <td>1.290000e+10</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>3335</th>
-      <td>2013</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>2</td>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>3336</th>
-      <td>2013</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Hail</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>4.800000e+09</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>3528</th>
-      <td>2014</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>2</td>
-      <td>1.0</td>
-      <td>8.0</td>
-      <td>4.000000e+08</td>
-      <td>80.892624</td>
-    </tr>
-    <tr>
-      <th>3987</th>
-      <td>2016</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>7.0</td>
-      <td>7.0</td>
-      <td>2.000000e+09</td>
-      <td>82.010331</td>
-    </tr>
-    <tr>
-      <th>4219</th>
-      <td>2017</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>600.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>83.757255</td>
-    </tr>
-    <tr>
-      <th>4220</th>
-      <td>2017</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Hail</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>7.400000e+08</td>
-      <td>83.757255</td>
-    </tr>
-    <tr>
-      <th>4221</th>
-      <td>2017</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Severe weather</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>3.0</td>
-      <td>1.590000e+08</td>
-      <td>83.757255</td>
-    </tr>
-    <tr>
-      <th>4448</th>
-      <td>2018</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>85.803026</td>
-    </tr>
-    <tr>
-      <th>4449</th>
-      <td>2018</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>5.0</td>
-      <td>5.884750e+08</td>
-      <td>85.803026</td>
-    </tr>
-    <tr>
-      <th>4694</th>
-      <td>2019</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>2</td>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>87.358007</td>
-    </tr>
-    <tr>
-      <th>4695</th>
-      <td>2019</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Blizzard/Winter storm</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>87.358007</td>
-    </tr>
-    <tr>
-      <th>4934</th>
-      <td>2020</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>1</td>
-      <td>33.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>88.435641</td>
-    </tr>
-    <tr>
-      <th>5194</th>
-      <td>2021</td>
-      <td>Germany</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>1000.0</td>
-      <td>197.0</td>
-      <td>4.000000e+10</td>
-      <td>92.590193</td>
-    </tr>
-    <tr>
-      <th>5195</th>
-      <td>2021</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Lightning/Thunderstorms</td>
-      <td>1</td>
-      <td>600.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>92.590193</td>
-    </tr>
-    <tr>
-      <th>5196</th>
-      <td>2021</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>92.590193</td>
-    </tr>
-    <tr>
-      <th>5461</th>
-      <td>2022</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Heat wave</td>
-      <td>1</td>
-      <td>8173.0</td>
-      <td>8173.0</td>
-      <td>NaN</td>
-      <td>100.000000</td>
-    </tr>
-    <tr>
-      <th>5462</th>
-      <td>2022</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Extra-tropical storm</td>
-      <td>3</td>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>1.023156e+09</td>
-      <td>100.000000</td>
-    </tr>
-    <tr>
-      <th>5707</th>
-      <td>2023</td>
-      <td>Germany</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Severe weather</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="wie-viele-todesopfer-gab-es-insgesamt-in-deutschland">
-<h4>Wie viele Todesopfer gab es insgesamt in Deutschland?<a class="headerlink" href="#wie-viele-todesopfer-gab-es-insgesamt-in-deutschland" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">][</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -3506,10 +1590,10 @@ class _LocIndexer(_LocationIndexer)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Disaster Type
-Storm                  0.56
-Flood                  0.22
-Extreme temperature    0.20
-Earthquake             0.02
+Storm                 0.56
+Flood                 0.22
+Extreme temperature   0.20
+Earthquake            0.02
 Name: proportion, dtype: float64
 </pre></div>
 </div>
@@ -3647,7 +1731,6 @@ Name: count, dtype: int64
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
   </thead>
   <tbody>
@@ -3659,10 +1742,9 @@ Name: count, dtype: int64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>2580000.0</td>
-      <td>37.0</td>
-      <td>50000.0</td>
-      <td>58.840648</td>
+      <td>2580000.00</td>
+      <td>37.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2</th>
@@ -3672,10 +1754,9 @@ Name: count, dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>2</td>
-      <td>105.0</td>
-      <td>37.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>105.00</td>
+      <td>37.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>3</th>
@@ -3685,10 +1766,9 @@ Name: count, dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>2</td>
-      <td>100.0</td>
-      <td>7.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>100.00</td>
+      <td>7.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>4</th>
@@ -3698,10 +1778,9 @@ Name: count, dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>10.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>10.00</td>
+      <td>4.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5</th>
@@ -3711,14 +1790,12 @@ Name: count, dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>3</td>
-      <td>9011.0</td>
-      <td>15.0</td>
-      <td>NaN</td>
-      <td>58.840648</td>
+      <td>9011.00</td>
+      <td>15.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -3737,10 +1814,9 @@ Name: count, dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>3.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>3.00</td>
+      <td>1.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5835</th>
@@ -3750,10 +1826,9 @@ Name: count, dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>169035.0</td>
-      <td>39.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>169035.00</td>
+      <td>39.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5836</th>
@@ -3763,10 +1838,9 @@ Name: count, dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>154608.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>154608.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5837</th>
@@ -3776,10 +1850,9 @@ Name: count, dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>22000.0</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>22000.00</td>
+      <td>0.00</td>
+      <td>1639896721.42</td>
     </tr>
     <tr>
       <th>5838</th>
@@ -3789,14 +1862,13 @@ Name: count, dtype: int64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>1639896721.42</td>
     </tr>
   </tbody>
 </table>
-<p>5838 rows × 10 columns</p>
+<p>5838 rows × 9 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -3819,441 +1891,23 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Disaster Type
-Animal incident                    12.0
-Drought                         23913.0
-Earthquake                     785228.0
-Extreme temperature            235687.0
-Flood                          128317.0
-Glacial lake outburst flood       439.0
-Impact                              0.0
-Infestation                         0.0
-Mass movement (dry)               382.0
-Mass movement (wet)             19413.0
-Storm                          218907.0
-Volcanic activity                1711.0
-Wildfire                         2046.0
+Animal incident                   12.00
+Drought                        23913.00
+Earthquake                    785228.00
+Extreme temperature           235687.00
+Flood                         128317.00
+Glacial lake outburst flood      439.00
+Impact                             0.00
+Infestation                        0.00
+Mass movement (dry)              382.00
+Mass movement (wet)            19413.00
+Storm                         218907.00
+Volcanic activity               1711.00
+Wildfire                        2046.00
 Name: Total Deaths, dtype: float64
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
-    </tr>
-    <tr>
-      <th>Disaster Type</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Animal incident</th>
-      <td>2014</td>
-      <td>Niger</td>
-      <td>Biological</td>
-      <td>Animal incident</td>
-      <td>1</td>
-      <td>5.000000e+00</td>
-      <td>12.0</td>
-      <td>0.000000e+00</td>
-      <td>80.892624</td>
-    </tr>
-    <tr>
-      <th>Drought</th>
-      <td>772205</td>
-      <td>AfghanistanArmeniaAzerbaijanBolivia (Plurinati...</td>
-      <td>ClimatologicalClimatologicalClimatologicalClim...</td>
-      <td>DroughtDroughtDroughtDroughtDroughtDroughtDrou...</td>
-      <td>396</td>
-      <td>1.651828e+09</td>
-      <td>23913.0</td>
-      <td>1.751722e+11</td>
-      <td>28990.398302</td>
-    </tr>
-    <tr>
-      <th>Earthquake</th>
-      <td>778193</td>
-      <td>AzerbaijanBangladeshChinaColombiaGreeceIceland...</td>
-      <td>GeophysicalGeophysicalGeophysicalGeophysicalGe...</td>
-      <td>Ground movementGround movementGround movementG...</td>
-      <td>652</td>
-      <td>1.398904e+08</td>
-      <td>785228.0</td>
-      <td>6.647881e+11</td>
-      <td>27980.773490</td>
-    </tr>
-    <tr>
-      <th>Extreme temperature</th>
-      <td>896633</td>
-      <td>ArgentinaBangladeshBelarusBolivia (Plurination...</td>
-      <td>MeteorologicalMeteorologicalMeteorologicalMete...</td>
-      <td>Cold waveCold waveCold waveCold waveCold waveC...</td>
-      <td>487</td>
-      <td>9.774977e+07</td>
-      <td>235687.0</td>
-      <td>5.086219e+10</td>
-      <td>33081.773472</td>
-    </tr>
-    <tr>
-      <th>Flood</th>
-      <td>4826898</td>
-      <td>AlgeriaAlgeriaAngolaAngolaArgentinaArgentinaAu...</td>
-      <td>HydrologicalHydrologicalHydrologicalHydrologic...</td>
-      <td>Flash floodFlood (General)Flood (General)River...</td>
-      <td>3968</td>
-      <td>1.782933e+09</td>
-      <td>128317.0</td>
-      <td>7.282075e+11</td>
-      <td>176689.363211</td>
-    </tr>
-    <tr>
-      <th>Glacial lake outburst flood</th>
-      <td>6066</td>
-      <td>IndiaItalyIndia</td>
-      <td>ClimatologicalClimatologicalClimatological</td>
-      <td>Glacial lake outburst floodGlacial lake outbur...</td>
-      <td>4</td>
-      <td>8.843500e+04</td>
-      <td>439.0</td>
-      <td>2.100000e+08</td>
-      <td>192.590193</td>
-    </tr>
-    <tr>
-      <th>Impact</th>
-      <td>2013</td>
-      <td>Russian Federation</td>
-      <td>Extra-terrestrial</td>
-      <td>Collision</td>
-      <td>1</td>
-      <td>3.014910e+05</td>
-      <td>0.0</td>
-      <td>3.300000e+07</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>Infestation</th>
-      <td>58273</td>
-      <td>AustraliaPeruChinaRussian FederationAustraliaB...</td>
-      <td>BiologicalBiologicalBiologicalBiologicalBiolog...</td>
-      <td>Locust infestationLocust infestationLocust inf...</td>
-      <td>29</td>
-      <td>2.800000e+06</td>
-      <td>0.0</td>
-      <td>1.200000e+08</td>
-      <td>2112.085926</td>
-    </tr>
-    <tr>
-      <th>Mass movement (dry)</th>
-      <td>26120</td>
-      <td>PhilippinesEcuadorChinaChinaColombiaEgyptPapua...</td>
-      <td>GeophysicalGeophysicalGeophysicalGeophysicalGe...</td>
-      <td>Landslide (dry)Landslide (dry)Landslide (dry)L...</td>
-      <td>13</td>
-      <td>4.424000e+03</td>
-      <td>382.0</td>
-      <td>8.000000e+06</td>
-      <td>956.344621</td>
-    </tr>
-    <tr>
-      <th>Mass movement (wet)</th>
-      <td>665755</td>
-      <td>AngolaAustriaAzerbaijanBosnia and HerzegovinaB...</td>
-      <td>HydrologicalHydrologicalHydrologicalHydrologic...</td>
-      <td>Landslide (wet)Avalanche (wet)Avalanche (wet)L...</td>
-      <td>443</td>
-      <td>5.124087e+06</td>
-      <td>19413.0</td>
-      <td>5.113121e+09</td>
-      <td>23928.007940</td>
-    </tr>
-    <tr>
-      <th>Storm</th>
-      <td>3037392</td>
-      <td>AlgeriaArgentinaArgentinaAustraliaAustriaBangl...</td>
-      <td>MeteorologicalMeteorologicalMeteorologicalMete...</td>
-      <td>Storm (General)Blizzard/Winter stormLightning/...</td>
-      <td>2482</td>
-      <td>8.144219e+08</td>
-      <td>218907.0</td>
-      <td>1.595769e+12</td>
-      <td>110203.802317</td>
-    </tr>
-    <tr>
-      <th>Volcanic activity</th>
-      <td>209182</td>
-      <td>GuatemalaJapanMexicoPhilippinesDemocratic Repu...</td>
-      <td>GeophysicalGeophysicalGeophysicalGeophysicalGe...</td>
-      <td>Ash fallAsh fallAsh fallAsh fallAsh fallAsh fa...</td>
-      <td>123</td>
-      <td>6.429001e+06</td>
-      <td>1711.0</td>
-      <td>3.465433e+09</td>
-      <td>7814.313176</td>
-    </tr>
-    <tr>
-      <th>Wildfire</th>
-      <td>460576</td>
-      <td>ArgentinaAustraliaBulgariaCroatiaCyprusEthiopi...</td>
-      <td>ClimatologicalClimatologicalClimatologicalClim...</td>
-      <td>Forest fireLand fire (Brush, Bush, Pasture)For...</td>
-      <td>294</td>
-      <td>1.470967e+07</td>
-      <td>2046.0</td>
-      <td>1.085216e+11</td>
-      <td>16594.190195</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
-    </tr>
-    <tr>
-      <th>Disaster Type</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Animal incident</th>
-      <td>2014</td>
-      <td>Niger</td>
-      <td>Biological</td>
-      <td>Animal incident</td>
-      <td>1</td>
-      <td>5.000000e+00</td>
-      <td>12.0</td>
-      <td>0.000000e+00</td>
-      <td>80.892624</td>
-    </tr>
-    <tr>
-      <th>Drought</th>
-      <td>772205</td>
-      <td>AfghanistanArmeniaAzerbaijanBolivia (Plurinati...</td>
-      <td>ClimatologicalClimatologicalClimatologicalClim...</td>
-      <td>DroughtDroughtDroughtDroughtDroughtDroughtDrou...</td>
-      <td>396</td>
-      <td>1.651828e+09</td>
-      <td>23913.0</td>
-      <td>1.751722e+11</td>
-      <td>28990.398302</td>
-    </tr>
-    <tr>
-      <th>Earthquake</th>
-      <td>778193</td>
-      <td>AzerbaijanBangladeshChinaColombiaGreeceIceland...</td>
-      <td>GeophysicalGeophysicalGeophysicalGeophysicalGe...</td>
-      <td>Ground movementGround movementGround movementG...</td>
-      <td>652</td>
-      <td>1.398904e+08</td>
-      <td>785228.0</td>
-      <td>6.647881e+11</td>
-      <td>27980.773490</td>
-    </tr>
-    <tr>
-      <th>Extreme temperature</th>
-      <td>896633</td>
-      <td>ArgentinaBangladeshBelarusBolivia (Plurination...</td>
-      <td>MeteorologicalMeteorologicalMeteorologicalMete...</td>
-      <td>Cold waveCold waveCold waveCold waveCold waveC...</td>
-      <td>487</td>
-      <td>9.774977e+07</td>
-      <td>235687.0</td>
-      <td>5.086219e+10</td>
-      <td>33081.773472</td>
-    </tr>
-    <tr>
-      <th>Flood</th>
-      <td>4826898</td>
-      <td>AlgeriaAlgeriaAngolaAngolaArgentinaArgentinaAu...</td>
-      <td>HydrologicalHydrologicalHydrologicalHydrologic...</td>
-      <td>Flash floodFlood (General)Flood (General)River...</td>
-      <td>3968</td>
-      <td>1.782933e+09</td>
-      <td>128317.0</td>
-      <td>7.282075e+11</td>
-      <td>176689.363211</td>
-    </tr>
-    <tr>
-      <th>Glacial lake outburst flood</th>
-      <td>6066</td>
-      <td>IndiaItalyIndia</td>
-      <td>ClimatologicalClimatologicalClimatological</td>
-      <td>Glacial lake outburst floodGlacial lake outbur...</td>
-      <td>4</td>
-      <td>8.843500e+04</td>
-      <td>439.0</td>
-      <td>2.100000e+08</td>
-      <td>192.590193</td>
-    </tr>
-    <tr>
-      <th>Impact</th>
-      <td>2013</td>
-      <td>Russian Federation</td>
-      <td>Extra-terrestrial</td>
-      <td>Collision</td>
-      <td>1</td>
-      <td>3.014910e+05</td>
-      <td>0.0</td>
-      <td>3.300000e+07</td>
-      <td>79.601309</td>
-    </tr>
-    <tr>
-      <th>Infestation</th>
-      <td>58273</td>
-      <td>AustraliaPeruChinaRussian FederationAustraliaB...</td>
-      <td>BiologicalBiologicalBiologicalBiologicalBiolog...</td>
-      <td>Locust infestationLocust infestationLocust inf...</td>
-      <td>29</td>
-      <td>2.800000e+06</td>
-      <td>0.0</td>
-      <td>1.200000e+08</td>
-      <td>2112.085926</td>
-    </tr>
-    <tr>
-      <th>Mass movement (dry)</th>
-      <td>26120</td>
-      <td>PhilippinesEcuadorChinaChinaColombiaEgyptPapua...</td>
-      <td>GeophysicalGeophysicalGeophysicalGeophysicalGe...</td>
-      <td>Landslide (dry)Landslide (dry)Landslide (dry)L...</td>
-      <td>13</td>
-      <td>4.424000e+03</td>
-      <td>382.0</td>
-      <td>8.000000e+06</td>
-      <td>956.344621</td>
-    </tr>
-    <tr>
-      <th>Mass movement (wet)</th>
-      <td>665755</td>
-      <td>AngolaAustriaAzerbaijanBosnia and HerzegovinaB...</td>
-      <td>HydrologicalHydrologicalHydrologicalHydrologic...</td>
-      <td>Landslide (wet)Avalanche (wet)Avalanche (wet)L...</td>
-      <td>443</td>
-      <td>5.124087e+06</td>
-      <td>19413.0</td>
-      <td>5.113121e+09</td>
-      <td>23928.007940</td>
-    </tr>
-    <tr>
-      <th>Storm</th>
-      <td>3037392</td>
-      <td>AlgeriaArgentinaArgentinaAustraliaAustriaBangl...</td>
-      <td>MeteorologicalMeteorologicalMeteorologicalMete...</td>
-      <td>Storm (General)Blizzard/Winter stormLightning/...</td>
-      <td>2482</td>
-      <td>8.144219e+08</td>
-      <td>218907.0</td>
-      <td>1.595769e+12</td>
-      <td>110203.802317</td>
-    </tr>
-    <tr>
-      <th>Volcanic activity</th>
-      <td>209182</td>
-      <td>GuatemalaJapanMexicoPhilippinesDemocratic Repu...</td>
-      <td>GeophysicalGeophysicalGeophysicalGeophysicalGe...</td>
-      <td>Ash fallAsh fallAsh fallAsh fallAsh fallAsh fa...</td>
-      <td>123</td>
-      <td>6.429001e+06</td>
-      <td>1711.0</td>
-      <td>3.465433e+09</td>
-      <td>7814.313176</td>
-    </tr>
-    <tr>
-      <th>Wildfire</th>
-      <td>460576</td>
-      <td>ArgentinaAustraliaBulgariaCroatiaCyprusEthiopi...</td>
-      <td>ClimatologicalClimatologicalClimatologicalClim...</td>
-      <td>Forest fireLand fire (Brush, Bush, Pasture)For...</td>
-      <td>294</td>
-      <td>1.470967e+07</td>
-      <td>2046.0</td>
-      <td>1.085216e+11</td>
-      <td>16594.190195</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> kann auch auf mehrere Spalten gleichzeitig angewendet werden</p>
 <div class="cell docutils container">
@@ -4264,48 +1918,60 @@ Name: Total Deaths, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Disaster Type                Disaster Subtype                
-Animal incident              Animal incident                         12.0
-Drought                      Drought                              23913.0
-Earthquake                   Ground movement                     532498.0
-                             Tsunami                             252730.0
-Extreme temperature          Cold wave                            11323.0
-                             Heat wave                           220684.0
-                             Severe winter conditions              3680.0
-Flood                        Coastal flood                          606.0
-                             Flash flood                          24663.0
-                             Flood (General)                      33094.0
-                             Riverine flood                       69954.0
-Glacial lake outburst flood  Glacial lake outburst flood            439.0
-Impact                       Collision                                0.0
-Infestation                  Locust infestation                       0.0
-                             Worms infestation                        0.0
-Mass movement (dry)          Avalanche (dry)                         16.0
-                             Landslide (dry)                        247.0
-                             Rockfall (dry)                         119.0
-Mass movement (wet)          Avalanche (wet)                       1856.0
-                             Landslide (wet)                      14504.0
-                             Mudslide                              2638.0
-                             Rockfall (wet)                         128.0
-                             Sudden Subsidence (wet)                287.0
-Storm                        Blizzard/Winter storm                 2779.0
-                             Derecho                                 24.0
-                             Extra-tropical storm                   363.0
-                             Hail                                   302.0
-                             Lightning/Thunderstorms               2061.0
-                             Sand/Dust storm                        316.0
-                             Severe weather                        1256.0
-                             Storm (General)                      15590.0
-                             Storm surge                             52.0
-                             Tornado                               2085.0
-                             Tropical cyclone                    194079.0
-Volcanic activity            Ash fall                               630.0
-                             Lava flow                               33.0
-                             Pyroclastic flow                       532.0
-                             Volcanic activity (General)            516.0
-Wildfire                     Forest fire                           1080.0
-                             Land fire (Brush, Bush, Pasture)       487.0
-                             Wildfire (General)                     479.0
+Animal incident              Animal incident                        12.00
+Drought                      Drought                             23913.00
+Earthquake                   Ground movement                    532498.00
+                             Tsunami                            252730.00
+Extreme temperature          Cold wave                           11323.00
+                             Heat wave                          220684.00
+                             Severe winter conditions             3680.00
+Flood                        Coastal flood                         606.00
+                             Flash flood                         24663.00
+                             Flood (General)                     33094.00
+                             Riverine flood                      69954.00
+Glacial lake outburst flood  Glacial lake outburst flood           439.00
+Impact                       Collision                               0.00
+Infestation                  Locust infestation                      0.00
+                             Worms infestation                       0.00
+Mass movement (dry)          Avalanche (dry)                        16.00
+                             Landslide (dry)                       247.00
+                             Rockfall (dry)                        119.00
+Mass movement (wet)          Avalanche (wet)                      1856.00
+                             Landslide (wet)                     14504.00
+                             Mudslide                             2638.00
+                             Rockfall (wet)                        128.00
+                             Sudden Subsidence (wet)               287.00
+Storm                        Blizzard/Winter storm                2779.00
+                             Derecho                                24.00
+                             Extra-tropical storm                  363.00
+                             Hail                                  302.00
+                             Lightning/Thunderstorms              2061.00
+                             Sand/Dust storm                       316.00
+                             Severe weather                       1256.00
+                             Storm (General)                     15590.00
+                             Storm surge                            52.00
+                             Tornado                              2085.00
+                             Tropical cyclone                   194079.00
+Volcanic activity            Ash fall                              630.00
+                             Lava flow                              33.00
+                             Pyroclastic flow                      532.00
+                             Volcanic activity (General)           516.00
+Wildfire                     Forest fire                          1080.00
+                             Land fire (Brush, Bush, Pasture)      487.00
+                             Wildfire (General)                    479.00
 Name: Total Deaths, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f335898ba50&gt;
 </pre></div>
 </div>
 </div>
@@ -4332,19 +1998,6 @@ Name: Total Deaths, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">germany_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span>
 <span class="n">germany_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Total Deaths&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/2f30fbfc631328a35042bb44826a412fabdd3ea45bfd38704c917ea05008c376.png" src="../_images/2f30fbfc631328a35042bb44826a412fabdd3ea45bfd38704c917ea05008c376.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Germany&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Disaster Type&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Deaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4482,11 +2135,9 @@ Name: Total Events, dtype: int64
       <th>Total Affected</th>
       <th>Total Deaths</th>
       <th>Total Damage (USD, original)</th>
-      <th>CPI</th>
     </tr>
     <tr>
       <th>Year</th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -4505,10 +2156,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>35000.0</td>
-      <td>58.840648</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>35000.00</td>
     </tr>
     <tr>
       <th>2001</th>
@@ -4517,10 +2167,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>10000.0</td>
-      <td>60.503579</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>10000.00</td>
     </tr>
     <tr>
       <th>2002</th>
@@ -4529,10 +2178,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>30000.0</td>
-      <td>61.463188</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>30000.00</td>
     </tr>
     <tr>
       <th>2003</th>
@@ -4541,10 +2189,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>50000.0</td>
-      <td>62.858460</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2004</th>
@@ -4553,10 +2200,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>173000.0</td>
-      <td>64.541329</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>173000.00</td>
     </tr>
     <tr>
       <th>2005</th>
@@ -4565,10 +2211,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>20000.0</td>
-      <td>66.731058</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>20000.00</td>
     </tr>
     <tr>
       <th>2006</th>
@@ -4577,10 +2222,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>500000.0</td>
-      <td>68.883759</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>500000.00</td>
     </tr>
     <tr>
       <th>2007</th>
@@ -4589,10 +2233,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>9000.0</td>
-      <td>70.848793</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>9000.00</td>
     </tr>
     <tr>
       <th>2008</th>
@@ -4601,10 +2244,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>29000.0</td>
-      <td>73.568746</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>29000.00</td>
     </tr>
     <tr>
       <th>2009</th>
@@ -4613,10 +2255,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>5000.0</td>
-      <td>73.307177</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>5000.00</td>
     </tr>
     <tr>
       <th>2010</th>
@@ -4625,10 +2266,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>78000.0</td>
-      <td>74.509444</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>78000.00</td>
     </tr>
     <tr>
       <th>2011</th>
@@ -4637,10 +2277,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>123000.0</td>
-      <td>76.861595</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>123000.00</td>
     </tr>
     <tr>
       <th>2012</th>
@@ -4649,10 +2288,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>760000.0</td>
-      <td>78.452114</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>760000.00</td>
     </tr>
     <tr>
       <th>2013</th>
@@ -4661,10 +2299,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>102000.0</td>
-      <td>79.601309</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>102000.00</td>
     </tr>
     <tr>
       <th>2014</th>
@@ -4673,10 +2310,9 @@ Name: Total Events, dtype: int64
       <td>Animal incident</td>
       <td>Animal incident</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>791000.0</td>
-      <td>80.892624</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>791000.00</td>
     </tr>
     <tr>
       <th>2015</th>
@@ -4685,10 +2321,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2000.0</td>
-      <td>80.988579</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2000.00</td>
     </tr>
     <tr>
       <th>2016</th>
@@ -4697,10 +2332,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Avalanche (wet)</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>50000.0</td>
-      <td>82.010331</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>50000.00</td>
     </tr>
     <tr>
       <th>2017</th>
@@ -4709,10 +2343,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1655000.0</td>
-      <td>83.757255</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1655000.00</td>
     </tr>
     <tr>
       <th>2018</th>
@@ -4721,10 +2354,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>36000.0</td>
-      <td>85.803026</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>36000.00</td>
     </tr>
     <tr>
       <th>2019</th>
@@ -4733,10 +2365,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>4000000.0</td>
-      <td>87.358007</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4000000.00</td>
     </tr>
     <tr>
       <th>2020</th>
@@ -4745,10 +2376,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1500000.0</td>
-      <td>88.435641</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1500000.00</td>
     </tr>
     <tr>
       <th>2021</th>
@@ -4757,10 +2387,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>120000.0</td>
-      <td>92.590193</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>120000.00</td>
     </tr>
     <tr>
       <th>2022</th>
@@ -4769,10 +2398,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>100.000000</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>2023</th>
@@ -4781,10 +2409,9 @@ Name: Total Events, dtype: int64
       <td>Drought</td>
       <td>Ash fall</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1000000.0</td>
-      <td>NaN</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1000000.00</td>
     </tr>
   </tbody>
 </table>
@@ -4829,27 +2456,16 @@ Name: Total Events, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yearly_events</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">45</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">yearly_events</span>
-
-<span class="ne">NameError</span>: name &#39;yearly_events&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yearly_events</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Total Events&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">yearly_events</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Events&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anzahl an Naturkatastrophen pro Jahr&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Anzahl an Naturkatastrophen pro Jahr&#39;}, xlabel=&#39;Year&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/0e43fafc034adc92234657ac61cfc22a60c666ab102d93a3da2b0c64185c6d35.png" src="../_images/0e43fafc034adc92234657ac61cfc22a60c666ab102d93a3da2b0c64185c6d35.png" />
 </div>
 </div>
 <p><strong>Plotte für Deutschland die Entwicklung der Anzahl an Naturkatastrophen über die Jahre hinweg</strong></p>
@@ -4859,6 +2475,12 @@ Name: Total Events, dtype: int64
 <span class="n">yearly_events</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total Events&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Anzahl an Naturkatastrophen pro Jahr&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Anzahl an Naturkatastrophen pro Jahr&#39;}, xlabel=&#39;Year&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/9adc34ec5273748d24db7c081c426b68b7ff78a00bd6eba2a78de68ac928f568.png" src="../_images/9adc34ec5273748d24db7c081c426b68b7ff78a00bd6eba2a78de68ac928f568.png" />
 </div>
 </div>
 <p><strong>Generelle Funktion</strong></p>
@@ -4933,6 +2555,15 @@ Name: Total Events, dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Naturkatastrophen in BANGLADESH 
+
+Getötete Menschen seit 1900: 11,564
+</pre></div>
+</div>
+<img alt="../_images/578c74e45897c3eaf4e6de397cb6ab69201e6bf2bd88c1335a2ac0ef818350ec.png" src="../_images/578c74e45897c3eaf4e6de397cb6ab69201e6bf2bd88c1335a2ac0ef818350ec.png" />
+<img alt="../_images/77443f3456e3ef001cfc59cc248aa357b46ce41f718fce736475abc0000963a0.png" src="../_images/77443f3456e3ef001cfc59cc248aa357b46ce41f718fce736475abc0000963a0.png" />
+</div>
 </div>
 <section id="uberblick-uber-die-welt">
 <h3>Überblick über die Welt<a class="headerlink" href="#uberblick-uber-die-welt" title="Permalink to this heading">#</a></h3>
@@ -4957,6 +2588,16 @@ Name: Total Events, dtype: int64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analyze</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Naturkatastrophen in WORLD 
+
+100.0% aller Menschen die weltweit von Naturkatastrophen betroffen sind leben hier.
+Getötete Menschen seit 1900: 1,416,055
+</pre></div>
+</div>
+<img alt="../_images/41758785f385586922fa440f636e1693be8a2246eca5990b88c82469606d8e08.png" src="../_images/41758785f385586922fa440f636e1693be8a2246eca5990b88c82469606d8e08.png" />
+<img alt="../_images/0e43fafc034adc92234657ac61cfc22a60c666ab102d93a3da2b0c64185c6d35.png" src="../_images/0e43fafc034adc92234657ac61cfc22a60c666ab102d93a3da2b0c64185c6d35.png" />
 </div>
 </div>
 </section>
@@ -5034,8 +2675,6 @@ Name: Total Events, dtype: int64
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-in-einem-land">Wie viele Todesopfer gibt es in einem Land?</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt">Wie viele Todesopfer gibt es insgesamt?</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gibt-es-insgesamt-in-deutschland">Wie viele Todesopfer gibt es insgesamt in Deutschland?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#korrektur-der-landernamen-fur-deutschland">Korrektur der Ländernamen für Deutschland</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-deutschland">Wie viele Todesopfer gab es insgesamt in Deutschland?</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-viele-todesopfer-gab-es-insgesamt-in-indien">Wie viele Todesopfer gab es insgesamt in Indien?</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#allgemeine-funktion-die-gesamtzahl-der-todesopfer-eines-landes-ausgibt">Allgemeine Funktion die Gesamtzahl der Todesopfer eines Landes ausgibt</a></li>
 </ul>

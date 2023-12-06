@@ -621,12 +621,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Zufälliger Integer Wert mit random package</span>
 <span class="kn">import</span> <span class="nn">random</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
@@ -635,12 +635,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># das heutige Datum über datetime ausgeben lassen</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023-12-05 10:54:46.646121
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 12, 6, 10, 37, 28, 342404)
 </pre></div>
 </div>
 </div>
@@ -668,9 +668,7 @@ document.write(`
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2.8.2)
 Requirement already satisfied: pytz&gt;=2020.1 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2023.3.post1)
 Requirement already satisfied: tzdata&gt;=2022.1 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2023.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: openpyxl in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (3.1.2)
@@ -699,6 +697,8 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../../data/emdat.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -773,9 +773,9 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>1</td>
       <td>2580000</td>
       <td>37</td>
-      <td>50000.0</td>
+      <td>50000.00</td>
       <td>84975</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>2</th>
@@ -791,7 +791,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>3</th>
@@ -807,7 +807,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>7</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>4</th>
@@ -823,7 +823,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>4</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1003,9 +1003,9 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>1</td>
       <td>2580000</td>
       <td>37</td>
-      <td>50000.0</td>
+      <td>50000.00</td>
       <td>84975</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1021,7 +1021,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1037,7 +1037,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>7</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1053,7 +1053,7 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
       <td>4</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
   </tbody>
 </table>
@@ -1106,7 +1106,7 @@ Anzahl an Spalten: 13
 <p><code class="docutils literal notranslate"><span class="pre">info()</span></code> für mehr Infos über die Spalten</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1131,7 +1131,6 @@ Data columns (total 13 columns):
  12  CPI                           5648 non-null   float64
 dtypes: float64(2), object(11)
 memory usage: 593.2+ KB
-None
 </pre></div>
 </div>
 </div>
@@ -1178,43 +1177,43 @@ None
   <tbody>
     <tr>
       <th>count</th>
-      <td>2.032000e+03</td>
-      <td>5648.000000</td>
+      <td>2032.00</td>
+      <td>5648.00</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>1.639897e+09</td>
-      <td>75.903707</td>
+      <td>1639896721.42</td>
+      <td>75.90</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>8.550684e+09</td>
-      <td>11.063540</td>
+      <td>8550683641.43</td>
+      <td>11.06</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>0.000000e+00</td>
-      <td>58.840648</td>
+      <td>0.00</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>2.000000e+07</td>
-      <td>66.731058</td>
+      <td>20000000.00</td>
+      <td>66.73</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>1.230000e+08</td>
-      <td>74.509444</td>
+      <td>123000000.00</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>7.427500e+08</td>
-      <td>83.757255</td>
+      <td>742750000.00</td>
+      <td>83.76</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>2.100000e+11</td>
-      <td>100.000000</td>
+      <td>210000000000.00</td>
+      <td>100.00</td>
     </tr>
   </tbody>
 </table>
@@ -1252,14 +1251,7 @@ None
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1310,9 +1302,9 @@ None
       <td>1</td>
       <td>2580000</td>
       <td>37</td>
-      <td>50000.0</td>
+      <td>50000.00</td>
       <td>84975</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1328,7 +1320,7 @@ None
       <td>37</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1344,7 +1336,7 @@ None
       <td>7</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1360,7 +1352,7 @@ None
       <td>4</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1376,7 +1368,7 @@ None
       <td>15</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1478,6 +1470,236 @@ None
 </table>
 <p>5838 rows × 13 columns</p>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Country</th>
+      <th>ISO</th>
+      <th>Disaster Group</th>
+      <th>Disaster Subroup</th>
+      <th>Disaster Type</th>
+      <th>Disaster Subtype</th>
+      <th>Total Events</th>
+      <th>Total Affected</th>
+      <th>Total Deaths</th>
+      <th>Total Damage (USD, original)</th>
+      <th>Total Damage (USD, adjusted)</th>
+      <th>CPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>#date +occurred</td>
+      <td>#country +name</td>
+      <td>#country +code</td>
+      <td>#cause +group</td>
+      <td>#cause +subgroup</td>
+      <td>#cause +type</td>
+      <td>#cause +subtype</td>
+      <td>#frequency</td>
+      <td>#affected +ind</td>
+      <td>#affected +ind +killed</td>
+      <td>NaN</td>
+      <td>#value +usd</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000</td>
+      <td>Afghanistan</td>
+      <td>AFG</td>
+      <td>Natural</td>
+      <td>Climatological</td>
+      <td>Drought</td>
+      <td>Drought</td>
+      <td>1</td>
+      <td>2580000</td>
+      <td>37</td>
+      <td>50000.00</td>
+      <td>84975</td>
+      <td>58.84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>DZA</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>2</td>
+      <td>105</td>
+      <td>37</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>58.84</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>DZA</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>2</td>
+      <td>100</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>58.84</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000</td>
+      <td>Algeria</td>
+      <td>DZA</td>
+      <td>Natural</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Storm (General)</td>
+      <td>1</td>
+      <td>10</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>58.84</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2023</td>
+      <td>Viet Nam</td>
+      <td>VNM</td>
+      <td>Natural</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5835</th>
+      <td>2023</td>
+      <td>Yemen</td>
+      <td>YEM</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>169035</td>
+      <td>39</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5836</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>ZMB</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flash flood</td>
+      <td>1</td>
+      <td>154608</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5837</th>
+      <td>2023</td>
+      <td>Zambia</td>
+      <td>ZMB</td>
+      <td>Natural</td>
+      <td>Hydrological</td>
+      <td>Flood</td>
+      <td>Flood (General)</td>
+      <td>1</td>
+      <td>22000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5838</th>
+      <td>2023</td>
+      <td>Zimbabwe</td>
+      <td>ZWE</td>
+      <td>Natural</td>
+      <td>Meteorological</td>
+      <td>Storm</td>
+      <td>Tropical cyclone</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5839 rows × 13 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># data.drop(index=0, inplace=True)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="datentypen-abfragen-und-anpassen">
@@ -1621,83 +1843,83 @@ memory usage: 593.1+ KB
   <tbody>
     <tr>
       <th>count</th>
-      <td>5838.000000</td>
-      <td>5838.000000</td>
-      <td>4.692000e+03</td>
-      <td>4118.000000</td>
-      <td>2.032000e+03</td>
-      <td>1.999000e+03</td>
-      <td>5648.000000</td>
+      <td>5838.00</td>
+      <td>5838.00</td>
+      <td>4692.00</td>
+      <td>4118.00</td>
+      <td>2032.00</td>
+      <td>1999.00</td>
+      <td>5648.00</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>2011.188763</td>
-      <td>1.523296</td>
-      <td>9.624997e+05</td>
-      <td>343.869597</td>
-      <td>1.639897e+09</td>
-      <td>2.067216e+09</td>
-      <td>75.903707</td>
+      <td>2011.19</td>
+      <td>1.52</td>
+      <td>962499.69</td>
+      <td>343.87</td>
+      <td>1639896721.42</td>
+      <td>2067216253.87</td>
+      <td>75.90</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>7.060059</td>
-      <td>1.276850</td>
-      <td>8.601462e+06</td>
-      <td>5402.594471</td>
-      <td>8.550684e+09</td>
-      <td>1.107843e+10</td>
-      <td>11.063540</td>
+      <td>7.06</td>
+      <td>1.28</td>
+      <td>8601461.99</td>
+      <td>5402.59</td>
+      <td>8550683641.43</td>
+      <td>11078428355.46</td>
+      <td>11.06</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>2000.000000</td>
-      <td>1.000000</td>
-      <td>1.000000e+00</td>
-      <td>1.000000</td>
-      <td>0.000000e+00</td>
-      <td>0.000000e+00</td>
-      <td>58.840648</td>
+      <td>2000.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>2005.000000</td>
-      <td>1.000000</td>
-      <td>1.000000e+03</td>
-      <td>4.000000</td>
-      <td>2.000000e+07</td>
-      <td>2.479192e+07</td>
-      <td>66.731058</td>
+      <td>2005.00</td>
+      <td>1.00</td>
+      <td>1000.00</td>
+      <td>4.00</td>
+      <td>20000000.00</td>
+      <td>24791922.00</td>
+      <td>66.73</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>2011.000000</td>
-      <td>1.000000</td>
-      <td>1.000000e+04</td>
-      <td>14.000000</td>
-      <td>1.230000e+08</td>
-      <td>1.626990e+08</td>
-      <td>74.509444</td>
+      <td>2011.00</td>
+      <td>1.00</td>
+      <td>10000.00</td>
+      <td>14.00</td>
+      <td>123000000.00</td>
+      <td>162699012.00</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>2017.000000</td>
-      <td>2.000000</td>
-      <td>1.000000e+05</td>
-      <td>47.750000</td>
-      <td>7.427500e+08</td>
-      <td>9.921833e+08</td>
-      <td>83.757255</td>
+      <td>2017.00</td>
+      <td>2.00</td>
+      <td>100000.00</td>
+      <td>47.75</td>
+      <td>742750000.00</td>
+      <td>992183337.00</td>
+      <td>83.76</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>2023.000000</td>
-      <td>17.000000</td>
-      <td>3.300000e+08</td>
-      <td>222570.000000</td>
-      <td>2.100000e+11</td>
-      <td>2.732184e+11</td>
-      <td>100.000000</td>
+      <td>2023.00</td>
+      <td>17.00</td>
+      <td>330000000.00</td>
+      <td>222570.00</td>
+      <td>210000000000.00</td>
+      <td>273218372541.00</td>
+      <td>100.00</td>
     </tr>
   </tbody>
 </table>
@@ -1710,70 +1932,77 @@ memory usage: 593.1+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unterschiedliche Länder</span>
 <span class="n">countries</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+<span class="n">countries</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Afghanistan&#39; &#39;Algeria&#39; &#39;Angola&#39; &#39;Argentina&#39; &#39;Armenia&#39; &#39;Australia&#39;
- &#39;Austria&#39; &#39;Azerbaijan&#39; &#39;Bangladesh&#39; &#39;Belarus&#39; &#39;Belize&#39; &#39;Bhutan&#39;
- &#39;Bolivia (Plurinational State of)&#39; &#39;Bosnia and Herzegovina&#39; &#39;Botswana&#39;
- &#39;Brazil&#39; &#39;Bulgaria&#39; &#39;Burundi&#39; &#39;Cambodia&#39; &#39;Cameroon&#39; &#39;Canada&#39; &#39;Chile&#39;
- &#39;China&#39; &#39;Colombia&#39; &#39;Costa Rica&#39; &#39;Croatia&#39; &#39;Cuba&#39; &#39;Cyprus&#39; &#39;Czechia&#39;
- &quot;Democratic People&#39;s Republic of Korea&quot; &#39;Ecuador&#39; &#39;Egypt&#39; &#39;El Salvador&#39;
- &#39;Eswatini&#39; &#39;Ethiopia&#39; &#39;Fiji&#39; &#39;France&#39; &#39;French Guiana&#39; &#39;Georgia&#39; &#39;Greece&#39;
- &#39;Guatemala&#39; &#39;Guinea&#39; &#39;Haiti&#39; &#39;Honduras&#39; &#39;Hungary&#39; &#39;Iceland&#39; &#39;India&#39;
- &#39;Indonesia&#39; &#39;Iran (Islamic Republic of)&#39; &#39;Ireland&#39; &#39;Israel&#39; &#39;Italy&#39;
- &#39;Jamaica&#39; &#39;Japan&#39; &#39;Jordan&#39; &#39;Kazakhstan&#39; &#39;Kyrgyzstan&#39;
- &quot;Lao People&#39;s Democratic Republic&quot; &#39;Madagascar&#39; &#39;Malawi&#39; &#39;Malaysia&#39;
- &#39;Mali&#39; &#39;Mexico&#39; &#39;Mongolia&#39; &#39;Morocco&#39; &#39;Mozambique&#39; &#39;Namibia&#39; &#39;Nepal&#39;
- &#39;New Zealand&#39; &#39;Nicaragua&#39; &#39;Niger&#39; &#39;Nigeria&#39; &#39;North Macedonia&#39; &#39;Norway&#39;
- &#39;Pakistan&#39; &#39;Panama&#39; &#39;Papua New Guinea&#39; &#39;Paraguay&#39; &#39;Peru&#39; &#39;Philippines&#39;
- &#39;Poland&#39; &#39;Portugal&#39; &#39;Republic of Korea&#39; &#39;Republic of Moldova&#39; &#39;Romania&#39;
- &#39;Russian Federation&#39; &#39;Réunion&#39; &#39;Senegal&#39; &#39;Serbia Montenegro&#39; &#39;Slovakia&#39;
- &#39;Somalia&#39; &#39;South Africa&#39; &#39;Spain&#39; &#39;Sri Lanka&#39; &#39;Sudan&#39; &#39;Switzerland&#39;
- &#39;Taiwan (Province of China)&#39; &#39;Tajikistan&#39; &#39;Thailand&#39; &#39;Turkmenistan&#39;
- &#39;Türkiye&#39; &#39;Uganda&#39; &#39;Ukraine&#39;
- &#39;United Kingdom of Great Britain and Northern Ireland&#39;
- &#39;United Republic of Tanzania&#39; &#39;United States of America&#39; &#39;Uruguay&#39;
- &#39;Uzbekistan&#39; &#39;Venezuela (Bolivarian Republic of)&#39; &#39;Viet Nam&#39; &#39;Zambia&#39;
- &#39;Zimbabwe&#39; &#39;Bahamas&#39; &#39;Burkina Faso&#39; &#39;Canary Islands&#39; &#39;Cayman Islands&#39;
- &#39;Central African Republic&#39; &#39;Chad&#39; &#39;Cook Islands&#39;
- &#39;Democratic Republic of the Congo&#39; &#39;Djibouti&#39; &#39;Dominican Republic&#39;
- &#39;Gambia&#39; &#39;Germany&#39; &#39;Ghana&#39; &#39;Kenya&#39; &#39;Latvia&#39; &#39;Lesotho&#39; &#39;Lithuania&#39;
- &#39;Mauritania&#39; &#39;Myanmar&#39; &#39;Puerto Rico&#39; &#39;Rwanda&#39; &#39;Saint Helena&#39; &#39;Samoa&#39;
- &#39;Syrian Arab Republic&#39; &#39;Timor-Leste&#39; &#39;Tonga&#39; &#39;Vanuatu&#39; &#39;Yemen&#39; &#39;Albania&#39;
- &#39;Barbados&#39; &#39;Belgium&#39; &#39;Cabo Verde&#39; &#39;Congo&#39; &#39;Denmark&#39; &#39;Grenada&#39; &#39;Guam&#39;
- &#39;Guinea-Bissau&#39; &#39;Lebanon&#39; &#39;Mauritius&#39; &#39;Micronesia (Federated States of)&#39;
- &#39;Netherlands (Kingdom of the)&#39; &#39;Northern Mariana Islands&#39; &#39;Oman&#39;
- &#39;Saint Vincent and the Grenadines&#39; &#39;Saudi Arabia&#39; &#39;Seychelles&#39;
- &#39;Solomon Islands&#39; &#39;Sweden&#39; &#39;American Samoa&#39; &#39;Bermuda&#39;
- &#39;China, Hong Kong Special Administrative Region&#39; &#39;Comoros&#39; &#39;Eritrea&#39;
- &#39;Luxembourg&#39; &#39;New Caledonia&#39; &#39;Slovenia&#39; &#39;Tunisia&#39; &#39;Dominica&#39; &#39;Guadeloupe&#39;
- &#39;Iraq&#39; &#39;Maldives&#39; &#39;Niue&#39; &#39;Saint Lucia&#39; &#39;Sierra Leone&#39;
- &#39;Trinidad and Tobago&#39; &#39;Turks and Caicos Islands&#39;
- &#39;United States Virgin Islands&#39; &#39;Estonia&#39; &#39;Finland&#39; &#39;Guyana&#39; &#39;Tokelau&#39;
- &#39;Montserrat&#39; &#39;Suriname&#39; &#39;Togo&#39; &#39;Benin&#39; &#39;Côte d’Ivoire&#39; &#39;Liberia&#39;
- &#39;Martinique&#39; &#39;Montenegro&#39; &#39;Serbia&#39; &#39;Antigua and Barbuda&#39; &#39;Kiribati&#39;
- &#39;Marshall Islands&#39; &#39;Saint Kitts and Nevis&#39; &#39;South Sudan&#39;
- &#39;State of Palestine&#39; &#39;Gabon&#39; &#39;French Polynesia&#39; &#39;Tuvalu&#39; &#39;Palau&#39;
- &#39;Wallis and Futuna Islands&#39; &#39;Libya&#39; &#39;Anguilla&#39; &#39;British Virgin Islands&#39;
- &#39;China, Macao Special Administrative Region&#39; &#39;Saint Barthélemy&#39;
- &#39;Saint Martin (French Part)&#39; &#39;Sint Maarten (Dutch part)&#39;
- &#39;United Arab Emirates&#39; &#39;Kuwait&#39; &#39;Qatar&#39; &#39;Isle of Man&#39;
- &#39;Sao Tome and Principe&#39; &#39;Malta&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Afghanistan&#39;, &#39;Algeria&#39;, &#39;Angola&#39;, &#39;Argentina&#39;, &#39;Armenia&#39;,
+       &#39;Australia&#39;, &#39;Austria&#39;, &#39;Azerbaijan&#39;, &#39;Bangladesh&#39;, &#39;Belarus&#39;,
+       &#39;Belize&#39;, &#39;Bhutan&#39;, &#39;Bolivia (Plurinational State of)&#39;,
+       &#39;Bosnia and Herzegovina&#39;, &#39;Botswana&#39;, &#39;Brazil&#39;, &#39;Bulgaria&#39;,
+       &#39;Burundi&#39;, &#39;Cambodia&#39;, &#39;Cameroon&#39;, &#39;Canada&#39;, &#39;Chile&#39;, &#39;China&#39;,
+       &#39;Colombia&#39;, &#39;Costa Rica&#39;, &#39;Croatia&#39;, &#39;Cuba&#39;, &#39;Cyprus&#39;, &#39;Czechia&#39;,
+       &quot;Democratic People&#39;s Republic of Korea&quot;, &#39;Ecuador&#39;, &#39;Egypt&#39;,
+       &#39;El Salvador&#39;, &#39;Eswatini&#39;, &#39;Ethiopia&#39;, &#39;Fiji&#39;, &#39;France&#39;,
+       &#39;French Guiana&#39;, &#39;Georgia&#39;, &#39;Greece&#39;, &#39;Guatemala&#39;, &#39;Guinea&#39;,
+       &#39;Haiti&#39;, &#39;Honduras&#39;, &#39;Hungary&#39;, &#39;Iceland&#39;, &#39;India&#39;, &#39;Indonesia&#39;,
+       &#39;Iran (Islamic Republic of)&#39;, &#39;Ireland&#39;, &#39;Israel&#39;, &#39;Italy&#39;,
+       &#39;Jamaica&#39;, &#39;Japan&#39;, &#39;Jordan&#39;, &#39;Kazakhstan&#39;, &#39;Kyrgyzstan&#39;,
+       &quot;Lao People&#39;s Democratic Republic&quot;, &#39;Madagascar&#39;, &#39;Malawi&#39;,
+       &#39;Malaysia&#39;, &#39;Mali&#39;, &#39;Mexico&#39;, &#39;Mongolia&#39;, &#39;Morocco&#39;, &#39;Mozambique&#39;,
+       &#39;Namibia&#39;, &#39;Nepal&#39;, &#39;New Zealand&#39;, &#39;Nicaragua&#39;, &#39;Niger&#39;, &#39;Nigeria&#39;,
+       &#39;North Macedonia&#39;, &#39;Norway&#39;, &#39;Pakistan&#39;, &#39;Panama&#39;,
+       &#39;Papua New Guinea&#39;, &#39;Paraguay&#39;, &#39;Peru&#39;, &#39;Philippines&#39;, &#39;Poland&#39;,
+       &#39;Portugal&#39;, &#39;Republic of Korea&#39;, &#39;Republic of Moldova&#39;, &#39;Romania&#39;,
+       &#39;Russian Federation&#39;, &#39;Réunion&#39;, &#39;Senegal&#39;, &#39;Serbia Montenegro&#39;,
+       &#39;Slovakia&#39;, &#39;Somalia&#39;, &#39;South Africa&#39;, &#39;Spain&#39;, &#39;Sri Lanka&#39;,
+       &#39;Sudan&#39;, &#39;Switzerland&#39;, &#39;Taiwan (Province of China)&#39;, &#39;Tajikistan&#39;,
+       &#39;Thailand&#39;, &#39;Turkmenistan&#39;, &#39;Türkiye&#39;, &#39;Uganda&#39;, &#39;Ukraine&#39;,
+       &#39;United Kingdom of Great Britain and Northern Ireland&#39;,
+       &#39;United Republic of Tanzania&#39;, &#39;United States of America&#39;,
+       &#39;Uruguay&#39;, &#39;Uzbekistan&#39;, &#39;Venezuela (Bolivarian Republic of)&#39;,
+       &#39;Viet Nam&#39;, &#39;Zambia&#39;, &#39;Zimbabwe&#39;, &#39;Bahamas&#39;, &#39;Burkina Faso&#39;,
+       &#39;Canary Islands&#39;, &#39;Cayman Islands&#39;, &#39;Central African Republic&#39;,
+       &#39;Chad&#39;, &#39;Cook Islands&#39;, &#39;Democratic Republic of the Congo&#39;,
+       &#39;Djibouti&#39;, &#39;Dominican Republic&#39;, &#39;Gambia&#39;, &#39;Germany&#39;, &#39;Ghana&#39;,
+       &#39;Kenya&#39;, &#39;Latvia&#39;, &#39;Lesotho&#39;, &#39;Lithuania&#39;, &#39;Mauritania&#39;, &#39;Myanmar&#39;,
+       &#39;Puerto Rico&#39;, &#39;Rwanda&#39;, &#39;Saint Helena&#39;, &#39;Samoa&#39;,
+       &#39;Syrian Arab Republic&#39;, &#39;Timor-Leste&#39;, &#39;Tonga&#39;, &#39;Vanuatu&#39;, &#39;Yemen&#39;,
+       &#39;Albania&#39;, &#39;Barbados&#39;, &#39;Belgium&#39;, &#39;Cabo Verde&#39;, &#39;Congo&#39;, &#39;Denmark&#39;,
+       &#39;Grenada&#39;, &#39;Guam&#39;, &#39;Guinea-Bissau&#39;, &#39;Lebanon&#39;, &#39;Mauritius&#39;,
+       &#39;Micronesia (Federated States of)&#39;, &#39;Netherlands (Kingdom of the)&#39;,
+       &#39;Northern Mariana Islands&#39;, &#39;Oman&#39;,
+       &#39;Saint Vincent and the Grenadines&#39;, &#39;Saudi Arabia&#39;, &#39;Seychelles&#39;,
+       &#39;Solomon Islands&#39;, &#39;Sweden&#39;, &#39;American Samoa&#39;, &#39;Bermuda&#39;,
+       &#39;China, Hong Kong Special Administrative Region&#39;, &#39;Comoros&#39;,
+       &#39;Eritrea&#39;, &#39;Luxembourg&#39;, &#39;New Caledonia&#39;, &#39;Slovenia&#39;, &#39;Tunisia&#39;,
+       &#39;Dominica&#39;, &#39;Guadeloupe&#39;, &#39;Iraq&#39;, &#39;Maldives&#39;, &#39;Niue&#39;,
+       &#39;Saint Lucia&#39;, &#39;Sierra Leone&#39;, &#39;Trinidad and Tobago&#39;,
+       &#39;Turks and Caicos Islands&#39;, &#39;United States Virgin Islands&#39;,
+       &#39;Estonia&#39;, &#39;Finland&#39;, &#39;Guyana&#39;, &#39;Tokelau&#39;, &#39;Montserrat&#39;,
+       &#39;Suriname&#39;, &#39;Togo&#39;, &#39;Benin&#39;, &#39;Côte d’Ivoire&#39;, &#39;Liberia&#39;,
+       &#39;Martinique&#39;, &#39;Montenegro&#39;, &#39;Serbia&#39;, &#39;Antigua and Barbuda&#39;,
+       &#39;Kiribati&#39;, &#39;Marshall Islands&#39;, &#39;Saint Kitts and Nevis&#39;,
+       &#39;South Sudan&#39;, &#39;State of Palestine&#39;, &#39;Gabon&#39;, &#39;French Polynesia&#39;,
+       &#39;Tuvalu&#39;, &#39;Palau&#39;, &#39;Wallis and Futuna Islands&#39;, &#39;Libya&#39;,
+       &#39;Anguilla&#39;, &#39;British Virgin Islands&#39;,
+       &#39;China, Macao Special Administrative Region&#39;, &#39;Saint Barthélemy&#39;,
+       &#39;Saint Martin (French Part)&#39;, &#39;Sint Maarten (Dutch part)&#39;,
+       &#39;United Arab Emirates&#39;, &#39;Kuwait&#39;, &#39;Qatar&#39;, &#39;Isle of Man&#39;,
+       &#39;Sao Tome and Principe&#39;, &#39;Malta&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>216
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>216
 </pre></div>
 </div>
 </div>
@@ -1847,12 +2076,12 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Disaster Subroup
-Hydrological         0.467797
-Meteorological       0.335046
-Climatological       0.105516
-Geophysical          0.086331
-Biological           0.005139
-Extra-terrestrial    0.000171
+Hydrological        0.47
+Meteorological      0.34
+Climatological      0.11
+Geophysical         0.09
+Biological          0.01
+Extra-terrestrial   0.00
 Name: proportion, dtype: float64
 </pre></div>
 </div>
@@ -1892,19 +2121,19 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Disaster Type
-Flood                          0.411100
-Storm                          0.258650
-Extreme temperature            0.076396
-Earthquake                     0.066290
-Drought                        0.065776
-Mass movement (wet)            0.056697
-Wildfire                       0.039226
-Volcanic activity              0.017814
-Infestation                    0.004967
-Mass movement (dry)            0.002227
-Glacial lake outburst flood    0.000514
-Impact                         0.000171
-Animal incident                0.000171
+Flood                         0.41
+Storm                         0.26
+Extreme temperature           0.08
+Earthquake                    0.07
+Drought                       0.07
+Mass movement (wet)           0.06
+Wildfire                      0.04
+Volcanic activity             0.02
+Infestation                   0.00
+Mass movement (dry)           0.00
+Glacial lake outburst flood   0.00
+Impact                        0.00
+Animal incident               0.00
 Name: proportion, dtype: float64
 </pre></div>
 </div>
@@ -1965,11 +2194,11 @@ Name: proportion, dtype: float64
       <td>Mass movement (wet)</td>
       <td>Landslide (wet)</td>
       <td>1</td>
-      <td>1.0</td>
-      <td>13.0</td>
+      <td>1.00</td>
+      <td>13.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>73.307177</td>
+      <td>73.31</td>
     </tr>
     <tr>
       <th>5056</th>
@@ -1981,11 +2210,11 @@ Name: proportion, dtype: float64
       <td>Storm</td>
       <td>Tropical cyclone</td>
       <td>1</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1.00</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>88.435641</td>
+      <td>88.44</td>
     </tr>
     <tr>
       <th>1505</th>
@@ -1997,11 +2226,11 @@ Name: proportion, dtype: float64
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>66.731058</td>
+      <td>66.73</td>
     </tr>
     <tr>
       <th>1876</th>
@@ -2013,11 +2242,11 @@ Name: proportion, dtype: float64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>70.848793</td>
+      <td>70.85</td>
     </tr>
     <tr>
       <th>147</th>
@@ -2029,11 +2258,11 @@ Name: proportion, dtype: float64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>...</th>
@@ -2062,7 +2291,7 @@ Name: proportion, dtype: float64
       <td>Flood (General)</td>
       <td>1</td>
       <td>NaN</td>
-      <td>21.0</td>
+      <td>21.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2078,8 +2307,8 @@ Name: proportion, dtype: float64
       <td>Flood (General)</td>
       <td>1</td>
       <td>NaN</td>
-      <td>19.0</td>
-      <td>25000000.0</td>
+      <td>19.00</td>
+      <td>25000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -2110,7 +2339,7 @@ Name: proportion, dtype: float64
       <td>Heat wave</td>
       <td>1</td>
       <td>NaN</td>
-      <td>14.0</td>
+      <td>14.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2126,7 +2355,7 @@ Name: proportion, dtype: float64
       <td>Tropical cyclone</td>
       <td>1</td>
       <td>NaN</td>
-      <td>2.0</td>
+      <td>2.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2188,11 +2417,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>330000000.0</td>
+      <td>330000000.00</td>
       <td>NaN</td>
-      <td>3.000000e+09</td>
-      <td>3.704226e+09</td>
-      <td>80.988579</td>
+      <td>3000000000.00</td>
+      <td>3704226000.00</td>
+      <td>80.99</td>
     </tr>
     <tr>
       <th>658</th>
@@ -2204,11 +2433,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>300000000.0</td>
+      <td>300000000.00</td>
       <td>NaN</td>
-      <td>9.107220e+08</td>
-      <td>1.481736e+09</td>
-      <td>61.463188</td>
+      <td>910722000.00</td>
+      <td>1481735695.00</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>892</th>
@@ -2220,11 +2449,11 @@ Name: proportion, dtype: float64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>6</td>
-      <td>155924986.0</td>
-      <td>662.0</td>
-      <td>1.532964e+10</td>
-      <td>2.438755e+10</td>
-      <td>62.858460</td>
+      <td>155924986.00</td>
+      <td>662.00</td>
+      <td>15329640000.00</td>
+      <td>24387552800.00</td>
+      <td>62.86</td>
     </tr>
     <tr>
       <th>2626</th>
@@ -2236,11 +2465,11 @@ Name: proportion, dtype: float64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>5</td>
-      <td>140194136.0</td>
-      <td>1911.0</td>
-      <td>1.817100e+10</td>
-      <td>2.438751e+10</td>
-      <td>74.509444</td>
+      <td>140194136.00</td>
+      <td>1911.00</td>
+      <td>18171000000.00</td>
+      <td>24387512516.00</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>1911</th>
@@ -2252,11 +2481,11 @@ Name: proportion, dtype: float64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>9</td>
-      <td>108793242.0</td>
-      <td>967.0</td>
-      <td>4.919155e+09</td>
-      <td>6.943174e+09</td>
-      <td>70.848793</td>
+      <td>108793242.00</td>
+      <td>967.00</td>
+      <td>4919155000.00</td>
+      <td>6943174065.00</td>
+      <td>70.85</td>
     </tr>
     <tr>
       <th>599</th>
@@ -2268,11 +2497,11 @@ Name: proportion, dtype: float64
       <td>Storm</td>
       <td>Sand/Dust storm</td>
       <td>1</td>
-      <td>100000000.0</td>
+      <td>100000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>61.463188</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>2885</th>
@@ -2284,11 +2513,11 @@ Name: proportion, dtype: float64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>5</td>
-      <td>93360000.0</td>
-      <td>628.0</td>
-      <td>1.070413e+10</td>
-      <td>1.392650e+10</td>
-      <td>76.861595</td>
+      <td>93360000.00</td>
+      <td>628.00</td>
+      <td>10704130000.00</td>
+      <td>13926499896.00</td>
+      <td>76.86</td>
     </tr>
     <tr>
       <th>4126</th>
@@ -2300,11 +2529,11 @@ Name: proportion, dtype: float64
       <td>Storm</td>
       <td>Blizzard/Winter storm</td>
       <td>4</td>
-      <td>85000057.0</td>
-      <td>90.0</td>
-      <td>2.125000e+09</td>
-      <td>2.591137e+09</td>
-      <td>82.010331</td>
+      <td>85000057.00</td>
+      <td>90.00</td>
+      <td>2125000000.00</td>
+      <td>2591136966.00</td>
+      <td>82.01</td>
     </tr>
     <tr>
       <th>593</th>
@@ -2316,11 +2545,11 @@ Name: proportion, dtype: float64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>80035257.0</td>
-      <td>793.0</td>
-      <td>3.100000e+09</td>
-      <td>5.043669e+09</td>
-      <td>61.463188</td>
+      <td>80035257.00</td>
+      <td>793.00</td>
+      <td>3100000000.00</td>
+      <td>5043669370.00</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>2170</th>
@@ -2332,11 +2561,11 @@ Name: proportion, dtype: float64
       <td>Extreme temperature</td>
       <td>Severe winter conditions</td>
       <td>2</td>
-      <td>77000000.0</td>
-      <td>145.0</td>
-      <td>2.110000e+10</td>
-      <td>2.868066e+10</td>
-      <td>73.568746</td>
+      <td>77000000.00</td>
+      <td>145.00</td>
+      <td>21100000000.00</td>
+      <td>28680657590.00</td>
+      <td>73.57</td>
     </tr>
   </tbody>
 </table>
@@ -2394,11 +2623,11 @@ Name: proportion, dtype: float64
       <td>Animal incident</td>
       <td>Animal incident</td>
       <td>1</td>
-      <td>5.0</td>
-      <td>12.0</td>
+      <td>5.00</td>
+      <td>12.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>80.892624</td>
+      <td>80.89</td>
     </tr>
     <tr>
       <th>3778</th>
@@ -2410,11 +2639,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>330000000.0</td>
+      <td>330000000.00</td>
       <td>NaN</td>
-      <td>3.000000e+09</td>
-      <td>3.704226e+09</td>
-      <td>80.988579</td>
+      <td>3000000000.00</td>
+      <td>3704226000.00</td>
+      <td>80.99</td>
     </tr>
     <tr>
       <th>658</th>
@@ -2426,11 +2655,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>300000000.0</td>
+      <td>300000000.00</td>
       <td>NaN</td>
-      <td>9.107220e+08</td>
-      <td>1.481736e+09</td>
-      <td>61.463188</td>
+      <td>910722000.00</td>
+      <td>1481735695.00</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>590</th>
@@ -2442,11 +2671,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>3</td>
-      <td>64560000.0</td>
+      <td>64560000.00</td>
       <td>NaN</td>
-      <td>1.210000e+09</td>
-      <td>1.968658e+09</td>
-      <td>61.463188</td>
+      <td>1210000000.00</td>
+      <td>1968658044.00</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>2400</th>
@@ -2458,11 +2687,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>2</td>
-      <td>60160000.0</td>
+      <td>60160000.00</td>
       <td>NaN</td>
-      <td>3.600000e+09</td>
-      <td>4.910843e+09</td>
-      <td>73.307177</td>
+      <td>3600000000.00</td>
+      <td>4910842514.00</td>
+      <td>73.31</td>
     </tr>
     <tr>
       <th>889</th>
@@ -2474,11 +2703,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>2</td>
-      <td>51000000.0</td>
+      <td>51000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>62.858460</td>
+      <td>62.86</td>
     </tr>
     <tr>
       <th>106</th>
@@ -2490,11 +2719,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>50000000.0</td>
-      <td>20.0</td>
-      <td>5.880000e+08</td>
-      <td>9.993092e+08</td>
-      <td>58.840648</td>
+      <td>50000000.00</td>
+      <td>20.00</td>
+      <td>588000000.00</td>
+      <td>999309177.00</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>2623</th>
@@ -2506,11 +2735,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>35000000.0</td>
+      <td>35000000.00</td>
       <td>NaN</td>
-      <td>2.370000e+09</td>
-      <td>3.180805e+09</td>
-      <td>74.509444</td>
+      <td>2370000000.00</td>
+      <td>3180804835.00</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>3500</th>
@@ -2522,11 +2751,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>2</td>
-      <td>27726000.0</td>
+      <td>27726000.00</td>
       <td>NaN</td>
-      <td>3.680000e+09</td>
-      <td>4.549240e+09</td>
-      <td>80.892624</td>
+      <td>3680000000.00</td>
+      <td>4549240500.00</td>
+      <td>80.89</td>
     </tr>
     <tr>
       <th>3485</th>
@@ -2538,11 +2767,11 @@ Name: proportion, dtype: float64
       <td>Drought</td>
       <td>Drought</td>
       <td>1</td>
-      <td>27000000.0</td>
+      <td>27000000.00</td>
       <td>NaN</td>
-      <td>5.000000e+09</td>
-      <td>6.181033e+09</td>
-      <td>80.892624</td>
+      <td>5000000000.00</td>
+      <td>6181033288.00</td>
+      <td>80.89</td>
     </tr>
   </tbody>
 </table>
@@ -2649,35 +2878,35 @@ Name: Year, Length: 5838, dtype: int64
       <td>2000</td>
       <td>Afghanistan</td>
       <td>Drought</td>
-      <td>2580000.0</td>
+      <td>2580000.00</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2000</td>
       <td>Algeria</td>
       <td>Flood</td>
-      <td>105.0</td>
+      <td>105.00</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2000</td>
       <td>Algeria</td>
       <td>Flood</td>
-      <td>100.0</td>
+      <td>100.00</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2000</td>
       <td>Algeria</td>
       <td>Storm</td>
-      <td>10.0</td>
+      <td>10.00</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2000</td>
       <td>Angola</td>
       <td>Flood</td>
-      <td>9011.0</td>
+      <td>9011.00</td>
     </tr>
     <tr>
       <th>...</th>
@@ -2691,28 +2920,28 @@ Name: Year, Length: 5838, dtype: int64
       <td>2023</td>
       <td>Viet Nam</td>
       <td>Storm</td>
-      <td>3.0</td>
+      <td>3.00</td>
     </tr>
     <tr>
       <th>5835</th>
       <td>2023</td>
       <td>Yemen</td>
       <td>Flood</td>
-      <td>169035.0</td>
+      <td>169035.00</td>
     </tr>
     <tr>
       <th>5836</th>
       <td>2023</td>
       <td>Zambia</td>
       <td>Flood</td>
-      <td>154608.0</td>
+      <td>154608.00</td>
     </tr>
     <tr>
       <th>5837</th>
       <td>2023</td>
       <td>Zambia</td>
       <td>Flood</td>
-      <td>22000.0</td>
+      <td>22000.00</td>
     </tr>
     <tr>
       <th>5838</th>
@@ -2782,10 +3011,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
       <td>NaN</td>
-      <td>6.0</td>
-      <td>3.000000e+08</td>
-      <td>4.958384e+08</td>
-      <td>60.503579</td>
+      <td>6.00</td>
+      <td>300000000.00</td>
+      <td>495838437.00</td>
+      <td>60.50</td>
     </tr>
     <tr>
       <th>636</th>
@@ -2797,11 +3026,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>330108.0</td>
-      <td>27.0</td>
-      <td>1.160000e+10</td>
-      <td>1.887309e+10</td>
-      <td>61.463188</td>
+      <td>330108.00</td>
+      <td>27.00</td>
+      <td>11600000000.00</td>
+      <td>18873085384.00</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>637</th>
@@ -2814,10 +3043,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Extra-tropical storm</td>
       <td>1</td>
       <td>NaN</td>
-      <td>11.0</td>
-      <td>1.800000e+09</td>
-      <td>2.928582e+09</td>
-      <td>61.463188</td>
+      <td>11.00</td>
+      <td>1800000000.00</td>
+      <td>2928582215.00</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>638</th>
@@ -2829,11 +3058,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>2</td>
-      <td>19.0</td>
-      <td>11.0</td>
-      <td>2.500000e+08</td>
-      <td>4.067475e+08</td>
-      <td>61.463188</td>
+      <td>19.00</td>
+      <td>11.00</td>
+      <td>250000000.00</td>
+      <td>406747530.00</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>929</th>
@@ -2846,10 +3075,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Heat wave</td>
       <td>1</td>
       <td>NaN</td>
-      <td>9355.0</td>
-      <td>1.650000e+09</td>
-      <td>2.624945e+09</td>
-      <td>62.858460</td>
+      <td>9355.00</td>
+      <td>1650000000.00</td>
+      <td>2624945016.00</td>
+      <td>62.86</td>
     </tr>
     <tr>
       <th>930</th>
@@ -2862,10 +3091,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Extra-tropical storm</td>
       <td>1</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>3.000000e+08</td>
-      <td>4.772627e+08</td>
-      <td>62.858460</td>
+      <td>5.00</td>
+      <td>300000000.00</td>
+      <td>477262730.00</td>
+      <td>62.86</td>
     </tr>
     <tr>
       <th>931</th>
@@ -2878,10 +3107,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
       <td>NaN</td>
-      <td>10.0</td>
+      <td>10.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>62.858460</td>
+      <td>62.86</td>
     </tr>
     <tr>
       <th>1163</th>
@@ -2893,11 +3122,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>150.0</td>
+      <td>150.00</td>
       <td>NaN</td>
-      <td>1.200000e+07</td>
-      <td>1.859274e+07</td>
-      <td>64.541329</td>
+      <td>12000000.00</td>
+      <td>18592738.00</td>
+      <td>64.54</td>
     </tr>
     <tr>
       <th>1164</th>
@@ -2910,10 +3139,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm (General)</td>
       <td>1</td>
       <td>NaN</td>
-      <td>2.0</td>
-      <td>1.300000e+08</td>
-      <td>2.014213e+08</td>
-      <td>64.541329</td>
+      <td>2.00</td>
+      <td>130000000.00</td>
+      <td>201421324.00</td>
+      <td>64.54</td>
     </tr>
     <tr>
       <th>1434</th>
@@ -2925,11 +3154,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>2</td>
-      <td>450.0</td>
-      <td>1.0</td>
-      <td>2.200000e+08</td>
-      <td>3.296816e+08</td>
-      <td>66.731058</td>
+      <td>450.00</td>
+      <td>1.00</td>
+      <td>220000000.00</td>
+      <td>329681571.00</td>
+      <td>66.73</td>
     </tr>
     <tr>
       <th>1435</th>
@@ -2941,11 +3170,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Extreme temperature</td>
       <td>Cold wave</td>
       <td>1</td>
-      <td>165.0</td>
-      <td>1.0</td>
-      <td>3.000000e+08</td>
-      <td>4.495658e+08</td>
-      <td>66.731058</td>
+      <td>165.00</td>
+      <td>1.00</td>
+      <td>300000000.00</td>
+      <td>449565778.00</td>
+      <td>66.73</td>
     </tr>
     <tr>
       <th>1436</th>
@@ -2957,11 +3186,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>2.0</td>
-      <td>2.0</td>
-      <td>2.700000e+08</td>
-      <td>4.046092e+08</td>
-      <td>66.731058</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>270000000.00</td>
+      <td>404609200.00</td>
+      <td>66.73</td>
     </tr>
     <tr>
       <th>1694</th>
@@ -2973,11 +3202,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>1000.0</td>
+      <td>1000.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>68.883759</td>
+      <td>68.88</td>
     </tr>
     <tr>
       <th>1695</th>
@@ -2990,10 +3219,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Heat wave</td>
       <td>1</td>
       <td>NaN</td>
-      <td>2.0</td>
+      <td>2.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>68.883759</td>
+      <td>68.88</td>
     </tr>
     <tr>
       <th>1696</th>
@@ -3006,10 +3235,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Severe winter conditions</td>
       <td>1</td>
       <td>NaN</td>
-      <td>10.0</td>
+      <td>10.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>68.883759</td>
+      <td>68.88</td>
     </tr>
     <tr>
       <th>1697</th>
@@ -3021,11 +3250,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Hail</td>
       <td>1</td>
-      <td>100.0</td>
-      <td>1.0</td>
+      <td>100.00</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>68.883759</td>
+      <td>68.88</td>
     </tr>
     <tr>
       <th>1698</th>
@@ -3037,11 +3266,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>2</td>
-      <td>200.0</td>
-      <td>10.0</td>
+      <td>200.00</td>
+      <td>10.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>68.883759</td>
+      <td>68.88</td>
     </tr>
     <tr>
       <th>1948</th>
@@ -3054,10 +3283,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Riverine flood</td>
       <td>1</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>70.848793</td>
+      <td>70.85</td>
     </tr>
     <tr>
       <th>1949</th>
@@ -3070,10 +3299,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Blizzard/Winter storm</td>
       <td>1</td>
       <td>NaN</td>
-      <td>7.0</td>
+      <td>7.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>70.848793</td>
+      <td>70.85</td>
     </tr>
     <tr>
       <th>1950</th>
@@ -3085,11 +3314,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>130.0</td>
-      <td>11.0</td>
-      <td>5.500000e+09</td>
-      <td>7.763012e+09</td>
-      <td>70.848793</td>
+      <td>130.00</td>
+      <td>11.00</td>
+      <td>5500000000.00</td>
+      <td>7763011606.00</td>
+      <td>70.85</td>
     </tr>
     <tr>
       <th>2205</th>
@@ -3102,10 +3331,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Extra-tropical storm</td>
       <td>1</td>
       <td>NaN</td>
-      <td>5.0</td>
-      <td>1.200000e+09</td>
-      <td>1.631127e+09</td>
-      <td>73.568746</td>
+      <td>5.00</td>
+      <td>1200000000.00</td>
+      <td>1631127446.00</td>
+      <td>73.57</td>
     </tr>
     <tr>
       <th>2206</th>
@@ -3118,10 +3347,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Severe weather</td>
       <td>1</td>
       <td>NaN</td>
-      <td>3.0</td>
-      <td>1.500000e+09</td>
-      <td>2.038909e+09</td>
-      <td>73.568746</td>
+      <td>3.00</td>
+      <td>1500000000.00</td>
+      <td>2038909307.00</td>
+      <td>73.57</td>
     </tr>
     <tr>
       <th>2435</th>
@@ -3135,9 +3364,9 @@ Name: Year, Length: 5838, dtype: int64
       <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>2.000000e+07</td>
-      <td>2.728246e+07</td>
-      <td>73.307177</td>
+      <td>20000000.00</td>
+      <td>27282458.00</td>
+      <td>73.31</td>
     </tr>
     <tr>
       <th>2436</th>
@@ -3150,10 +3379,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Cold wave</td>
       <td>2</td>
       <td>NaN</td>
-      <td>15.0</td>
+      <td>15.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>73.307177</td>
+      <td>73.31</td>
     </tr>
     <tr>
       <th>2437</th>
@@ -3166,10 +3395,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
       <td>NaN</td>
-      <td>1.0</td>
-      <td>5.000000e+07</td>
-      <td>6.820615e+07</td>
-      <td>73.307177</td>
+      <td>1.00</td>
+      <td>50000000.00</td>
+      <td>68206146.00</td>
+      <td>73.31</td>
     </tr>
     <tr>
       <th>2668</th>
@@ -3182,10 +3411,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flash flood</td>
       <td>1</td>
       <td>NaN</td>
-      <td>3.0</td>
+      <td>3.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>74.509444</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>2669</th>
@@ -3198,10 +3427,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Cold wave</td>
       <td>1</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>74.509444</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>2670</th>
@@ -3217,7 +3446,7 @@ Name: Year, Length: 5838, dtype: int64
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>74.509444</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>2671</th>
@@ -3230,10 +3459,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Extra-tropical storm</td>
       <td>1</td>
       <td>NaN</td>
-      <td>4.0</td>
-      <td>1.000000e+09</td>
-      <td>1.342112e+09</td>
-      <td>74.509444</td>
+      <td>4.00</td>
+      <td>1000000000.00</td>
+      <td>1342111745.00</td>
+      <td>74.51</td>
     </tr>
     <tr>
       <th>2907</th>
@@ -3246,10 +3475,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Riverine flood</td>
       <td>1</td>
       <td>NaN</td>
-      <td>4.0</td>
+      <td>4.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>76.861595</td>
+      <td>76.86</td>
     </tr>
     <tr>
       <th>3128</th>
@@ -3262,10 +3491,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Cold wave</td>
       <td>2</td>
       <td>NaN</td>
-      <td>6.0</td>
+      <td>6.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>78.452114</td>
+      <td>78.45</td>
     </tr>
     <tr>
       <th>3334</th>
@@ -3277,11 +3506,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>6350.0</td>
-      <td>4.0</td>
-      <td>1.290000e+10</td>
-      <td>1.620576e+10</td>
-      <td>79.601309</td>
+      <td>6350.00</td>
+      <td>4.00</td>
+      <td>12900000000.00</td>
+      <td>16205763565.00</td>
+      <td>79.60</td>
     </tr>
     <tr>
       <th>3335</th>
@@ -3293,11 +3522,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>2</td>
-      <td>2.0</td>
-      <td>7.0</td>
+      <td>2.00</td>
+      <td>7.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>79.601309</td>
+      <td>79.60</td>
     </tr>
     <tr>
       <th>3336</th>
@@ -3311,9 +3540,9 @@ Name: Year, Length: 5838, dtype: int64
       <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>4.800000e+09</td>
-      <td>6.030052e+09</td>
-      <td>79.601309</td>
+      <td>4800000000.00</td>
+      <td>6030051559.00</td>
+      <td>79.60</td>
     </tr>
     <tr>
       <th>3528</th>
@@ -3325,11 +3554,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Lightning/Thunderstorms</td>
       <td>2</td>
-      <td>1.0</td>
-      <td>8.0</td>
-      <td>4.000000e+08</td>
-      <td>4.944827e+08</td>
-      <td>80.892624</td>
+      <td>1.00</td>
+      <td>8.00</td>
+      <td>400000000.00</td>
+      <td>494482663.00</td>
+      <td>80.89</td>
     </tr>
     <tr>
       <th>3987</th>
@@ -3342,10 +3571,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood (General)</td>
       <td>1</td>
       <td>NaN</td>
-      <td>7.0</td>
-      <td>2.000000e+09</td>
-      <td>2.438717e+09</td>
-      <td>82.010331</td>
+      <td>7.00</td>
+      <td>2000000000.00</td>
+      <td>2438717145.00</td>
+      <td>82.01</td>
     </tr>
     <tr>
       <th>4219</th>
@@ -3357,11 +3586,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>1</td>
-      <td>600.0</td>
+      <td>600.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>83.757255</td>
+      <td>83.76</td>
     </tr>
     <tr>
       <th>4220</th>
@@ -3374,10 +3603,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Hail</td>
       <td>1</td>
       <td>NaN</td>
-      <td>2.0</td>
-      <td>7.400000e+08</td>
-      <td>8.835056e+08</td>
-      <td>83.757255</td>
+      <td>2.00</td>
+      <td>740000000.00</td>
+      <td>883505559.00</td>
+      <td>83.76</td>
     </tr>
     <tr>
       <th>4221</th>
@@ -3389,11 +3618,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Severe weather</td>
       <td>1</td>
-      <td>24.0</td>
-      <td>3.0</td>
-      <td>1.590000e+08</td>
-      <td>1.898343e+08</td>
-      <td>83.757255</td>
+      <td>24.00</td>
+      <td>3.00</td>
+      <td>159000000.00</td>
+      <td>189834303.00</td>
+      <td>83.76</td>
     </tr>
     <tr>
       <th>4448</th>
@@ -3409,7 +3638,7 @@ Name: Year, Length: 5838, dtype: int64
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>85.803026</td>
+      <td>85.80</td>
     </tr>
     <tr>
       <th>4449</th>
@@ -3421,11 +3650,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>12.0</td>
-      <td>5.0</td>
-      <td>5.884750e+08</td>
-      <td>6.858441e+08</td>
-      <td>85.803026</td>
+      <td>12.00</td>
+      <td>5.00</td>
+      <td>588475000.00</td>
+      <td>685844110.00</td>
+      <td>85.80</td>
     </tr>
     <tr>
       <th>4694</th>
@@ -3438,10 +3667,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Heat wave</td>
       <td>2</td>
       <td>NaN</td>
-      <td>4.0</td>
+      <td>4.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>87.358007</td>
+      <td>87.36</td>
     </tr>
     <tr>
       <th>4695</th>
@@ -3454,10 +3683,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Blizzard/Winter storm</td>
       <td>1</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>87.358007</td>
+      <td>87.36</td>
     </tr>
     <tr>
       <th>4934</th>
@@ -3469,11 +3698,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>1</td>
-      <td>33.0</td>
+      <td>33.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>88.435641</td>
+      <td>88.44</td>
     </tr>
     <tr>
       <th>5194</th>
@@ -3485,11 +3714,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Flood (General)</td>
       <td>1</td>
-      <td>1000.0</td>
-      <td>197.0</td>
-      <td>4.000000e+10</td>
-      <td>4.320112e+10</td>
-      <td>92.590193</td>
+      <td>1000.00</td>
+      <td>197.00</td>
+      <td>40000000000.00</td>
+      <td>43201119615.00</td>
+      <td>92.59</td>
     </tr>
     <tr>
       <th>5195</th>
@@ -3501,11 +3730,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Lightning/Thunderstorms</td>
       <td>1</td>
-      <td>600.0</td>
+      <td>600.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>92.590193</td>
+      <td>92.59</td>
     </tr>
     <tr>
       <th>5196</th>
@@ -3517,11 +3746,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
+      <td>4.00</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>92.590193</td>
+      <td>92.59</td>
     </tr>
     <tr>
       <th>5461</th>
@@ -3534,10 +3763,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Heat wave</td>
       <td>1</td>
       <td>NaN</td>
-      <td>8173.0</td>
+      <td>8173.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>100.000000</td>
+      <td>100.00</td>
     </tr>
     <tr>
       <th>5462</th>
@@ -3549,11 +3778,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Extra-tropical storm</td>
       <td>3</td>
-      <td>2.0</td>
-      <td>7.0</td>
-      <td>1.023156e+09</td>
-      <td>1.023156e+09</td>
-      <td>100.000000</td>
+      <td>2.00</td>
+      <td>7.00</td>
+      <td>1023156000.00</td>
+      <td>1023156000.00</td>
+      <td>100.00</td>
     </tr>
     <tr>
       <th>5707</th>
@@ -3566,7 +3795,7 @@ Name: Year, Length: 5838, dtype: int64
       <td>Severe weather</td>
       <td>1</td>
       <td>NaN</td>
-      <td>1.0</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3626,11 +3855,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Riverine flood</td>
       <td>2</td>
-      <td>46600000.0</td>
-      <td>1751.0</td>
-      <td>7.345000e+08</td>
-      <td>1.248287e+09</td>
-      <td>58.840648</td>
+      <td>46600000.00</td>
+      <td>1751.00</td>
+      <td>734500000.00</td>
+      <td>1248286718.00</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>358</th>
@@ -3642,11 +3871,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>2</td>
-      <td>1590550.0</td>
-      <td>1159.0</td>
-      <td>1.848500e+09</td>
-      <td>3.055191e+09</td>
-      <td>60.503579</td>
+      <td>1590550.00</td>
+      <td>1159.00</td>
+      <td>1848500000.00</td>
+      <td>3055191171.00</td>
+      <td>60.50</td>
     </tr>
     <tr>
       <th>386</th>
@@ -3658,11 +3887,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>6321812.0</td>
-      <td>20005.0</td>
-      <td>2.623000e+09</td>
-      <td>4.335281e+09</td>
-      <td>60.503579</td>
+      <td>6321812.00</td>
+      <td>20005.00</td>
+      <td>2623000000.00</td>
+      <td>4335280736.00</td>
+      <td>60.50</td>
     </tr>
     <tr>
       <th>542</th>
@@ -3674,11 +3903,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>3</td>
-      <td>100891.0</td>
-      <td>1200.0</td>
+      <td>100891.00</td>
+      <td>1200.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>61.463188</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>663</th>
@@ -3691,10 +3920,10 @@ Name: Year, Length: 5838, dtype: int64
       <td>Heat wave</td>
       <td>1</td>
       <td>NaN</td>
-      <td>1030.0</td>
+      <td>1030.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>61.463188</td>
+      <td>61.46</td>
     </tr>
     <tr>
       <th>...</th>
@@ -3722,9 +3951,9 @@ Name: Year, Length: 5838, dtype: int64
       <td>Flood</td>
       <td>Flash flood</td>
       <td>1</td>
-      <td>50000.0</td>
-      <td>2970.0</td>
-      <td>1.000000e+07</td>
+      <td>50000.00</td>
+      <td>2970.00</td>
+      <td>10000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -3738,8 +3967,8 @@ Name: Year, Length: 5838, dtype: int64
       <td>Storm</td>
       <td>Storm (General)</td>
       <td>1</td>
-      <td>1600000.0</td>
-      <td>12352.0</td>
+      <td>1600000.00</td>
+      <td>12352.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3754,8 +3983,8 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>1002476.0</td>
-      <td>2497.0</td>
+      <td>1002476.00</td>
+      <td>2497.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3770,9 +3999,9 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>3</td>
-      <td>4109320.0</td>
-      <td>4500.0</td>
-      <td>8.900000e+09</td>
+      <td>4109320.00</td>
+      <td>4500.00</td>
+      <td>8900000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -3786,9 +4015,9 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>3</td>
-      <td>9207698.0</td>
-      <td>50103.0</td>
-      <td>3.400000e+10</td>
+      <td>9207698.00</td>
+      <td>50103.00</td>
+      <td>34000000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -3849,11 +4078,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>3294.0</td>
-      <td>31.0</td>
-      <td>1.000000e+07</td>
-      <td>16995054.0</td>
-      <td>58.840648</td>
+      <td>3294.00</td>
+      <td>31.00</td>
+      <td>10000000.00</td>
+      <td>16995054.00</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>24</th>
@@ -3865,11 +4094,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>1000.0</td>
+      <td>1000.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>56</th>
@@ -3881,11 +4110,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>5</td>
-      <td>2105050.0</td>
-      <td>9.0</td>
-      <td>1.169830e+08</td>
-      <td>198813241.0</td>
-      <td>58.840648</td>
+      <td>2105050.00</td>
+      <td>9.00</td>
+      <td>116983000.00</td>
+      <td>198813241.00</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>64</th>
@@ -3897,11 +4126,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>430.0</td>
-      <td>2.0</td>
+      <td>430.00</td>
+      <td>2.00</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>95</th>
@@ -3913,11 +4142,11 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>600.0</td>
+      <td>600.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>58.840648</td>
+      <td>58.84</td>
     </tr>
     <tr>
       <th>...</th>
@@ -3945,8 +4174,8 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>16274.0</td>
-      <td>8.0</td>
+      <td>16274.00</td>
+      <td>8.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3961,8 +4190,8 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>141.0</td>
-      <td>1.0</td>
+      <td>141.00</td>
+      <td>1.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3977,9 +4206,9 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>3</td>
-      <td>4109320.0</td>
-      <td>4500.0</td>
-      <td>8.900000e+09</td>
+      <td>4109320.00</td>
+      <td>4500.00</td>
+      <td>8900000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -3993,7 +4222,7 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>1</td>
-      <td>2205.0</td>
+      <td>2205.00</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -4009,9 +4238,9 @@ Name: Year, Length: 5838, dtype: int64
       <td>Earthquake</td>
       <td>Ground movement</td>
       <td>3</td>
-      <td>9207698.0</td>
-      <td>50103.0</td>
-      <td>3.400000e+10</td>
+      <td>9207698.00</td>
+      <td>50103.00</td>
+      <td>34000000000.00</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -4027,17 +4256,17 @@ Name: Year, Length: 5838, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22         3294.0
-24         1000.0
-56      2105050.0
-64          430.0
-95          600.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22        3294.00
+24        1000.00
+56     2105050.00
+64         430.00
+95         600.00
           ...    
-5775      16274.0
-5777        141.0
-5811    4109320.0
-5814       2205.0
-5818    9207698.0
+5775     16274.00
+5777       141.00
+5811   4109320.00
+5814      2205.00
+5818   9207698.00
 Name: Total Affected, Length: 387, dtype: float64
 </pre></div>
 </div>

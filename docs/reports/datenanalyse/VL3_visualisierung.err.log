@@ -1,31 +1,104 @@
 Traceback (most recent call last):
-  File "/home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/natalie-widmann/anaconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+  File "/home/natalie-widmann/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+  File "/home/natalie-widmann/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/home/natalie-widmann/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+  File "/home/natalie-widmann/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "/home/natalie-widmann/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "/home/natalie-widmann/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-yearly_events
+import seaborn as sns
+
+# Sample data
+data = {'Year': [2015, 2016, 2017, 2018, 2019], 'Sales': [200, 300, 400, 350, 500]}
+df = pd.DataFrame(data)
+
+# Line plot
+sns.lineplot(data=germany_data, x='Year', y='Sales')
+plt.title('Sales Over Time')
+plt.show()
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[45], line 1[0m
-[0;32m----> 1[0m [43myearly_events[49m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[18], line 8[0m
+[1;32m      5[0m df [38;5;241m=[39m pd[38;5;241m.[39mDataFrame(data)
+[1;32m      7[0m [38;5;66;03m# Line plot[39;00m
+[0;32m----> 8[0m sns[38;5;241m.[39mlineplot(data[38;5;241m=[39mgermany_data, x[38;5;241m=[39m[38;5;124m'[39m[38;5;124mYear[39m[38;5;124m'[39m, y[38;5;241m=[39m[38;5;124m'[39m[38;5;124mSales[39m[38;5;124m'[39m)
+[1;32m      9[0m plt[38;5;241m.[39mtitle([38;5;124m'[39m[38;5;124mSales Over Time[39m[38;5;124m'[39m)
+[1;32m     10[0m plt[38;5;241m.[39mshow()
 
-[0;31mNameError[0m: name 'yearly_events' is not defined
+File [0;32m~/anaconda3/lib/python3.11/site-packages/seaborn/relational.py:618[0m, in [0;36mlineplot[0;34m(data, x, y, hue, size, style, units, palette, hue_order, hue_norm, sizes, size_order, size_norm, dashes, markers, style_order, estimator, errorbar, n_boot, seed, orient, sort, err_style, err_kws, legend, ci, ax, **kwargs)[0m
+[1;32m    615[0m errorbar [38;5;241m=[39m _deprecate_ci(errorbar, ci)
+[1;32m    617[0m variables [38;5;241m=[39m _LinePlotter[38;5;241m.[39mget_semantics([38;5;28mlocals[39m())
+[0;32m--> 618[0m p [38;5;241m=[39m _LinePlotter(
+[1;32m    619[0m     data[38;5;241m=[39mdata, variables[38;5;241m=[39mvariables,
+[1;32m    620[0m     estimator[38;5;241m=[39mestimator, n_boot[38;5;241m=[39mn_boot, seed[38;5;241m=[39mseed, errorbar[38;5;241m=[39merrorbar,
+[1;32m    621[0m     sort[38;5;241m=[39msort, orient[38;5;241m=[39morient, err_style[38;5;241m=[39merr_style, err_kws[38;5;241m=[39merr_kws,
+[1;32m    622[0m     legend[38;5;241m=[39mlegend,
+[1;32m    623[0m )
+[1;32m    625[0m p[38;5;241m.[39mmap_hue(palette[38;5;241m=[39mpalette, order[38;5;241m=[39mhue_order, norm[38;5;241m=[39mhue_norm)
+[1;32m    626[0m p[38;5;241m.[39mmap_size(sizes[38;5;241m=[39msizes, order[38;5;241m=[39msize_order, norm[38;5;241m=[39msize_norm)
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/seaborn/relational.py:365[0m, in [0;36m_LinePlotter.__init__[0;34m(self, data, variables, estimator, n_boot, seed, errorbar, sort, orient, err_style, err_kws, legend)[0m
+[1;32m    351[0m [38;5;28;01mdef[39;00m [38;5;21m__init__[39m(
+[1;32m    352[0m     [38;5;28mself[39m, [38;5;241m*[39m,
+[1;32m    353[0m     data[38;5;241m=[39m[38;5;28;01mNone[39;00m, variables[38;5;241m=[39m{},
+[0;32m   (...)[0m
+[1;32m    359[0m     [38;5;66;03m# the kind of plot to draw, but for the time being we need to set[39;00m
+[1;32m    360[0m     [38;5;66;03m# this information so the SizeMapping can use it[39;00m
+[1;32m    361[0m     [38;5;28mself[39m[38;5;241m.[39m_default_size_range [38;5;241m=[39m (
+[1;32m    362[0m         np[38;5;241m.[39mr_[[38;5;241m.5[39m, [38;5;241m2[39m] [38;5;241m*[39m mpl[38;5;241m.[39mrcParams[[38;5;124m"[39m[38;5;124mlines.linewidth[39m[38;5;124m"[39m]
+[1;32m    363[0m     )
+[0;32m--> 365[0m     [38;5;28msuper[39m()[38;5;241m.[39m[38;5;21m__init__[39m(data[38;5;241m=[39mdata, variables[38;5;241m=[39mvariables)
+[1;32m    367[0m     [38;5;28mself[39m[38;5;241m.[39mestimator [38;5;241m=[39m estimator
+[1;32m    368[0m     [38;5;28mself[39m[38;5;241m.[39merrorbar [38;5;241m=[39m errorbar
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:640[0m, in [0;36mVectorPlotter.__init__[0;34m(self, data, variables)[0m
+[1;32m    635[0m [38;5;66;03m# var_ordered is relevant only for categorical axis variables, and may[39;00m
+[1;32m    636[0m [38;5;66;03m# be better handled by an internal axis information object that tracks[39;00m
+[1;32m    637[0m [38;5;66;03m# such information and is set up by the scale_* methods. The analogous[39;00m
+[1;32m    638[0m [38;5;66;03m# information for numeric axes would be information about log scales.[39;00m
+[1;32m    639[0m [38;5;28mself[39m[38;5;241m.[39m_var_ordered [38;5;241m=[39m {[38;5;124m"[39m[38;5;124mx[39m[38;5;124m"[39m: [38;5;28;01mFalse[39;00m, [38;5;124m"[39m[38;5;124my[39m[38;5;124m"[39m: [38;5;28;01mFalse[39;00m}  [38;5;66;03m# alt., used DefaultDict[39;00m
+[0;32m--> 640[0m [38;5;28mself[39m[38;5;241m.[39massign_variables(data, variables)
+[1;32m    642[0m [38;5;28;01mfor[39;00m var, [38;5;28mcls[39m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_semantic_mappings[38;5;241m.[39mitems():
+[1;32m    643[0m 
+[1;32m    644[0m     [38;5;66;03m# Create the mapping function[39;00m
+[1;32m    645[0m     map_func [38;5;241m=[39m partial([38;5;28mcls[39m[38;5;241m.[39mmap, plotter[38;5;241m=[39m[38;5;28mself[39m)
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:701[0m, in [0;36mVectorPlotter.assign_variables[0;34m(self, data, variables)[0m
+[1;32m    699[0m [38;5;28;01melse[39;00m:
+[1;32m    700[0m     [38;5;28mself[39m[38;5;241m.[39minput_format [38;5;241m=[39m [38;5;124m"[39m[38;5;124mlong[39m[38;5;124m"[39m
+[0;32m--> 701[0m     plot_data, variables [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_assign_variables_longform(
+[1;32m    702[0m         data, [38;5;241m*[39m[38;5;241m*[39mvariables,
+[1;32m    703[0m     )
+[1;32m    705[0m [38;5;28mself[39m[38;5;241m.[39mplot_data [38;5;241m=[39m plot_data
+[1;32m    706[0m [38;5;28mself[39m[38;5;241m.[39mvariables [38;5;241m=[39m variables
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:938[0m, in [0;36mVectorPlotter._assign_variables_longform[0;34m(self, data, **kwargs)[0m
+[1;32m    933[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(val, ([38;5;28mstr[39m, [38;5;28mbytes[39m)):
+[1;32m    934[0m 
+[1;32m    935[0m     [38;5;66;03m# This looks like a column name but we don't know what it means![39;00m
+[1;32m    937[0m     err [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCould not interpret value `[39m[38;5;132;01m{[39;00mval[38;5;132;01m}[39;00m[38;5;124m` for parameter `[39m[38;5;132;01m{[39;00mkey[38;5;132;01m}[39;00m[38;5;124m`[39m[38;5;124m"[39m
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(err)
+[1;32m    940[0m [38;5;28;01melse[39;00m:
+[1;32m    941[0m 
+[1;32m    942[0m     [38;5;66;03m# Otherwise, assume the value is itself data[39;00m
+[1;32m    943[0m 
+[1;32m    944[0m     [38;5;66;03m# Raise when data object is present and a vector can't matched[39;00m
+[1;32m    945[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(data, pd[38;5;241m.[39mDataFrame) [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(val, pd[38;5;241m.[39mSeries):
+
+[0;31mValueError[0m: Could not interpret value `Sales` for parameter `y`
 

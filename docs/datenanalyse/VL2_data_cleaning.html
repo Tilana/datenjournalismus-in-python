@@ -15,32 +15,32 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -49,24 +49,18 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'datenanalyse/VL2_data_cleaning';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Datenanalyse Teil III" href="VL3_visualisierung.html" />
-    <link rel="prev" title="Datenanalyse Teil I" href="VL1_data_analysis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,28 +70,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +108,22 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +139,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../willkommen/intro.html">
@@ -158,7 +159,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,47 +188,47 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Grundlagen in Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../grundlagen/beispiele.html">Praktische Anwendungen</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../grundlagen/beispiele.html">Praktische Anwendungen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/wealth.html">Wie reich ist Jeff Bezos?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/automatisierteTexte.html">Automatisierte Texte</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/luftqualitaet.html">Analyse der Luftqualität in Leipzig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/anwendungsbeispiele/nebeneinkuenfte.html">Nebeneinkünfte von Lokalpolitiker:innen</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../grundlagen/theorie.html">Theorie</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/operatoren.html">Operatoren</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../grundlagen/theorie.html">Theorie</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/operatoren.html">Operatoren</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/arithm_operatoren.html">Arithmetische Operatoren</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/vergleichsoperatoren.html">Vergleichsoperatoren</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/bool_operatoren.html">Logische (Boolsche) Operatoren</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/variablen.html">Variablen</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/datentypen.html">Datentypen</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/datentypen.html">Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/datentypen_basics.html">Grundlegende Datentypen: int, float, string, bool</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/listen.html">Listen</a></li>
 
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/dictionaries.html">Dictionaries</a></li>
 
 </ul>
-</li>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/methoden.html">Methoden</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/funktionen.html">Funktionen</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/funktionen.html">Funktionen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/inbuilt_functions.html">Eingebaute Funktionen</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/eigene_funktionen.html">Selbstdefinierte Funktionen</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/kontrollstrukturen.html">Kontrollstrukturen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../grundlagen/kontrollstrukturen.html">Kontrollstrukturen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/ifelse.html">Fallunterscheidungen: if, else, elif</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/forloops.html">For Loops</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/whileloops.html">While Loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../grundlagen/flow_control.html">Flow Control</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/packages.html">Python Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grundlagen/dateipfade.html">Dateipfade</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro.html">Übungsaufgaben</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro.html">Übungsaufgaben</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen1.html">Operatoren, Datentypen &amp; built-in Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen2.html">String Methoden, Vergleichs- &amp; boolsche Operatoren, if-elif-else</a></li>
 
@@ -225,25 +237,22 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebung_luftqualitaet.html">Analyse der Luftqualität in Leipzig</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebung_nebeneinkuenfte.html">Nebeneinkünfte von Lokalpolitiker:innen</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Datenanalyse</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="data_exploration.html">Explorative Datenanalyse</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="data_visualisation.html">Visualisierung</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="natural_disaster_dashboard.html">Natural Disasters Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VL1_data_analysis.html">Datenanalyse Teil I</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datenanalyse Teil II</a></li>
-<li class="toctree-l1"><a class="reference internal" href="VL3_visualisierung.html">Datenanalyse Teil III</a></li>
-
-<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro2.html">Übungsaufgaben</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro2.html">Übungsaufgaben</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen5.html">Packages &amp; Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen6.html">Weitere Schritte mit Pandas</a></li>
 
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">APIs &amp; Scraper</span></p>
 <ul class="nav bd-sidenav">
@@ -253,11 +262,11 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro3.html">Übungsaufgaben</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../aufgaben/intro3.html">Übungsaufgaben</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen7.html">Schnittstellen / API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../aufgaben/uebungen8.html">Scraper</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -273,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -282,14 +291,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -314,14 +323,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/Tilana/datenjournalismus-in-python/main?urlpath=tree/workbook/datenanalyse/VL2_data_cleaning.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -332,14 +341,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/Tilana/datenjournalismus-in-python/blob/main/workbook/datenanalyse/VL2_data_cleaning.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -481,10 +490,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -492,14 +501,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -545,13 +554,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="datenanalyse-teil-ii">
 <h1>Datenanalyse Teil II<a class="headerlink" href="#datenanalyse-teil-ii" title="Permalink to this heading">#</a></h1>
 <section id="natalie-widmann">
 <h2>Natalie Widmann<a class="headerlink" href="#natalie-widmann" title="Permalink to this heading">#</a></h2>
-<p>Wintersemester 2023 / 2024</p>
+<p>Wintersemester 2024 / 2025</p>
 </section>
 <section id="aggregated-figures-for-natural-disasters-in-em-dat">
 <h2>Aggregated figures for Natural Disasters in EM-DAT<a class="headerlink" href="#aggregated-figures-for-natural-disasters-in-em-dat" title="Permalink to this heading">#</a></h2>
@@ -567,254 +576,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (2.1.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;2,&gt;=1.23.2 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (1.26.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2023.3.post1)
-Requirement already satisfied: tzdata&gt;=2022.1 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from pandas) (2023.3)
-Requirement already satisfied: six&gt;=1.5 in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: openpyxl in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (3.1.2)
-Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjournalismus in Python/Code/.venv/lib/python3.11/site-packages (from openpyxl) (1.1.0)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../../data/emdat.xlsx&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://data.humdata.org/dataset/74163686-a029-4e27-8fbf-c5bfcd13f953/resource/c5ce40d6-07b1-4f36-955a-d6196436ff6b/download/emdat-country-profiles_2024_11_25.xlsx&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="n">data</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>ISO</th>
-      <th>Disaster Group</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-      <th>Total Damage (USD, adjusted)</th>
-      <th>CPI</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#date +occurred</td>
-      <td>#country +name</td>
-      <td>#country +code</td>
-      <td>#cause +group</td>
-      <td>#cause +subgroup</td>
-      <td>#cause +type</td>
-      <td>#cause +subtype</td>
-      <td>#frequency</td>
-      <td>#affected +ind</td>
-      <td>#affected +ind +killed</td>
-      <td>NaN</td>
-      <td>#value +usd</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>AFG</td>
-      <td>Natural</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000</td>
-      <td>37</td>
-      <td>50000.00</td>
-      <td>84975</td>
-      <td>58.84</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>DZA</td>
-      <td>Natural</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>2</td>
-      <td>105</td>
-      <td>37</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>58.84</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>DZA</td>
-      <td>Natural</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>2</td>
-      <td>100</td>
-      <td>7</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>58.84</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>DZA</td>
-      <td>Natural</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>10</td>
-      <td>4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>58.84</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>VNM</td>
-      <td>Natural</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>3</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>2023</td>
-      <td>Yemen</td>
-      <td>YEM</td>
-      <td>Natural</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>169035</td>
-      <td>39</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>ZMB</td>
-      <td>Natural</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>154608</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>ZMB</td>
-      <td>Natural</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>22000</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5838</th>
-      <td>2023</td>
-      <td>Zimbabwe</td>
-      <td>ZWE</td>
-      <td>Natural</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>5839 rows × 13 columns</p>
-</div></div></div>
 </div>
 </section>
 <section id="data-cleaning">
@@ -830,30 +603,6 @@ Requirement already satisfied: et-xmlfile in /home/natalie/Dokumente/Datenjourna
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 5838 entries, 1 to 5838
-Data columns (total 13 columns):
- #   Column                        Non-Null Count  Dtype  
----  ------                        --------------  -----  
- 0   Year                          5838 non-null   object 
- 1   Country                       5838 non-null   object 
- 2   ISO                           5838 non-null   object 
- 3   Disaster Group                5838 non-null   object 
- 4   Disaster Subroup              5838 non-null   object 
- 5   Disaster Type                 5838 non-null   object 
- 6   Disaster Subtype              5838 non-null   object 
- 7   Total Events                  5838 non-null   object 
- 8   Total Affected                4692 non-null   object 
- 9   Total Deaths                  4118 non-null   object 
- 10  Total Damage (USD, original)  2032 non-null   float64
- 11  Total Damage (USD, adjusted)  1999 non-null   object 
- 12  CPI                           5648 non-null   float64
-dtypes: float64(2), object(11)
-memory usage: 593.1+ KB
 </pre></div>
 </div>
 </div>
@@ -874,30 +623,6 @@ memory usage: 593.1+ KB
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 5838 entries, 1 to 5838
-Data columns (total 13 columns):
- #   Column                        Non-Null Count  Dtype  
----  ------                        --------------  -----  
- 0   Year                          5838 non-null   int64  
- 1   Country                       5838 non-null   object 
- 2   ISO                           5838 non-null   object 
- 3   Disaster Group                5838 non-null   object 
- 4   Disaster Subroup              5838 non-null   object 
- 5   Disaster Type                 5838 non-null   object 
- 6   Disaster Subtype              5838 non-null   object 
- 7   Total Events                  5838 non-null   int64  
- 8   Total Affected                4692 non-null   float64
- 9   Total Deaths                  4118 non-null   float64
- 10  Total Damage (USD, original)  2032 non-null   float64
- 11  Total Damage (USD, adjusted)  1999 non-null   float64
- 12  CPI                           5648 non-null   float64
-dtypes: float64(5), int64(2), object(6)
-memory usage: 593.1+ KB
-</pre></div>
-</div>
-</div>
 </div>
 <p>Entferne irrelevante Spalten, hier: <em>ISO, Disaster Group, Total Damage (USD, adjusted)</em></p>
 <div class="cell docutils container">
@@ -915,172 +640,15 @@ memory usage: 593.1+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000.00</td>
-      <td>37.00</td>
-      <td>50000.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>2</td>
-      <td>105.00</td>
-      <td>37.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>2</td>
-      <td>100.00</td>
-      <td>7.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>10.00</td>
-      <td>4.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2000</td>
-      <td>Angola</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>3</td>
-      <td>9011.00</td>
-      <td>15.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>3.00</td>
-      <td>1.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>2023</td>
-      <td>Yemen</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>169035.00</td>
-      <td>39.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>154608.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>22000.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5838</th>
-      <td>2023</td>
-      <td>Zimbabwe</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>2.00</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>5838 rows × 9 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;data&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="fehlende-werte-nans-values">
@@ -1093,37 +661,12 @@ Wie viele fehlen?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5838
-</pre></div>
-</div>
-</div>
 </div>
 <section id="wie-viele-werte-pro-spalte-sind-nan">
 <h3>Wie viele Werte pro Spalte sind NaN?<a class="headerlink" href="#wie-viele-werte-pro-spalte-sind-nan" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 5838 entries, 1 to 5838
-Data columns (total 9 columns):
- #   Column                        Non-Null Count  Dtype  
----  ------                        --------------  -----  
- 0   Year                          5838 non-null   int64  
- 1   Country                       5838 non-null   object 
- 2   Disaster Subroup              5838 non-null   object 
- 3   Disaster Type                 5838 non-null   object 
- 4   Disaster Subtype              5838 non-null   object 
- 5   Total Events                  5838 non-null   int64  
- 6   Total Affected                4692 non-null   float64
- 7   Total Deaths                  4118 non-null   float64
- 8   Total Damage (USD, original)  2032 non-null   float64
-dtypes: float64(3), int64(2), object(4)
-memory usage: 410.6+ KB
 </pre></div>
 </div>
 </div>
@@ -1134,31 +677,10 @@ memory usage: 410.6+ KB
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1       False
-2       False
-3       False
-4       False
-5       False
-        ...  
-5834    False
-5835    False
-5836    False
-5837    False
-5838     True
-Name: Total Affected, Length: 5838, dtype: bool
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total Affected&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1146
 </pre></div>
 </div>
 </div>
@@ -1169,191 +691,10 @@ Name: Total Affected, Length: 5838, dtype: bool
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>5838</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-<p>5838 rows × 9 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year                               0
-Country                            0
-Disaster Subroup                   0
-Disaster Type                      0
-Disaster Subtype                   0
-Total Events                       0
-Total Affected                  1146
-Total Deaths                    1720
-Total Damage (USD, original)    3806
-dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1375,173 +716,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000.00</td>
-      <td>37.00</td>
-      <td>50000.00</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2000</td>
-      <td>Angola</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Riverine flood</td>
-      <td>1</td>
-      <td>70000.00</td>
-      <td>31.00</td>
-      <td>10000000.00</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2000</td>
-      <td>Argentina</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>3</td>
-      <td>31840.00</td>
-      <td>6.00</td>
-      <td>300000000.00</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>2000</td>
-      <td>Australia</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>3</td>
-      <td>1350.00</td>
-      <td>1.00</td>
-      <td>150000000.00</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>2000</td>
-      <td>Azerbaijan</td>
-      <td>Geophysical</td>
-      <td>Earthquake</td>
-      <td>Ground movement</td>
-      <td>1</td>
-      <td>3294.00</td>
-      <td>31.00</td>
-      <td>10000000.00</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5824</th>
-      <td>2023</td>
-      <td>United States of America</td>
-      <td>Climatological</td>
-      <td>Wildfire</td>
-      <td>Wildfire (General)</td>
-      <td>2</td>
-      <td>8497.00</td>
-      <td>130.00</td>
-      <td>3000000000.00</td>
-    </tr>
-    <tr>
-      <th>5827</th>
-      <td>2023</td>
-      <td>United States of America</td>
-      <td>Meteorological</td>
-      <td>Extreme temperature</td>
-      <td>Severe winter conditions</td>
-      <td>1</td>
-      <td>25.00</td>
-      <td>10.00</td>
-      <td>380000000.00</td>
-    </tr>
-    <tr>
-      <th>5828</th>
-      <td>2023</td>
-      <td>United States of America</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Severe weather</td>
-      <td>1</td>
-      <td>551.00</td>
-      <td>3.00</td>
-      <td>250000000.00</td>
-    </tr>
-    <tr>
-      <th>5829</th>
-      <td>2023</td>
-      <td>United States of America</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>3</td>
-      <td>912.00</td>
-      <td>37.00</td>
-      <td>7000000000.00</td>
-    </tr>
-    <tr>
-      <th>5830</th>
-      <td>2023</td>
-      <td>United States of America</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tornado</td>
-      <td>5</td>
-      <td>14217.00</td>
-      <td>75.00</td>
-      <td>19560000000.00</td>
-    </tr>
-  </tbody>
-</table>
-<p>1500 rows × 9 columns</p>
-</div></div></div>
 </div>
 <p>Entferne nur Zeilen die in einer bestimmten Spalte NaN Werte haben</p>
 <div class="cell docutils container">
@@ -1551,173 +725,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000.00</td>
-      <td>37.00</td>
-      <td>50000.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>2</td>
-      <td>105.00</td>
-      <td>37.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>2</td>
-      <td>100.00</td>
-      <td>7.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>10.00</td>
-      <td>4.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2000</td>
-      <td>Angola</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>3</td>
-      <td>9011.00</td>
-      <td>15.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5833</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>463.00</td>
-      <td>4.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>3.00</td>
-      <td>1.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>2023</td>
-      <td>Yemen</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>169035.00</td>
-      <td>39.00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>154608.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>22000.00</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>4692 rows × 9 columns</p>
-</div></div></div>
 </div>
 </section>
 </section>
@@ -1745,173 +752,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000.00</td>
-      <td>37.00</td>
-      <td>50000.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>2</td>
-      <td>105.00</td>
-      <td>37.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>2</td>
-      <td>100.00</td>
-      <td>7.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>10.00</td>
-      <td>4.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2000</td>
-      <td>Angola</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>3</td>
-      <td>9011.00</td>
-      <td>15.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>3.00</td>
-      <td>1.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>2023</td>
-      <td>Yemen</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>169035.00</td>
-      <td>39.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>154608.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>22000.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>5838</th>
-      <td>2023</td>
-      <td>Zimbabwe</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>0.00</td>
-      <td>2.00</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-<p>5838 rows × 9 columns</p>
-</div></div></div>
 </div>
 <p>Welche Werte für Total Affected, Total Deaths oder Total Damage?</p>
 <ul class="simple">
@@ -1940,11 +780,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1639896721.4173229
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1959,173 +794,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000.00</td>
-      <td>37.00</td>
-      <td>50000.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>2</td>
-      <td>105.00</td>
-      <td>37.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>2</td>
-      <td>100.00</td>
-      <td>7.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>10.00</td>
-      <td>4.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2000</td>
-      <td>Angola</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>3</td>
-      <td>9011.00</td>
-      <td>15.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>3.00</td>
-      <td>1.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>2023</td>
-      <td>Yemen</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>169035.00</td>
-      <td>39.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>154608.00</td>
-      <td>0.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>22000.00</td>
-      <td>0.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5838</th>
-      <td>2023</td>
-      <td>Zimbabwe</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>2.00</td>
-      <td>2.00</td>
-      <td>1639896721.42</td>
-    </tr>
-  </tbody>
-</table>
-<p>5838 rows × 9 columns</p>
-</div></div></div>
 </div>
 </section>
 <section id="id1">
@@ -2152,11 +820,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2164,173 +827,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Country</th>
-      <th>Disaster Subroup</th>
-      <th>Disaster Type</th>
-      <th>Disaster Subtype</th>
-      <th>Total Events</th>
-      <th>Total Affected</th>
-      <th>Total Deaths</th>
-      <th>Total Damage (USD, original)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>2000</td>
-      <td>Afghanistan</td>
-      <td>Climatological</td>
-      <td>Drought</td>
-      <td>Drought</td>
-      <td>1</td>
-      <td>2580000.00</td>
-      <td>37.00</td>
-      <td>50000.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>2</td>
-      <td>105.00</td>
-      <td>37.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>2</td>
-      <td>100.00</td>
-      <td>7.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000</td>
-      <td>Algeria</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Storm (General)</td>
-      <td>1</td>
-      <td>10.00</td>
-      <td>4.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2000</td>
-      <td>Angola</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>3</td>
-      <td>9011.00</td>
-      <td>15.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5834</th>
-      <td>2023</td>
-      <td>Viet Nam</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>3.00</td>
-      <td>1.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5835</th>
-      <td>2023</td>
-      <td>Yemen</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>169035.00</td>
-      <td>39.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5836</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flash flood</td>
-      <td>1</td>
-      <td>154608.00</td>
-      <td>0.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5837</th>
-      <td>2023</td>
-      <td>Zambia</td>
-      <td>Hydrological</td>
-      <td>Flood</td>
-      <td>Flood (General)</td>
-      <td>1</td>
-      <td>22000.00</td>
-      <td>0.00</td>
-      <td>1639896721.42</td>
-    </tr>
-    <tr>
-      <th>5838</th>
-      <td>2023</td>
-      <td>Zimbabwe</td>
-      <td>Meteorological</td>
-      <td>Storm</td>
-      <td>Tropical cyclone</td>
-      <td>1</td>
-      <td>2.00</td>
-      <td>2.00</td>
-      <td>1639896721.42</td>
-    </tr>
-  </tbody>
-</table>
-<p>5838 rows × 9 columns</p>
-</div></div></div>
 </div>
 </section>
 <section id="daten-speichern-neu-laden">
@@ -2372,27 +868,9 @@ dtype: int64
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="VL1_data_analysis.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Datenanalyse Teil I</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="VL3_visualisierung.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Datenanalyse Teil III</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -2401,6 +879,7 @@ dtype: int64
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2448,7 +927,7 @@ By Natalie Widmann
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2472,8 +951,8 @@ By Natalie Widmann
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
